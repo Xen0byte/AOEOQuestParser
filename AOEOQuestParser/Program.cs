@@ -10,6 +10,11 @@ namespace AOEOQuestParser
     {
         static void Main(string[] args)
         {
+            Logic.GetSourceFolderLocation();
+
+            Logic.SetDestinationFolderLocation();
+
+            Console.ReadLine();
         }
     }
 }
