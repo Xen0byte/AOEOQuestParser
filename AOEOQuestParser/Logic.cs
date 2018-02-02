@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,10 +49,32 @@ namespace AOEOQuestParser
             }
             else if (Array.Exists(noSelections, element => element == customDestinationCheck))
             {
-                Console.WriteLine("You have not set a custom destination folder. Your destination folder will be \"C:\\\".");
+                Console.WriteLine("You have not set a custom destination folder. Your destination folder will be \"C:\\\"." + "\n");
             }
 
             return questDestination;
+        }
+
+        public static string GetAllFilesForProcessing(string questPath)
+        {
+            string[] questFiles = new string[0];
+
+            try
+            {
+                questFiles = Directory.GetFiles(questPath, "*.quest", SearchOption.AllDirectories);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e + "\n");
+                Console.WriteLine("\"" + questPath + "\"" + " is an invalid path. Press ENTER to exit.");
+            }
+
+            foreach (string i in questFiles)
+            {
+                Console.WriteLine("{0}", i);
+            }
+
+            return questFiles.ToString();
         }
     }
 }
