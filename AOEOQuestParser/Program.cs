@@ -18,7 +18,7 @@ namespace AOEOQuestParser
             // Logic.GetElementsWithDescendants(questFiles);
             #endregion
 
-            Logic.ProcessQuestFiles(questFiles, relativePaths);
+            Logic.ProcessQuestFiles(questFiles, relativePaths, questDestination);
 
             Console.ReadLine();
         }

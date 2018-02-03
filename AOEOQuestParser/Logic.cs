@@ -104,7 +104,7 @@ namespace AOEOQuestParser
             return relativePaths;
         }
 
-        // This is a debug method to get all the unique elements with descendants.
+        // This is a debug method to get all the unique elements with descendants, for building the Parser class.
         // In the processed *quest file, elements with no descendants will become attributes.
         public static List<string> GetElementsWithDescendants(string[] questArray)
         {
@@ -140,13 +140,15 @@ namespace AOEOQuestParser
 
         // Converts all the *quest files found in the source folder to a format compatible with the FireSinging AOEO open-source server.
         // This is where the magic happens.
-        public static void ProcessQuestFiles(string[] questArray, string[] relativePaths)
+        public static void ProcessQuestFiles(string[] questArray, string[] relativePaths, string questDestination)
         {
-            //the bulk of the code goes here
+            Parser.quest(questArray);
+
+            WriteFiles(questDestination, relativePaths);
         }
 
         // Writes the processed *quest files to the destination folder using the files' relative paths.
-        public static void WriteFiles(string questDestination)
+        public static void WriteFiles(string questDestination, string[] relativePaths)
         {
             //write *quest files to new format
         }
