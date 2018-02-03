@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AOEOQuestParser
 {
@@ -14,7 +10,15 @@ namespace AOEOQuestParser
 
             string questDestination = Logic.SetDestinationFolderLocation();
 
-            Logic.GetAllFilesForProcessing(questLocation);
+            string[] questFiles = Logic.GetAllFilesForProcessing(questLocation);
+
+            string[] relativePaths = Logic.GetRelativePaths(questFiles, questLocation);
+
+            #region Debug Method To Get Unique Elements With Descendants
+            // Logic.GetElementsWithDescendants(questFiles);
+            #endregion
+
+            Logic.ProcessQuestFiles(questFiles, relativePaths);
 
             Console.ReadLine();
         }
