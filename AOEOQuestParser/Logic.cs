@@ -23,13 +23,14 @@ namespace AOEOQuestParser
         // Gets the destination folder location from user input. This is where the processed *quest files will be stored.
         public static string SetDestinationFolderLocation()
         {
-            string questDestination = "C:\\";
+            string questDestination = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).ToString();
             string customDestinationCheck;
 
             string[] yesSelections = { "y", "Y", "yes", "Yes", "YES" };
             string[] noSelections = { "n", "N", "no", "No", "NO" };
 
-            Console.WriteLine("The default destination folder is \"C:\\\". Would you like to change the destination folder?");
+            Console.WriteLine("The default destination folder is the logged-in user's Documents folder.");
+            Console.WriteLine("Would you like to change the destination folder?" + "\n");
             Console.WriteLine("Please press [Y]es or [N]o to continue.");
             customDestinationCheck = Console.ReadKey(true).KeyChar.ToString();
             Console.WriteLine();
@@ -50,21 +51,32 @@ namespace AOEOQuestParser
             }
             else if (Array.Exists(noSelections, element => element == customDestinationCheck))
             {
-                Console.WriteLine("You have not set a custom destination folder. Your destination folder will be \"C:\\\"." + "\n");
+                Console.WriteLine("You have not set a custom destination folder.");
+                Console.WriteLine("Your destination folder will be the Documents folder." + "\n");
             }
 
             return questDestination;
         }
 
+        // Sets the temporary file to which partially parsed data will be written.
+        public static string SetTempFile(string questDestination)
+        {
+            string tempFile = questDestination + "\\temp.xml";
+            return tempFile;
+        }
+
         // Builds an array of all the *quest files found in the source folder and all its subdirectories.
         public static string[] GetAllFilesForProcessing(string questPath)
         {
-            string[] questFiles = new string[0];
+            List<string> questFiles = new List<string>();
             int questFileCounter = 0;
 
             try
             {
-                questFiles = Directory.GetFiles(questPath, "*.quest", SearchOption.AllDirectories);
+                foreach (string questFile in Directory.GetFiles(questPath, "*.quest", SearchOption.AllDirectories))
+                {
+                    questFiles.Add(questFile);
+                }
             }
             catch (Exception e)
             {
@@ -80,7 +92,7 @@ namespace AOEOQuestParser
 
             Console.WriteLine("\n" + questFileCounter + " files found." + "\n");
 
-            return questFiles;
+            return questFiles.ToArray();
         }
 
         // Builds an array of all the relative paths to the *quest files found in the source folder and all its subdirectories.
@@ -93,11 +105,9 @@ namespace AOEOQuestParser
 
             foreach (string i in questArray)
             {
-                relativePathsList.Add(questArray[questFileCounter].Remove(0, questLocation.Length + 1));
+                relativePathsList.Add(questArray[questFileCounter].Remove(0, questLocation.Length));
                 questFileCounter++;
             }
-
-            Console.WriteLine(questFileCounter + " relative paths stored." + "\n");
 
             relativePaths = relativePathsList.ToArray();
 
@@ -140,17 +150,30 @@ namespace AOEOQuestParser
 
         // Converts all the *quest files found in the source folder to a format compatible with the FireSinging AOEO open-source server.
         // This is where the magic happens.
-        public static void ProcessQuestFiles(string[] questArray, string[] relativePaths, string questDestination)
+        public static void ProcessQuestFiles(string[] questArray, string questDestination, string[] relativePaths, string tempFile)
         {
-            Parser.quest(questArray);
+            Parser.WriteQuestToFile(questArray, questDestination, relativePaths, tempFile);
+        }
 
-            WriteFiles(questDestination, relativePaths);
+        // Creates a temporary XML file to write the parsed data to.
+        public static void WriteTempFile(string tempFile)
+        {
+            XDocument tempXDoc = new XDocument();
+            tempXDoc.Add(new XElement("quest"));
+            tempXDoc.Save(tempFile);
+        }
+
+        // Deletes the temporary XML file, after the parsed data has been copied to a *quest file.
+        public static void EraseTempFile(string tempFile)
+        {
+            File.Delete(tempFile);
         }
 
         // Writes the processed *quest files to the destination folder using the files' relative paths.
-        public static void WriteFiles(string questDestination, string[] relativePaths)
+        public static void WriteFiles(string questDestination, string relativePath, string tempFile)
         {
-            //write *quest files to new format
+            (new FileInfo(questDestination + relativePath)).Directory.Create();
+            File.WriteAllLines(questDestination + relativePath, File.ReadAllLines(tempFile).Skip(1).ToArray());
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -8,14 +7,65 @@ namespace AOEOQuestParser
 {
     class Parser
     {
-        public static void quest(string[] questArray)
+        //1. Processes elements from the source file individually or in groups of similar elements.
+        //2. Adds the outputs one by one to instances of a temporary XML file.
+        //3. Builds the final parsed *quest files from the temporary XML file instances.
+        public static void WriteQuestToFile(string[] questArray, string questDestination, string[] relativePaths, string tempFile)
         {
+            int processedFilesCounter = 0;
 
+            foreach (string currentQuestFile in questArray)
+            {
+                Logic.WriteTempFile(tempFile);
+
+                quest(currentQuestFile, tempFile);
+                nodescendants(currentQuestFile, tempFile);
+
+                Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
+                Logic.EraseTempFile(tempFile);
+
+                processedFilesCounter++;
+                Console.Write("\r{0}", "processed: " + processedFilesCounter + " out of " + questArray.Length.ToString() + " quest files (" + (Convert.ToSingle(processedFilesCounter) / Convert.ToSingle(questArray.Length) * 100).ToString("0.00") + "%)");
+            }
         }
 
-        public static void nodescendants()
+        // Writes the quest element to the temporary XML file. This is the root element.
+        public static void quest(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
+            XElement questElement = questFileInstance.Descendants().First();
+            XNamespace nameSpace = "http://www.w3.org/2000/";
 
+            questElement.Attribute("{" + nameSpace + "xmlns/}" + "xsi").Remove();
+            questElement.Attribute("{" + nameSpace + "xmlns/}" + "xsd").Remove();
+            questElement.RemoveNodes();
+            questElement.Save(tempFile);
+        }
+
+        // Writes all direct descendants with no child elements of the root element from the source file as attributes of the root element from the temporary file.
+        // Elements with no value are ignored.
+        public static void nodescendants(string currentQuestFile, string tempFile)
+        {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
+            List<KeyValuePair<string, string>> descendantsList = new List<KeyValuePair<string, string>>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Descendants().Count() == 0 && element.AncestorsAndSelf().Count() == 2 && element.Value != "")
+                {
+                    descendantsList.Add(new KeyValuePair<string, string>(element.Name.ToString(), element.Value.ToString()));
+                }
+            }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (KeyValuePair<string, string> newAttribute in descendantsList)
+            {
+                questElement.Add(new XAttribute(newAttribute.Key, newAttribute.Value));
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         public static void aiflagvariables()

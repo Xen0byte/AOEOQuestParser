@@ -10,6 +10,8 @@ namespace AOEOQuestParser
 
             string questDestination = Logic.SetDestinationFolderLocation();
 
+            string tempFile = Logic.SetTempFile(questDestination);
+
             string[] questFiles = Logic.GetAllFilesForProcessing(questLocation);
 
             string[] relativePaths = Logic.GetRelativePaths(questFiles, questLocation);
@@ -18,9 +20,10 @@ namespace AOEOQuestParser
             // Logic.GetElementsWithDescendants(questFiles);
             #endregion
 
-            Logic.ProcessQuestFiles(questFiles, relativePaths, questDestination);
+            Logic.ProcessQuestFiles(questFiles, questDestination, relativePaths, tempFile);
 
-            Console.ReadLine();
+            Console.WriteLine("\n" + "Press any key to exit...");
+            Console.ReadKey(true);
         }
     }
 }
