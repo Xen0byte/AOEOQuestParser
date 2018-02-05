@@ -25,7 +25,7 @@ namespace AOEOQuestParser
                 Logic.EraseTempFile(tempFile);
 
                 processedFilesCounter++;
-                Console.Write("\r{0}", "processed: " + processedFilesCounter + " out of " + questArray.Length.ToString() + " quest files (" + (Convert.ToSingle(processedFilesCounter) / Convert.ToSingle(questArray.Length) * 100).ToString("0.00") + "%)");
+                Console.Write($"\rprocessed: {processedFilesCounter} out of {questArray.Length} quest files ({(Convert.ToSingle(processedFilesCounter) / Convert.ToSingle(questArray.Length) * 100):0.00}%)");
             }
         }
 
