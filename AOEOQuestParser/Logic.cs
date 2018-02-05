@@ -8,12 +8,42 @@ namespace AOEOQuestParser
 {
     public class Logic
     {
+        // Asks the user to run the application in Debug Mode.
+        // The debug methods will execute before a conditional breakpoint on the quest parsing algorithm.
+        public static bool DebugMode()
+        {
+            bool debugMode = false;
+            string customDestinationCheck;
+
+            string[] yesSelections = { "y", "Y", "yes", "Yes", "YES" };
+            string[] noSelections = { "n", "N", "no", "No", "NO" };
+
+            Console.WriteLine("Would you like to start the application in Debug Mode?" + "\n");
+            Console.WriteLine("Please press [Y]es or [N]o to continue.");
+            customDestinationCheck = Console.ReadKey(true).KeyChar.ToString();
+            Console.WriteLine();
+
+            while (!Array.Exists(yesSelections, element => element == customDestinationCheck) && !Array.Exists(noSelections, element => element == customDestinationCheck))
+            {
+                Console.WriteLine("Invalid selection. Please press [Y]es or [N]o to continue.");
+                customDestinationCheck = Console.ReadKey(true).KeyChar.ToString();
+                Console.WriteLine();
+            }
+
+            if (Array.Exists(yesSelections, element => element == customDestinationCheck))
+            {
+                debugMode = true;
+            }
+
+            return debugMode;
+        }
+
         // Gets the source folder location from user input. This is where the source *quest files are read from.
         public static string GetSourceFolderLocation()
         {
             string questLocation;
 
-            Console.WriteLine("Please type or paste in the path of the folder where your *quest files are located!");
+            Console.WriteLine("Please drag-and-drop onto this window the folder where your *quest files are located!");
             questLocation = Console.ReadLine();
             Console.WriteLine();
 
@@ -29,7 +59,7 @@ namespace AOEOQuestParser
             string[] yesSelections = { "y", "Y", "yes", "Yes", "YES" };
             string[] noSelections = { "n", "N", "no", "No", "NO" };
 
-            Console.WriteLine("The default destination folder is the logged-in user's Documents folder.");
+            Console.WriteLine("The default destination folder is the Documents folder.");
             Console.WriteLine("Would you like to change the destination folder?" + "\n");
             Console.WriteLine("Please press [Y]es or [N]o to continue.");
             customDestinationCheck = Console.ReadKey(true).KeyChar.ToString();
@@ -54,6 +84,9 @@ namespace AOEOQuestParser
                 Console.WriteLine("You have not set a custom destination folder.");
                 Console.WriteLine("Your destination folder will be the Documents folder." + "\n");
             }
+
+            questDestination += "\\.parsed-quest-files";
+            Directory.CreateDirectory(questDestination);
 
             return questDestination;
         }
@@ -114,6 +147,7 @@ namespace AOEOQuestParser
             return relativePaths;
         }
 
+#region Debug Methods
         // This is a debug method to get all the unique elements with descendants, for building the Parser class.
         // In the processed *quest file, elements with no descendants will become attributes.
         public static List<string> GetElementsWithDescendants(string[] questArray)
@@ -138,6 +172,9 @@ namespace AOEOQuestParser
 
             elementsWithDescendants.Sort();
 
+            Console.WriteLine("[DEBUG] Elements With Descendants:");
+            Console.WriteLine("----------------------------------");
+
             foreach (string elementWithDescendants in elementsWithDescendants)
             {
                 Console.WriteLine(elementWithDescendants);
@@ -147,6 +184,7 @@ namespace AOEOQuestParser
 
             return elementsWithDescendants;
         }
+#endregion
 
         // Converts all the *quest files found in the source folder to a format compatible with the FireSinging AOEO open-source server.
         // This is where the magic happens.

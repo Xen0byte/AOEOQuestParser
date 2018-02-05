@@ -6,6 +6,8 @@ namespace AOEOQuestParser
     {
         static void Main(string[] args)
         {
+            bool debugMode = Logic.DebugMode();
+
             string questLocation = Logic.GetSourceFolderLocation();
 
             string questDestination = Logic.SetDestinationFolderLocation();
@@ -16,8 +18,11 @@ namespace AOEOQuestParser
 
             string[] relativePaths = Logic.GetRelativePaths(questFiles, questLocation);
 
-            #region Debug Method To Get Unique Elements With Descendants
-            // Logic.GetElementsWithDescendants(questFiles);
+            #region Debug Methods
+            if (debugMode)
+            {
+                Logic.GetElementsWithDescendants(questFiles);
+            }
             #endregion
 
             Logic.ProcessQuestFiles(questFiles, questDestination, relativePaths, tempFile);
