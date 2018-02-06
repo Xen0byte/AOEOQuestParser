@@ -13,24 +13,24 @@ namespace AOEOQuestParser
         public static bool DebugMode()
         {
             bool debugMode = false;
-            string customDestinationCheck;
+            string debugCheck;
 
             string[] yesSelections = { "y", "Y", "yes", "Yes", "YES" };
             string[] noSelections = { "n", "N", "no", "No", "NO" };
 
             Console.WriteLine("Would you like to start the application in Debug Mode?" + "\n");
             Console.WriteLine("Please press [Y]es or [N]o to continue.");
-            customDestinationCheck = Console.ReadKey(true).KeyChar.ToString();
+            debugCheck = Console.ReadKey(true).KeyChar.ToString();
             Console.WriteLine();
 
-            while (!Array.Exists(yesSelections, element => element == customDestinationCheck) && !Array.Exists(noSelections, element => element == customDestinationCheck))
+            while (!Array.Exists(yesSelections, element => element == debugCheck) && !Array.Exists(noSelections, element => element == debugCheck))
             {
                 Console.WriteLine("Invalid selection. Please press [Y]es or [N]o to continue.");
-                customDestinationCheck = Console.ReadKey(true).KeyChar.ToString();
+                debugCheck = Console.ReadKey(true).KeyChar.ToString();
                 Console.WriteLine();
             }
 
-            if (Array.Exists(yesSelections, element => element == customDestinationCheck))
+            if (Array.Exists(yesSelections, element => element == debugCheck))
             {
                 debugMode = true;
             }
@@ -157,18 +157,55 @@ namespace AOEOQuestParser
         public static List<string> GetElementsWithDescendants(string[] questArray)
         {
             List<string> elementsWithDescendants = new List<string>();
+            //
+            string selectionCheck;
 
-            foreach (string i in questArray)
+            string[] aSelections = { "a", "A" };
+            string[] dSelections = { "d", "D" };
+
+            Console.WriteLine("Get [A]ll elements with descendants, or just [D]irect descendants of the root element?" + "\n");
+            selectionCheck = Console.ReadKey(true).KeyChar.ToString();
+
+            while (!Array.Exists(aSelections, element => element == selectionCheck) && !Array.Exists(dSelections, element => element == selectionCheck))
             {
-                XDocument questFile = XDocument.Load(i);
+                Console.WriteLine("Invalid selection. Please press [A]ll or [D]irect to continue.");
+                selectionCheck = Console.ReadKey(true).KeyChar.ToString();
+                Console.WriteLine();
+            }
 
-                foreach (XElement element in questFile.Descendants())
+
+            if (Array.Exists(aSelections, element => element == selectionCheck))
+            {
+                foreach (string i in questArray)
                 {
-                    if (element.Name.ToString() != "quest" && element.Descendants().Count() > 0 && element.Parent.Name.ToString() == "quest")
+                    XDocument questFile = XDocument.Load(i);
+
+                    foreach (XElement element in questFile.Descendants())
                     {
-                        if (!elementsWithDescendants.Contains(element.Name.ToString()))
+                        if (element.Descendants().Count() > 0)
                         {
-                            elementsWithDescendants.Add(element.Name.ToString());
+                            if (!elementsWithDescendants.Contains(element.Name.ToString()))
+                            {
+                                elementsWithDescendants.Add(element.Name.ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            else if (Array.Exists(dSelections, element => element == selectionCheck))
+            {
+                foreach (string i in questArray)
+                {
+                    XDocument questFile = XDocument.Load(i);
+
+                    foreach (XElement element in questFile.Descendants())
+                    {
+                        if (element.Name.ToString() != "quest" && element.Descendants().Count() > 0 && element.Parent.Name.ToString() == "quest")
+                        {
+                            if (!elementsWithDescendants.Contains(element.Name.ToString()))
+                            {
+                                elementsWithDescendants.Add(element.Name.ToString());
+                            }
                         }
                     }
                 }
@@ -189,20 +226,21 @@ namespace AOEOQuestParser
             return elementsWithDescendants;
         }
 
-        // This is a debug method to get all instances of a single element among all quest files.
+        // This is a debug method to return the most complex instance of a single element amongst all quest files.
+        // It also returns all unique ancestors of the specified element, to make sure the element isn't a child of more than one element. 
         // This method will be used to determine the maximum depth.
         // This method helps with making a judgement call on what the most efficient way would be to parse the element to the new format.
         public static List<string> GetAllInstancesOfElement(string[] questArray)
         {
             List<string> allInstancesOfElement = new List<string>();
+            List<string> ancestorsOfElement = new List<string>();
             XElement mostComplexElement = new XElement("null");
             int highestComplexity = 0;
             string fileFound = "";
 
             Console.WriteLine("This method gets all instances among all quest files of the specified XML element.");
-            Console.WriteLine("Type in an element name and press Enter to continue, or leave blank and press Enter to skip.");
+            Console.WriteLine("Type in an element name and press Enter to continue, or leave blank and press Enter to skip." + "\n");
             string elementSelected = Console.ReadLine();
-            Console.WriteLine();
 
             foreach (string i in questArray)
             {
@@ -222,6 +260,11 @@ namespace AOEOQuestParser
                                 mostComplexElement = element;
                                 fileFound = i;
                             }
+
+                            if (!ancestorsOfElement.Contains(element.Ancestors().First().Name.ToString()))
+                            {
+                                ancestorsOfElement.Add(element.Ancestors().First().Name.ToString());
+                            }
                         }
                     }
                 }
@@ -229,18 +272,38 @@ namespace AOEOQuestParser
 
             if (allInstancesOfElement.Count() > 0)
             {
-                Console.WriteLine("[DEBUG] All Instances Of Element: " + elementSelected);
-                Console.WriteLine("---------------------------------");
+                #region Unused Block Of Code
+                // This block of code is not feasible as it outputs too much data for the terminal buffer to handle.
+                //
+                // Console.WriteLine("\n" + "[DEBUG] All Instances Of Element: " + elementSelected);
+                // Console.WriteLine("---------------------------------");
 
-                foreach (string instanceOfElement in allInstancesOfElement)
-                {
-                    Console.WriteLine(instanceOfElement + "\n");
-                }
+                // foreach (string instanceOfElement in allInstancesOfElement)
+                // {
+                //     Console.WriteLine(instanceOfElement + "\n");
+                // }
+                #endregion
 
-                Console.WriteLine("[DEBUG] Element With Highest Complexity Of Type: " + elementSelected);
+                Console.WriteLine("\n" + "[DEBUG] Element With Highest Complexity Of Type: " + elementSelected);
                 Console.WriteLine("------------------------------------------------");
                 Console.WriteLine(mostComplexElement.ToString() + "\n");
-                Console.WriteLine("Found in file: " + fileFound);
+                Console.WriteLine("Found in file: " + fileFound + "\n");
+                Console.WriteLine("[DEBUG] All Direct Ancestors Of Element: " + elementSelected);
+                Console.WriteLine("----------------------------------------");
+
+                foreach (string ancestorOfElement in ancestorsOfElement)
+                {
+                    if (ancestorsOfElement.Count() > 0)
+                    {
+                        Console.Write(ancestorOfElement + " ");
+                    }
+                    else
+                    {
+                        Console.Write("The selected element is the root element. It has no ancestors.");
+                    }
+                }
+
+                Console.WriteLine();
             }
             else
             {
