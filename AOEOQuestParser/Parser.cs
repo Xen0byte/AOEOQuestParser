@@ -20,6 +20,7 @@ namespace AOEOQuestParser
 
                 quest(currentQuestFile, tempFile);
                 nodescendants(currentQuestFile, tempFile);
+                playersettings(currentQuestFile, tempFile);
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
                 Logic.EraseTempFile(tempFile);
@@ -38,6 +39,7 @@ namespace AOEOQuestParser
 
             questElement.Attribute("{" + nameSpace + "xmlns/}" + "xsi").Remove();
             questElement.Attribute("{" + nameSpace + "xmlns/}" + "xsd").Remove();
+
             questElement.RemoveNodes();
             questElement.Save(tempFile);
         }
@@ -68,132 +70,7 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
-        public static void aiflagvariables()
-        {
-
-        }
-
-        public static void aislidervariables()
-        {
-
-        }
-
-        public static void aivariable()
-        {
-
-        }
-
-        public static void alliancepoints()
-        {
-
-        }
-
-        public static void and()
-        {
-
-        }
-
-        public static void buildunit()
-        {
-
-        }
-
-        public static void capitalresource()
-        {
-
-        }
-
-        public static void capitaltech()
-        {
-
-        }
-
-        public static void civilization()
-        {
-
-        }
-
-        public static void collectmaterial()
-        {
-
-        }
-
-        public static void collectresource()
-        {
-
-        }
-
-        public static void completegame()
-        {
-
-        }
-
-        public static void consumable()
-        {
-
-        }
-
-        public static void consumematerial()
-        {
-
-        }
-
-        public static void convertunit()
-        {
-
-        }
-
-        public static void counter()
-        {
-
-        }
-
         public static void diplomacysettings()
-        {
-
-        }
-
-        public static void dummy()
-        {
-
-        }
-
-        public static void events()
-        {
-
-        }
-
-        public static void gamecurrency()
-        {
-
-        }
-
-        public static void grouping()
-        {
-
-        }
-
-        public static void kill()
-        {
-
-        }
-
-        public static void level()
-        {
-
-        }
-
-        public static void mapvariables()
-        {
-
-        }
-
-        public static void material()
-        {
-
-        }
-
-        public static void nuggetoverrides()
         {
 
         }
@@ -208,57 +85,54 @@ namespace AOEOQuestParser
 
         }
 
-        public static void or()
+        // Writes the aiflagvariables element and all it's descendants as a direct child of the root element.
+        public static void playersettings(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
+            List<KeyValuePair<string, string>> aivariables = new List<KeyValuePair<string, string>>();
 
-        }
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "aivariable")
+                {
+                    if (element.Parent.Name.ToString() == "aiflagvariables")
+                    {
+                        if (element.Descendants("key").Count() > 0 && element.Descendants("value").Count() > 0)
+                        {
+                            aivariables.Add(new KeyValuePair<string, string>(element.Descendants("key").First().Value, element.Descendants("value").First().Value));
+                        }
+                        else if (element.Descendants("key").Count() == 0 && element.Descendants("value").Count() > 0)
+                        {
+                            aivariables.Add(new KeyValuePair<string, string>("", element.Descendants("value").First().Value));
+                        }
+                        else if (element.Descendants("key").Count() > 0 && element.Descendants("value").Count() == 0)
+                        {
+                            aivariables.Add(new KeyValuePair<string, string>(element.Descendants("key").First().Value, ""));
+                        }
+                    }
+                }
+            } ////////////////////////////////////////////////////////// FIXXXXXXXXXX MEEEEEEEEEEEEEEEEE !!!!!!!! C01_M32_Sicyon_ProtectHall.quest
 
-        public static void overrides()
-        {
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement aiflagvariablesElement = tempXDocInstance.Descendants("aiflagvariables").First();
 
-        }
+            foreach (KeyValuePair<string, string> aivariable in aivariables)
+            {
+                aiflagvariablesElement.Add(new XElement("aivariable", new XAttribute("key", aivariable.Key), new XAttribute("value", aivariable.Value)));
 
-        public static void ownsequipment()
-        {
+                foreach (XAttribute attribute in aiflagvariablesElement.Attributes())
+                {
+                    if (attribute.Value == "")
+                    {
+                        aiflagvariablesElement.Attribute(attribute.Name).Remove();
+                    }
+                }
+            }
 
-        }
-
-        public static void ownsunit()
-        {
-
-        }
-
-        public static void playersettings()
-        {
-
-        }
-
-        public static void population()
-        {
-
+            tempXDocInstance.Save(tempFile);
         }
 
         public static void prereqs()
-        {
-
-        }
-
-        public static void protectunit()
-        {
-
-        }
-
-        public static void protounit()
-        {
-
-        }
-
-        public static void questcomplete()
-        {
-
-        }
-
-        public static void questgiver()
         {
 
         }
@@ -273,27 +147,7 @@ namespace AOEOQuestParser
 
         }
 
-        public static void queststatus()
-        {
-
-        }
-
-        public static void random()
-        {
-
-        }
-
         public static void randommap()
-        {
-
-        }
-
-        public static void reduceunitsto()
-        {
-
-        }
-
-        public static void repairunit()
         {
 
         }
@@ -313,22 +167,7 @@ namespace AOEOQuestParser
 
         }
 
-        public static void spawngroup()
-        {
-
-        }
-
-        public static void spawnunit()
-        {
-
-        }
-
         public static void targets()
-        {
-
-        }
-
-        public static void techstatus()
         {
 
         }
@@ -343,52 +182,7 @@ namespace AOEOQuestParser
 
         }
 
-        public static void trait()
-        {
-
-        }
-
-        public static void tribute()
-        {
-
-        }
-
-        public static void unitdiscovered()
-        {
-
-        }
-
-        public static void unitinarea()
-        {
-
-        }
-
-        public static void unitnearunit()
-        {
-
-        }
-
-        public static void unitprobability()
-        {
-
-        }
-
-        public static void values()
-        {
-
-        }
-
         public static void victoryconditions()
-        {
-
-        }
-
-        public static void wingame()
-        {
-
-        }
-
-        public static void xp()
         {
 
         }

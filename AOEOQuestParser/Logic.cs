@@ -51,42 +51,46 @@ namespace AOEOQuestParser
         }
 
         // Gets the destination folder location from user input. This is where the processed *quest files will be stored.
-        public static string SetDestinationFolderLocation()
+        public static string SetDestinationFolderLocation(bool debugMode)
         {
             string questDestination = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).ToString();
-            string customDestinationCheck;
 
-            string[] yesSelections = { "y", "Y", "yes", "Yes", "YES" };
-            string[] noSelections = { "n", "N", "no", "No", "NO" };
-
-            Console.WriteLine("The default destination folder is the Documents folder.");
-            Console.WriteLine("Would you like to change the destination folder?" + "\n");
-            Console.WriteLine("Please press [Y]es or [N]o to continue.");
-            customDestinationCheck = Console.ReadKey(true).KeyChar.ToString();
-            Console.WriteLine();
-
-            while (!Array.Exists(yesSelections, element => element == customDestinationCheck) && !Array.Exists(noSelections, element => element == customDestinationCheck))
+            if (!debugMode)
             {
-                Console.WriteLine("Invalid selection. Please press [Y]es or [N]o to continue.");
+                string customDestinationCheck;
+
+                string[] yesSelections = { "y", "Y", "yes", "Yes", "YES" };
+                string[] noSelections = { "n", "N", "no", "No", "NO" };
+
+                Console.WriteLine("The default destination folder is the Documents folder.");
+                Console.WriteLine("Would you like to change the destination folder?" + "\n");
+                Console.WriteLine("Please press [Y]es or [N]o to continue.");
                 customDestinationCheck = Console.ReadKey(true).KeyChar.ToString();
                 Console.WriteLine();
-            }
 
-            if (Array.Exists(yesSelections, element => element == customDestinationCheck))
-            {
-                Console.WriteLine("Please type or paste in the path of the folder where your would like your parsed *quest files to be saved!");
-                questDestination = Console.ReadLine();
-                Console.WriteLine();
-                Console.WriteLine("The custom destination folder you have selected is \"" + questDestination + "\".");
-            }
-            else if (Array.Exists(noSelections, element => element == customDestinationCheck))
-            {
-                Console.WriteLine("You have not set a custom destination folder.");
-                Console.WriteLine("Your destination folder will be the Documents folder." + "\n");
-            }
+                while (!Array.Exists(yesSelections, element => element == customDestinationCheck) && !Array.Exists(noSelections, element => element == customDestinationCheck))
+                {
+                    Console.WriteLine("Invalid selection. Please press [Y]es or [N]o to continue.");
+                    customDestinationCheck = Console.ReadKey(true).KeyChar.ToString();
+                    Console.WriteLine();
+                }
 
-            questDestination += "\\.parsed-quest-files";
-            Directory.CreateDirectory(questDestination);
+                if (Array.Exists(yesSelections, element => element == customDestinationCheck))
+                {
+                    Console.WriteLine("Please type or paste in the path of the folder where your would like your parsed *quest files to be saved!");
+                    questDestination = Console.ReadLine();
+                    Console.WriteLine();
+                    Console.WriteLine("The custom destination folder you have selected is \"" + questDestination + "\".");
+                }
+                else if (Array.Exists(noSelections, element => element == customDestinationCheck))
+                {
+                    Console.WriteLine("You have not set a custom destination folder.");
+                    Console.WriteLine("Your destination folder will be the Documents folder." + "\n");
+                }
+
+                questDestination += "\\.parsed-quest-files";
+                Directory.CreateDirectory(questDestination);
+            }
 
             return questDestination;
         }
@@ -147,7 +151,7 @@ namespace AOEOQuestParser
             return relativePaths;
         }
 
-#region Debug Methods
+        #region Debug Methods
         // This is a debug method to get all the unique elements with descendants, for building the Parser class.
         // In the processed *quest file, elements with no descendants will become attributes.
         public static List<string> GetElementsWithDescendants(string[] questArray)
@@ -160,7 +164,7 @@ namespace AOEOQuestParser
 
                 foreach (XElement element in questFile.Descendants())
                 {
-                    if (element.Descendants().Count() > 0)
+                    if (element.Name.ToString() != "quest" && element.Descendants().Count() > 0 && element.Parent.Name.ToString() == "quest")
                     {
                         if (!elementsWithDescendants.Contains(element.Name.ToString()))
                         {
@@ -184,7 +188,75 @@ namespace AOEOQuestParser
 
             return elementsWithDescendants;
         }
-#endregion
+
+        // This is a debug method to get all instances of a single element among all quest files.
+        // This method will be used to determine the maximum depth.
+        // This method helps with making a judgement call on what the most efficient way would be to parse the element to the new format.
+        public static List<string> GetAllInstancesOfElement(string[] questArray)
+        {
+            List<string> allInstancesOfElement = new List<string>();
+            XElement mostComplexElement = new XElement("null");
+            int highestComplexity = 0;
+            string fileFound = "";
+
+            Console.WriteLine("This method gets all instances among all quest files of the specified XML element.");
+            Console.WriteLine("Type in an element name and press Enter to continue, or leave blank and press Enter to skip.");
+            string elementSelected = Console.ReadLine();
+            Console.WriteLine();
+
+            foreach (string i in questArray)
+            {
+                XDocument questFile = XDocument.Load(i);
+
+                foreach (XElement element in questFile.Descendants())
+                {
+                    if (element.Name.ToString() == elementSelected)
+                    {
+                        if (!allInstancesOfElement.Contains(element.ToString()))
+                        {
+                            allInstancesOfElement.Add(element.ToString());
+
+                            if (element.Descendants().Count() > highestComplexity)
+                            {
+                                highestComplexity = element.Descendants().Count();
+                                mostComplexElement = element;
+                                fileFound = i;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (allInstancesOfElement.Count() > 0)
+            {
+                Console.WriteLine("[DEBUG] All Instances Of Element: " + elementSelected);
+                Console.WriteLine("---------------------------------");
+
+                foreach (string instanceOfElement in allInstancesOfElement)
+                {
+                    Console.WriteLine(instanceOfElement + "\n");
+                }
+
+                Console.WriteLine("[DEBUG] Element With Highest Complexity Of Type: " + elementSelected);
+                Console.WriteLine("------------------------------------------------");
+                Console.WriteLine(mostComplexElement.ToString() + "\n");
+                Console.WriteLine("Found in file: " + fileFound);
+            }
+            else
+            {
+                if (elementSelected.Length == 0)
+                {
+                    Console.WriteLine("[DEBUG] Step Skipped or Element Not Found");
+                }
+                else if (elementSelected.Length > 0)
+                {
+                    Console.WriteLine("\n" + "[DEBUG] Step Skipped or Element Not Found");
+                }
+            }
+
+            return allInstancesOfElement;
+        }
+        #endregion
 
         // Converts all the *quest files found in the source folder to a format compatible with the FireSinging AOEO open-source server.
         // This is where the magic happens.
