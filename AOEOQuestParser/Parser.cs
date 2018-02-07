@@ -96,7 +96,10 @@ namespace AOEOQuestParser
         {
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
-            List<KeyValuePair<string, string>> aivariables = new List<KeyValuePair<string, string>>();
+            List<KeyValuePair<string, string>> aivariablesFlag = new List<KeyValuePair<string, string>>();
+            List<KeyValuePair<string, string>> aivariablesSlider = new List<KeyValuePair<string, string>>();
+            List<KeyValuePair<string, string>> noDescendants = new List<KeyValuePair<string, string>>();
+
             List<XElement> playersettingsElements = new List<XElement>();
             List<XElement> elementsToWrite = new List<XElement>();
 
@@ -118,28 +121,68 @@ namespace AOEOQuestParser
                         {
                             if (subElement.Descendants("key").Count() > 0 && subElement.Descendants("value").Count() > 0)
                             {
-                                aivariables.Add(new KeyValuePair<string, string>(subElement.Descendants("key").First().Value, subElement.Descendants("value").First().Value));
+                                aivariablesFlag.Add(new KeyValuePair<string, string>(subElement.Descendants("key").First().Value, subElement.Descendants("value").First().Value));
                             }
                             else if (subElement.Descendants("key").Count() == 0 && subElement.Descendants("value").Count() > 0)
                             {
-                                aivariables.Add(new KeyValuePair<string, string>("", subElement.Descendants("value").First().Value));
+                                aivariablesFlag.Add(new KeyValuePair<string, string>("", subElement.Descendants("value").First().Value));
                             }
                             else if (subElement.Descendants("key").Count() > 0 && subElement.Descendants("value").Count() == 0)
                             {
-                                aivariables.Add(new KeyValuePair<string, string>(subElement.Descendants("key").First().Value, ""));
+                                aivariablesFlag.Add(new KeyValuePair<string, string>(subElement.Descendants("key").First().Value, ""));
                             }
                         }
+
+                        if (subElement.Parent.Name.ToString() == "aislidervariables")
+                        {
+                            if (subElement.Descendants("key").Count() > 0 && subElement.Descendants("value").Count() > 0)
+                            {
+                                aivariablesSlider.Add(new KeyValuePair<string, string>(subElement.Descendants("key").First().Value, subElement.Descendants("value").First().Value));
+                            }
+                            else if (subElement.Descendants("key").Count() == 0 && subElement.Descendants("value").Count() > 0)
+                            {
+                                aivariablesSlider.Add(new KeyValuePair<string, string>("", subElement.Descendants("value").First().Value));
+                            }
+                            else if (subElement.Descendants("key").Count() > 0 && subElement.Descendants("value").Count() == 0)
+                            {
+                                aivariablesSlider.Add(new KeyValuePair<string, string>(subElement.Descendants("key").First().Value, ""));
+                            }
+                        }
+                    }
+
+                    if (subElement.Parent.Name.ToString() == "playersettings" && subElement.Descendants().Count() == 0 && subElement.Value != "")
+                    {
+                        noDescendants.Add(new KeyValuePair<string, string>(subElement.Name.ToString(), subElement.Value.ToString()));
+                    }
+                    else if (subElement.Parent.Name.ToString() == "playersettings" &&
+                        subElement.Descendants().Count() > 0 &&
+                        subElement.Name.ToString() != "aiflagvariables" && subElement.Name.ToString() != "aislidervariables")
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The playersettings\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
                     }
                 }
 
                 element.RemoveNodes();
 
-                if (aivariables.Count() > 0)
+                if (aivariablesFlag.Count() > 0)
                 {
                     element.Add(new XElement("aiflagvariables"));
                 }
 
-                foreach (KeyValuePair<string, string> aivariable in aivariables)
+                if (aivariablesSlider.Count() > 0)
+                {
+                    element.Add(new XElement("aislidervariables"));
+                }
+
+                if (noDescendants.Count() > 0)
+                {
+                    foreach (KeyValuePair<string, string> newAttribute in noDescendants)
+                    {
+                        element.Add(new XAttribute(newAttribute.Key, newAttribute.Value));
+                    }
+                }
+
+                foreach (KeyValuePair<string, string> aivariable in aivariablesFlag)
                 {
                     element.Descendants("aiflagvariables").First().Add(new XElement("aivariable", new XAttribute("key", aivariable.Key), new XAttribute("value", aivariable.Value)));
 
@@ -152,8 +195,23 @@ namespace AOEOQuestParser
                     }
                 }
 
+                foreach (KeyValuePair<string, string> aivariable in aivariablesSlider)
+                {
+                    element.Descendants("aislidervariables").First().Add(new XElement("aivariable", new XAttribute("key", aivariable.Key), new XAttribute("value", aivariable.Value)));
+
+                    foreach (XAttribute attribute in element.Attributes())
+                    {
+                        if (attribute.Value == "")
+                        {
+                            element.Attribute(attribute.Name).Remove();
+                        }
+                    }
+                }
+
                 elementsToWrite.Add(element);
-                aivariables = new List<KeyValuePair<string, string>>();
+                aivariablesFlag = new List<KeyValuePair<string, string>>();
+                aivariablesSlider = new List<KeyValuePair<string, string>>();
+                noDescendants = new List<KeyValuePair<string, string>>();
             }
 
             XDocument tempXDocInstance = XDocument.Load(tempFile);
