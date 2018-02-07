@@ -26,10 +26,7 @@ namespace AOEOQuestParser
             }
             #endregion
 
-            if (!debugMode)
-            {
-                Logic.ProcessQuestFiles(questFiles, questDestination, relativePaths, tempFile);
-            }
+            if (!debugMode) { Logic.ProcessQuestFiles(questFiles, questDestination, relativePaths, tempFile); }
 
             Console.WriteLine("\n" + "Press any key to exit...");
             Console.ReadKey(true);

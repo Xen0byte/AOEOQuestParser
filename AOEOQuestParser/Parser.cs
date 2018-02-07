@@ -7,8 +7,11 @@ namespace AOEOQuestParser
 {
     class Parser
     {
+        #region Static Counter Variables
         static int nodescendantsCounter = 0;
         static int playersettingsCounter = 0;
+        static int timersCounter = 0;
+        #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
         //2. Adds the outputs one by one to instances of a temporary XML file.
@@ -24,6 +27,7 @@ namespace AOEOQuestParser
                 quest(currentQuestFile, tempFile);
                 nodescendants(currentQuestFile, tempFile);
                 playersettings(currentQuestFile, tempFile);
+                timer(currentQuestFile, tempFile);
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
                 Logic.EraseTempFile(tempFile);
@@ -32,7 +36,7 @@ namespace AOEOQuestParser
                 Console.Write($"\rprocessed: {processedFilesCounter} out of {questArray.Length} quest files ({(Convert.ToSingle(processedFilesCounter) / Convert.ToSingle(questArray.Length) * 100):0.00}%)");
             }
 
-            Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings");
+            Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | ");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -154,9 +158,7 @@ namespace AOEOQuestParser
                     {
                         noDescendants.Add(new KeyValuePair<string, string>(subElement.Name.ToString(), subElement.Value.ToString()));
                     }
-                    else if (subElement.Parent.Name.ToString() == "playersettings" &&
-                        subElement.Descendants().Count() > 0 &&
-                        subElement.Name.ToString() != "aiflagvariables" && subElement.Name.ToString() != "aislidervariables")
+                    else if (subElement.Parent.Name.ToString() == "playersettings" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "aiflagvariables" && subElement.Name.ToString() != "aislidervariables")
                     {
                         Console.WriteLine("\n" + "[ERROR] The playersettings\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
                     }
@@ -266,9 +268,107 @@ namespace AOEOQuestParser
 
         }
 
-        public static void timer()
+        public static void timer(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<KeyValuePair<string, string>> noDescendants = new List<KeyValuePair<string, string>>();
+            List<KeyValuePair<string, string>> timerEvents = new List<KeyValuePair<string, string>>();
+
+            List<XElement> timerElements = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "timer" && element.Parent.Name.ToString() == "quest")
+                {
+                    timerElements.Add(element);
+                }
+            }
+
+            foreach (XElement timer in timerElements) //////////////////////////////////// Sort out error in C03_S81_EastThrace_Thracians.quest and !!check for null validation!!
+            {
+                foreach (XElement subElement in timer.Descendants())
+                {
+                    if (subElement.Name.ToString() == "timerevent" && subElement.Parent.Name.ToString() == "events" && (subElement.Attributes().Count() > 0 || (subElement.Value.ToString() != "" && subElement.Value != null)))
+                    {
+                        if (subElement.Attributes("event").First().Name.ToString() == "event" && subElement.Value.ToString() != "")
+                        {
+                            timerEvents.Add(new KeyValuePair<string, string>(subElement.Attribute("event").Value.ToString(), subElement.Value.ToString()));
+                        }
+                        else if (subElement.Attributes("event").First().Name.ToString() != "event" && subElement.Value.ToString() != "")
+                        {
+                            timerEvents.Add(new KeyValuePair<string, string>("", subElement.Value.ToString()));
+                        }
+                        else if (subElement.Attributes("event").First().Name.ToString() == "event" && subElement.Value.ToString() == "")
+                        {
+                            timerEvents.Add(new KeyValuePair<string, string>(subElement.Attribute("event").Value.ToString(), ""));
+                        }
+                    }
+                    else if (subElement.Parent.Name.ToString() == "timer" && subElement.Descendants().Count() == 0 && subElement.Value != "")
+                    {
+                        noDescendants.Add(new KeyValuePair<string, string>(subElement.Name.ToString(), subElement.Value.ToString()));
+                    }
+                    else if (subElement.Parent.Name.ToString() == "timer" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "events")
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
+                    }
+                }
+
+                timer.RemoveNodes();
+
+                if (noDescendants.Count() > 0)
+                {
+                    foreach (KeyValuePair<string, string> newAttribute in noDescendants)
+                    {
+                        timer.Add(new XAttribute(newAttribute.Key, newAttribute.Value));
+                    }
+                }
+
+                if (timerEvents.Count() > 0)
+                {
+                    timer.Add(new XElement("events"));
+
+                    foreach (KeyValuePair<string, string> timerEvent in timerEvents)
+                    {
+                        timer.Descendants("events").First().Add(new XElement("timerevent", new XAttribute("event", timerEvent.Key), new XAttribute("time", timerEvent.Value)));
+
+                        foreach (XAttribute attribute in timer.Attributes())
+                        {
+                            if (attribute.Value == "")
+                            {
+                                timer.Attribute(attribute.Name).Remove();
+                            }
+                        }
+
+                        foreach (XElement timerevent in timer.Descendants())
+                        {
+                            foreach (XAttribute attribute in timerevent.Attributes())
+                            {
+                                if (attribute.Value == "")
+                                {
+                                    timerevent.Attribute(attribute.Name).Remove();
+                                }
+                            }
+                        }
+                    }
+                }
+
+                elementsToWrite.Add(timer);
+                noDescendants = new List<KeyValuePair<string, string>>();
+                timerEvents = new List<KeyValuePair<string, string>>();
+            }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                timersCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         public static void timereffects()
