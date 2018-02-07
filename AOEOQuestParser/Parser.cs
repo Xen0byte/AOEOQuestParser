@@ -7,6 +7,9 @@ namespace AOEOQuestParser
 {
     class Parser
     {
+        static int nodescendantsCounter = 0;
+        static int playersettingsCounter = 0;
+
         //1. Processes elements from the source file individually or in groups of similar elements.
         //2. Adds the outputs one by one to instances of a temporary XML file.
         //3. Builds the final parsed *quest files from the temporary XML file instances.
@@ -28,6 +31,8 @@ namespace AOEOQuestParser
                 processedFilesCounter++;
                 Console.Write($"\rprocessed: {processedFilesCounter} out of {questArray.Length} quest files ({(Convert.ToSingle(processedFilesCounter) / Convert.ToSingle(questArray.Length) * 100):0.00}%)");
             }
+
+            Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -65,6 +70,7 @@ namespace AOEOQuestParser
             foreach (KeyValuePair<string, string> newAttribute in descendantsList)
             {
                 questElement.Add(new XAttribute(newAttribute.Key, newAttribute.Value));
+                nodescendantsCounter++;
             }
 
             tempXDocInstance.Save(tempFile);
@@ -85,48 +91,78 @@ namespace AOEOQuestParser
 
         }
 
-        // Writes the aiflagvariables element and all it's descendants as a direct child of the root element.
+        // Writes the playersettings element and all it's descendants as a direct child of the root element.
         public static void playersettings(string currentQuestFile, string tempFile)
         {
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
+
             List<KeyValuePair<string, string>> aivariables = new List<KeyValuePair<string, string>>();
+            List<XElement> playersettingsElements = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "aivariable")
+                if (element.Name.ToString() == "playersettings" && element.Parent.Name.ToString() == "quest")
                 {
-                    if (element.Parent.Name.ToString() == "aiflagvariables")
+                    playersettingsElements.Add(element);
+                }
+            }
+
+            foreach (XElement element in playersettingsElements)
+            {
+                foreach (XElement subElement in element.Descendants())
+                {
+                    if (subElement.Name.ToString() == "aivariable")
                     {
-                        if (element.Descendants("key").Count() > 0 && element.Descendants("value").Count() > 0)
+                        if (subElement.Parent.Name.ToString() == "aiflagvariables")
                         {
-                            aivariables.Add(new KeyValuePair<string, string>(element.Descendants("key").First().Value, element.Descendants("value").First().Value));
-                        }
-                        else if (element.Descendants("key").Count() == 0 && element.Descendants("value").Count() > 0)
-                        {
-                            aivariables.Add(new KeyValuePair<string, string>("", element.Descendants("value").First().Value));
-                        }
-                        else if (element.Descendants("key").Count() > 0 && element.Descendants("value").Count() == 0)
-                        {
-                            aivariables.Add(new KeyValuePair<string, string>(element.Descendants("key").First().Value, ""));
+                            if (subElement.Descendants("key").Count() > 0 && subElement.Descendants("value").Count() > 0)
+                            {
+                                aivariables.Add(new KeyValuePair<string, string>(subElement.Descendants("key").First().Value, subElement.Descendants("value").First().Value));
+                            }
+                            else if (subElement.Descendants("key").Count() == 0 && subElement.Descendants("value").Count() > 0)
+                            {
+                                aivariables.Add(new KeyValuePair<string, string>("", subElement.Descendants("value").First().Value));
+                            }
+                            else if (subElement.Descendants("key").Count() > 0 && subElement.Descendants("value").Count() == 0)
+                            {
+                                aivariables.Add(new KeyValuePair<string, string>(subElement.Descendants("key").First().Value, ""));
+                            }
                         }
                     }
                 }
-            } ////////////////////////////////////////////////////////// FIXXXXXXXXXX MEEEEEEEEEEEEEEEEE !!!!!!!! C01_M32_Sicyon_ProtectHall.quest
+
+                element.RemoveNodes();
+
+                if (aivariables.Count() > 0)
+                {
+                    element.Add(new XElement("aiflagvariables"));
+                }
+
+                foreach (KeyValuePair<string, string> aivariable in aivariables)
+                {
+                    element.Descendants("aiflagvariables").First().Add(new XElement("aivariable", new XAttribute("key", aivariable.Key), new XAttribute("value", aivariable.Value)));
+
+                    foreach (XAttribute attribute in element.Attributes())
+                    {
+                        if (attribute.Value == "")
+                        {
+                            element.Attribute(attribute.Name).Remove();
+                        }
+                    }
+                }
+
+                elementsToWrite.Add(element);
+                aivariables = new List<KeyValuePair<string, string>>();
+            }
 
             XDocument tempXDocInstance = XDocument.Load(tempFile);
-            XElement aiflagvariablesElement = tempXDocInstance.Descendants("aiflagvariables").First();
+            XElement questElement = tempXDocInstance.Descendants().First();
 
-            foreach (KeyValuePair<string, string> aivariable in aivariables)
+            foreach (XElement parsedElement in elementsToWrite)
             {
-                aiflagvariablesElement.Add(new XElement("aivariable", new XAttribute("key", aivariable.Key), new XAttribute("value", aivariable.Value)));
-
-                foreach (XAttribute attribute in aiflagvariablesElement.Attributes())
-                {
-                    if (attribute.Value == "")
-                    {
-                        aiflagvariablesElement.Attribute(attribute.Name).Remove();
-                    }
-                }
+                questElement.Add(parsedElement);
+                playersettingsCounter++;
             }
 
             tempXDocInstance.Save(tempFile);

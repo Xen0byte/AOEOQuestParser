@@ -152,6 +152,8 @@ namespace AOEOQuestParser
         }
 
         #region Debug Methods
+        static int debugCounter = 0;
+
         // This is a debug method to get all the unique elements with descendants, for building the Parser class.
         // In the processed *quest file, elements with no descendants will become attributes.
         public static List<string> GetElementsWithDescendants(string[] questArray)
@@ -230,7 +232,7 @@ namespace AOEOQuestParser
         // It also returns all unique ancestors of the specified element, to make sure the element isn't a child of more than one element. 
         // This method will be used to determine the maximum depth.
         // This method helps with making a judgement call on what the most efficient way would be to parse the element to the new format.
-        public static List<string> GetAllInstancesOfElement(string[] questArray)
+        public static List<string> GetAllInstancesOfElement(string[] questArray, string tempFile)
         {
             List<string> allInstancesOfElement = new List<string>();
             List<string> ancestorsOfElement = new List<string>();
@@ -250,6 +252,8 @@ namespace AOEOQuestParser
                 {
                     if (element.Name.ToString() == elementSelected)
                     {
+                        debugCounter++;
+
                         if (!allInstancesOfElement.Contains(element.ToString()))
                         {
                             allInstancesOfElement.Add(element.ToString());
@@ -272,17 +276,18 @@ namespace AOEOQuestParser
 
             if (allInstancesOfElement.Count() > 0)
             {
-                #region Unused Block Of Code
-                // This block of code is not feasible as it outputs too much data for the terminal buffer to handle.
-                //
-                // Console.WriteLine("\n" + "[DEBUG] All Instances Of Element: " + elementSelected);
-                // Console.WriteLine("---------------------------------");
+                Console.WriteLine("\n" + "[DEBUG] All Instances Of Element: " + elementSelected);
+                Console.WriteLine("---------------------------------");
 
-                // foreach (string instanceOfElement in allInstancesOfElement)
-                // {
-                //     Console.WriteLine(instanceOfElement + "\n");
-                // }
-                #endregion
+                File.AppendAllText(tempFile, allInstancesOfElement.Count() + " unique " + elementSelected + " elements found" + "\n" + "\n");
+
+                foreach (string instanceOfElement in allInstancesOfElement)
+                {
+                    File.AppendAllText(tempFile, instanceOfElement + "\n");
+                }
+
+                Console.WriteLine(debugCounter + " total instances of \"" + elementSelected + "\" found");
+                Console.WriteLine("all unique instances of \"" + elementSelected + "\" have been written to " + tempFile);
 
                 Console.WriteLine("\n" + "[DEBUG] Element With Highest Complexity Of Type: " + elementSelected);
                 Console.WriteLine("------------------------------------------------");

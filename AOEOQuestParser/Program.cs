@@ -22,7 +22,7 @@ namespace AOEOQuestParser
             if (debugMode)
             {
                 Logic.GetElementsWithDescendants(questFiles);
-                Logic.GetAllInstancesOfElement(questFiles);
+                Logic.GetAllInstancesOfElement(questFiles, tempFile);
             }
             #endregion
 
@@ -33,6 +33,7 @@ namespace AOEOQuestParser
 
             Console.WriteLine("\n" + "Press any key to exit...");
             Console.ReadKey(true);
+            Logic.EraseTempFile(tempFile);
         }
     }
 }
