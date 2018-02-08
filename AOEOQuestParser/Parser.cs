@@ -286,11 +286,11 @@ namespace AOEOQuestParser
                 }
             }
 
-            foreach (XElement timer in timerElements) //////////////////////////////////// Sort out error in C03_S81_EastThrace_Thracians.quest and !!check for null validation!!
+            foreach (XElement timer in timerElements)
             {
                 foreach (XElement subElement in timer.Descendants())
                 {
-                    if (subElement.Name.ToString() == "timerevent" && subElement.Parent.Name.ToString() == "events" && (subElement.Attributes().Count() > 0 || (subElement.Value.ToString() != "" && subElement.Value != null)))
+                    if (subElement.Name.ToString() == "timerevent" && subElement.Parent.Name.ToString() == "events" && subElement.Attributes().Count() > 0)
                     {
                         if (subElement.Attributes("event").First().Name.ToString() == "event" && subElement.Value.ToString() != "")
                         {
@@ -302,7 +302,10 @@ namespace AOEOQuestParser
                         }
                         else if (subElement.Attributes("event").First().Name.ToString() == "event" && subElement.Value.ToString() == "")
                         {
-                            timerEvents.Add(new KeyValuePair<string, string>(subElement.Attribute("event").Value.ToString(), ""));
+                            if (subElement.Attribute("event").Value.ToString() != "")
+                            {
+                                timerEvents.Add(new KeyValuePair<string, string>(subElement.Attribute("event").Value.ToString(), ""));
+                            }
                         }
                     }
                     else if (subElement.Parent.Name.ToString() == "timer" && subElement.Descendants().Count() == 0 && subElement.Value != "")
