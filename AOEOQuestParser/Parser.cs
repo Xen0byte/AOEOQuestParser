@@ -374,8 +374,41 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
-        public static void timereffects()
+        public static void timereffects(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
+
+            List<KeyValuePair<string, string>> timerEffects = new List<KeyValuePair<string, string>>();
+            List<KeyValuePair<string, string>> noDescendants = new List<KeyValuePair<string, string>>();
+
+            List<XElement> timerEffectElements = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "timereffects" && element.Parent.Name.ToString() == "quest")
+                {
+                    timerEffectElements.Add(element);
+                }
+            }
+
+            foreach (XElement timerEffect in timerEffectElements)
+            {
+                foreach (XElement subElement in timerEffect.Descendants()) //nothing below this works
+                {
+                    if (subElement.Parent.Name.ToString() == "timer" && subElement.Descendants().Count() == 0 && subElement.Value != "")
+                    {
+                        noDescendants.Add(new KeyValuePair<string, string>(subElement.Name.ToString(), subElement.Value.ToString()));
+                    }
+                    else if (subElement.Parent.Name.ToString() == "timer" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "events")
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
+                    }
+                }
+
+                timerEffect.RemoveNodes();
+            }
+
 
         }
 
