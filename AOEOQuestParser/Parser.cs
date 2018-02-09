@@ -11,6 +11,7 @@ namespace AOEOQuestParser
         static int nodescendantsCounter = 0;
         static int playersettingsCounter = 0;
         static int timersCounter = 0;
+        static int timereffectsCounter = 0;
         #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
@@ -28,6 +29,7 @@ namespace AOEOQuestParser
                 nodescendants(currentQuestFile, tempFile);
                 playersettings(currentQuestFile, tempFile);
                 timer(currentQuestFile, tempFile);
+                timereffects(currentQuestFile, tempFile);
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
                 Logic.EraseTempFile(tempFile);
@@ -36,7 +38,8 @@ namespace AOEOQuestParser
                 Console.Write($"\rprocessed: {processedFilesCounter} out of {questArray.Length} quest files ({(Convert.ToSingle(processedFilesCounter) / Convert.ToSingle(questArray.Length) * 100):0.00}%)");
             }
 
-            Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | ");
+            Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | " + timereffectsCounter + " timereffects");
+            Console.WriteLine("[REMEMBER] Four Per Line");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -378,38 +381,89 @@ namespace AOEOQuestParser
         {
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
-            List<KeyValuePair<string, string>> timerEffects = new List<KeyValuePair<string, string>>();
-            List<KeyValuePair<string, string>> noDescendants = new List<KeyValuePair<string, string>>();
+            List<KeyValuePair<string, string>> noDescendantsUnit = new List<KeyValuePair<string, string>>();
+            List<KeyValuePair<string, string>> noDescendantsGroup = new List<KeyValuePair<string, string>>();
 
-            List<XElement> timerEffectElements = new List<XElement>();
+            List<XElement> timerEffectsList = new List<XElement>();
             List<XElement> elementsToWrite = new List<XElement>();
 
             foreach (XElement element in questFileInstance.Descendants())
             {
                 if (element.Name.ToString() == "timereffects" && element.Parent.Name.ToString() == "quest")
                 {
-                    timerEffectElements.Add(element);
+                    timerEffectsList.Add(element);
                 }
             }
 
-            foreach (XElement timerEffect in timerEffectElements)
+            foreach (XElement timerEffect in timerEffectsList)
             {
-                foreach (XElement subElement in timerEffect.Descendants()) //nothing below this works
+                foreach (XElement subElement in timerEffect.Descendants())
                 {
-                    if (subElement.Parent.Name.ToString() == "timer" && subElement.Descendants().Count() == 0 && subElement.Value != "")
+                    if (subElement.Parent.Name.ToString() == "spawnunit" && subElement.Descendants().Count() == 0 && subElement.Value != "")
                     {
-                        noDescendants.Add(new KeyValuePair<string, string>(subElement.Name.ToString(), subElement.Value.ToString()));
+                        noDescendantsUnit.Add(new KeyValuePair<string, string>(subElement.Name.ToString(), subElement.Value.ToString()));
                     }
-                    else if (subElement.Parent.Name.ToString() == "timer" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "events")
+                    else if (subElement.Parent.Name.ToString() == "spawnunit" && subElement.Descendants().Count() > 0)
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
+                    }
+
+                    if (subElement.Parent.Name.ToString() == "spawngroup" && subElement.Descendants().Count() == 0 && subElement.Value != "")
+                    {
+                        noDescendantsGroup.Add(new KeyValuePair<string, string>(subElement.Name.ToString(), subElement.Value.ToString()));
+                    }
+                    else if (subElement.Parent.Name.ToString() == "spawngroup" && subElement.Descendants().Count() > 0)
                     {
                         Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
                     }
                 }
 
-                timerEffect.RemoveNodes();
+                XElement spawnunitElement = new XElement("spawnunitElement");
+                XElement spawngroupElement = new XElement("spawngroupElement");
+
+                if (timerEffect.Descendants("spawnunit").Count() > 0)
+                {
+                    spawnunitElement = timerEffect.Descendants("spawnunit").First();
+                    spawnunitElement.RemoveNodes();
+                }
+
+                if (timerEffect.Descendants("spawngroup").Count() > 0)
+                {
+                    spawngroupElement = timerEffect.Descendants("spawngroup").First();
+                    spawngroupElement.RemoveNodes();
+                }
+
+                if (noDescendantsUnit.Count() > 0)
+                {
+                    foreach (KeyValuePair<string, string> newAttribute in noDescendantsUnit)
+                    {
+                        spawnunitElement.Add(new XAttribute(newAttribute.Key, newAttribute.Value));
+                    }
+                }
+
+                if (noDescendantsGroup.Count() > 0)
+                {
+                    foreach (KeyValuePair<string, string> newAttribute in noDescendantsGroup)
+                    {
+                        spawngroupElement.Add(new XAttribute(newAttribute.Key, newAttribute.Value));
+                    }
+                }
+
+                elementsToWrite.Add(timerEffect);
+                noDescendantsUnit = new List<KeyValuePair<string, string>>();
+                noDescendantsGroup = new List<KeyValuePair<string, string>>();
             }
 
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
 
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                timereffectsCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         public static void victoryconditions()
