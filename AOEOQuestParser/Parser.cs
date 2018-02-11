@@ -13,6 +13,7 @@ namespace AOEOQuestParser
         static int timersCounter = 0;
         static int timereffectsCounter = 0;
         static int victoryconditionsCounter = 0;
+        static int randommapCounter = 0;
         #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
@@ -33,6 +34,7 @@ namespace AOEOQuestParser
                 timer(currentQuestFile, tempFile);
                 timereffects(currentQuestFile, tempFile);
                 victoryconditions(currentQuestFile, tempFile);
+                randommap(currentQuestFile, tempFile);
                 #endregion
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
@@ -43,7 +45,7 @@ namespace AOEOQuestParser
             }
 
             Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | " + timereffectsCounter + " timereffects");
-            Console.WriteLine(victoryconditionsCounter + " victoryconditions | ");
+            Console.WriteLine(victoryconditionsCounter + " victoryconditions | " + randommapCounter + " randommaps | ");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -250,9 +252,80 @@ namespace AOEOQuestParser
 
         }
 
-        public static void randommap()
+        // Writes the randommap element and all it's descendants as a direct child of the root element.
+        public static void randommap(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<KeyValuePair<string, string>> noDescendants = new List<KeyValuePair<string, string>>();
+            List<XElement> descendants = new List<XElement>();
+
+            List<XElement> randommapElements = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "randommap" && element.Parent.Name.ToString() == "quest")
+                {
+                    randommapElements.Add(element);
+                }
+            }
+
+            foreach (XElement randommap in randommapElements)
+            {
+                foreach (XElement subElement in randommap.Descendants())
+                {
+                    if (subElement.Parent.Name.ToString() == "randommap" && subElement.Descendants().Count() == 0 && subElement.Value != "")
+                    {
+                        noDescendants.Add(new KeyValuePair<string, string>(subElement.Name.ToString(), subElement.Value.ToString()));
+                    }
+
+                    if (subElement.Parent.Name.ToString() == "randommap" && subElement.Descendants().Count() > 0)
+                    {
+                        descendants.Add(new XElement(subElement));
+                    }
+                }
+
+                randommap.RemoveNodes();
+
+                if (noDescendants.Count() > 0)
+                {
+                    foreach (KeyValuePair<string, string> newAttribute in noDescendants)
+                    {
+                        randommap.Add(new XAttribute(newAttribute.Key, newAttribute.Value));
+                    }
+
+                    foreach (XAttribute attribute in randommap.Attributes())
+                    {
+                        if (attribute.Value == "")
+                        {
+                            randommap.Attribute(attribute.Name).Remove();
+                        }
+                    }
+                }
+
+                if (descendants.Count() > 0)
+                {
+                    foreach (XElement descendant in descendants)
+                    {
+                        randommap.Add(descendant);
+                    }
+                }
+
+                elementsToWrite.Add(randommap);
+                noDescendants = new List<KeyValuePair<string, string>>();
+            }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                randommapCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         public static void rewards()
@@ -275,6 +348,7 @@ namespace AOEOQuestParser
 
         }
 
+        // Writes the timer element and all it's descendants as a direct child of the root element.
         public static void timer(string currentQuestFile, string tempFile)
         {
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
@@ -381,6 +455,7 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
+        // Writes the timereffects element and all it's descendants as a direct child of the root element.
         public static void timereffects(string currentQuestFile, string tempFile)
         {
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
@@ -470,6 +545,7 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
+        // Writes the victoryconditions element and all it's descendants as a direct child of the root element.
         public static void victoryconditions(string currentQuestFile, string tempFile)
         {
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
