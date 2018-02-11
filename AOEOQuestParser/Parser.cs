@@ -152,7 +152,7 @@ namespace AOEOQuestParser
                             {
                                 questgiverInstance.Add(new XAttribute(questgiverDescendant.Key, questgiverDescendant.Value));
                             }
-                        }
+                        } //////////////////////////// THERE'S SOMETHING WRONG HERE !!
 
                         questgiverInstance.RemoveNodes();
                         questgivers.Add(questgiverInstance);
