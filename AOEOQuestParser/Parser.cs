@@ -14,6 +14,7 @@ namespace AOEOQuestParser
         static int timereffectsCounter = 0;
         static int victoryconditionsCounter = 0;
         static int randommapCounter = 0;
+        static int onacceptCounter = 0;
         #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
@@ -35,6 +36,7 @@ namespace AOEOQuestParser
                 timereffects(currentQuestFile, tempFile);
                 victoryconditions(currentQuestFile, tempFile);
                 randommap(currentQuestFile, tempFile);
+                onaccept(currentQuestFile, tempFile);
                 #endregion
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
@@ -45,7 +47,7 @@ namespace AOEOQuestParser
             }
 
             Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | " + timereffectsCounter + " timereffects");
-            Console.WriteLine(victoryconditionsCounter + " victoryconditions | " + randommapCounter + " randommaps | ");
+            Console.WriteLine(victoryconditionsCounter + " victoryconditions | " + randommapCounter + " randommaps | " + onacceptCounter + " onaccepts | ");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -99,9 +101,102 @@ namespace AOEOQuestParser
 
         }
 
-        public static void onaccept()
+        // Writes the onaccept element and all it's descendants as a direct child of the root element.
+        public static void onaccept(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<KeyValuePair<string, string>> questgiverDescendants = new List<KeyValuePair<string, string>>();
+
+            List<XElement> noDescendants = new List<XElement>();
+            List<XElement> onacceptElements = new List<XElement>();
+            List<XElement> questgivers = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "onaccept" && element.Parent.Name.ToString() == "quest")
+                {
+                    onacceptElements.Add(element);
+                }
+            }
+
+            foreach (XElement onaccept in onacceptElements)
+            {
+                foreach (XElement subElement in onaccept.Descendants())
+                {
+                    if (subElement.Parent.Name.ToString() == "onaccept" && subElement.Descendants().Count() == 0 && subElement.Value != "")
+                    {
+                        noDescendants.Add(new XElement(subElement));
+                    }
+                    else if (subElement.Parent.Name.ToString() == "onaccept" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() == "questgiver")
+                    {
+                        XElement questgiverInstance = new XElement("questgiver");
+                        questgiverInstance = subElement;
+
+                        foreach (XElement descendant in subElement.Descendants())
+                        {
+                            if (descendant.Parent.Name.ToString() == "questgiver" && descendant.Descendants().Count() == 0 && descendant.Value.ToString() != "")
+                            {
+                                questgiverDescendants.Add(new KeyValuePair<string, string>(descendant.Name.ToString(), descendant.Value.ToString()));
+                            }
+                            else if (descendant.Parent.Name.ToString() != "questgiver")
+                            {
+                                Console.WriteLine("\n" + "[ERROR] The onaccept\\questgiver\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
+                            }
+                        }
+
+                        if(questgiverDescendants.Count() > 0)
+                        {
+                            foreach (KeyValuePair <string, string> questgiverDescendant in questgiverDescendants)
+                            {
+                                questgiverInstance.Add(new XAttribute(questgiverDescendant.Key, questgiverDescendant.Value));
+                            }
+                        }
+
+                        questgiverInstance.RemoveNodes();
+                        questgivers.Add(questgiverInstance);
+                        questgiverInstance = new XElement("questgiver");
+                    }
+                    else if (subElement.Parent.Name.ToString() == "onaccept" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "questgiver")
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The onaccept\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                    }
+                }
+
+                onaccept.RemoveNodes();
+
+                if (noDescendants.Count() > 0)
+                {
+                    foreach (XElement nodescendant in noDescendants)
+                    {
+                        onaccept.Add(nodescendant);
+                    }
+                }
+
+                if (questgivers.Count() > 0)
+                {
+                    foreach (XElement questgiver in questgivers)
+                    {
+                        onaccept.Add(questgiver);
+                    }
+                }
+
+                elementsToWrite.Add(onaccept);
+                noDescendants = new List<XElement>();
+                questgivers = new List<XElement>();
+            }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                onacceptCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         // Writes the playersettings element and all it's descendants as a direct child of the root element.
@@ -169,7 +264,7 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "playersettings" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "aiflagvariables" && subElement.Name.ToString() != "aislidervariables")
                     {
-                        Console.WriteLine("\n" + "[ERROR] The playersettings\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The playersettings\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
                     }
                 }
 
@@ -395,7 +490,7 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "timer" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "events")
                     {
-                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
                     }
                 }
 
@@ -484,7 +579,7 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "spawnunit" && subElement.Descendants().Count() > 0)
                     {
-                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
                     }
 
                     if (subElement.Parent.Name.ToString() == "spawngroup" && subElement.Descendants().Count() == 0 && subElement.Value != "")
@@ -493,7 +588,7 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "spawngroup" && subElement.Descendants().Count() > 0)
                     {
-                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The timereffect\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
                     }
                 }
 
@@ -573,7 +668,7 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "victoryconditions" && (subElement.Descendants().Count() > 0 || subElement.Name.ToString() != "victorycondition"))
                     {
-                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The victoryconditions\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
                     }
                 }
 
