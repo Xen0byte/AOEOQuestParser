@@ -12,6 +12,7 @@ namespace AOEOQuestParser
         static int playersettingsCounter = 0;
         static int timersCounter = 0;
         static int timereffectsCounter = 0;
+        static int victoryconditionsCounter = 0;
         #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
@@ -25,11 +26,14 @@ namespace AOEOQuestParser
             {
                 Logic.WriteTempFile(tempFile);
 
+                #region Methods To Add Quest Element And All Direct Descendants
                 quest(currentQuestFile, tempFile);
                 nodescendants(currentQuestFile, tempFile);
                 playersettings(currentQuestFile, tempFile);
                 timer(currentQuestFile, tempFile);
                 timereffects(currentQuestFile, tempFile);
+                victoryconditions(currentQuestFile, tempFile);
+                #endregion
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
                 Logic.EraseTempFile(tempFile);
@@ -39,7 +43,7 @@ namespace AOEOQuestParser
             }
 
             Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | " + timereffectsCounter + " timereffects");
-            Console.WriteLine("[REMEMBER] Four Per Line");
+            Console.WriteLine(victoryconditionsCounter + " victoryconditions | ");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -466,9 +470,61 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
-        public static void victoryconditions()
+        public static void victoryconditions(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<KeyValuePair<string, string>> noDescendants = new List<KeyValuePair<string, string>>();
+
+            List<XElement> victoryconditionsList = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "victoryconditions" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
+                {
+                    victoryconditionsList.Add(element);
+                }
+            }
+
+            foreach (XElement victorycondition in victoryconditionsList)
+            {
+                foreach (XElement subElement in victorycondition.Descendants())
+                {
+                    if (subElement.Parent.Name.ToString() == "victoryconditions" && subElement.Value.ToString() != "")
+                    {
+                        noDescendants.Add(new KeyValuePair<string, string>(subElement.Name.ToString(), subElement.Value.ToString()));
+                    }
+                    else if (subElement.Parent.Name.ToString() == "victoryconditions" && (subElement.Descendants().Count() > 0 || subElement.Name.ToString() != "victorycondition"))
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + "element has not been fully processed." + "\n");
+                    }
+                }
+
+                victorycondition.RemoveNodes();
+
+                if (noDescendants.Count() > 0)
+                {
+                    foreach (KeyValuePair<string, string> newDescendant in noDescendants)
+                    {
+                        victorycondition.Add(new XElement(newDescendant.Key, newDescendant.Value));
+                    }
+                }
+
+                elementsToWrite.Add(victorycondition);
+                noDescendants = new List<KeyValuePair<string, string>>();
+            }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                victoryconditionsCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
     }
 }
