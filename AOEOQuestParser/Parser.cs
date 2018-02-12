@@ -127,7 +127,23 @@ namespace AOEOQuestParser
                 {
                     if (subElement.Parent.Name.ToString() == "onaccept" && subElement.Descendants().Count() == 0 && subElement.Value != "")
                     {
-                        noDescendants.Add(new XElement(subElement));
+                        if (subElement.Name.ToString() == "protip" || subElement.Name.ToString() == "enableprotip")
+                        {
+                            subElement.Add(new XAttribute("tip", subElement.Value.ToString()));
+
+                            XElement tip = new XElement(subElement.Name.ToString());
+
+                            foreach (XAttribute attribute in subElement.Attributes())
+                            {
+                                tip.Add(new XAttribute(attribute.Name.ToString(), attribute.Value.ToString()));
+                            }
+
+                            noDescendants.Add(new XElement(tip));
+                        }
+                        else
+                        {
+                            noDescendants.Add(new XElement(subElement));
+                        }
                     }
                     else if (subElement.Parent.Name.ToString() == "onaccept" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() == "questgiver")
                     {
@@ -152,11 +168,12 @@ namespace AOEOQuestParser
                             {
                                 questgiverInstance.Add(new XAttribute(questgiverDescendant.Key, questgiverDescendant.Value));
                             }
-                        } //////////////////////////// THERE'S SOMETHING WRONG HERE !!
+                        }
 
                         questgiverInstance.RemoveNodes();
                         questgivers.Add(questgiverInstance);
                         questgiverInstance = new XElement("questgiver");
+                        questgiverDescendants = new List<KeyValuePair<string, string>>();
                     }
                     else if (subElement.Parent.Name.ToString() == "onaccept" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "questgiver")
                     {
