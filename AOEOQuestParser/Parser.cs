@@ -15,6 +15,7 @@ namespace AOEOQuestParser
         static int victoryconditionsCounter = 0;
         static int randommapCounter = 0;
         static int onacceptCounter = 0;
+        static int questgiverCounter = 0;
         #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
@@ -37,6 +38,7 @@ namespace AOEOQuestParser
                 victoryconditions(currentQuestFile, tempFile);
                 randommap(currentQuestFile, tempFile);
                 onaccept(currentQuestFile, tempFile);
+                questgivers(currentQuestFile, tempFile);
                 #endregion
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
@@ -47,7 +49,7 @@ namespace AOEOQuestParser
             }
 
             Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | " + timereffectsCounter + " timereffects");
-            Console.WriteLine(victoryconditionsCounter + " victoryconditions | " + randommapCounter + " randommaps | " + onacceptCounter + " onaccepts | ");
+            Console.WriteLine(victoryconditionsCounter + " victoryconditions | " + randommapCounter + " randommaps | " + onacceptCounter + " onaccepts | " + questgiverCounter + " questgivers");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -354,9 +356,70 @@ namespace AOEOQuestParser
 
         }
 
-        public static void questgivers()
+        // Writes the questgivers element and all it's descendants as a direct child of the root element.
+        public static void questgivers(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<XElement> questgiverElements = new List<XElement>();
+            List<XElement> noDescendants = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "questgivers" && element.Parent.Name.ToString() == "quest")
+                {
+                    questgiverElements.Add(element);
+                }
+            }
+
+            foreach (XElement questgiver in questgiverElements)
+            {
+                foreach (XElement subElement in questgiver.Descendants())
+                {
+                    if (subElement.Parent.Name.ToString() == "questgivers" && subElement.Descendants().Count() == 0 && subElement.Value.ToString() != "")
+                    {
+                        subElement.Add(new XAttribute("unit", subElement.Value.ToString()));
+
+                        XElement unit = new XElement(subElement.Name.ToString());
+
+                        foreach (XAttribute attribute in subElement.Attributes())
+                        {
+                            unit.Add(new XAttribute(attribute.Name.ToString(), attribute.Value.ToString()));
+                        }
+
+                        noDescendants.Add(new XElement(unit));
+                    }
+                    else if (subElement.Parent.Name.ToString() == "questgivers" && subElement.Descendants().Count() > 0)
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The questgivers\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                    }
+                }
+
+                questgiver.RemoveNodes();
+
+                if (noDescendants.Count() > 0)
+                {
+                    foreach (XElement nodescendant in noDescendants)
+                    {
+                        questgiver.Add(nodescendant);
+                    }
+                }
+
+                elementsToWrite.Add(questgiver);
+                noDescendants = new List<XElement>();
+            }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                questgiverCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         public static void questreturners()
