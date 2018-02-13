@@ -164,9 +164,9 @@ namespace AOEOQuestParser
                             }
                         }
 
-                        if(questgiverDescendants.Count() > 0)
+                        if (questgiverDescendants.Count() > 0)
                         {
-                            foreach (KeyValuePair <string, string> questgiverDescendant in questgiverDescendants)
+                            foreach (KeyValuePair<string, string> questgiverDescendant in questgiverDescendants)
                             {
                                 questgiverInstance.Add(new XAttribute(questgiverDescendant.Key, questgiverDescendant.Value));
                             }
@@ -518,9 +518,74 @@ namespace AOEOQuestParser
 
         }
 
-        public static void targets()
+        // Writes the targets element and all it's descendants as a direct child of the root element.
+        public static void targets(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<XElement> targets = new List<XElement>();
+            List<XElement> directnodes = new List<XElement>();
+            List<XElement> nodescendants = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "targets" && element.Parent.Name.ToString() == "quest")
+                {
+                    targets.Add(element);
+                }
+            }
+
+            foreach (XElement target in targets)
+            {
+                foreach (XElement subElement in target.Descendants())
+                {
+                    if (subElement.Parent.Name.ToString() == "targets" && subElement.Value.ToString() != "" && (subElement.Name.ToString() == "grouping" || subElement.Name.ToString() == "protounit"))
+                    {
+                        directnodes.Add(subElement);
+                    }
+                    else if (subElement.Parent.Name.ToString() == "targets" && subElement.Value.ToString() != "" && (subElement.Name.ToString() != "grouping" && subElement.Name.ToString() != "protounit"))
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The targets\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                    }
+                }
+
+                foreach (XElement directnode in directnodes)
+                {
+                    if (directnode.Name.ToString() == "grouping")
+                    {
+                        foreach (XElement descendant in directnode.Descendants())
+                        {
+                            if (descendant.Parent.Name.ToString() == "grouping" && descendant.Descendants().Count() == 0)
+                            {
+                                // process descendants with no descendants
+                            }
+                            else if (descendant.Parent.Name.ToString() == "grouping" && descendant.Descendants().Count() > 0)
+                            {
+                                Console.WriteLine("\n" + "[ERROR] The targets\\grouping\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
+                            }
+                        }
+                    }
+                    else if (directnode.Name.ToString() == "protounit")
+                    {
+                        foreach (XElement descendant in directnode.Descendants())
+                        {
+                            if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() == 0)
+                            {
+                                // process descendants with no descendants
+                            }
+                            else if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() > 0 && descendant.Name.ToString() == "overrides")
+                            {
+                                // process overrides
+                            }
+                            else if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() > 0 && descendant.Name.ToString() != "overrides")
+                            {
+                                Console.WriteLine("\n" + "[ERROR] The targets\\protounit\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         // Writes the timer element and all it's descendants as a direct child of the root element.
