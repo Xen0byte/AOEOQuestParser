@@ -16,6 +16,7 @@ namespace AOEOQuestParser
         static int randommapCounter = 0;
         static int onacceptCounter = 0;
         static int questgiverCounter = 0;
+        static int targetCounter = 0;
         #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
@@ -39,6 +40,7 @@ namespace AOEOQuestParser
                 randommap(currentQuestFile, tempFile);
                 onaccept(currentQuestFile, tempFile);
                 questgivers(currentQuestFile, tempFile);
+                targets(currentQuestFile, tempFile);
                 #endregion
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
@@ -50,6 +52,7 @@ namespace AOEOQuestParser
 
             Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | " + timereffectsCounter + " timereffects");
             Console.WriteLine(victoryconditionsCounter + " victoryconditions | " + randommapCounter + " randommaps | " + onacceptCounter + " onaccepts | " + questgiverCounter + " questgivers");
+            Console.WriteLine(targetCounter + " targets | ");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -525,7 +528,7 @@ namespace AOEOQuestParser
 
             List<XElement> targets = new List<XElement>();
             List<XElement> directnodes = new List<XElement>();
-            List<XElement> nodescendants = new List<XElement>();
+            List<XElement> overrides = new List<XElement>();
             List<XElement> elementsToWrite = new List<XElement>();
 
             foreach (XElement element in questFileInstance.Descendants())
@@ -548,6 +551,8 @@ namespace AOEOQuestParser
                     {
                         Console.WriteLine("\n" + "[ERROR] The targets\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
                     }
+
+                    ////////////////////// process random quests\C03\c_Side\C03_S83_EastThrace_Thracians_Elite
                 }
 
                 foreach (XElement directnode in directnodes)
@@ -558,13 +563,15 @@ namespace AOEOQuestParser
                         {
                             if (descendant.Parent.Name.ToString() == "grouping" && descendant.Descendants().Count() == 0)
                             {
-                                // process descendants with no descendants
+                                directnode.Add(new XAttribute(descendant.Name.ToString(), descendant.Value.ToString()));
                             }
                             else if (descendant.Parent.Name.ToString() == "grouping" && descendant.Descendants().Count() > 0)
                             {
                                 Console.WriteLine("\n" + "[ERROR] The targets\\grouping\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
                             }
                         }
+
+                        directnode.RemoveNodes();
                     }
                     else if (directnode.Name.ToString() == "protounit")
                     {
@@ -572,20 +579,54 @@ namespace AOEOQuestParser
                         {
                             if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() == 0)
                             {
-                                // process descendants with no descendants
+                                directnode.Add(new XAttribute(descendant.Name.ToString(), descendant.Value.ToString()));
                             }
                             else if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() > 0 && descendant.Name.ToString() == "overrides")
                             {
-                                // process overrides
+                                foreach (XElement subdescendent in descendant.Descendants())
+                                {
+                                    descendant.Add(new XAttribute(subdescendent.Name.ToString(), subdescendent.Value.ToString()));
+                                }
+
+                                descendant.RemoveNodes();
+                                overrides.Add(descendant);
+
+                                //////////////////// handle duplicate elements as attributes and figure out why they're even like that...
                             }
                             else if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() > 0 && descendant.Name.ToString() != "overrides")
                             {
                                 Console.WriteLine("\n" + "[ERROR] The targets\\protounit\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
                             }
                         }
+
+                        directnode.RemoveNodes();
+
+                        if (overrides.Count() > 0)
+                        {
+                            foreach (XElement overridenode in overrides)
+                            {
+                                directnode.Add(new XElement(overridenode));
+                            }
+                        }
+
+                        overrides = new List<XElement>();
                     }
                 }
+
+                elementsToWrite.Add(target);
+                directnodes = new List<XElement>();
             }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                targetCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         // Writes the timer element and all it's descendants as a direct child of the root element.
