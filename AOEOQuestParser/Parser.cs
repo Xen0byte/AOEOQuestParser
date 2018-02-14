@@ -120,7 +120,7 @@ namespace AOEOQuestParser
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "onaccept" && element.Parent.Name.ToString() == "quest")
+                if (element.Name.ToString() == "onaccept" && element.Parent.Name.ToString() == "quest" && element.Value.ToString() != "")
                 {
                     onacceptElements.Add(element);
                 }
@@ -529,6 +529,12 @@ namespace AOEOQuestParser
             List<XElement> targets = new List<XElement>();
             List<XElement> directnodes = new List<XElement>();
             List<XElement> overrides = new List<XElement>();
+
+            List<XElement> randomunitprobability = new List<XElement>();
+            List<XElement> randomtargets = new List<XElement>();
+            List<XElement> randomprotounit = new List<XElement>();
+            List<XElement> randomoverrides = new List<XElement>();
+
             List<XElement> elementsToWrite = new List<XElement>();
 
             foreach (XElement element in questFileInstance.Descendants())
@@ -543,16 +549,15 @@ namespace AOEOQuestParser
             {
                 foreach (XElement subElement in target.Descendants())
                 {
-                    if (subElement.Parent.Name.ToString() == "targets" && subElement.Value.ToString() != "" && (subElement.Name.ToString() == "grouping" || subElement.Name.ToString() == "protounit"))
+                    if (subElement.Parent.Name.ToString() == "targets" && subElement.Value.ToString() != "" && (subElement.Name.ToString() == "grouping" || subElement.Name.ToString() == "protounit" || subElement.Name.ToString() == "random"))
                     {
                         directnodes.Add(subElement);
                     }
+
                     else if (subElement.Parent.Name.ToString() == "targets" && subElement.Value.ToString() != "" && (subElement.Name.ToString() != "grouping" && subElement.Name.ToString() != "protounit"))
                     {
                         Console.WriteLine("\n" + "[ERROR] The targets\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
                     }
-
-                    ////////////////////// process random quests\C03\c_Side\C03_S83_EastThrace_Thracians_Elite
                 }
 
                 foreach (XElement directnode in directnodes)
@@ -565,6 +570,7 @@ namespace AOEOQuestParser
                             {
                                 directnode.Add(new XAttribute(descendant.Name.ToString(), descendant.Value.ToString()));
                             }
+
                             else if (descendant.Parent.Name.ToString() == "grouping" && descendant.Descendants().Count() > 0)
                             {
                                 Console.WriteLine("\n" + "[ERROR] The targets\\grouping\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
@@ -573,6 +579,7 @@ namespace AOEOQuestParser
 
                         directnode.RemoveNodes();
                     }
+
                     else if (directnode.Name.ToString() == "protounit")
                     {
                         foreach (XElement descendant in directnode.Descendants())
@@ -581,6 +588,7 @@ namespace AOEOQuestParser
                             {
                                 directnode.Add(new XAttribute(descendant.Name.ToString(), descendant.Value.ToString()));
                             }
+
                             else if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() > 0 && descendant.Name.ToString() == "overrides")
                             {
                                 foreach (XElement subdescendent in descendant.Descendants())
@@ -591,6 +599,7 @@ namespace AOEOQuestParser
                                 descendant.RemoveNodes();
                                 overrides.Add(descendant);
                             }
+
                             else if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() > 0 && descendant.Name.ToString() != "overrides")
                             {
                                 Console.WriteLine("\n" + "[ERROR] The targets\\protounit\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
@@ -608,6 +617,118 @@ namespace AOEOQuestParser
                         }
 
                         overrides = new List<XElement>();
+                    }
+
+                    else if (directnode.Name.ToString() == "random")
+                    {
+                        foreach (XElement subSubElement in directnode.Descendants())
+                        {
+                            if (subSubElement.Parent.Name.ToString() == "random" && subSubElement.Descendants().Count() == 0 && subSubElement.Value.ToString() != "")
+                            {
+                                directnode.Add(new XAttribute(subSubElement.Name.ToString(), subSubElement.Value.ToString()));
+                            }
+
+                            else if (subSubElement.Parent.Name.ToString() == "random" && subSubElement.Name.ToString() == "unitprobability")
+                            {
+                                randomunitprobability.Add(subSubElement);
+                            }
+
+                            else if (subSubElement.Parent.Name.ToString() == "random" && subSubElement.Name.ToString() == "targets" && subSubElement.Value.ToString() != "")
+                            {
+                                foreach (XElement subSubSubElement in subSubElement.Descendants())
+                                {
+                                    if (subSubSubElement.Parent.Name.ToString() == "targets" && subSubSubElement.Name.ToString() == "protounit" && subSubSubElement.Value.ToString() != "")
+                                    {
+                                        foreach (XElement subSubSubSubElement in subSubSubElement.Descendants())
+                                        {
+                                            if (subSubSubSubElement.Parent.Name.ToString() == "protounit" && subSubSubSubElement.Descendants().Count() == 0 && subSubSubSubElement.Value.ToString() != "")
+                                            {
+                                                subSubSubElement.Add(new XAttribute(subSubSubSubElement.Name.ToString(), subSubSubSubElement.Value.ToString()));
+                                            }
+
+                                            else if (subSubSubSubElement.Parent.Name.ToString() == "protounit" && subSubSubSubElement.Descendants().Count() > 0 && subSubSubSubElement.Value.ToString() != "" && subSubSubSubElement.Name.ToString() == "overrides")
+                                            {
+                                                foreach (XElement subSubSubSubSubElement in subSubSubSubElement.Descendants())
+                                                {
+                                                    if (subSubSubSubSubElement.Parent.Name.ToString() == "overrides" && subSubSubSubSubElement.Descendants().Count() == 0)
+                                                    {
+                                                        subSubSubSubElement.Add(new XAttribute(subSubSubSubSubElement.Name.ToString(), subSubSubSubSubElement.Value.ToString()));
+                                                    }
+
+                                                    else if (subSubSubSubSubElement.Parent.Name.ToString() == "overrides" && subSubSubSubSubElement.Descendants().Count() > 0)
+                                                    {
+                                                        Console.WriteLine("\n" + "[ERROR] The targets\\random\\targets\\protounit\\overrides\\" + subSubSubSubElement.Name.ToString() + " element has not been fully processed." + "\n");
+                                                    }
+                                                }
+
+                                                subSubSubSubElement.RemoveNodes();
+                                                randomoverrides.Add(subSubSubSubElement);
+                                            }
+
+                                            else if (subSubSubSubElement.Parent.Name.ToString() == "protounit" && subSubSubSubElement.Descendants().Count() > 0 && subSubSubSubElement.Value.ToString() != "" && subSubSubSubElement.Name.ToString() != "overrides")
+                                            {
+                                                Console.WriteLine("\n" + "[ERROR] The targets\\random\\targets\\" + subSubSubSubElement.Name.ToString() + " element has not been fully processed." + "\n");
+                                            }
+                                        }
+
+                                        subSubSubElement.RemoveNodes();
+
+                                        if (randomoverrides.Count() > 0)
+                                        {
+                                            foreach (XElement randomoverride in randomoverrides)
+                                            {
+                                                subSubSubElement.Add(new XElement(randomoverride));
+                                            }
+                                        }
+
+                                        randomoverrides = new List<XElement>();
+
+                                        randomprotounit.Add(subSubSubElement);
+                                    }
+                                }
+
+                                subSubElement.RemoveNodes();
+
+                                if (randomprotounit.Count() > 0)
+                                {
+                                    foreach (XElement randomproto in randomprotounit)
+                                    {
+                                        subSubElement.Add(new XElement(randomproto));
+                                    }
+                                }
+
+                                randomprotounit = new List<XElement>();
+
+                                randomtargets.Add(subSubElement);
+                            }
+
+                            else if (subSubElement.Parent.Name.ToString() == "random" && subSubElement.Value.ToString() != "" && (subSubElement.Name.ToString() != "unitprobability" && subSubElement.Name.ToString() != "targets"))
+                            {
+                                Console.WriteLine("\n" + "[ERROR] The targets\\random\\" + subSubElement.Name.ToString() + " element has not been fully processed." + "\n");
+                            }
+                        }
+
+                        directnode.RemoveNodes();
+
+                        if (randomunitprobability.Count() > 0)
+                        {
+                            foreach (XElement randomprod in randomunitprobability)
+                            {
+                                directnode.Add(new XElement(randomprod));
+                            }
+                        }
+
+                        randomunitprobability = new List<XElement>();
+
+                        if (randomtargets.Count() > 0)
+                        {
+                            foreach (XElement randomtarget in randomtargets)
+                            {
+                                directnode.Add(new XElement(randomtarget));
+                            }
+                        }
+
+                        randomtargets = new List<XElement>();
                     }
                 }
 
