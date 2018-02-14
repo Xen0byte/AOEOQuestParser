@@ -590,8 +590,6 @@ namespace AOEOQuestParser
 
                                 descendant.RemoveNodes();
                                 overrides.Add(descendant);
-
-                                //////////////////// handle duplicate elements as attributes and figure out why they're even like that...
                             }
                             else if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() > 0 && descendant.Name.ToString() != "overrides")
                             {
