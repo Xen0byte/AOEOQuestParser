@@ -19,6 +19,7 @@ namespace AOEOQuestParser
         static int targetCounter = 0;
         static int questreturnerCounter = 0;
         static int prereqCounter = 0;
+        static int rewardCounter = 0;
         #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
@@ -45,6 +46,7 @@ namespace AOEOQuestParser
                 targets(currentQuestFile, tempFile);
                 questreturners(currentQuestFile, tempFile);
                 prereqs(currentQuestFile, tempFile);
+                rewards(currentQuestFile, tempFile);
                 #endregion
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
@@ -56,7 +58,7 @@ namespace AOEOQuestParser
 
             Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | " + timereffectsCounter + " timereffects");
             Console.WriteLine(victoryconditionsCounter + " victoryconditions | " + randommapCounter + " randommaps | " + onacceptCounter + " onaccepts | " + questgiverCounter + " questgivers");
-            Console.WriteLine(targetCounter + " targets | " + questreturnerCounter + " questreturners | " + prereqCounter + " prereqs | ");
+            Console.WriteLine(targetCounter + " targets | " + questreturnerCounter + " questreturners | " + prereqCounter + " prereqs | " + rewardCounter + " rewards");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -358,6 +360,7 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
+        // Writes the prereqs element and all it's descendants as a direct child of the root element.
         public static void prereqs(string currentQuestFile, string tempFile)
         {
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
@@ -377,7 +380,10 @@ namespace AOEOQuestParser
             {
                 foreach (XElement subElement in prereq.Descendants())
                 {
-                    if (subElement.Parent.Name.ToString() == "values" && subElement.Parent.Parent.Name.ToString() != "prereqs" && subElement.Descendants().Count() > 0) // make this work!! + ORs
+                    if (subElement.Descendants().Count() > 0 && (subElement.Name.ToString() == "questcomplete" ||
+                        subElement.Name.ToString() == "queststatus" ||
+                        subElement.Name.ToString() == "level" ||
+                        subElement.Name.ToString() == "civilization"))
                     {
                         foreach (XElement descendant in subElement.Descendants())
                         {
@@ -387,9 +393,17 @@ namespace AOEOQuestParser
                         subElement.RemoveNodes();
                     }
 
-                    else if (subElement.Parent.Name.ToString() == "values" && subElement.Descendants().Count() == 0)
+                    else if (subElement.Descendants().Count() > 0 && (subElement.Name.ToString() != "questcomplete" &&
+                        subElement.Name.ToString() != "queststatus" &&
+                        subElement.Name.ToString() != "level" &&
+                        subElement.Name.ToString() != "civilization" &&
+                        subElement.Name.ToString() != "values" &&
+                        subElement.Name.ToString() != "or" &&
+                        subElement.Name.ToString() != "and"))
                     {
-                        Console.WriteLine("\n" + "[ERROR] The prereqs\\values\\*\\values\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The prereqs\\*\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.Write(currentQuestFile);
+                        Console.Write(currentQuestFile);
                     }
                 }
 
@@ -616,9 +630,66 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
-        public static void rewards()
+        // Writes the rewards element and all it's descendants as a direct child of the root element.
+        public static void rewards(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<XElement> rewards = new List<XElement>();
+            List<XElement> protip = new List<XElement>(); // ---------------------------------------------------> THIS ++ XP ++ blueprint ++ lootable ++ trait
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "rewards" && element.Parent.Name.ToString() == "quest")
+                {
+                    rewards.Add(element);
+                }
+            }
+
+            foreach (XElement reward in rewards)
+            {
+                foreach (XElement descendant in reward.Descendants())
+                {
+                    if (descendant.Descendants().Count() > 0 && (descendant.Name.ToString() == "material" ||
+                        descendant.Name.ToString() == "capitalresource" ||
+                        descendant.Name.ToString() == "alliancepoints" ||
+                        descendant.Name.ToString() == "consumematerial" ||
+                        descendant.Name.ToString() == "consumable"))
+                    {
+                        foreach (XElement subdescendant in descendant.Descendants())
+                        {
+                            descendant.Add(new XAttribute(subdescendant.Name.ToString(), subdescendant.Value.ToString()));
+                        }
+
+                        descendant.RemoveNodes();
+                    }
+
+                    else if (descendant.Parent.Name.ToString() == "rewards" && (descendant.Name.ToString() != "material" &&
+                        descendant.Name.ToString() != "capitalresource" &&
+                        descendant.Name.ToString() != "alliancepoints" &&
+                        descendant.Name.ToString() != "consumematerial" &&
+                        descendant.Name.ToString() != "consumable" &&
+                        descendant.Name.ToString() != "and" &&
+                        descendant.Name.ToString() != "or"))
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The rewards\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
+                    }
+                }
+
+                elementsToWrite.Add(reward);
+            }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                rewardCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         public static void secondaryobjectives()
