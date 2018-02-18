@@ -70,7 +70,7 @@
 	<onaccept/>
 	<rewards visible="true">
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>B04Short</lookuptable>
 		</xp>
 		<capitalresource visible="true">

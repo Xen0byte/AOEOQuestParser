@@ -50,7 +50,7 @@
 	<onaccept/>
 	<rewards visible="true">
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>b02Global</lookuptable>
 		</xp>
 		<capitalresource visible="true">

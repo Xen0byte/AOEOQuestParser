@@ -169,7 +169,7 @@
 			<amount>8</amount>
 		</alliancepoints>
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>EliteLong</lookuptable>
 		</xp>
 		<capitalresource visible="true">

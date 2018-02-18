@@ -157,7 +157,7 @@
 			<amount>18</amount>
 		</alliancepoints>
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>B04VLong</lookuptable>
 		</xp>
 		<capitalresource visible="true">

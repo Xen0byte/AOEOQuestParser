@@ -126,7 +126,7 @@ namespace AOEOQuestParser
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "onaccept" && element.Parent.Name.ToString() == "quest" && element.Value.ToString() != "")
+                if (element.Name.ToString() == "onaccept" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
                 {
                     onacceptElements.Add(element);
                 }
@@ -169,7 +169,8 @@ namespace AOEOQuestParser
                             }
                             else if (descendant.Parent.Name.ToString() != "questgiver")
                             {
-                                Console.WriteLine("\n" + "[ERROR] The onaccept\\questgiver\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
+                                Console.WriteLine("\n" + "[ERROR] The onaccept\\questgiver\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                             }
                         }
 
@@ -188,7 +189,8 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "onaccept" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "questgiver")
                     {
-                        Console.WriteLine("\n" + "[ERROR] The onaccept\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The onaccept\\" + subElement.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 
@@ -241,7 +243,7 @@ namespace AOEOQuestParser
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "playersettings" && element.Parent.Name.ToString() == "quest")
+                if (element.Name.ToString() == "playersettings" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
                 {
                     playersettingsElements.Add(element);
                 }
@@ -292,7 +294,8 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "playersettings" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "aiflagvariables" && subElement.Name.ToString() != "aislidervariables")
                     {
-                        Console.WriteLine("\n" + "[ERROR] The playersettings\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The playersettings\\" + subElement.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 
@@ -370,7 +373,7 @@ namespace AOEOQuestParser
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "prereqs" && element.Parent.Name.ToString() == "quest")
+                if (element.Name.ToString() == "prereqs" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
                 {
                     prereqs.Add(element);
                 }
@@ -401,9 +404,8 @@ namespace AOEOQuestParser
                         subElement.Name.ToString() != "or" &&
                         subElement.Name.ToString() != "and"))
                     {
-                        Console.WriteLine("\n" + "[ERROR] The prereqs\\*\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
-                        Console.Write(currentQuestFile);
-                        Console.Write(currentQuestFile);
+                        Console.WriteLine("\n" + "[ERROR] The prereqs\\*\\" + subElement.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 
@@ -433,7 +435,7 @@ namespace AOEOQuestParser
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "questgivers" && element.Parent.Name.ToString() == "quest")
+                if (element.Name.ToString() == "questgivers" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
                 {
                     questgiverElements.Add(element);
                 }
@@ -458,7 +460,8 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "questgivers" && subElement.Descendants().Count() > 0)
                     {
-                        Console.WriteLine("\n" + "[ERROR] The questgivers\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The questgivers\\" + subElement.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 
@@ -499,7 +502,7 @@ namespace AOEOQuestParser
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "questreturners" && element.Parent.Name.ToString() == "quest")
+                if (element.Name.ToString() == "questreturners" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
                 {
                     questreturners.Add(element);
                 }
@@ -524,7 +527,8 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "questreturners" && subElement.Descendants().Count() > 0)
                     {
-                        Console.WriteLine("\n" + "[ERROR] The questreturners\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The questreturners\\" + subElement.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 
@@ -567,7 +571,7 @@ namespace AOEOQuestParser
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "randommap" && element.Parent.Name.ToString() == "quest")
+                if (element.Name.ToString() == "randommap" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
                 {
                     randommapElements.Add(element);
                 }
@@ -636,12 +640,11 @@ namespace AOEOQuestParser
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
             List<XElement> rewards = new List<XElement>();
-            List<XElement> protip = new List<XElement>(); // ---------------------------------------------------> THIS ++ XP ++ blueprint ++ lootable ++ trait
             List<XElement> elementsToWrite = new List<XElement>();
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "rewards" && element.Parent.Name.ToString() == "quest")
+                if (element.Name.ToString() == "rewards" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
                 {
                     rewards.Add(element);
                 }
@@ -649,35 +652,116 @@ namespace AOEOQuestParser
 
             foreach (XElement reward in rewards)
             {
+                XElement newRewards = new XElement("rewards");
+
+                foreach (XAttribute attribute in reward.Attributes())
+                {
+                    newRewards.Add(new XAttribute(attribute.Name.ToString(), attribute.Value.ToString()));
+                }
+
                 foreach (XElement descendant in reward.Descendants())
                 {
-                    if (descendant.Descendants().Count() > 0 && (descendant.Name.ToString() == "material" ||
+                    if (descendant.Descendants().Count() == 0 && descendant.Parent.Name.ToString() == "rewards" && descendant.Value.ToString() != "")
+                    {
+                        XElement nodescendants = new XElement(descendant.Name.ToString());
+
+                        foreach (XAttribute attribute in descendant.Attributes())
+                        {
+                            nodescendants.Add(new XAttribute(attribute.Name.ToString(), attribute.Value.ToString()));
+                        }
+
+                        if (descendant.Name.ToString() == "protip")
+                        {
+                            nodescendants.Add(new XAttribute("tip", descendant.Value.ToString()));
+                        }
+                        else if (descendant.Name.ToString() == "xp")
+                        {
+                            nodescendants.Add(new XAttribute("amount", descendant.Value.ToString()));
+                        }
+                        else if (descendant.Name.ToString() == "blueprint")
+                        {
+                            nodescendants.Add(new XAttribute("unit", descendant.Value.ToString()));
+                        }
+                        else if (descendant.Name.ToString() == "advisor")
+                        {
+                            nodescendants.Add(new XAttribute("unit", descendant.Value.ToString()));
+                        }
+                        else if (descendant.Name.ToString() == "loottable")
+                        {
+                            nodescendants.Add(new XAttribute("type", descendant.Value.ToString()));
+                        }
+                        else if (descendant.Name.ToString() == "lockregion")
+                        {
+                            nodescendants.Add(new XAttribute("region", descendant.Value.ToString()));
+                        }
+                        else if (descendant.Name.ToString() == "unlockregion")
+                        {
+                            nodescendants.Add(new XAttribute("region", descendant.Value.ToString()));
+                        }
+                        else if (descendant.Name.ToString() == "mailreward")
+                        {
+                            nodescendants.Add(new XAttribute("reward", descendant.Value.ToString()));
+                        }
+                        else if (descendant.Name.ToString() == "trait")
+                        {
+                            nodescendants.Add(new XAttribute("item", descendant.Value.ToString()));
+                        }
+                        else if (descendant.Name.ToString() == "gamecurrency")
+                        {
+                            nodescendants.Add(new XAttribute("type", descendant.Value.ToString()));
+                        }
+                        else
+                        {
+                            Console.WriteLine("\n" + "[ERROR] The rewards\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                            Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        }
+
+                        newRewards.Add(new XElement(nodescendants));
+                    }
+
+                    else if (descendant.Descendants().Count() == 0 && descendant.Parent.Name.ToString() == "rewards" && descendant.Value.ToString() == "")
+                    {
+                        if (descendant.Attributes().Count() > 0)
+                        {
+                            newRewards.Add(new XElement(descendant));
+                        }
+                    }
+
+                    else if (descendant.Descendants().Count() > 0 && descendant.Parent.Name.ToString() == "rewards" && (descendant.Name.ToString() == "material" ||
                         descendant.Name.ToString() == "capitalresource" ||
                         descendant.Name.ToString() == "alliancepoints" ||
                         descendant.Name.ToString() == "consumematerial" ||
+                        descendant.Name.ToString() == "xp" ||
+                        descendant.Name.ToString() == "capitaltech" ||
+                        descendant.Name.ToString() == "questgiver" ||
+                        descendant.Name.ToString() == "gamecurrency" ||
                         descendant.Name.ToString() == "consumable"))
                     {
-                        foreach (XElement subdescendant in descendant.Descendants())
+                        XElement directdescendant = new XElement(descendant.Name.ToString());
+
+                        foreach (XAttribute attribute in descendant.Attributes())
                         {
-                            descendant.Add(new XAttribute(subdescendant.Name.ToString(), subdescendant.Value.ToString()));
+                            directdescendant.Add(new XAttribute(attribute.Name.ToString(), attribute.Value.ToString()));
                         }
 
-                        descendant.RemoveNodes();
+                        foreach (XElement subdescendant in descendant.Descendants())
+                        {
+                            directdescendant.Add(new XAttribute(subdescendant.Name.ToString(), subdescendant.Value.ToString()));
+                        }
+
+                        newRewards.Add(new XElement(directdescendant));
                     }
 
-                    else if (descendant.Parent.Name.ToString() == "rewards" && (descendant.Name.ToString() != "material" &&
-                        descendant.Name.ToString() != "capitalresource" &&
-                        descendant.Name.ToString() != "alliancepoints" &&
-                        descendant.Name.ToString() != "consumematerial" &&
-                        descendant.Name.ToString() != "consumable" &&
-                        descendant.Name.ToString() != "and" &&
-                        descendant.Name.ToString() != "or"))
+                    else if (descendant.Parent.Name.ToString() == "rewards")
                     {
-                        Console.WriteLine("\n" + "[ERROR] The rewards\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
+                        // ADD ELEMENT !!!
+
+                        Console.WriteLine("\n" + "[ERROR] The rewards\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 
-                elementsToWrite.Add(reward);
+                elementsToWrite.Add(newRewards);
             }
 
             XDocument tempXDocInstance = XDocument.Load(tempFile);
@@ -720,7 +804,7 @@ namespace AOEOQuestParser
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "targets" && element.Parent.Name.ToString() == "quest")
+                if (element.Name.ToString() == "targets" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
                 {
                     targets.Add(element);
                 }
@@ -737,7 +821,8 @@ namespace AOEOQuestParser
 
                     else if (subElement.Parent.Name.ToString() == "targets" && subElement.Value.ToString() != "" && (subElement.Name.ToString() != "grouping" && subElement.Name.ToString() != "protounit"))
                     {
-                        Console.WriteLine("\n" + "[ERROR] The targets\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The targets\\" + subElement.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 
@@ -754,7 +839,8 @@ namespace AOEOQuestParser
 
                             else if (descendant.Parent.Name.ToString() == "grouping" && descendant.Descendants().Count() > 0)
                             {
-                                Console.WriteLine("\n" + "[ERROR] The targets\\grouping\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
+                                Console.WriteLine("\n" + "[ERROR] The targets\\grouping\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                             }
                         }
 
@@ -783,7 +869,8 @@ namespace AOEOQuestParser
 
                             else if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() > 0 && descendant.Name.ToString() != "overrides")
                             {
-                                Console.WriteLine("\n" + "[ERROR] The targets\\protounit\\" + descendant.Name.ToString() + " element has not been fully processed." + "\n");
+                                Console.WriteLine("\n" + "[ERROR] The targets\\protounit\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                             }
                         }
 
@@ -838,7 +925,8 @@ namespace AOEOQuestParser
 
                                                     else if (subSubSubSubSubElement.Parent.Name.ToString() == "overrides" && subSubSubSubSubElement.Descendants().Count() > 0)
                                                     {
-                                                        Console.WriteLine("\n" + "[ERROR] The targets\\random\\targets\\protounit\\overrides\\" + subSubSubSubElement.Name.ToString() + " element has not been fully processed." + "\n");
+                                                        Console.WriteLine("\n" + "[ERROR] The targets\\random\\targets\\protounit\\overrides\\" + subSubSubSubElement.Name.ToString() + " element has not been fully processed.");
+                                                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                                                     }
                                                 }
 
@@ -848,7 +936,8 @@ namespace AOEOQuestParser
 
                                             else if (subSubSubSubElement.Parent.Name.ToString() == "protounit" && subSubSubSubElement.Descendants().Count() > 0 && subSubSubSubElement.Value.ToString() != "" && subSubSubSubElement.Name.ToString() != "overrides")
                                             {
-                                                Console.WriteLine("\n" + "[ERROR] The targets\\random\\targets\\" + subSubSubSubElement.Name.ToString() + " element has not been fully processed." + "\n");
+                                                Console.WriteLine("\n" + "[ERROR] The targets\\random\\targets\\" + subSubSubSubElement.Name.ToString() + " element has not been fully processed.");
+                                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                                             }
                                         }
 
@@ -885,7 +974,8 @@ namespace AOEOQuestParser
 
                             else if (subSubElement.Parent.Name.ToString() == "random" && subSubElement.Value.ToString() != "" && (subSubElement.Name.ToString() != "unitprobability" && subSubElement.Name.ToString() != "targets"))
                             {
-                                Console.WriteLine("\n" + "[ERROR] The targets\\random\\" + subSubElement.Name.ToString() + " element has not been fully processed." + "\n");
+                                Console.WriteLine("\n" + "[ERROR] The targets\\random\\" + subSubElement.Name.ToString() + " element has not been fully processed.");
+                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                             }
                         }
 
@@ -942,7 +1032,7 @@ namespace AOEOQuestParser
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "timer" && element.Parent.Name.ToString() == "quest")
+                if (element.Name.ToString() == "timer" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
                 {
                     timerElements.Add(element);
                 }
@@ -976,7 +1066,8 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "timer" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "events")
                     {
-                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 
@@ -1049,7 +1140,7 @@ namespace AOEOQuestParser
 
             foreach (XElement element in questFileInstance.Descendants())
             {
-                if (element.Name.ToString() == "timereffects" && element.Parent.Name.ToString() == "quest")
+                if (element.Name.ToString() == "timereffects" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
                 {
                     timerEffectsList.Add(element);
                 }
@@ -1065,7 +1156,8 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "spawnunit" && subElement.Descendants().Count() > 0)
                     {
-                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
 
                     if (subElement.Parent.Name.ToString() == "spawngroup" && subElement.Descendants().Count() == 0 && subElement.Value != "")
@@ -1074,7 +1166,8 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "spawngroup" && subElement.Descendants().Count() > 0)
                     {
-                        Console.WriteLine("\n" + "[ERROR] The timereffect\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The timereffect\\" + subElement.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 
@@ -1154,7 +1247,8 @@ namespace AOEOQuestParser
                     }
                     else if (subElement.Parent.Name.ToString() == "victoryconditions" && (subElement.Descendants().Count() > 0 || subElement.Name.ToString() != "victorycondition"))
                     {
-                        Console.WriteLine("\n" + "[ERROR] The victoryconditions\\" + subElement.Name.ToString() + " element has not been fully processed." + "\n");
+                        Console.WriteLine("\n" + "[ERROR] The victoryconditions\\" + subElement.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 

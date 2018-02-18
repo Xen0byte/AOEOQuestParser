@@ -140,7 +140,7 @@
 			<amount>15</amount>
 		</alliancepoints>
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>SQVLong</lookuptable>
 		</xp>
 		<capitalresource visible="true">

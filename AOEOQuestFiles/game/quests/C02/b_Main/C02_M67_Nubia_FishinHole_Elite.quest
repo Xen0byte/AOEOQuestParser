@@ -133,7 +133,7 @@
 	<onaccept/>
 	<rewards visible="true">
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>EliteVShort</lookuptable>
 		</xp>
 		<capitalresource visible="true">

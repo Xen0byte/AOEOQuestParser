@@ -121,7 +121,7 @@
 	<onaccept/>
 	<rewards visible="true">
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>SQVShort</lookuptable>
 		</xp>
 		<capitalresource visible="true">

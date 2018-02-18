@@ -54,7 +54,7 @@
 	<onaccept/>
 	<rewards visible="true">
 		<xp visible="true">
-			0
+			<amount>0</amount>
 			<lookuptable>pvpLoserXP</lookuptable>
 		</xp>
 		<alliancepoints visible="true">
@@ -63,7 +63,7 @@
 	</rewards>
 	<secondaryrewards visible="true" name="VictoryReward">
 		<xp visible="true">
-			0
+			<amount>0</amount>
 			<lookuptable>pvp2v2Ranked</lookuptable>
 		</xp>
 		<alliancepoints visible="true">

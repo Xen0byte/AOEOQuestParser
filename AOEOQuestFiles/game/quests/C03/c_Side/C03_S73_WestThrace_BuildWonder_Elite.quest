@@ -119,7 +119,7 @@
 	<onaccept/>
 	<rewards visible="true">
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>EliteMedium</lookuptable>
 		</xp>
 		<capitalresource visible="true">

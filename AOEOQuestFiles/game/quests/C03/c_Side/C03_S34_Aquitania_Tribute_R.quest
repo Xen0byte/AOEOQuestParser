@@ -222,7 +222,7 @@
 	</timereffects>
 	<rewards visible="true">
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>SQShort</lookuptable>
 		</xp>
 		<capitalresource visible="true">

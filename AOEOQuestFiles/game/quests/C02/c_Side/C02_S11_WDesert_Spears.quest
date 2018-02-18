@@ -110,7 +110,7 @@
 	</onaccept>
 	<rewards visible="true">
 		<xp visible="true">
-			5000
+			<amount>5000</amount>
 			<lookuptable/>
 		</xp>
 		<capitalresource visible="true">

@@ -142,7 +142,7 @@
 	<onaccept/>
 	<rewards visible="true">
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>SQLong</lookuptable>
 		</xp>
 		<capitalresource visible="true">

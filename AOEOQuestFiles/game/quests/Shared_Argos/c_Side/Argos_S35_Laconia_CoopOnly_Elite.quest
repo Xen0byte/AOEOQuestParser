@@ -140,7 +140,7 @@
 			<amount>20</amount>
 		</alliancepoints>
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>EliteVLong</lookuptable>
 		</xp>
 		<capitalresource visible="true">

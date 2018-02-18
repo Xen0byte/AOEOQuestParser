@@ -94,7 +94,7 @@
 	<onaccept/>
 	<rewards visible="true">
 		<xp visible="true">
-			1
+			<amount>1</amount>
 			<lookuptable>SQVShort</lookuptable>
 		</xp>
 		<or visible="true">
