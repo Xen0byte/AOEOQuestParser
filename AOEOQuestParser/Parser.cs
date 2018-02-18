@@ -754,10 +754,16 @@ namespace AOEOQuestParser
 
                     else if (descendant.Parent.Name.ToString() == "rewards")
                     {
-                        // ADD ELEMENT !!!
+                        if (descendant.Name.ToString() == "or")
+                        {
+                            // do something
+                        }
 
-                        Console.WriteLine("\n" + "[ERROR] The rewards\\" + descendant.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        else
+                        {
+                            Console.WriteLine("\n" + "[ERROR] The rewards\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                            Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        }
                     }
                 }
 
