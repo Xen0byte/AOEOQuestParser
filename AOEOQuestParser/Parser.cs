@@ -20,6 +20,8 @@ namespace AOEOQuestParser
         static int questreturnerCounter = 0;
         static int prereqCounter = 0;
         static int rewardCounter = 0;
+        static int secondaryrewardCounter = 0;
+        static int diplomacysettingsCounter = 0;
         #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
@@ -46,7 +48,9 @@ namespace AOEOQuestParser
                 targets(currentQuestFile, tempFile);
                 questreturners(currentQuestFile, tempFile);
                 prereqs(currentQuestFile, tempFile);
-                rewards(currentQuestFile, tempFile);
+                //rewards(currentQuestFile, tempFile); ---> SUPER BROKEN
+                secondaryrewards(currentQuestFile, tempFile);
+                diplomacysettings(currentQuestFile, tempFile);
                 #endregion
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
@@ -59,6 +63,7 @@ namespace AOEOQuestParser
             Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | " + timereffectsCounter + " timereffects");
             Console.WriteLine(victoryconditionsCounter + " victoryconditions | " + randommapCounter + " randommaps | " + onacceptCounter + " onaccepts | " + questgiverCounter + " questgivers");
             Console.WriteLine(targetCounter + " targets | " + questreturnerCounter + " questreturners | " + prereqCounter + " prereqs | " + rewardCounter + " rewards");
+            Console.WriteLine(secondaryrewardCounter + " secondaryrewards | " + diplomacysettingsCounter + " diplomacysettings | ");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -102,9 +107,40 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
-        public static void diplomacysettings()
+        // Writes the diplomacysettings element and all it's descendants as a direct child of the root element.
+        public static void diplomacysettings(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<XElement> diplomacysettings = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "diplomacysettings" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
+                {
+                    diplomacysettings.Add(element);
+                }
+            }
+
+            if (diplomacysettings.Count() > 0)
+            {
+                foreach (XElement diplomacysetting in diplomacysettings)
+                {
+                    elementsToWrite.Add(diplomacysetting);
+                }
+            }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                diplomacysettingsCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         public static void objectives()
@@ -634,7 +670,7 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
-        // Writes the rewards element and all it's descendants as a direct child of the root element.
+        // Writes the rewards element and all it's descendants as a direct child of the root element. ---> NEEDS MORE WORK (Currently Partially Broken)
         public static void rewards(string currentQuestFile, string tempFile)
         {
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
@@ -787,9 +823,89 @@ namespace AOEOQuestParser
 
         }
 
-        public static void secondaryrewards()
+        // Writes the secondaryrewards element and all it's descendants as a direct child of the root element.
+        public static void secondaryrewards(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<XElement> secondaryrewards = new List<XElement>();
+            List<XElement> subElements = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "secondaryrewards" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
+                {
+                    secondaryrewards.Add(element);
+                }
+            }
+
+            foreach (XElement secondaryreward in secondaryrewards)
+            {
+                foreach (XElement subElement in secondaryreward.Descendants())
+                {
+                    if (subElement.Parent.Name.ToString() == "secondaryrewards" && (subElement.Attributes().Count() > 0 || subElement.Value.ToString() != ""))
+                    {
+                        if (subElement.Descendants().Count() > 0)
+                        {
+                            foreach (XElement descendant in subElement.Descendants())
+                            {
+                                if (descendant.Descendants().Count() == 0)
+                                {
+                                    subElement.Add(new XAttribute(descendant.Name.ToString(), descendant.Value.ToString()));
+                                }
+
+                                else
+                                {
+                                    Console.WriteLine("\n" + "[ERROR] The secondaryrewards\\*\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                                    Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                }
+                            }
+
+                            subElement.RemoveNodes();
+                            subElements.Add(subElement);
+                        }
+
+                        else if (subElement.Descendants().Count() == 0)
+                        {
+                            XElement newElement = new XElement(subElement.Name.ToString());
+
+                            foreach (XAttribute attribute in subElement.Attributes())
+                            {
+                                newElement.Add(new XAttribute(attribute.Name.ToString(), attribute.Value.ToString()));
+                            }
+
+                            newElement.Add(new XAttribute(subElement.Name.ToString(), subElement.Value.ToString()));
+
+                            subElements.Add(newElement);
+                        }
+                    }
+                }
+
+                secondaryreward.RemoveNodes();
+
+                if (subElements.Count() > 0)
+                {
+                    foreach (XElement element in subElements)
+                    {
+                        secondaryreward.Add(element);
+                    }
+                }
+
+                subElements = new List<XElement>();
+                elementsToWrite.Add(secondaryreward);
+            }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                secondaryrewardCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         // Writes the targets element and all it's descendants as a direct child of the root element.
