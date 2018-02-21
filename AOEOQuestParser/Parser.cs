@@ -143,9 +143,30 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
-        public static void objectives()
+        public static void objectives(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<XElement> objectives = new List<XElement>();
+            List<XElement> subElements = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "objectives" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
+                {
+                    objectives.Add(element);
+                }
+            }
+
+            foreach (XElement objective in objectives)
+            {
+                //nodesc
+                //desc
+                //and|or
+                //strip out value
+                //and|or only have description and values
+            }
         }
 
         // Writes the onaccept element and all it's descendants as a direct child of the root element.
