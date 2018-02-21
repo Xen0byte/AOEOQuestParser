@@ -106,11 +106,11 @@
 			<amount>25</amount>
 		</capitalresource>
 		<trait visible="true">
-			ArmorPlt_U020
+			<id>ArmorPlt_U020</id>
 			<traitlevel>6</traitlevel>
 		</trait>
 		<trait visible="true">
-			FishingNet1H_U008
+			<id>FishingNet1H_U008</id>
 			<traitlevel>6</traitlevel>
 		</trait>
 	</rewards>

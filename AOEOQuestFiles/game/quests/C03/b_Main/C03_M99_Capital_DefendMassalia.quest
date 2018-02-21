@@ -78,11 +78,11 @@
 		<loottable visible="true">tables\_coreloot_celthigh_reward</loottable>
 		<or visible="true">
 			<trait visible="true">
-				ArmorClth_E101
+				<id>ArmorClth_E101</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Torc_E101
+				<id>Torc_E101</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

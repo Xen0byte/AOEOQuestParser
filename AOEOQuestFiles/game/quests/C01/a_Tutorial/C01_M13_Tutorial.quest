@@ -141,27 +141,27 @@
 		</capitalresource>
 		<or visible="true">
 			<trait visible="true">
-				Sword1H_R016
+				<id>Sword1H_R016</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				Bow1H_R015
+				<id>Bow1H_R015</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear2H_R017
+				<id>Spear2H_R017</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				Shield1H_R016
+				<id>Shield1H_R016</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear2H_U016
+				<id>Spear2H_U016</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				Bow1H_U012_VR
+				<id>Bow1H_U012_VR</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 		</or>

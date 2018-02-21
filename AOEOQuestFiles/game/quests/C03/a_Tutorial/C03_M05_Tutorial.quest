@@ -59,15 +59,15 @@
 	<rewards visible="true">
 		<xp visible="true">100</xp>
 		<trait visible="true">
-			ArmorClth_R003
+			<id>ArmorClth_R003</id>
 			<traitlevel>5</traitlevel>
 		</trait>
 		<trait visible="true">
-			ArmorBldg_U013
+			<id>ArmorBldg_U013</id>
 			<traitlevel>5</traitlevel>
 		</trait>
 		<trait visible="true">
-			Gear_U017
+			<id>Gear_U017</id>
 			<traitlevel>5</traitlevel>
 		</trait>
 		<protip visible="false" proto="Ce_Cap_Warehouse03Starting">TIP_Shared_FirstNewGear</protip>

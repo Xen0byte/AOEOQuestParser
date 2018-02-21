@@ -150,27 +150,27 @@
 		</capitalresource>
 		<or visible="true">
 			<trait visible="true">
-				Axe2H_R017_SR
+				<id>Axe2H_R017_SR</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				Sling2H_R003
+				<id>Sling2H_R003</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear2H_R017
+				<id>Spear2H_R017</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				Scepter2H_R008
+				<id>Scepter2H_R008</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear2H_U016
+				<id>Spear2H_U016</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				Bow1H_U012_VR
+				<id>Bow1H_U012_VR</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 		</or>

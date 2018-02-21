@@ -48,7 +48,7 @@ namespace AOEOQuestParser
                 targets(currentQuestFile, tempFile);
                 questreturners(currentQuestFile, tempFile);
                 prereqs(currentQuestFile, tempFile);
-                //rewards(currentQuestFile, tempFile); ---> SUPER BROKEN
+                rewards(currentQuestFile, tempFile);
                 secondaryrewards(currentQuestFile, tempFile);
                 diplomacysettings(currentQuestFile, tempFile);
                 #endregion
@@ -670,7 +670,9 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
-        // Writes the rewards element and all it's descendants as a direct child of the root element. ---> NEEDS MORE WORK (Currently Partially Broken)
+        // Writes the rewards element and all it's descendants as a direct child of the root element.
+        // The regex for finding broken traits is: <trait visible="true">(\s+)(\w+)(\s+)<traitlevel>
+        // The regex for replacing broken traits is: <trait visible="true">\1<id>\2</id>\3<traitlevel>
         public static void rewards(string currentQuestFile, string tempFile)
         {
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
@@ -695,7 +697,7 @@ namespace AOEOQuestParser
                     newRewards.Add(new XAttribute(attribute.Name.ToString(), attribute.Value.ToString()));
                 }
 
-                foreach (XElement descendant in reward.Descendants())
+                foreach (XElement descendant in reward.Elements())
                 {
                     if (descendant.Descendants().Count() == 0 && descendant.Parent.Name.ToString() == "rewards" && descendant.Value.ToString() != "")
                     {
@@ -707,6 +709,10 @@ namespace AOEOQuestParser
                         }
 
                         if (descendant.Name.ToString() == "protip")
+                        {
+                            nodescendants.Add(new XAttribute("tip", descendant.Value.ToString()));
+                        }
+                        else if (descendant.Name.ToString() == "enableprotip")
                         {
                             nodescendants.Add(new XAttribute("tip", descendant.Value.ToString()));
                         }
@@ -740,7 +746,7 @@ namespace AOEOQuestParser
                         }
                         else if (descendant.Name.ToString() == "trait")
                         {
-                            nodescendants.Add(new XAttribute("item", descendant.Value.ToString()));
+                            nodescendants.Add(new XAttribute("id", descendant.Value.ToString()));
                         }
                         else if (descendant.Name.ToString() == "gamecurrency")
                         {
@@ -763,15 +769,7 @@ namespace AOEOQuestParser
                         }
                     }
 
-                    else if (descendant.Descendants().Count() > 0 && descendant.Parent.Name.ToString() == "rewards" && (descendant.Name.ToString() == "material" ||
-                        descendant.Name.ToString() == "capitalresource" ||
-                        descendant.Name.ToString() == "alliancepoints" ||
-                        descendant.Name.ToString() == "consumematerial" ||
-                        descendant.Name.ToString() == "xp" ||
-                        descendant.Name.ToString() == "capitaltech" ||
-                        descendant.Name.ToString() == "questgiver" ||
-                        descendant.Name.ToString() == "gamecurrency" ||
-                        descendant.Name.ToString() == "consumable"))
+                    else if (descendant.Descendants().Count() > 0 && descendant.Parent.Name.ToString() == "rewards" && descendant.Name.ToString() != "or")
                     {
                         XElement directdescendant = new XElement(descendant.Name.ToString());
 
@@ -788,18 +786,113 @@ namespace AOEOQuestParser
                         newRewards.Add(new XElement(directdescendant));
                     }
 
-                    else if (descendant.Parent.Name.ToString() == "rewards")
+                    else if (descendant.Descendants().Count() > 0 && descendant.Parent.Name.ToString() == "rewards" && descendant.Name.ToString() == "or")
                     {
-                        if (descendant.Name.ToString() == "or")
+                        XElement newOr = new XElement(descendant.Name.ToString());
+
+                        foreach (XElement subdescendant in descendant.Elements())
                         {
-                            // do something
+                            if (subdescendant.Descendants().Count() == 0 && subdescendant.Parent.Name.ToString() == "or" && subdescendant.Value.ToString() != "")
+                            {
+                                XElement nodescendants = new XElement(subdescendant.Name.ToString());
+
+                                foreach (XAttribute attribute in subdescendant.Attributes())
+                                {
+                                    nodescendants.Add(new XAttribute(attribute.Name.ToString(), attribute.Value.ToString()));
+                                }
+
+                                if (subdescendant.Name.ToString() == "protip")
+                                {
+                                    nodescendants.Add(new XAttribute("tip", subdescendant.Value.ToString()));
+                                }
+                                else if (subdescendant.Name.ToString() == "enableprotip")
+                                {
+                                    nodescendants.Add(new XAttribute("tip", subdescendant.Value.ToString()));
+                                }
+                                else if (subdescendant.Name.ToString() == "xp")
+                                {
+                                    nodescendants.Add(new XAttribute("amount", subdescendant.Value.ToString()));
+                                }
+                                else if (subdescendant.Name.ToString() == "blueprint")
+                                {
+                                    nodescendants.Add(new XAttribute("unit", subdescendant.Value.ToString()));
+                                }
+                                else if (subdescendant.Name.ToString() == "advisor")
+                                {
+                                    nodescendants.Add(new XAttribute("unit", subdescendant.Value.ToString()));
+                                }
+                                else if (subdescendant.Name.ToString() == "loottable")
+                                {
+                                    nodescendants.Add(new XAttribute("type", subdescendant.Value.ToString()));
+                                }
+                                else if (subdescendant.Name.ToString() == "lockregion")
+                                {
+                                    nodescendants.Add(new XAttribute("region", subdescendant.Value.ToString()));
+                                }
+                                else if (subdescendant.Name.ToString() == "unlockregion")
+                                {
+                                    nodescendants.Add(new XAttribute("region", subdescendant.Value.ToString()));
+                                }
+                                else if (subdescendant.Name.ToString() == "mailreward")
+                                {
+                                    nodescendants.Add(new XAttribute("reward", subdescendant.Value.ToString()));
+                                }
+                                else if (subdescendant.Name.ToString() == "trait")
+                                {
+                                    nodescendants.Add(new XAttribute("id", subdescendant.Value.ToString()));
+                                }
+                                else if (subdescendant.Name.ToString() == "gamecurrency")
+                                {
+                                    nodescendants.Add(new XAttribute("type", subdescendant.Value.ToString()));
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\n" + "[ERROR] The rewards\\" + subdescendant.Name.ToString() + " element has not been fully processed.");
+                                    Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                }
+
+                                newOr.Add(new XElement(nodescendants));
+                            }
+
+                            else if (subdescendant.Descendants().Count() == 0 && subdescendant.Parent.Name.ToString() == "or" && subdescendant.Value.ToString() == "")
+                            {
+                                if (subdescendant.Attributes().Count() > 0)
+                                {
+                                    newOr.Add(new XElement(subdescendant));
+                                }
+                            }
+
+                            else if (subdescendant.Descendants().Count() > 0 && subdescendant.Parent.Name.ToString() == "or")
+                            {
+                                XElement directdescendant = new XElement(subdescendant.Name.ToString());
+
+                                foreach (XAttribute attribute in subdescendant.Attributes())
+                                {
+                                    directdescendant.Add(new XAttribute(attribute.Name.ToString(), attribute.Value.ToString()));
+                                }
+
+                                foreach (XElement subsubdescendant in subdescendant.Descendants())
+                                {
+                                    directdescendant.Add(new XAttribute(subsubdescendant.Name.ToString(), subsubdescendant.Value.ToString()));
+                                }
+
+                                newOr.Add(new XElement(directdescendant));
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("\n" + "[ERROR] The rewards\\or\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                            }
                         }
 
-                        else
-                        {
-                            Console.WriteLine("\n" + "[ERROR] The rewards\\" + descendant.Name.ToString() + " element has not been fully processed.");
-                            Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
-                        }
+                        newRewards.Add(new XElement(newOr));
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The rewards\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
                     }
                 }
 

@@ -115,11 +115,11 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				SWORD1H_R017
+				<id>SWORD1H_R017</id>
 				<traitlevel>15</traitlevel>
 			</trait>
 			<trait visible="true">
-				Gear_R032
+				<id>Gear_R032</id>
 				<traitlevel>15</traitlevel>
 			</trait>
 		</or>

@@ -173,27 +173,27 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				Javalin2H_R016
+				<id>Javalin2H_R016</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Axe2H_R017_SR
+				<id>Axe2H_R017_SR</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Sling2H_R003
+				<id>Sling2H_R003</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear2H_R017
+				<id>Spear2H_R017</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Shield1H_U017
+				<id>Shield1H_U017</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Bow1H_U012_VR
+				<id>Bow1H_U012_VR</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

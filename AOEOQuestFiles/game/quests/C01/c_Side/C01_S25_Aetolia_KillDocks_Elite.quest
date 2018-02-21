@@ -129,27 +129,27 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				ArrowOH_R016
+				<id>ArrowOH_R016</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorClth_U017
+				<id>ArmorClth_U017</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorBldg_U014
+				<id>ArmorBldg_U014</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorPlt_U021
+				<id>ArmorPlt_U021</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorMed_U012
+				<id>ArmorMed_U012</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorLgt_U013
+				<id>ArmorLgt_U013</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

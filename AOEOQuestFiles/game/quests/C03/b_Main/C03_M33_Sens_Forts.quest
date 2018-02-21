@@ -89,28 +89,28 @@
 		</capitalresource>
 		<loottable visible="true">tables\_coreloot_celtwarrior_reward</loottable>
 		<trait visible="true">
-			Sword1H_R101
+			<id>Sword1H_R101</id>
 			<traitlevel>11</traitlevel>
 		</trait>
 		<or visible="true">
 			<trait visible="true">
-				ArmorClth_U017
+				<id>ArmorClth_U017</id>
 				<traitlevel>9</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorBldg_U014
+				<id>ArmorBldg_U014</id>
 				<traitlevel>9</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorPlt_U021
+				<id>ArmorPlt_U021</id>
 				<traitlevel>9</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorMed_U012
+				<id>ArmorMed_U012</id>
 				<traitlevel>9</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorLgt_U013
+				<id>ArmorLgt_U013</id>
 				<traitlevel>9</traitlevel>
 			</trait>
 		</or>

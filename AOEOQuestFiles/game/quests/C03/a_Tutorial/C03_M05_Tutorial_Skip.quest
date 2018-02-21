@@ -51,35 +51,35 @@
 	<rewards visible="true">
 		<xp visible="true">100</xp>
 		<trait visible="true">
-			ArmorClth_R003
+			<id>ArmorClth_R003</id>
 			<traitlevel>5</traitlevel>
 		</trait>
 		<trait visible="true">
-			ArmorBldg_U013
+			<id>ArmorBldg_U013</id>
 			<traitlevel>5</traitlevel>
 		</trait>
 		<trait visible="true">
-			Gear_U017
+			<id>Gear_U017</id>
 			<traitlevel>5</traitlevel>
 		</trait>
 		<trait visible="true">
-			Scout1H_U001
+			<id>Scout1H_U001</id>
 			<traitlevel>6</traitlevel>
 		</trait>
 		<trait visible="true">
-			ArmorLgt_U012
+			<id>ArmorLgt_U012</id>
 			<traitlevel>6</traitlevel>
 		</trait>
 		<trait visible="true">
-			ArmorPlt_U020
+			<id>ArmorPlt_U020</id>
 			<traitlevel>6</traitlevel>
 		</trait>
 		<trait visible="true">
-			FishingNet1H_U008
+			<id>FishingNet1H_U008</id>
 			<traitlevel>6</traitlevel>
 		</trait>
 		<trait visible="true">
-			Tool1H_U020
+			<id>Tool1H_U020</id>
 			<traitlevel>6</traitlevel>
 		</trait>
 		<protip visible="false" proto="Ce_Cap_Warehouse03Starting">TIP_Shared_FirstNewGear</protip>

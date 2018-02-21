@@ -116,19 +116,19 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				ArmorPlt_U021
+				<id>ArmorPlt_U021</id>
 				<traitlevel>5</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorBldg_U014
+				<id>ArmorBldg_U014</id>
 				<traitlevel>5</traitlevel>
 			</trait>
 			<trait visible="true">
-				Bow1H_U012_VR
+				<id>Bow1H_U012_VR</id>
 				<traitlevel>7</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArrowOH_R016
+				<id>ArrowOH_R016</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

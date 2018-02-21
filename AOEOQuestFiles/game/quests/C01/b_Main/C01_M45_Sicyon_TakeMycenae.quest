@@ -152,15 +152,15 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				ArmorMed_R017
+				<id>ArmorMed_R017</id>
 				<traitlevel>13</traitlevel>
 			</trait>
 			<trait visible="true">
-				Bow1H_R002_VR
+				<id>Bow1H_R002_VR</id>
 				<traitlevel>13</traitlevel>
 			</trait>
 			<trait visible="true">
-				Javelin2H_R015
+				<id>Javelin2H_R015</id>
 				<traitlevel>13</traitlevel>
 			</trait>
 		</or>

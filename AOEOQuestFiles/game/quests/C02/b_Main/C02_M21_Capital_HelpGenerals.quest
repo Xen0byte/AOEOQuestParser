@@ -152,15 +152,15 @@
 		</capitalresource>
 		<or visible="true">
 			<trait visible="true">
-				Axe2H_R016_SR
+				<id>Axe2H_R016_SR</id>
 				<traitlevel>11</traitlevel>
 			</trait>
 			<trait visible="true">
-				Scepter2H_R015
+				<id>Scepter2H_R015</id>
 				<traitlevel>11</traitlevel>
 			</trait>
 			<trait visible="true">
-				Sling2H_R016
+				<id>Sling2H_R016</id>
 				<traitlevel>11</traitlevel>
 			</trait>
 		</or>

@@ -132,15 +132,15 @@
 		<blueprint visible="true">CeltDelphiTemple</blueprint>
 		<or visible="true">
 			<trait visible="true">
-				Warpaint_E101
+				<id>Warpaint_E101</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Warpaint_E102
+				<id>Warpaint_E102</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Warpaint_E103
+				<id>Warpaint_E103</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

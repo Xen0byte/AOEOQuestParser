@@ -138,39 +138,39 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				Spear1H_R003
+				<id>Spear1H_R003</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear2H_R004
+				<id>Spear2H_R004</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Gear_Siege_R003
+				<id>Gear_Siege_R003</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				RamHead2H_R003
+				<id>RamHead2H_R003</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Gear_Prst_R002
+				<id>Gear_Prst_R002</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				FishingNet1H_R001
+				<id>FishingNet1H_R001</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Ballista2H_R001
+				<id>Ballista2H_R001</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorBldg_R003
+				<id>ArmorBldg_R003</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Shield1H_R006
+				<id>Shield1H_R006</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<advisor visible="true">Herakleides_C_II</advisor>

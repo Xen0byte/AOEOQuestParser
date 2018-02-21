@@ -127,7 +127,7 @@
 			<amount>25</amount>
 		</capitalresource>
 		<trait visible="true">
-			Tool1H_U020
+			<id>Tool1H_U020</id>
 			<traitlevel>6</traitlevel>
 		</trait>
 	</rewards>

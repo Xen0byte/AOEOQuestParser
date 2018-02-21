@@ -131,15 +131,15 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				Scepter2H_R014
+				<id>Scepter2H_R014</id>
 				<traitlevel>20</traitlevel>
 			</trait>
 			<trait visible="true">
-				Sling2H_R014
+				<id>Sling2H_R014</id>
 				<traitlevel>20</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear1H_R015
+				<id>Spear1H_R015</id>
 				<traitlevel>20</traitlevel>
 			</trait>
 		</or>

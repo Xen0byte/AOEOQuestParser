@@ -318,11 +318,11 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				FishingNet1H_R008
+				<id>FishingNet1H_R008</id>
 				<traitlevel>33</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorPlt_R001
+				<id>ArmorPlt_R001</id>
 				<traitlevel>33</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

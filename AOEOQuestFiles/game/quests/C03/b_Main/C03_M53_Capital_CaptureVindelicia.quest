@@ -186,19 +186,19 @@
 		</questgiver>
 		<or visible="true">
 			<trait visible="true">
-				Sword1H_R016_SR
+				<id>Sword1H_R016_SR</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear2H_R017
+				<id>Spear2H_R017</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Sling2H_R006
+				<id>Sling2H_R006</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArrowOH_R016
+				<id>ArrowOH_R016</id>
 				<traitlevel>12</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

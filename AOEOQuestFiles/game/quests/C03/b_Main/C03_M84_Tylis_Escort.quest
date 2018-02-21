@@ -149,7 +149,7 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				Gear_Boat_R101
+				<id>Gear_Boat_R101</id>
 				<traitlevel>19</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

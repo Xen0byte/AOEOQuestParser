@@ -345,19 +345,19 @@
 		<protip visible="false" proto="C01_R1_PortMaster">TIP_C01_NewQuests_PortMaster</protip>
 		<or visible="true">
 			<trait visible="true">
-				Sword1H_R016_SR
+				<id>Sword1H_R016_SR</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Bow1H_R015
+				<id>Bow1H_R015</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Shield1H_U017
+				<id>Shield1H_U017</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear2H_U016
+				<id>Spear2H_U016</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 		</or>

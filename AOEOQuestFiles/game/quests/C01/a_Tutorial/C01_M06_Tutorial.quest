@@ -154,11 +154,11 @@
 			<amount>50</amount>
 		</capitalresource>
 		<trait visible="true">
-			Scout1H_U001
+			<id>Scout1H_U001</id>
 			<traitlevel>6</traitlevel>
 		</trait>
 		<trait visible="true">
-			ArmorLgt_U012
+			<id>ArmorLgt_U012</id>
 			<traitlevel>6</traitlevel>
 		</trait>
 		<enableprotip visible="false">TIP_UI_TechTree_FirstAgeUp</enableprotip>

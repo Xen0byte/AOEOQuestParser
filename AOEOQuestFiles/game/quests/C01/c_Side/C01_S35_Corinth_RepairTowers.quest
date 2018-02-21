@@ -154,7 +154,7 @@
 		<loottable visible="true">general</loottable>
 		<loottable visible="true">general</loottable>
 		<trait visible="true">
-			Scout1H_R001
+			<id>Scout1H_R001</id>
 			<traitlevel>13</traitlevel>
 		</trait>
 	</rewards>

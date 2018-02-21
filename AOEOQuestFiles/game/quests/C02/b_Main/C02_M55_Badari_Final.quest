@@ -199,15 +199,15 @@
 		</capitalresource>
 		<or visible="true">
 			<trait visible="true">
-				Spear1H_R001
+				<id>Spear1H_R001</id>
 				<traitlevel>12</traitlevel>
 			</trait>
 			<trait visible="true">
-				Shield1H_R001
+				<id>Shield1H_R001</id>
 				<traitlevel>12</traitlevel>
 			</trait>
 			<trait visible="true">
-				Bow1H_R001_VR
+				<id>Bow1H_R001_VR</id>
 				<traitlevel>12</traitlevel>
 			</trait>
 		</or>

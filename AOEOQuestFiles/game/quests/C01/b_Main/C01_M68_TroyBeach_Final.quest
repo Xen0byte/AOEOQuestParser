@@ -176,11 +176,11 @@
 		<blueprint visible="true">GreekTrojanHorse</blueprint>
 		<or visible="true">
 			<trait visible="true">
-				ARROWOH_R014
+				<id>ARROWOH_R014</id>
 				<traitlevel>18</traitlevel>
 			</trait>
 			<trait visible="true">
-				SHIELD1H_R017
+				<id>SHIELD1H_R017</id>
 				<traitlevel>18</traitlevel>
 			</trait>
 		</or>

@@ -73,15 +73,15 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				ArmorLgt_R017
+				<id>ArmorLgt_R017</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Gear_R031
+				<id>Gear_R031</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				ArmorClth_R016
+				<id>ArmorClth_R016</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

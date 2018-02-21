@@ -131,19 +131,19 @@
 		</questgiver>
 		<or visible="true">
 			<trait visible="true">
-				Axe2H_R017_SR
+				<id>Axe2H_R017_SR</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Sling2H_R003
+				<id>Sling2H_R003</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Shield1H_U017
+				<id>Shield1H_U017</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear2H_U016
+				<id>Spear2H_U016</id>
 				<traitlevel>10</traitlevel>
 			</trait>
 		</or>

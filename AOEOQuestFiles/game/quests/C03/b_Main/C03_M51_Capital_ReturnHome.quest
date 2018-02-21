@@ -81,11 +81,11 @@
 		</capitalresource>
 		<or visible="true">
 			<trait visible="true">
-				Spear2H_U101
+				<id>Spear2H_U101</id>
 				<traitlevel>13</traitlevel>
 			</trait>
 			<trait visible="true">
-				Shield1H_U101
+				<id>Shield1H_U101</id>
 				<traitlevel>13</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

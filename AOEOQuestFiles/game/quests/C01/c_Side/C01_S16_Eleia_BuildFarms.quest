@@ -124,7 +124,7 @@
 		<loottable visible="true">general</loottable>
 		<loottable visible="true">general</loottable>
 		<trait visible="true">
-			Tool1H_E010
+			<id>Tool1H_E010</id>
 			<traitlevel>13</traitlevel>
 		</trait>
 	</rewards>

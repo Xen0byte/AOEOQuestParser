@@ -236,6 +236,7 @@ namespace AOEOQuestParser
         {
             List<string> allInstancesOfElement = new List<string>();
             List<string> ancestorsOfElement = new List<string>();
+            List<string> childrenOfElement = new List<string>();
             XElement mostComplexElement = new XElement("null");
             int highestComplexity = 0;
             string fileFound = "";
@@ -268,6 +269,14 @@ namespace AOEOQuestParser
                             if (!ancestorsOfElement.Contains(element.Ancestors().First().Name.ToString()))
                             {
                                 ancestorsOfElement.Add(element.Ancestors().First().Name.ToString());
+                            }
+                        }
+
+                        foreach (XElement child in element.Elements())
+                        {
+                            if (!childrenOfElement.Contains(child.Name.ToString()))
+                            {
+                                childrenOfElement.Add(child.Name.ToString());
                             }
                         }
                     }
@@ -305,6 +314,22 @@ namespace AOEOQuestParser
                     else
                     {
                         Console.Write("The selected element is the root element. It has no ancestors.");
+                    }
+                }
+
+                Console.WriteLine("\n");
+                Console.WriteLine("[DEBUG] All Direct Children Of Element: " + elementSelected);
+                Console.WriteLine("---------------------------------------");
+
+                foreach (string child in childrenOfElement)
+                {
+                    if (childrenOfElement.Count() > 0)
+                    {
+                        Console.Write(child + " ");
+                    }
+                    else
+                    {
+                        Console.Write("The selected element has no children.");
                     }
                 }
 

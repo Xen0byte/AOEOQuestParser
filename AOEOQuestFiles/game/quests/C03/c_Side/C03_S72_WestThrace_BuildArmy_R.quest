@@ -139,19 +139,19 @@
 		<loottable visible="true">general</loottable>
 		<or visible="true">
 			<trait visible="true">
-				Sling2H_R006
+				<id>Sling2H_R006</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Spear2H_R005
+				<id>Spear2H_R005</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Sword1H_R006
+				<id>Sword1H_R006</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<trait visible="true">
-				Axe2H_R003
+				<id>Axe2H_R003</id>
 				<traitlevel>23</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

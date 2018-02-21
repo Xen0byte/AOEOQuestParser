@@ -53,11 +53,11 @@
 		</capitalresource>
 		<or visible="true">
 			<trait visible="true">
-				ArmorLgt_R020
+				<id>ArmorLgt_R020</id>
 				<traitlevel>25</traitlevel>
 			</trait>
 			<trait visible="true">
-				Gear_Bldg_R014
+				<id>Gear_Bldg_R014</id>
 				<traitlevel>25</traitlevel>
 			</trait>
 			<loottable visible="true">general</loottable>

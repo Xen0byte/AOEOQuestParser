@@ -154,7 +154,7 @@
 		<loottable visible="true">general</loottable>
 		<loottable visible="true">general</loottable>
 		<trait visible="true">
-			Tool1H_E011
+			<id>Tool1H_E011</id>
 			<traitlevel>12</traitlevel>
 		</trait>
 		<blueprint visible="true">Van_LargePyramid</blueprint>
