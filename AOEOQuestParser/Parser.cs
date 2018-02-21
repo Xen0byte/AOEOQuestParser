@@ -22,6 +22,7 @@ namespace AOEOQuestParser
         static int rewardCounter = 0;
         static int secondaryrewardCounter = 0;
         static int diplomacysettingsCounter = 0;
+        static int objectiveCounter = 0;
         #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
@@ -51,6 +52,7 @@ namespace AOEOQuestParser
                 rewards(currentQuestFile, tempFile);
                 secondaryrewards(currentQuestFile, tempFile);
                 diplomacysettings(currentQuestFile, tempFile);
+                objectives(currentQuestFile, tempFile);
                 #endregion
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
@@ -63,7 +65,7 @@ namespace AOEOQuestParser
             Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | " + timereffectsCounter + " timereffects");
             Console.WriteLine(victoryconditionsCounter + " victoryconditions | " + randommapCounter + " randommaps | " + onacceptCounter + " onaccepts | " + questgiverCounter + " questgivers");
             Console.WriteLine(targetCounter + " targets | " + questreturnerCounter + " questreturners | " + prereqCounter + " prereqs | " + rewardCounter + " rewards");
-            Console.WriteLine(secondaryrewardCounter + " secondaryrewards | " + diplomacysettingsCounter + " diplomacysettings | ");
+            Console.WriteLine(secondaryrewardCounter + " secondaryrewards | " + diplomacysettingsCounter + " diplomacysettings | " + objectiveCounter + " objectives | ");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -143,12 +145,13 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
+        // Writes the objectives element and all it's descendants as a direct child of the root element.
         public static void objectives(string currentQuestFile, string tempFile)
         {
             XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
             List<XElement> objectives = new List<XElement>();
-            List<XElement> subElements = new List<XElement>();
+            List<XElement> descriptions = new List<XElement>();
             List<XElement> elementsToWrite = new List<XElement>();
 
             foreach (XElement element in questFileInstance.Descendants())
@@ -161,12 +164,56 @@ namespace AOEOQuestParser
 
             foreach (XElement objective in objectives)
             {
-                //nodesc
-                //desc
-                //and|or
-                //strip out value
-                //and|or only have description and values
+                foreach (XElement descendant in objective.Descendants())
+                {
+                    if (descendant.Descendants().Count() > 0 && descendant.Name.ToString() != "values" && descendant.Name.ToString() != "or" && descendant.Name.ToString() != "and")
+                    {
+                        foreach (XElement subdescendant in descendant.Descendants())
+                        {
+                            descendant.Add(new XAttribute(subdescendant.Name.ToString(), subdescendant.Value.ToString()));
+                        }
+
+                        descendant.RemoveNodes();
+                    }
+
+                    else if (descendant.Descendants().Count() == 0 && descendant.Name.ToString() == "description" && descendant.Value.ToString() != "" && (descendant.Parent.Name.ToString() == "objectives" || descendant.Parent.Name.ToString() == "or" || descendant.Parent.Name.ToString() == "and"))
+                    {
+                        descendant.Parent.Add(new XAttribute(descendant.Name.ToString(), descendant.Value.ToString()));
+                    }
+
+                    else if (descendant.Name.ToString() != "values" && descendant.Name.ToString() != "or" && descendant.Name.ToString() != "and" && descendant.Name.ToString() != "description")
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The objectives\\*\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
+                    }
+                }
+
+                foreach (XElement descendant in objective.Descendants())
+                {
+                    if (descendant.Name.ToString() == "description")
+                    {
+                        descriptions.Add(descendant);
+                    }
+                }
+
+                foreach (XElement description in descriptions)
+                {
+                    description.Remove();
+                }
+
+                elementsToWrite.Add(objective);
             }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                objectiveCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         // Writes the onaccept element and all it's descendants as a direct child of the root element.
@@ -227,7 +274,7 @@ namespace AOEOQuestParser
                             else if (descendant.Parent.Name.ToString() != "questgiver")
                             {
                                 Console.WriteLine("\n" + "[ERROR] The onaccept\\questgiver\\" + descendant.Name.ToString() + " element has not been fully processed.");
-                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                             }
                         }
 
@@ -247,7 +294,7 @@ namespace AOEOQuestParser
                     else if (subElement.Parent.Name.ToString() == "onaccept" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "questgiver")
                     {
                         Console.WriteLine("\n" + "[ERROR] The onaccept\\" + subElement.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
                 }
 
@@ -352,7 +399,7 @@ namespace AOEOQuestParser
                     else if (subElement.Parent.Name.ToString() == "playersettings" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "aiflagvariables" && subElement.Name.ToString() != "aislidervariables")
                     {
                         Console.WriteLine("\n" + "[ERROR] The playersettings\\" + subElement.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
                 }
 
@@ -462,7 +509,7 @@ namespace AOEOQuestParser
                         subElement.Name.ToString() != "and"))
                     {
                         Console.WriteLine("\n" + "[ERROR] The prereqs\\*\\" + subElement.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
                 }
 
@@ -518,7 +565,7 @@ namespace AOEOQuestParser
                     else if (subElement.Parent.Name.ToString() == "questgivers" && subElement.Descendants().Count() > 0)
                     {
                         Console.WriteLine("\n" + "[ERROR] The questgivers\\" + subElement.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
                 }
 
@@ -585,7 +632,7 @@ namespace AOEOQuestParser
                     else if (subElement.Parent.Name.ToString() == "questreturners" && subElement.Descendants().Count() > 0)
                     {
                         Console.WriteLine("\n" + "[ERROR] The questreturners\\" + subElement.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
                 }
 
@@ -776,7 +823,7 @@ namespace AOEOQuestParser
                         else
                         {
                             Console.WriteLine("\n" + "[ERROR] The rewards\\" + descendant.Name.ToString() + " element has not been fully processed.");
-                            Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                            Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                         }
 
                         newRewards.Add(new XElement(nodescendants));
@@ -869,7 +916,7 @@ namespace AOEOQuestParser
                                 else
                                 {
                                     Console.WriteLine("\n" + "[ERROR] The rewards\\" + subdescendant.Name.ToString() + " element has not been fully processed.");
-                                    Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                    Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                                 }
 
                                 newOr.Add(new XElement(nodescendants));
@@ -903,7 +950,7 @@ namespace AOEOQuestParser
                             else
                             {
                                 Console.WriteLine("\n" + "[ERROR] The rewards\\or\\" + descendant.Name.ToString() + " element has not been fully processed.");
-                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                             }
                         }
 
@@ -913,7 +960,7 @@ namespace AOEOQuestParser
                     else
                     {
                         Console.WriteLine("\n" + "[ERROR] The rewards\\" + descendant.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
                 }
 
@@ -972,7 +1019,7 @@ namespace AOEOQuestParser
                                 else
                                 {
                                     Console.WriteLine("\n" + "[ERROR] The secondaryrewards\\*\\" + descendant.Name.ToString() + " element has not been fully processed.");
-                                    Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                    Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                                 }
                             }
 
@@ -1058,7 +1105,7 @@ namespace AOEOQuestParser
                     else if (subElement.Parent.Name.ToString() == "targets" && subElement.Value.ToString() != "" && (subElement.Name.ToString() != "grouping" && subElement.Name.ToString() != "protounit"))
                     {
                         Console.WriteLine("\n" + "[ERROR] The targets\\" + subElement.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
                 }
 
@@ -1076,7 +1123,7 @@ namespace AOEOQuestParser
                             else if (descendant.Parent.Name.ToString() == "grouping" && descendant.Descendants().Count() > 0)
                             {
                                 Console.WriteLine("\n" + "[ERROR] The targets\\grouping\\" + descendant.Name.ToString() + " element has not been fully processed.");
-                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                             }
                         }
 
@@ -1106,7 +1153,7 @@ namespace AOEOQuestParser
                             else if (descendant.Parent.Name.ToString() == "protounit" && descendant.Descendants().Count() > 0 && descendant.Name.ToString() != "overrides")
                             {
                                 Console.WriteLine("\n" + "[ERROR] The targets\\protounit\\" + descendant.Name.ToString() + " element has not been fully processed.");
-                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                             }
                         }
 
@@ -1162,7 +1209,7 @@ namespace AOEOQuestParser
                                                     else if (subSubSubSubSubElement.Parent.Name.ToString() == "overrides" && subSubSubSubSubElement.Descendants().Count() > 0)
                                                     {
                                                         Console.WriteLine("\n" + "[ERROR] The targets\\random\\targets\\protounit\\overrides\\" + subSubSubSubElement.Name.ToString() + " element has not been fully processed.");
-                                                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                                                     }
                                                 }
 
@@ -1173,7 +1220,7 @@ namespace AOEOQuestParser
                                             else if (subSubSubSubElement.Parent.Name.ToString() == "protounit" && subSubSubSubElement.Descendants().Count() > 0 && subSubSubSubElement.Value.ToString() != "" && subSubSubSubElement.Name.ToString() != "overrides")
                                             {
                                                 Console.WriteLine("\n" + "[ERROR] The targets\\random\\targets\\" + subSubSubSubElement.Name.ToString() + " element has not been fully processed.");
-                                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                                Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                                             }
                                         }
 
@@ -1211,7 +1258,7 @@ namespace AOEOQuestParser
                             else if (subSubElement.Parent.Name.ToString() == "random" && subSubElement.Value.ToString() != "" && (subSubElement.Name.ToString() != "unitprobability" && subSubElement.Name.ToString() != "targets"))
                             {
                                 Console.WriteLine("\n" + "[ERROR] The targets\\random\\" + subSubElement.Name.ToString() + " element has not been fully processed.");
-                                Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                                Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                             }
                         }
 
@@ -1303,7 +1350,7 @@ namespace AOEOQuestParser
                     else if (subElement.Parent.Name.ToString() == "timer" && subElement.Descendants().Count() > 0 && subElement.Name.ToString() != "events")
                     {
                         Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
                 }
 
@@ -1393,7 +1440,7 @@ namespace AOEOQuestParser
                     else if (subElement.Parent.Name.ToString() == "spawnunit" && subElement.Descendants().Count() > 0)
                     {
                         Console.WriteLine("\n" + "[ERROR] The timer\\" + subElement.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
 
                     if (subElement.Parent.Name.ToString() == "spawngroup" && subElement.Descendants().Count() == 0 && subElement.Value != "")
@@ -1403,7 +1450,7 @@ namespace AOEOQuestParser
                     else if (subElement.Parent.Name.ToString() == "spawngroup" && subElement.Descendants().Count() > 0)
                     {
                         Console.WriteLine("\n" + "[ERROR] The timereffect\\" + subElement.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
                 }
 
@@ -1484,7 +1531,7 @@ namespace AOEOQuestParser
                     else if (subElement.Parent.Name.ToString() == "victoryconditions" && (subElement.Descendants().Count() > 0 || subElement.Name.ToString() != "victorycondition"))
                     {
                         Console.WriteLine("\n" + "[ERROR] The victoryconditions\\" + subElement.Name.ToString() + " element has not been fully processed.");
-                        Console.WriteLine("[FILE]: " + currentQuestFile + "\n");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
                     }
                 }
 
