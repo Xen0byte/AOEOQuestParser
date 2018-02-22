@@ -1,0 +1,55 @@
+<quest uniqueid="387" version="46" displayname="$$646$$" level="16" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4958$$" completiontext="$$4957$$" inprogresstext="$$4956$$" summarytext="$$4954$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.25" maplocationy="0.275" mapmarker="QuestDefault" mappage="Libya" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2287$$" script="CORE\Turtle_Moderate" dataset="C02\C02_Libyan_T2" cooponly="false" startingfood="300" startingwood="200" startinggold="100" startingstone="0" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2288$$" dataset="C02\C02_Libyan_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\C02\C02_Side_Admiral_FindFirstMate" randommap="true" numplayers="4" mapregionname="Egyptian Marsh" mapsizename="Large">
+    <mapvariables>
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R3_LostAdmiral" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="C02\C02_P1Base_WithCorral" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="4" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="true" name="Lib1" count="1" team="2" area="Quest_Area_A" groupfilename="C02\C02_Egypt_LargeBase01" rottype="Rotate270" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Lib2" count="1" team="2" area="Quest_Area_B" groupfilename="Shared\Shared_Terrain_DesertCliff_01" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Lib3" count="1" team="2" area="Quest_Area_C" groupfilename="Shared\Shared_Terrain_DesertCliff_02" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="true" name="First_Mate" protoname="First_Mate" count="1" team="3" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" animfile="NPC\CivNubian\Units\Infantry\Warrior\Warrior.xml" displaynameid="56424" icon="UserInterface\Icons\Units\NubianSpearman64_ua" portraiticon="UserInterface\Icons\Units\AvatarNubianSpearman_ua" soundfile="NPC_Nubian_Warrior" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Guards" protoname="guards" count="10" team="3" area="Quest_Area_A" usequesttargetindicator="false">
+      <overrides parent="Eg_Arc_NomadArc_E" displaynameid="57716" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R3_LostAdmiral" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="388" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="15000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitinarea id="2" description="$$2609$$" area="Player1" type="First_Mate" count="1" radius="20" aidefend="true" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

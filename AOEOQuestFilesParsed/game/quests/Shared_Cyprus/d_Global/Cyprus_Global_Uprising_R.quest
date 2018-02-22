@@ -1,0 +1,35 @@
+<quest uniqueid="3029" version="96" displayname="$$6088$$" level="-1" difficultycoloroverride="1" repeatable="true" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$6503$$" completiontext="$$6506$$" inprogresstext="$$6505$$" summarytext="$$6572$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.1" maplocationy="0.1" mapmarker="Blank" mappage="Cyprus" elitespawnchance="0" linkedquestid="0" questbasescale="3">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="CyprusTrader" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="CyprusTrader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="3001" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <loottable visible="true" type="general" />
+    <or>
+      <material visible="true" materialname="4ArchimedesTool" count="4" />
+      <material visible="true" materialname="4ArcticFoxFur" count="4" />
+      <material visible="true" materialname="4FlawlessDiamond" count="4" />
+      <material visible="true" materialname="4GuayacanPlank" count="4" />
+      <material visible="true" materialname="4IlluminatedCodex" count="4" />
+      <material visible="true" materialname="4ObsidianBlock" count="4" />
+      <material visible="true" materialname="4PhilosopherStone" count="4" />
+      <material visible="true" materialname="4PureGoldIngot" count="4" />
+      <material visible="true" materialname="4SilkCloth" count="4" />
+      <material visible="true" materialname="4WhiteHoney" count="4" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <kill id="1" description="$$6501$$" type="CyprusGeneral" count="20" includeconversion="true" onlycountelites="false" />
+    </values>
+  </objectives>
+</quest>

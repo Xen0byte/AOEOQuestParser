@@ -1,0 +1,54 @@
+<quest uniqueid="102008" version="134" displayname="$$8385$$" level="0" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" description="$$8762$$" completiontext="$$8466$$" inprogresstext="$$8763$$" summarytext="$$8468$$" repeatableduration="12" canabandon="true" hiddenquest="true" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="SkirmishMode" customloadscreen="loadscreentips\randoms\load_random_upsell_b02.xml" maplocationx="0.5" maplocationy="0.59" mapmarker="QuestDefault" mappage="Cyprus" elitespawnchance="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="1" color="7" tributablebehavior="Default" playertype="Computer" personality="$$8317$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Computer" personality="$$8318$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Computer" personality="$$8319$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8320$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8321$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="7" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8322$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="8" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8323$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="core\b02\b02_prototypedemo" randommap="true" numplayers="8" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="Settings-MapTypeDropdown" type="Int" value="0" />
+      <variable name="Settings-MapResourcesDropdown" type="Int" value="4" />
+      <variable name="Settings-FogOfWarDropdown" type="Int" value="2" />
+      <variable name="Settings-StartingResourcesDropdown" type="Int" value="2" />
+      <variable name="AIDifficulty" type="Int" value="1" />
+      <variable name="AIStrategy" type="Int" value="1" />
+      <variable name="AIFocus" type="Int" value="1" />
+      <variable name="RewardsOn" type="Int" value="1" />
+      <variable name="Settings-MapSizeDropdown" type="Int" value="2" />
+      <variable name="Settings-VictoryConditionDropdownDropdown" type="Int" value="0" />
+      <variable name="Settings-NumHumanTeamPlayers" type="Int" value="4" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B02_R1_SkirmishHall" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B02_R1_KingSkirmish" />
+  </questreturners>
+  <prereqs>
+    <values />
+  </prereqs>
+  <rewards visible="true">
+    <protip visible="false" tip="TIP_B02_DemoTurnIn" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableBanditArcher_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableBanditHippikon_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableBanditHorseHunter_U" count="3" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="VICTORY" autocomplete="false" />
+          <dummy id="3" objectivename="LOSS" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

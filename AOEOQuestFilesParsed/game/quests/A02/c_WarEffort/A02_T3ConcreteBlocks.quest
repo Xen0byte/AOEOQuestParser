@@ -1,0 +1,25 @@
+<quest uniqueid="1289" version="33" displayname="$$9949$$" level="0" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceCouncilOfImhotep" questtype="Global" description="$$9950$$" completiontext="$$9884$$" inprogresstext="$$9883$$" summarytext="$$9882$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="A02_AllianceCollector" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="A02_AllianceCollector" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="40" max="99" />
+      <questcomplete id="1200" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="4" />
+    <consumematerial visible="true" materialname="3ConcreteBlock" count="50" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <collectmaterial id="1" description="$$9951$$" type="3ConcreteBlock" amount="50" includeexisting="true" />
+    </values>
+  </objectives>
+</quest>

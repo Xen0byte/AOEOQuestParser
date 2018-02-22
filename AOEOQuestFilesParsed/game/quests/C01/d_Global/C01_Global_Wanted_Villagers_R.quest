@@ -1,0 +1,29 @@
+<quest uniqueid="153" version="19" displayname="$$726$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$4074$$" completiontext="$$728$$" inprogresstext="$$1599$$" summarytext="$$3542$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="region" type="String" value="Greek Inland" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_Oracle" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R1_Oracle" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="58" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <convertunit id="1" description="$$2342$$" type="UnitTypeVillager1" count="30" />
+    </values>
+  </objectives>
+</quest>

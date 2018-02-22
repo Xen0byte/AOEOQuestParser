@@ -1,0 +1,57 @@
+<quest uniqueid="12001" version="61" displayname="$$367$$" level="1" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$5280$$" completiontext="$$4631$$" inprogresstext="$$9155$$" summarytext="$$2105$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c02_r1m01.xml" maplocationx="0.431" maplocationy="0.242" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2253$$" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2254$$" dataset="c02\c02_vanilla_t0" cooponly="false" startingfood="-1" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="4" team="4" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2254$$" dataset="c02\c02_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared\Shared_FirstQuestLoader" randommap="true" numplayers="4" mapregionname="Egyptian Marsh" lightsetname="Morning" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_M01_MoveAttack" />
+      <variable name="firstProTip" type="String" value="TIP_C02_FirstQuest_QG" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" value="Morning" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_KingNarmer" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C02_R1_KingNarmer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="700" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="15" />
+    <capitaltech visible="true" captechid="270" />
+    <capitaltech visible="true" captechid="269" />
+    <protip visible="false" tip="TIP_C02_QuestTechUnlock_TC_Villagers" />
+    <enableprotip visible="false" tip="TIP_UI_Workshop_FirstUse" />
+    <enableprotip visible="false" tip="TIP_UI_QuestMap_FirstUse" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$2366$$" type="NPC_Badari_Axeman" count="8" includeconversion="true" onlycountelites="false" />
+              <unitdiscovered id="4" description="$$3731$$" type="AbstractNugget" count="2" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

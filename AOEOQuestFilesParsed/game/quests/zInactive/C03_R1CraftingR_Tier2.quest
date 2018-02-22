@@ -1,0 +1,60 @@
+<quest uniqueid="13302" version="106" displayname="$$4832$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$7514$$" completiontext="$$4827$$" inprogresstext="$$4825$$" summarytext="$$4826$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.26" mapmarker="QuestRepeatable" mappage="C03_Celtica" elitespawnchance="0.1" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" script="CORE\Rush_Moderate" dataset="C03\C03_Barbarian_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2251$$" dataset="C03\C03_Vanilla_T0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" dataset="C03\C03_Barbarian_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared\Shared_CraftingR_Tier2" randommap="true" numplayers="4" mapregionname="Celtic Valley" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenariofile" type="String" value="Shared\Shared_CraftingR_Tier2" />
+      <variable name="region" type="String" value="Celtic Valley" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R1_GuildMaster" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="Shared_Start_For_Crafting_Quest" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Carts01" protoname="Qst_MerchantCart" count="5" team="3" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57661" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R1_GuildMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <level min="16" max="99" />
+      <questcomplete id="13404" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQShort" />
+    <or>
+      <material visible="true" materialname="2BronzeIngot" count="100" />
+      <material visible="true" materialname="2OakPlank" count="100" />
+      <material visible="true" materialname="2GraniteBlock" count="100" />
+      <material visible="true" materialname="2OliveOil" count="100" />
+      <material visible="true" materialname="2Leather" count="100" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitinarea id="2" description="$$3904$$" area="Player1" type="Qst_MerchantCart" count="5" radius="25" aidefend="true" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

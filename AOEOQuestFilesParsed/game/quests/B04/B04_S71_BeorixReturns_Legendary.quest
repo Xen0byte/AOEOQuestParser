@@ -1,0 +1,133 @@
+<quest uniqueid="104971" version="74" displayname="$$12963$$" level="43" difficultycoloroverride="2" repeatable="true" offertype="eOfferBooster4" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$13109$$" completiontext="$$12843$$" inprogresstext="$$12841$$" summarytext="$$12722$$" repeatableduration="144" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.65" maplocationy="0.6" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="1" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12698$$" script="core\ramp_moderate" dataset="c07\C07_CoreRush_T4" cooponly="false" startingfood="-1" startingwood="2000" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="NavyBias" value="-1" />
+      <aivariable key="InfantryBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12698$$" script="core\ramp_moderate" dataset="c07\C07_CoreRush_T4" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12698$$" dataset="c07\C07_CoreRush_T4" cooponly="false" startingfood="-1" startingwood="2000" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="NavyBias" value="-1" />
+      <aivariable key="CavalryBias" value="0.6" />
+      <aivariable key="ArcherBias" value="0.5" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12698$$" dataset="c07\C07_CoreRush_T4" cooponly="false" startingfood="-1" startingwood="2000" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="NavyBias" value="-1" />
+      <aivariable key="CavalryBias" value="0.6" />
+      <aivariable key="ArcherBias" value="0.5" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="Core\B04\B04_Arc4_1_LandNaval" randommap="true" numplayers="6" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="B04/B04_Arc4_1_LandNaval" />
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="104971" />
+      <variable name="P4AddMarketManager" type="Bool" value="true" />
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="P2AllowTCBuilding" type="Bool" value="false" />
+      <variable name="P4AllowTCBuilding" type="Bool" value="false" />
+      <variable name="bIsLEGENDARY" type="Bool" value="true" />
+      <variable name="P2AllowResourcePatrol" type="Bool" value="false" />
+      <variable name="P4AllowResourcePatrol" type="Bool" value="false" />
+      <variable name="OptionalRestrictAge4" type="Bool" value="true" />
+      <variable name="OptionalRestrictAge3" type="Bool" value="true" />
+      <variable name="QuestID" type="Int" value="104971" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="1000000" value="Legendary_40-50_01" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="B04_PrimaryQG" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1 Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barrackstowers" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="CoopStart" count="1" team="3" area="Player2" groupfilename="shared_player3_age2_barrackstowers" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="B04_PrimaryQG" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="104051" />
+      <level min="40" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="50" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="6000" lookuptable="" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional_One">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1500" lookuptable="" />
+    <loottable visible="true" loottable="general" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <secondaryrewards visible="true" name="Optional_Two">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1500" lookuptable="" />
+    <loottable visible="true" loottable="general" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$13156$$" type="NPC_NorthernHero02" count="1" includeconversion="true" onlycountelites="false" />
+              <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="6" mustfailall="false" rewardname="Optional_One" description="$$9507$$">
+    <values>
+      <or id="7" mustfailall="false">
+        <values>
+          <dummy id="8" description="$$13105$$" objectivename="OptionalRestrictAge4" autocomplete="false" />
+          <and id="9" mustfailall="false">
+            <values>
+              <kill id="10" description="" type="NPC_NorthernHero02" count="1" includeconversion="true" onlycountelites="false" />
+              <dummy id="11" description="" objectivename="EnemiesDefeated" autocomplete="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+  <secondaryobjectives id="12" mustfailall="false" rewardname="Optional_Two" description="$$9508$$">
+    <values>
+      <or id="13" mustfailall="false">
+        <values>
+          <dummy id="14" description="$$13104$$" objectivename="OptionalRestrictAge3" autocomplete="false" />
+          <and id="15" mustfailall="false">
+            <values>
+              <kill id="16" description="" type="NPC_NorthernHero02" count="1" includeconversion="true" onlycountelites="false" />
+              <dummy id="17" description="" objectivename="EnemiesDefeated" autocomplete="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

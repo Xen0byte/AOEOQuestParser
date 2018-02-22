@@ -1,0 +1,97 @@
+<quest uniqueid="339" version="99" displayname="$$598$$" level="14" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$599$$" completiontext="$$600$$" inprogresstext="$$1521$$" summarytext="$$1522$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.73" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+      <aivariable key="ArcherBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+      <aivariable key="InfantryBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <timer time="00:15:00" hideonui="false">
+    <events>
+      <timerevent event="ArcherWave" time="00:00:01" />
+      <timerevent event="WarriorWave" time="00:00:01" />
+      <timerevent event="ArcherWave" time="00:01:00" />
+      <timerevent event="WarriorWave" time="00:02:00" />
+      <timerevent event="ArcherWave" time="00:04:00" />
+      <timerevent event="WarriorWave" time="00:04:00" />
+      <timerevent event="CamelWave" time="00:06:00" />
+      <timerevent event="CamelWave" time="00:08:00" />
+      <timerevent event="ElephantWave" time="00:10:00" />
+      <timerevent event="CamelWave" time="00:11:30" />
+      <timerevent event="ArcherWave" time="00:11:30" />
+      <timerevent event="ArcherWave" time="00:12:00" />
+      <timerevent event="ElephantWave" time="00:13:00" />
+      <timerevent event="WarriorWave" time="00:13:00" />
+      <timerevent event="WarriorWave" time="00:13:30" />
+    </events>
+  </timer>
+  <timereffects event="ArcherWave">
+    <spawnunit visible="false" count="4" placeunittype="NPC_Nubian_Archer" asplayer="2" spawntype="SpawnForPlayer" nearunittype="NPC_Nubian_TownCenter" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="WarriorWave">
+    <spawnunit visible="false" count="8" placeunittype="NPC_Nubian_Warrior" asplayer="3" spawntype="SpawnForPlayer" nearunittype="NPC_Nubian_TownCenter" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="CamelWave">
+    <spawnunit visible="false" count="8" placeunittype="Eg_Cav_CamelRider" asplayer="2" spawntype="SpawnForAllies" nearunittype="NPC_Nubian_TownCenter" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="ElephantWave">
+    <spawnunit visible="false" count="3" placeunittype="NPC_Nubian_Elephant" asplayer="3" spawntype="SpawnForAllies" nearunittype="NPC_Nubian_TownCenter" radius="10" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core\C02\C02_MultiUse_Napata" randommap="true" numplayers="4" mapregionname="Egyptian Rock" lightsetname="Afternoon" mapsizename="Large">
+    <mapvariables>
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_ChieftainMolmot" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="C02\Custom\C02_Side_NapataConquered" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="MakePlayer1Nubian" count="1" team="1" area="Player1" groupfilename="C02\Custom\C02_Side_MakeNubian" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="4" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Nubian1" count="1" team="2" area="Quest_Area_A" groupfilename="C02\Nubian\C02_Nubian_TowersBase" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Nubian2" count="1" team="3" area="Quest_Area_B" groupfilename="C02\Nubian\C02_Nubian_TowersBase" rottype="RotateRandom" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="revealer" protoname="Qst_RevealerHuge" count="1" team="2" area="Player1" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_ChieftainMolmot" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="330" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQMedium" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQMedium" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$2472$$" type="NPC_Nubian_TownCenter" owningplayerid="1" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

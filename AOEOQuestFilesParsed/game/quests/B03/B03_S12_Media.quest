@@ -1,0 +1,56 @@
+<quest uniqueid="103012" version="45" displayname="$$11385$$" level="22" repeatable="false" offertype="eOfferBooster3" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$12120$$" completiontext="$$11257$$" inprogresstext="$$11255$$" summarytext="$$11332$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.52" maplocationy="0.48" mapmarker="QuestDefault" mappage="Persia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="200" startingwood="200" startinggold="150" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11544$$" script="shared_babylon\babylon_siegetower" dataset="c06\c06_coreramp_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="200" startingwood="200" startinggold="150" startingstone="300" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11544$$" dataset="c06\c06_coreramp_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="1" color="5" tributablebehavior="Default" playertype="Computer" personality="$$11186$$" dataset="c06\c06_coreramp_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="5" mapregionname="Persian Rock" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="shared_babylon\babylon_s12_media" />
+      <variable name="region" type="String" value="Persian Rock" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_Leader" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2 Start" count="1" team="3" area="Player2" groupfilename="shared_player3_age2_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Sapper Group A" protoname="Ba_Inf_Sapper" count="6" team="1" area="Quest_Area_A" overrides="" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Sapper Group B" protoname="Ba_Inf_Sapper" count="6" team="1" area="Quest_Area_B" overrides="" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_Leader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103011" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="90000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$3707$$" type="UnitTypeBldgTownCenter" count="1" includeconversion="true" onlycountelites="false" />
+              <kill id="4" description="$$4735$$" type="UnitTypeBldgSiegeWorkshop" count="4" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

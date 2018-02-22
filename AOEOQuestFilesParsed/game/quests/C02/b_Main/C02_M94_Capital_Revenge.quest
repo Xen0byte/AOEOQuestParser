@@ -1,0 +1,93 @@
+<quest uniqueid="399" version="88" displayname="$$643$$" level="19" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5829$$" completiontext="$$6650$$" inprogresstext="$$5217$$" summarytext="$$5826$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.695" maplocationy="0.358" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2278$$" script="CORE\Rush_Hardcore" dataset="C02\C02_CoreRush_T2" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000">
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="-0.1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2279$$" script="CORE\Rush_Moderate" dataset="c02\c02_corerush_t2" cooponly="false" startingfood="0" startingwood="10000" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoAutoReveal" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.9" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2279$$" script="CORE\Boom_Moderate" dataset="c02\c02_corerush_t2" cooponly="false" startingfood="0" startingwood="10000" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoAutoReveal" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.9" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="5" mapregionname="Egyptian Rock" lightsetname="&lt;Not Specified&gt;" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R3M86_FinalRevenge" />
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="P2AttackDelayMod" type="Int" value="5" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_CitySesostris_V2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="P2" count="1" team="5" area="Player2" groupfilename="Shared_Start_BarracksTowers" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_CitySesostris_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="397" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="12" />
+    <xp visible="true" amount="75000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="250" />
+    <blueprint visible="true" unit="Van_LargeStepPyramid" />
+    <questgiver visible="false" name="C02_R1_CitySesostris_V2" status="Unavailable" />
+    <questgiver visible="false" name="C02_R1_PharoahSesostris" status="Available" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="Scepter2H_R014" traitlevel="20" />
+      <trait visible="true" id="Sling2H_R014" traitlevel="20" />
+      <trait visible="true" id="Spear1H_R015" traitlevel="20" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$2580$$" objectivename="UNUSED" autocomplete="false" />
+          <and id="3" mustfailall="false">
+            <values>
+              <reduceunitsto id="4" type="Eg_Bldg_TownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+              <reduceunitsto id="5" type="Eg_Bldg_Fortress" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+            </values>
+          </and>
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

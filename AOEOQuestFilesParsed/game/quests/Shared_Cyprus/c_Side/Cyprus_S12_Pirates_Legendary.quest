@@ -1,0 +1,126 @@
+<quest uniqueid="3032" version="138" displayname="$$9129$$" level="43" difficultycoloroverride="2" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6679$$" completiontext="$$6658$$" inprogresstext="$$6660$$" summarytext="$$6358$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.87" maplocationy="0.4" mapmarker="QuestRepeatable" mappage="Cyprus" elitespawnchance="1" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6676$$" script="CORE\Rush_Hardcore" dataset="C02\C02_Pirate_T4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-0.8" />
+      <aivariable key="NavyBias" value="1" />
+      <aivariable key="EconomyHandicap" value="0.4" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6676$$" script="CORE\Rush_Weak" dataset="C02\C02_Pirate_T4" cooponly="false" startingfood="5000" startingwood="5000" startinggold="5000" startingstone="5000">
+    <aiflagvariables>
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-0.1" />
+      <aivariable key="NavyBias" value="1" />
+      <aivariable key="EconomyHandicap" value="0.4" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6676$$" script="Custom\AIDoNothing" dataset="C02\C02_Pirate_T4" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <timer time="99:99:99" hideonui="true" />
+  <timereffects event="P2AttackBoats">
+    <spawnunit visible="true" count="1" placeunittype="Eg_Shp_Trireme" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Dock" radius="5" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P4AttackBoats">
+    <spawnunit visible="true" count="1" placeunittype="Eg_Shp_Trireme" asplayer="4" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Dock" radius="5" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P2DefendBoats">
+    <spawnunit visible="true" count="1" placeunittype="Eg_Shp_FireShip" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Dock" radius="5" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P4DefendBoats">
+    <spawnunit visible="true" count="1" placeunittype="Eg_Shp_FireShip" asplayer="4" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Dock" radius="5" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P2FishBoats">
+    <spawnunit visible="true" count="4" placeunittype="Eg_Civ_FishingBoat" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Dock" radius="5" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P4FishBoats">
+    <spawnunit visible="true" count="4" placeunittype="Eg_Civ_FishingBoat" asplayer="4" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Dock" radius="5" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P2Market">
+    <spawnunit visible="true" count="1" placeunittype="Eg_Bldg_Market" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_TownCenter" radius="100" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P4Market">
+    <spawnunit visible="true" count="1" placeunittype="Eg_Bldg_Market" asplayer="4" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_TownCenter" radius="100" useboneposition="false" />
+  </timereffects>
+  <randommap map="core\shared_cyprus\cyprus_pirates" randommap="true" numplayers="5" mapregionname="Egyptian Marsh" lightsetname="&lt;Not Specified&gt;" mapsizename="Large">
+    <mapvariables>
+      <variable name="IsREPEAT" type="Bool" value="true" />
+      <variable name="IsLEGENDARY" type="Bool" value="true" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="10000000" value="Legendary_40-50_01" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="CyprusPortMaster" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="PlayerIsland" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_barrackstowers" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="true" name="Enemy1" count="1" team="4" area="Quest_Area_B" groupfilename="shared_start_fortress" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2Island" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="true" name="Enemy2" count="1" team="2" area="Quest_Area_A" groupfilename="shared_start_fortress" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="true" forcetocenter="false" name="Enemy2COOP" protoname="Eg_Sie_Catapult" count="5" team="5" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="true" forcetocenter="false" name="EnemyCOOP" protoname="Eg_Sie_Catapult" count="5" team="5" area="Quest_Area_A" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="CyprusPortMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="3030" />
+      <level min="40" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="13" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="500" />
+    <loottable visible="true" type="general_legendary" />
+    <loottable visible="true" type="general_legendary" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="250" />
+    <loottable visible="true" loottable="general_legendary" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2508$$" type="Eg_Bldg_TownCenter" count="2" includeconversion="true" onlycountelites="false" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="6" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="7" mustfailall="false">
+        <values>
+          <kill id="8" description="$$10440$$" type="Eg_Shp_CatTrireme" count="18" includeconversion="true" onlycountelites="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

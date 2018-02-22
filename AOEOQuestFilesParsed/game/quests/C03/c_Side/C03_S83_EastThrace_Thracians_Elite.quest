@@ -1,0 +1,91 @@
+<quest uniqueid="13983" version="10" displayname="$$12891$$" level="-1" difficultycoloroverride="2" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$9348$$" completiontext="$$7859$$" inprogresstext="$$7860$$" summarytext="$$9055$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.34" mapmarker="QuestRepeatable" mappage="Thrace" elitespawnchance="1" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="2500" startingwood="1500" startinggold="3000" startingstone="200" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8924$$" dataset="C01\C01_ThracianAllLevels" cooponly="false" startingfood="2000" startingwood="1000" startinggold="2000" startingstone="0" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10605$$" dataset="C01\C01_Vanilla_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:15:00" hideonui="false" />
+  <randommap map="Core/C03/C03_S83_EastThrace_Thracians" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_Side_ThracianHorsemen" />
+      <variable name="bIsELITE" type="Bool" value="true" />
+      <variable name="QuestID" type="Int" value="13983" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R3_Acichorios" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="true" forcetocenter="false" name="CoopPlayerUnit01" protoname="Ce_Sie_Palintonon" count="1" team="3" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="true" forcetocenter="false" name="CoopPlayerUnit02" protoname="Ce_Cav_HeadHunter_C" count="8" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+    <random placeatleast="1" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Catapult1" chance="0.25" />
+        <unit name="Catapult2" chance="0.25" />
+        <unit name="Catapult3" chance="0.25" />
+        <unit name="Catapult4" chance="0.25" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Catapult1" protoname="CrushedSpirits" count="1" team="4" area="Player1" usequesttargetindicator="true">
+          <overrides parent="Gr_Sie_Catapult" displaynameid="67781" visualscale="2" footprint="2" maxhitpoints="1000" initialhitpoints="1000" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Catapult2" protoname="CrushedSpirits" count="1" team="4" area="Player2" usequesttargetindicator="true">
+          <overrides parent="Gr_Sie_Catapult" displaynameid="67781" visualscale="2" footprint="2" maxhitpoints="1000" initialhitpoints="1000" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Catapult3" protoname="CrushedSpirits" count="1" team="4" area="Player3" usequesttargetindicator="true">
+          <overrides parent="Gr_Sie_Catapult" displaynameid="67781" visualscale="2" footprint="2" maxhitpoints="1000" initialhitpoints="1000" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Catapult4" protoname="CrushedSpirits" count="1" team="4" area="Player4" usequesttargetindicator="true">
+          <overrides parent="Gr_Sie_Catapult" displaynameid="67781" visualscale="2" footprint="2" maxhitpoints="1000" initialhitpoints="1000" />
+        </protounit>
+      </targets>
+    </random>
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R3_Acichorios" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13061" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="EliteMedium" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteMedium" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteOptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$4735$$" type="Gr_Bldg_SiegeWorkshop" count="5" includeconversion="true" onlycountelites="false" />
+              <reduceunitsto id="4" description="$$7040$$" type="Unit" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="true" causesfailure="false" playerid="1" />
+            </values>
+          </and>
+          <dummy id="5" description="$$8927$$" objectivename="EarlyWipe" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="6" mustfailall="false" rewardname="Optional" description="$$10992$$">
+    <values>
+      <or id="7" mustfailall="false">
+        <values>
+          <timer id="8" description="$$10992$$" failonexpire="true" />
+          <dummy id="9" description="$$10604$$" objectivename="Optional" autocomplete="false" />
+          <kill id="10" type="CrushedSpirits" count="1" includeconversion="true" onlycountelites="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

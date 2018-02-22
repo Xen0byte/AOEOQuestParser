@@ -1,0 +1,47 @@
+<quest uniqueid="10133" version="68" displayname="$$3892$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" dataset="c02\c02_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" dataset="c04\c04_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" dataset="c06\c06_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="7" team="3" color="3" tributablebehavior="Default" playertype="Computer" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="core\shared\shared_conversionblitz" randommap="true" numplayers="7" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared\Shared_ConversionBlitz" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="99" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2484$$" type="UnitTypeBldgFortress" count="1" includeconversion="true" onlycountelites="false" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="LogicalTypeScout" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

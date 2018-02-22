@@ -1,0 +1,36 @@
+<quest uniqueid="102027" version="145" displayname="$$8812$$" level="43" repeatable="true" offertype="eOfferBooster2" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$8790$$" completiontext="$$8792$$" inprogresstext="$$8738$$" summarytext="$$8813$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Cyprus" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B02_R1_KingSkirmish" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B02_R1_KingSkirmish" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="102021" />
+      <level min="40" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="b02Global3" />
+    <alliancepoints visible="true" amount="50" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="b02Global3" />
+    <loottable visible="true" type="general_skirmish" />
+    <loottable visible="true" type="general_skirmish" />
+    <loottable visible="true" type="general_skirmish" />
+    <loottable visible="true" type="general_skirmish" />
+    <loottable visible="true" type="general_skirmish" />
+    <loottable visible="true" type="general_skirmish" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <counter id="1" description="$$8464$$" objectivename="DEFEATENEMY" reqcount="10" />
+    </values>
+  </objectives>
+</quest>

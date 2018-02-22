@@ -1,0 +1,58 @@
+<quest uniqueid="397" version="99" displayname="$$640$$" level="18" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$8261$$" completiontext="$$6652$$" inprogresstext="$$5823$$" summarytext="$$5824$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.56" maplocationy="0.387" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2276$$" dataset="C02\C02_Vanilla_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2277$$" dataset="C02\C02_Libyan_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2277$$" dataset="C02\C02_Libyan_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Egyptian Sand" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R3M85_BuildingSupport" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_CitySesostris_V2" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="Prince" protoname="NPC_PrinceSesostris2" count="1" team="1" area="Player1" usequesttargetindicator="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_CitySesostris_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="394" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="60000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <protectunit id="2" description="$$5712$$" type="NPC_PrinceSesostris2" owningplayerid="1" />
+          <and id="3" mustfailall="false">
+            <values>
+              <unitinarea id="4" description="$$2577$$" area="Quest_Area_C" type="Eg_Spc_PriestPtah" count="1" radius="1000" aidefend="false" />
+              <unitinarea id="5" description="$$2578$$" area="Quest_Area_B" type="Eg_Spc_PriestSet" count="1" radius="1000" aidefend="false" />
+              <unitinarea id="6" description="$$2579$$" area="Quest_Area_A" type="Eg_Spc_PriestRa" count="1" radius="1000" aidefend="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

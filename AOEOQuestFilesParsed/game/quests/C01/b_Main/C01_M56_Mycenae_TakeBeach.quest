@@ -1,0 +1,119 @@
+<quest uniqueid="175" version="62" displayname="$$1109$$" level="14" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3388$$" completiontext="$$1111$$" inprogresstext="$$3389$$" summarytext="$$3391$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.23" maplocationy="0.325" mapmarker="QuestDefault" mappage="Troy" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="10000" startingwood="10000" startinggold="10000" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" script="core\Rush_Weak" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="CavalryBias" value="-0.5" />
+      <aivariable key="EconomyHandicap" value="-0.4" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" script="CORE\Turtle_Weak" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResearchMilitary" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" script="CORE\Turtle_Weak" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoResearchMilitary" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResearchMilitary" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="6" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" dataset="c01\c01_trojan_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="6" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_R2M55_TroyBeach" />
+      <variable name="P2LandPatrolCount" type="Int" value="12" />
+      <variable name="P3LandPatrolCount" type="Int" value="12" />
+      <variable name="P4LandPatrolCount" type="Int" value="6" />
+      <variable name="P2AllowResourcePatrol" type="Bool" value="false" />
+      <variable name="P3AllowResourcePatrol" type="Bool" value="false" />
+      <variable name="P4AllowResourcePatrol" type="Bool" value="false" />
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="P2AllowTCBuilding" type="Bool" value="false" />
+      <variable name="region" type="String" value="Greek Coast" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R2_KingAgamemnon" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="ProTips" count="1" team="1" area="Player1" groupfilename="C01\Custom\C01_R2M55_TroyTrireme_ProTips" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R2_KingAgamemnon" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="44" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
+    <xp visible="true" amount="35000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <consumable visible="true" consumablename="ConsumableSpy_U" count="5" />
+    <unlockregion visible="false" region="1" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="SWORD1H_R017" traitlevel="15" />
+      <trait visible="true" id="Gear_R032" traitlevel="15" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
+              <kill id="4" description="$$2508$$" type="Gr_Bldg_TownCenter" count="3" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <and id="5" mustfailall="true">
+            <values>
+              <reduceunitsto id="6" type="Qst_Shp_TroyTrireme" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,83 @@
+<quest uniqueid="321" version="50" displayname="$$565$$" level="13" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4988$$" completiontext="$$6644$$" inprogresstext="$$4986$$" summarytext="$$1500$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.71" maplocationy="0.36" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="4000" startinggold="0" startingstone="2000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="custom\airushrushrush" dataset="C02\C02_CoreRamp_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <timer time="00:05:00" hideonui="false">
+    <events>
+      <timerevent event="WaveWarrior" time="00:04:59" />
+      <timerevent event="WaveArcher" time="00:04:59" />
+      <timerevent event="WaveElephant" time="00:04:59" />
+      <timerevent event="WaveArcher" time="00:04:59" />
+      <timerevent event="WaveWarrior" time="00:04:59" />
+      <timerevent event="WaveElephant" time="00:04:59" />
+      <timerevent event="WaveWarrior" time="00:04:59" />
+      <timerevent event="WaveArcher" time="00:04:59" />
+    </events>
+  </timer>
+  <timereffects event="WaveWarrior">
+    <spawnunit visible="true" count="20" placeunittype="NPC_Nubian_Warrior" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Qst_SpawnPoint1" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="WaveArcher">
+    <spawnunit visible="true" count="20" placeunittype="NPC_Nubian_Archer" asplayer="2" spawntype="SpawnForAllies" nearunittype="Qst_SpawnPoint1" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="WaveElephant">
+    <spawnunit visible="true" count="4" placeunittype="NPC_Nubian_Elephant" asplayer="2" spawntype="SpawnForAllies" nearunittype="Qst_SpawnPoint1" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="WaveChief">
+    <spawnunit visible="true" count="1" placeunittype="NPC_Nubian_Chief" asplayer="2" spawntype="SpawnForAllies" nearunittype="Qst_SpawnPoint1" radius="5" useboneposition="false" />
+  </timereffects>
+  <randommap map="scenarioloader" randommap="true" numplayers="2" mapregionname="Egyptian Rock">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_Side_Architect_WallOff" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_Architect" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="revealer" protoname="Qst_RevealerLarge" count="1" team="2" area="Player1" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_Architect" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="324" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="120" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Enemy" team1="2" team2="1" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <timer id="3" description="$$3593$$" failonexpire="false" />
+              <kill id="4" description="$$2601$$" type="NPC_Nubian_Warrior" count="60" includeconversion="true" onlycountelites="false" />
+              <kill id="5" description="$$2602$$" type="NPC_Nubian_Archer" count="60" includeconversion="true" onlycountelites="false" />
+              <kill id="6" description="$$2603$$" type="NPC_Nubian_Elephant" count="8" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

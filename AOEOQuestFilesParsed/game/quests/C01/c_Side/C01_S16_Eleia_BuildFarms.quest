@@ -1,0 +1,60 @@
+<quest uniqueid="179" version="41" displayname="$$2207$$" level="-1" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3868$$" completiontext="$$1012$$" inprogresstext="$$3613$$" summarytext="$$3854$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.236" maplocationy="0.277" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="100" startingwood="100" startinggold="0" startingstone="0" />
+  <timer time="00:05:00" hideonui="false">
+    <events>
+      <timerevent event="Wolves" time="00:02:00" />
+      <timerevent event="Wolves" time="00:03:30" />
+      <timerevent event="Wolves" time="00:04:00" />
+      <timerevent event="Wolves" time="00:04:30" />
+    </events>
+  </timer>
+  <timereffects event="Wolves">
+    <spawnunit visible="true" count="3" placeunittype="Wolf" asplayer="1" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_TownCenter" radius="15" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core\Shared\Shared_RM_Land_Maze" randommap="true" numplayers="1" mapregionname="Greek Inland" lightsetname="Morning" mapsizename="Small">
+    <mapvariables>
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_HeliceMerchant" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Quest_Area_C" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_HeliceMerchant" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="177" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="5000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <trait visible="true" id="Tool1H_E010" traitlevel="13" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <buildunit id="3" description="$$2467$$" type="Gr_Bldg_Farm" count="10" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="5" mustfailall="true">
+            <values>
+              <reduceunitsto id="6" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

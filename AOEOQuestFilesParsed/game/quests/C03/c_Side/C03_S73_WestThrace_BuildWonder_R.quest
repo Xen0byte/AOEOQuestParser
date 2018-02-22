@@ -1,0 +1,78 @@
+<quest uniqueid="13602" version="84" displayname="$$7508$$" level="-1" difficultycoloroverride="1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$8646$$" completiontext="$$7511$$" inprogresstext="$$7512$$" summarytext="$$7513$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.15" maplocationy="0.85" mapmarker="QuestRepeatable" mappage="Thrace" elitespawnchance="0" linkedquestid="13973" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="2000" startingwood="2000" startinggold="2000" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2303$$" dataset="C01\C01_ThracianAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2233$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2303$$" dataset="C01\C01_ThracianAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2303$$" script="CORE\Rush_Moderate" dataset="C01\C01_ThracianAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:25:00" hideonui="false" />
+  <randommap map="Core\Shared\Shared_BuildWonder" randommap="true" numplayers="5" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared\Shared_BuildWonder" />
+      <variable name="region" type="String" value="Greek Inland" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R3_Brennos" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barrackstowers" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R3_Brennos" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <level min="20" max="99" />
+      <questcomplete id="13036" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQMedium" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQMedium" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="ArmorClth_R004" traitlevel="23" />
+      <trait visible="true" id="ArmorLgt_R004" traitlevel="23" />
+      <trait visible="true" id="ArmorMed_R006" traitlevel="23" />
+      <trait visible="true" id="Warpaint_R101" traitlevel="23" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <unitinarea id="3" description="$$7496$$" area="Quest_Area_E" type="Ce_Bldg_Wonder" count="1" radius="-1" aidefend="true" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="8" mustfailall="false">
+        <values>
+          <timer id="9" description="" failonexpire="true" />
+          <kill id="10" description="$$2507$$" type="UnitTypeBldgFortress" count="2" includeconversion="true" onlycountelites="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

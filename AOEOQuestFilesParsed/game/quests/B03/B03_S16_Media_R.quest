@@ -1,0 +1,77 @@
+<quest uniqueid="103016" version="60" displayname="$$10250$$" level="-1" difficultycoloroverride="1" repeatable="true" offertype="eOfferBooster3" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$12124$$" completiontext="$$11974$$" inprogresstext="$$11976$$" summarytext="$$9757$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.49" maplocationy="0.475" mapmarker="QuestRepeatable" mappage="Persia" elitespawnchance="0" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11969$$" dataset="c04\c04_coreramp_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$11979$$" dataset="c04\c04_coreramp_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:15:00" hideonui="false" />
+  <randommap map="core\shared_babylon\babylon_s16_media_r" randommap="true" numplayers="3" mapregionname="Meso Valley" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="QuestID" type="Int" value="103016" />
+      <variable name="OptionalRestrictTime" type="Bool" value="true" />
+      <variable name="TimeFailedMinutes" type="Int" value="10" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_OldFactionGuy" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_OldFactionGuy" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103053" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="10" />
+    <xp visible="true" amount="1" lookuptable="SQMedium" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQMedium" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <and id="3" mustfailall="false">
+            <values>
+              <unitdiscovered id="4" description="$$11738$$" type="Qst_SpawnPoint1" count="3" />
+              <unitdiscovered id="5" description="$$11739$$" type="Qst_SpawnPoint2" count="7" />
+            </values>
+          </and>
+          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="8" mustfailall="false">
+        <values>
+          <dummy id="9" description="$$10089$$" objectivename="TimeFailed" autocomplete="false" />
+          <and id="10" mustfailall="false">
+            <values>
+              <unitdiscovered id="11" description="" type="Qst_SpawnPoint1" count="3" />
+              <unitdiscovered id="12" description="" type="Qst_SpawnPoint2" count="7" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

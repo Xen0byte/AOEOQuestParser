@@ -1,0 +1,130 @@
+<quest uniqueid="337" version="67" displayname="$$580$$" level="16" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5773$$" completiontext="$$582$$" inprogresstext="$$8270$$" summarytext="$$6647$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.575" maplocationy="0.8" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Boom_Weak" dataset="C02\C02_Vanilla_T0" cooponly="false" startingfood="500" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0.5" />
+      <aivariable key="InfantryBias" value="0.4" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Boom_Weak" dataset="C02\C02_Vanilla_T0" cooponly="false" startingfood="10000" startingwood="10000" startinggold="10000" startingstone="10000">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoAttack" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0.5" />
+      <aivariable key="InfantryBias" value="0.4" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2266$$" dataset="C02\C02_Vanilla_T0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:12:00" hideonui="false">
+    <events>
+      <timerevent event="P2PatrolPoint1" time="00:01:00" />
+      <timerevent event="P2PatrolPoint2" time="00:01:00" />
+      <timerevent event="P2PatrolPoint3" time="00:01:00" />
+      <timerevent event="P2PatrolPoint4" time="00:01:00" />
+      <timerevent event="P3PatrolPoint1" time="00:01:00" />
+      <timerevent event="P3PatrolPoint2" time="00:01:00" />
+      <timerevent event="P3PatrolPoint3" time="00:01:00" />
+      <timerevent event="P3PatrolPoint4" time="00:01:00" />
+    </events>
+  </timer>
+  <timereffects event="P2PatrolPoint1">
+    <spawnunit visible="true" count="1" placeunittype="AILandPoint1" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_StoreHouse" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P2PatrolPoint2">
+    <spawnunit visible="true" count="1" placeunittype="AILandPoint2" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_StoreHouse" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P2PatrolPoint3">
+    <spawnunit visible="true" count="1" placeunittype="AILandPoint3" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_StoreHouse" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P2PatrolPoint4">
+    <spawnunit visible="true" count="1" placeunittype="AILandPoint4" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_StoreHouse" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P3PatrolPoint1">
+    <spawnunit visible="true" count="1" placeunittype="AILandPoint1" asplayer="3" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_StoreHouse" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P3PatrolPoint2">
+    <spawnunit visible="true" count="1" placeunittype="AILandPoint2" asplayer="3" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_StoreHouse" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P3PatrolPoint3">
+    <spawnunit visible="true" count="1" placeunittype="AILandPoint3" asplayer="3" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_StoreHouse" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P3PatrolPoint4">
+    <spawnunit visible="true" count="1" placeunittype="AILandPoint4" asplayer="3" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_StoreHouse" radius="20" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core\Shared\Shared_RM_Land_FairFight" randommap="true" numplayers="5" mapregionname="Egyptian Sand" lightsetname="Evening" mapsizename="Large">
+    <mapvariables>
+      <variable name="P2LandPatrolCount" type="Int" value="12" />
+      <variable name="P3LandPatrolCount" type="Int" value="12" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" value="Evening" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_GeneralChafre" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="5" area="Player2" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Nubian1" count="1" team="2" area="Quest_Area_C" groupfilename="C02\Nubian\C02_Nubian_LargeStart_02" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Nubian2" count="1" team="3" area="Quest_Area_B" groupfilename="C02\Nubian\C02_Nubian_LargeStart_01" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Extra_Villagers_P2" protoname="Eg_Civ_Villager" count="15" team="2" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Extra_Villagers_P3" protoname="Eg_Civ_Villager" count="15" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Extra_Spearmen_P2" protoname="Eg_Inf_Spearman" count="12" team="2" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Extra_Spearmen_P3" protoname="Eg_Inf_Spearman" count="12" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_GeneralChafre" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="330" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="30000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <material visible="true" materialname="2Leather" count="100" />
+      <material visible="true" materialname="2OliveOil" count="100" />
+      <material visible="true" materialname="2BronzeIngot" count="100" />
+      <material visible="true" materialname="2GraniteBlock" count="100" />
+      <material visible="true" materialname="2OakPlank" count="100" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <kill id="3" description="$$2567$$" type="Eg_Civ_Villager" count="30" includeconversion="true" onlycountelites="false" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

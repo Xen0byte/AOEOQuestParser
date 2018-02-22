@@ -1,0 +1,80 @@
+<quest uniqueid="13972" version="11" displayname="$$12889$$" level="-1" difficultycoloroverride="2" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$7765$$" completiontext="$$7766$$" inprogresstext="$$7762$$" summarytext="$$1790$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.26" maplocationy="0.32" mapmarker="QuestRepeatable" mappage="Thrace" elitespawnchance="1" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2303$$" dataset="C01\C01_CoreRushAllLevels" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2303$$" dataset="C02\C02_CoreRushAllLevels" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2303$$" dataset="C04\C04_CoreRushAllLevels" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:25:00" hideonui="false" />
+  <randommap map="Core\Shared\Shared_BuildArmy" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared\Shared_BuildArmy" />
+      <variable name="QuestID" type="Int" value="13972" />
+      <variable name="bIsELITE" type="Bool" value="true" />
+      <variable name="region" type="String" value="Greek Inland" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R3_Comontorios" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barrackstowers" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R3_Comontorios" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <level min="20" max="99" />
+      <questcomplete id="13036" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="EliteMedium" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteMedium" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="Sling2H_R006" traitlevel="23" />
+      <trait visible="true" id="Spear2H_R005" traitlevel="23" />
+      <trait visible="true" id="Sword1H_R006" traitlevel="23" />
+      <trait visible="true" id="Axe2H_R003" traitlevel="23" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteOptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <and id="3" mustfailall="false">
+            <values>
+              <dummy id="4" objectivename="CompletePrimary" autocomplete="false" />
+              <population id="5" description="$$2460$$" currentgoal="200" capgoal="1" />
+            </values>
+          </and>
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="9" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="10" mustfailall="false">
+        <values>
+          <timer id="11" description="$$2471$$" failonexpire="true" />
+          <dummy id="12" objectivename="CompleteSecondry" autocomplete="false" />
+          <ownsunit id="13" description="$$2369$$" type="UnitTypeVillager1" count="100" owningplayerid="1" causesfailure="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

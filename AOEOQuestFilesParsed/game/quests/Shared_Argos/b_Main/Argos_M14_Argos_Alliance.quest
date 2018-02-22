@@ -1,0 +1,102 @@
+<quest uniqueid="75" version="58" displayname="$$856$$" level="24" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4197$$" completiontext="$$9314$$" inprogresstext="$$1673$$" summarytext="$$4195$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.521" maplocationy="0.678" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Heavy" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="5" tributablebehavior="Default" playertype="Computer" personality="$$2317$$" script="CORE\Rush_Moderate" dataset="C02\C02_CoreRamp_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0" />
+      <aivariable key="SiegeBias" value="0" />
+      <aivariable key="InfantryBias" value="1" />
+      <aivariable key="ArcherBias" value="0" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Ramp_Hardcore" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0.6" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="-0.2" />
+      <aivariable key="ArcherBias" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="5" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Argos/Argos_M14_EgyptAlliance" />
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="75" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosEgyptianAdmiral" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Guard1" protoname="Npc_SP_Swordsman" count="4" team="5" area="Quest_Area_A" usequesttargetindicator="false" />
+    <random placeatleast="0" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Luggage1" chance="0.2" />
+        <unit name="Luggage2" chance="0.2" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Luggage1" protoname="PharoahsLuggage" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52637" animfile="CivEgyptian\Units\Civilian\Caravan\Caravan.xml" portraiticon="UserInterface\Icons\Units\AvatarECaravan_ua" icon="UserInterface\Icons\Units\ECaravan64_ua" soundfile="Camel" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Luggage2" protoname="PharoahsLuggage" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52637" animfile="CivEgyptian\Units\Civilian\Caravan\Caravan.xml" portraiticon="UserInterface\Icons\Units\AvatarECaravan_ua" icon="UserInterface\Icons\Units\ECaravan64_ua" soundfile="Camel" />
+        </protounit>
+      </targets>
+    </random>
+    <random placeatleast="0" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Camel1" chance="0.2" />
+        <unit name="Camel2" chance="0.2" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Camel1" protoname="FavoriteCamel" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52641" animfile="World\Animals\Camel\Camel.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarWildCamel_ua" icon="UserInterface\Icons\Units\Gaia\WildCamel64_ua" soundfile="Camel" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Camel2" protoname="FavoriteCamel" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52641" animfile="World\Animals\Camel\Camel.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarWildCamel_ua" icon="UserInterface\Icons\Units\Gaia\WildCamel64_ua" soundfile="Camel" />
+        </protounit>
+      </targets>
+    </random>
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosEgyptianAdmiral" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="73" />
+      <questcomplete id="211" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="120000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="300" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

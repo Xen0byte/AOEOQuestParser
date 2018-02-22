@@ -1,0 +1,30 @@
+<quest uniqueid="11128" version="3" displayname="$$12319$$" level="20" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="set_questland" randommap="true" numplayers="3" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="99" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <collectresource id="1" description="$$2513$$" type="Wood" amount="1" includeexisting="true" />
+    </values>
+  </objectives>
+</quest>

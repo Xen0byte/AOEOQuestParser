@@ -1,0 +1,101 @@
+<quest uniqueid="13064" version="118" displayname="$$7456$$" level="10" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$7979$$" completiontext="$$134$$" inprogresstext="$$7469$$" summarytext="$$7470$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.45" maplocationy="0.12" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="2000" startingwood="2000" startinggold="2000" startingstone="2000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10273$$" script="CORE\Rush_Heavy" dataset="C03\C03_CoreRush_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="4" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10273$$" script="CORE\Rush_Moderate" dataset="C03\C03_CoreRush_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2298$$" dataset="C03\C03_CoreRush_T1" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="0" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10273$$" dataset="C03\C03_CoreRush_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="99:99:99" hideonui="true">
+    <events>
+      <timerevent event="Gae_Small" time="00:06:00" />
+      <timerevent event="Gae_Small" time="00:09:00" />
+      <timerevent event="Gae_Small" time="00:11:00" />
+      <timerevent event="Gae_Small" time="00:13:00" />
+    </events>
+  </timer>
+  <timereffects event="Gae_Small">
+    <spawnunit visible="true" count="4" placeunittype="Ce_Arc_Gaesatae_C" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Ce_Bldg_ArcheryRange" radius="15" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core\C03\C03_R1M53_CaptureVindelicia" randommap="true" numplayers="5" mapregionname="Celtic Alps" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R1M53_CaptureVindelicia" />
+      <variable name="region" type="String" value="Celtic Alps" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R1_Leader" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="Objective_Gaesatae" protoname="Objective_Gaesatae" count="10" team="5" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Ce_Arc_Gaesatae_C" visualscale="1.4" initialhitpoints="400" maxhitpoints="400" convertresist="100" displaynameid="62629" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="QuestBrennos" protoname="Ce_QG_Brennos" count="1" team="1" area="Quest_Area_B" usequesttargetindicator="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R1_Leader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13021" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="6" />
+    <xp visible="true" amount="25000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="120" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <questgiver visible="false" name="C03_R1_VindeliciaDrust" status="Unavailable" />
+    <or>
+      <trait visible="true" id="Sword1H_R016_SR" traitlevel="10" />
+      <trait visible="true" id="Spear2H_R017" traitlevel="10" />
+      <trait visible="true" id="Sling2H_R006" traitlevel="10" />
+      <trait visible="true" id="ArrowOH_R016" traitlevel="12" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="2" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="4" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="4" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="4" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$2382$$">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$8688$$" type="Objective_Gaesatae" count="10" includeconversion="true" onlycountelites="false" />
+              <and id="4" mustfailall="false" description="$$8712$$">
+                <values>
+                  <reduceunitsto id="5" type="Ce_Bldg_GuardTower" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+                  <reduceunitsto id="6" type="Ce_Bldg_Barracks" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+                  <reduceunitsto id="7" type="Ce_Bldg_ArcheryRange" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+                  <reduceunitsto id="8" type="Ce_Bldg_Stables" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+                </values>
+              </and>
+            </values>
+          </and>
+          <protectunit id="9" description="$$7535$$" type="Ce_QG_Brennos" owningplayerid="1" />
+          <reduceunitsto id="10" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="11" mustfailall="false">
+            <values>
+              <dummy id="12" objectivename="TIMER_EFFECT_BUGFIX" autocomplete="false" />
+              <timer id="13" failonexpire="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

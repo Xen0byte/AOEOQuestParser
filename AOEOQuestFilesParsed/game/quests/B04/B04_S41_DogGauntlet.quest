@@ -1,0 +1,59 @@
+<quest uniqueid="104041" version="107" displayname="$$12984$$" level="-1" repeatable="false" offertype="eOfferBooster4" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$13089$$" completiontext="$$13090$$" inprogresstext="$$13091$$" summarytext="$$12987$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.2" maplocationy="0.7" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12666$$" dataset="c07\C07_CoreRushAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12666$$" dataset="c07\C07_CoreRushAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12666$$" dataset="c07\C07_CoreRushAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2233$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\B04\B04_S41_DogGauntlet" randommap="true" numplayers="6" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="B04\B04_S41_DogGauntlet" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B04_PrimaryQG" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="CoopStart" count="1" team="3" area="Player2" groupfilename="shared_player3_age2_barracks" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="B04_PrimaryQG" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="104033" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="B04Med" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="B04Med" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitinarea id="3" description="$$13119$$" area="Quest_Area_A" type="NPC_NorthernHero01" count="1" radius="-1" aidefend="true" />
+              <kill id="4" description="$$2484$$" type="No_Bldg_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+              <kill id="5" description="$$13120$$" type="No_Bldg_LookoutTower" count="20" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <protectunit id="6" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="NPC_NorthernHero01" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

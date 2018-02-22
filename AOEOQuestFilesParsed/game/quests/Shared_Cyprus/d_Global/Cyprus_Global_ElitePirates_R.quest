@@ -1,0 +1,24 @@
+<quest uniqueid="3033" version="99" displayname="$$6612$$" level="-1" difficultycoloroverride="1" repeatable="true" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$9340$$" completiontext="$$6625$$" inprogresstext="$$6622$$" summarytext="$$6627$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.1" maplocationy="0.1" mapmarker="Blank" mappage="Cyprus" elitespawnchance="0" linkedquestid="0" questbasescale="3">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="CyprusPortMaster" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="CyprusPortMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="3001" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <loottable visible="true" type="general" />
+    <consumable visible="true" consumablename="ConsumableFireShips_E" count="5" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <kill id="1" description="$$6626$$" type="Eg_Shp_Trireme" count="20" includeconversion="true" onlycountelites="true" />
+    </values>
+  </objectives>
+</quest>

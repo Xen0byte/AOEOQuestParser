@@ -1,0 +1,93 @@
+<quest uniqueid="331" version="36" displayname="$$532$$" level="14" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5806$$" completiontext="$$5808$$" inprogresstext="$$5809$$" summarytext="$$5807$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.831" maplocationy="0.111" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="200" startingwood="150" startinggold="2000" startingstone="100" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2267$$" script="core\rush_moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="150" startingwood="150" startinggold="1500" startingstone="100">
+    <aiflagvariables>
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2262$$" script="CORE\Turtle_Moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="200" startingwood="150" startinggold="1500" startingstone="100">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="200" startingwood="150" startinggold="2000" startingstone="100" />
+  <timer time="00:15:00" hideonui="false">
+    <events>
+      <timerevent event="Slingers" time="00:03:00" />
+      <timerevent event="Slingers" time="00:06:00" />
+      <timerevent event="Slingers" time="00:09:00" />
+      <timerevent event="Slingers" time="00:12:00" />
+      <timerevent event="Caravan" time="00:03:00" />
+      <timerevent event="Caravan" time="00:06:00" />
+      <timerevent event="Caravan" time="00:09:00" />
+      <timerevent event="Caravan" time="00:12:00" />
+    </events>
+  </timer>
+  <timereffects event="Slingers">
+    <spawnunit visible="false" count="4" placeunittype="NPC_Nubian_Archer" asplayer="2" spawntype="SpawnForAllies" nearunittype="AIStart" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Caravan">
+    <spawnunit visible="true" count="1" placeunittype="Eg_Civ_Caravan" asplayer="2" spawntype="SpawnForAllies" nearunittype="AIStart" radius="10" useboneposition="false" />
+  </timereffects>
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Egyptian Rock">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R2M67_GoldOneWay" />
+      <variable name="ForcedPlayerLevel" type="Int" value="7" />
+      <variable name="P2HatedEnemyOverride" type="Int" value="3" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_Sesostris" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="player2" count="1" team="4" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_Sesostris" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="324" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <collectresource id="3" description="$$2523$$" type="Gold" amount="5000" includeexisting="true" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+            </values>
+          </and>
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="10" type="AbstractMarket" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="11" type="AbstractMarket" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+              <reduceunitsto id="12" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+              <reduceunitsto id="13" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+            </values>
+          </and>
+          <protectunit id="14" description="$$7970$$" type="Eg_Bldg_TownCenter" owningplayerid="3" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

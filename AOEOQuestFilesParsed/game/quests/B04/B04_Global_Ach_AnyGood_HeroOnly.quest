@@ -1,0 +1,31 @@
+<quest uniqueid="104111" version="40" displayname="$$12977$$" level="-1" difficultycoloroverride="1" repeatable="false" offertype="eOfferBooster4" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$13136$$" completiontext="$$13076$$" inprogresstext="$$13077$$" summarytext="$$12953$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Norse" elitespawnchance="0" linkedquestid="0" questbasescale="3">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="B04_Bard" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B04_Bard" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="104012" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <or>
+      <consumable visible="true" consumablename="PowerNuclearConsumable10" count="1" />
+      <consumable visible="true" consumablename="PowerNuclearConsumable9" count="1" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$12952$$" objectivename="HERO_ONLY_COMPLETE" autocomplete="false" />
+          <kill id="3" type="AILandPoint1" count="1" includeconversion="false" onlycountelites="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,56 @@
+<quest uniqueid="317" version="61" displayname="$$517$$" level="11" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5754$$" completiontext="$$5755$$" inprogresstext="$$5147$$" summarytext="$$5753$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.22" maplocationy="0.28" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" dataset="C02\C02_Vanilla_T0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="2" mapregionname="Egyptian Sand" lightsetname="Evening" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R2M62_ThreePriests" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" value="Evening" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_Sesostris" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C02_R2_Sesostris" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="318" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="3" />
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="120" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="Scepter2H_R001" traitlevel="13" />
+      <trait visible="true" id="Staff2H_R002_VR" traitlevel="13" />
+      <trait visible="true" id="Gear_Prst_R004" traitlevel="13" />
+    </or>
+    <questgiver visible="false" name="C02_R2_DesertTrader" status="Available" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Enemy" team1="1" team2="2" sharedlos="true" />
+    <diplomacy relation="Enemy" team1="2" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitinarea id="3" description="$$2560$$" area="Quest_Area_A" type="Eg_Spc_PriestAmen" count="1" radius="-1" aidefend="false" />
+              <unitinarea id="4" description="$$2561$$" area="Quest_Area_A" type="Eg_Spc_PriestPtah" count="1" radius="-1" aidefend="false" />
+              <unitinarea id="5" description="$$2562$$" area="Quest_Area_A" type="Eg_Spc_PriestRa" count="1" radius="-1" aidefend="false" />
+            </values>
+          </and>
+          <reduceunitsto id="6" type="Eg_Spc_PriestPtah" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,59 @@
+<quest uniqueid="13037" version="85" displayname="$$8584$$" level="17" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$7743$$" completiontext="$$276$$" inprogresstext="$$8621$$" summarytext="$$7744$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.32" maplocationy="0.775" mapmarker="QuestDefault" mappage="Thrace" elitespawnchance="0.025">
+  <playersettings id="1" team="1" color="1" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="0" />
+  <playersettings id="2" team="2" color="2" playertype="Computer" personality="$$2304$$" dataset="C01\C01_CoreRush_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="1" color="7" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" playertype="Computer" personality="$$2304$$" dataset="C01\C01_CoreRush_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="2" color="2" playertype="Computer" personality="$$2304$$" script="CORE\Rush_Moderate" dataset="C01\C01_CoreRush_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core/C03/C03_R3M87_Thermopylae" randommap="true" numplayers="5" mapregionname="Greek Inland" lightsetname="Afternoon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R3M87_Thermopylae" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Afternoon" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R3_Brennos" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="CoopStart" count="1" team="3" area="Player2" groupfilename="shared_player3_age2_barrackstowers" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R3_Brennos" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13036" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
+    <xp visible="true" amount="50000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="tables\_coreloot_celthigh_reward" />
+    <or>
+      <trait visible="true" id="Bow1H_E101" traitlevel="22" />
+      <trait visible="true" id="Bow1H_E102" traitlevel="22" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="3" mustfailall="false">
+            <values>
+              <kill id="4" description="$$3247$$" type="UnitTypeBldgStables" count="3" includeconversion="true" onlycountelites="false" />
+              <kill id="5" description="$$3244$$" type="UnitTypeBldgBarracks" count="7" includeconversion="true" onlycountelites="false" />
+              <kill id="6" description="$$8972$$" type="UnitTypeBldgArcheryRange" count="5" includeconversion="true" onlycountelites="false" />
+              <dummy id="7" description="$$3802$$" objectivename="CrossThermopylae" autocomplete="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

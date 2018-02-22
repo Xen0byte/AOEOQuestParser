@@ -1,0 +1,82 @@
+<quest uniqueid="77" version="51" displayname="$$705$$" level="20" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4863$$" completiontext="$$707$$" inprogresstext="$$1585$$" summarytext="$$3421$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.51" maplocationy="0.395" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="3000" startingwood="3000" startinggold="3000" startingstone="2000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Heavy" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="800" startingwood="2500" startinggold="500" startingstone="500">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0.2" />
+      <aivariable key="EconomyHandicap" value="0.3" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Ramp_Moderate" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="0.3" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Ramp_Moderate" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="0.4" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="1" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2236$$" dataset="c01\c01_mycenae_t3" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:20:00" hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="5" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_R3M92_DefendMycenae" />
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="P3AddMarketManager" type="Bool" value="true" />
+      <variable name="P4AddMarketManager" type="Bool" value="true" />
+      <variable name="P3AttackDelayMod" type="Int" value="5" />
+      <variable name="P4AttackDelayMod" type="Int" value="7" />
+      <variable name="region" type="String" value="Greek Inland" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R2_KingAgamemnon" />
+    <protounit unit="C01_R1_VillageElder" />
+    <protounit unit="C01_R3_WarriorAgamemnon" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="19" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="12" />
+    <xp visible="true" amount="120000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="250" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableFireShips_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableFireShips_R" count="3" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$4065$$" type="Gr_Cap_MycenaeanPalaceA" owningplayerid="5" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,49 @@
+<quest uniqueid="62" version="39" displayname="$$699$$" level="11" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4056$$" completiontext="$$3377$$" inprogresstext="$$4057$$" summarytext="$$3378$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.52" maplocationy="0.48" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="1800" startinggold="0" startingstone="1500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" dataset="c01\c01_mycenae_t1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="2" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_R2M52_BuildFortresses" />
+      <variable name="region" type="String" value="Greek Inland" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R2_KingAgamemnon" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R2_KingAgamemnon" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="57" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="120" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableGrantStone_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableGrantStone_R" count="3" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitinarea id="3" description="$$2488$$" area="Quest_Area_B" type="Gr_Bldg_Fortress" count="1" radius="-1" aidefend="true" />
+              <unitinarea id="4" description="$$2489$$" area="Quest_Area_A" type="Gr_Bldg_Fortress" count="1" radius="-1" aidefend="true" />
+              <unitinarea id="5" description="$$2490$$" area="Quest_Area_C" type="Gr_Bldg_Fortress" count="1" radius="-1" aidefend="true" />
+            </values>
+          </and>
+          <reduceunitsto id="6" type="Gr_Civ_Villager" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

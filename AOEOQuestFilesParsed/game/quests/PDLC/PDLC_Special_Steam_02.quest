@@ -1,0 +1,33 @@
+<quest uniqueid="2403" version="38" displayname="$$11987$$" level="0" repeatable="false" offertype="eOfferSteamSpecial2" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="CapitolCity" description="$$11559$$" completiontext="$$11559$$" inprogresstext="$$11559$$" summarytext="$$11558$$" canabandon="false" hiddenquest="true" friendonly="false" suppressnotifications="true" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="true" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="GEN_PDLCStore" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="GEN_FredTheRedeemer" />
+  </questreturners>
+  <prereqs>
+    <values />
+  </prereqs>
+  <rewards visible="true">
+    <blueprint visible="true" unit="Gn_Cap_FireworksGuy" />
+    <consumable visible="true" consumablename="ConsumableCivReinforcements" count="5" />
+    <blueprint visible="true" unit="Bundle1_Cap_TreeGrove" />
+    <blueprint visible="true" unit="Bundle1_Cap_ArchOfConstantine" />
+    <blueprint visible="true" unit="Bundle1_Cap_GreekFortress01" />
+    <blueprint visible="true" unit="Bundle1_Cap_GreekFortress02" />
+    <blueprint visible="true" unit="Bundle1_Cap_Leonidaion" />
+    <material visible="true" materialname="!VanityTicket" count="9" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$11557$$">
+        <values>
+          <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
+          <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

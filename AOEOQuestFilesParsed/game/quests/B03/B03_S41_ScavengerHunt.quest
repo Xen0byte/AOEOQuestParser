@@ -1,0 +1,70 @@
+<quest uniqueid="103041" version="58" displayname="$$10325$$" level="-1" repeatable="false" offertype="eOfferBooster3" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11955$$" completiontext="$$11925$$" inprogresstext="$$11926$$" summarytext="$$10766$$" repeatableduration="0" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.58" maplocationy="0.09" mapmarker="QuestDefault" mappage="Libya" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="200" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10642$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$11772$$" dataset="c02\c02_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$11772$$" dataset="c02\c02_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared_Babylon\Babylon_S41_SH_LostIsland" randommap="true" numplayers="4" mapregionname="Egyptian Marsh" lightsetname="Evening" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Babylon/Babylon_S41_SH_LostIsland" />
+      <variable name="RestrictNuggetScaling" type="Bool" value="true" />
+      <variable name="QuestID" type="Int" value="103041" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" value="Evening" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="-1" value="Quest_BabylonSH41_MapleTreeNugget" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_NewFactionLady" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_start_small" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="BabylonS41_KingTusk" protoname="BabylonS41_KingTusk1" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="NPC_SH_BoarKing" visualscale="2.2" initialhitpoints="3000" maxhitpoints="3000" animfile="World\Animals\Boar\KingTusk.xml" wanderdistance="0" maxrunvelocity="15.0" maxvelocity="12.0" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_NewFactionLady" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <or>
+        <values>
+          <queststatus id="103040" queststatus="Assigned" />
+          <questcomplete id="103040" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQShort" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <tribute id="3" description="$$10817$$" type="Food" amount="600" destplayer="3" />
+              <dummy id="4" description="$$11773$$" objectivename="BabylonS41_AllySurvivesDummy" autocomplete="false" />
+              <dummy id="5" description="$$10819$$" objectivename="BabylonS41_KillKingTusk" autocomplete="false" />
+              <collectmaterial id="6" description="$$10654$$" type="SH_Fungus" amount="1" includeexisting="false" />
+            </values>
+          </and>
+          <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

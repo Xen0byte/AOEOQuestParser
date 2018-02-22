@@ -1,0 +1,52 @@
+<quest uniqueid="13047" version="87" displayname="$$8587$$" level="-1" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$8594$$" completiontext="$$8591$$" inprogresstext="$$9084$$" summarytext="$$9607$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.72" maplocationy="0.5" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2308$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2309$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core/C03/C03_Side_AlpsLoader" randommap="true" numplayers="3" mapregionname="Celtic Alps" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_Side_Alps_01" />
+      <variable name="region" type="String" value="Celtic Alps" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R1_Explorer" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="Auggie" protoname="NPC_AuggieR1" count="1" team="1" area="Player1" usequesttargetindicator="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Wolf HP Decrease" count="1" team="1" area="Player1" groupfilename="C03\Custom\C03_Side_AdjustWolfHP" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R1_Explorer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13020" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="5000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Enemy" team1="1" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="1" sharedlos="false" />
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$2386$$" objectivename="ClimbMountain" autocomplete="false" />
+          <protectunit id="3" description="$$8355$$" type="NPC_AuggieR1" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

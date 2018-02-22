@@ -1,0 +1,65 @@
+<quest uniqueid="11057" version="119" displayname="$$6254$$" level="3" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$3880$$" completiontext="$$3879$$" inprogresstext="$$3013$$" summarytext="$$5629$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" maplocationx="0.269" maplocationy="0.154" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0">
+  <playersettings id="1" team="1" color="1" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" playertype="Computer" personality="$$2232$$" script="CORE\Ramp_Weak" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="0" startingwood="9001" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.7" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" playertype="Computer" personality="$$2232$$" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Greek Coast" lightsetname="Morning" mapsizename="Small">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_Training_Docks" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_PortMaster" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="EnemyBase" count="1" team="2" area="Quest_Area_A" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_PortMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="11007" />
+      <level min="3" max="8" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="25" />
+    <trait visible="true" id="ArmorPlt_U020" traitlevel="6" />
+    <trait visible="true" id="FishingNet1H_U008" traitlevel="6" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <buildunit id="3" description="$$2431$$" type="Gr_Bldg_Dock" count="1" />
+              <buildunit id="4" description="$$2432$$" type="Gr_Civ_FishingBoat" count="4" />
+              <collectresource id="5" description="$$2368$$" type="Food" amount="1000" includeexisting="false" />
+            </values>
+          </and>
+          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

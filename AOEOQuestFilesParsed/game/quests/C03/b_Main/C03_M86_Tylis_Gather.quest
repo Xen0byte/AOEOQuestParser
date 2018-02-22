@@ -1,0 +1,63 @@
+<quest uniqueid="13035" version="99" displayname="$$7729$$" level="16" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$9350$$" completiontext="$$270$$" inprogresstext="$$7731$$" summarytext="$$8905$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.27" maplocationy="0.67" mapmarker="QuestDefault" mappage="Thrace" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2304$$" dataset="C01\C01_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2304$$" dataset="C01\C01_CoreRush_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$8123$$" dataset="C03\C03_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core/C03/C03_R3M85_GatherWood" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="Afternoon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R3M85_GatherWood" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Afternoon" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R3_Brennos" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="Auggie" protoname="NPC_AuggieR3" count="1" team="1" area="Player1" usequesttargetindicator="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R3_Brennos" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13034" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="30000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="Staff2H_R101" traitlevel="20" />
+      <trait visible="true" id="Gear_Prst_E101" traitlevel="20" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <convertunit id="3" description="$$2342$$" type="UnitTypeVillager1" count="10" />
+              <collectresource id="4" description="$$2373$$" type="Wood" amount="2000" includeexisting="true" />
+              <unitinarea id="5" description="$$7044$$" area="Quest_Area_A" type="UnitTypeCaravan1" count="1" radius="-1" aidefend="false" />
+            </values>
+          </and>
+          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <protectunit id="7" description="$$8355$$" type="NPC_AuggieR3" owningplayerid="1" />
+          <protectunit id="8" description="$$8356$$" type="Ce_Civ_Caravan" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

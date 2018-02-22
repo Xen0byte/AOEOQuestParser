@@ -1,0 +1,121 @@
+<quest uniqueid="1151" version="98" displayname="$$10061$$" level="43" repeatable="true" canplaycoop="true" cooprequired="false" ranked="false" description="$$10179$$" completiontext="$$9643$$" inprogresstext="$$9644$$" summarytext="$$9701$$" alliance="eAllianceDelianLeague" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.36" maplocationy="0.1" mapmarker="QuestRepeatable" mappage="C03_Celtica" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$9748$$" script="Shared_Alliance\Alliance_IslandDefense" dataset="c03\c03_coreramp_t4" cooponly="false" startingfood="1200" startingwood="1200" startinggold="1200" startingstone="1200" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$10060$$" dataset="c03\c03_coreramp_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$9748$$" script="Shared_Alliance\Alliance_IslandDefense" dataset="c03\c03_coreramp_t4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:15:00" hideonui="false" />
+  <randommap map="core\shared_alliance\alliance_islanddefend" randommap="true" numplayers="5" mapregionname="Celtic Valley" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="HumanAlliance" type="Int" value="1" />
+      <variable name="region" type="String" value="Celtic Valley" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="A01_AllianceLeader" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="A01_AllianceLeader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="40" max="99" />
+      <questcomplete id="1100" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="10" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="300" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="OptionalOne">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="300" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <secondaryrewards visible="true" name="OptionalTwo">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="400" />
+    <loottable visible="true" loottable="general" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <secondaryrewards visible="true" name="OptionalThree">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1000" />
+    <loottable visible="true" loottable="general_legendary" />
+    <loottable visible="true" loottable="general_legendary" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Enemy" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Enemy" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <timer id="3" description="$$2471$$" failonexpire="false" />
+              <ownsunit id="4" description="" type="Ce_Bldg_SacredGrove" count="2" owningplayerid="4" causesfailure="false" />
+            </values>
+          </and>
+          <dummy id="5" description="$$9694$$" objectivename="UNUSED" autocomplete="false" />
+          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <reduceunitsto id="7" description="" type="Ce_Bldg_SacredGrove" count="1" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+          <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="9" mustfailall="false" rewardname="OptionalOne" description="$$9507$$">
+    <values>
+      <or id="10" mustfailall="false">
+        <values>
+          <and id="11" mustfailall="false">
+            <values>
+              <timer id="12" description="" failonexpire="false" />
+              <ownsunit id="13" description="" type="Ce_Bldg_SacredGrove" count="3" owningplayerid="4" causesfailure="false" />
+            </values>
+          </and>
+          <dummy id="14" description="$$9751$$" objectivename="UNUSED" autocomplete="false" />
+          <reduceunitsto id="15" description="" type="Ce_Bldg_SacredGrove" count="2" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+          <reduceunitsto id="16" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+  <secondaryobjectives id="17" mustfailall="false" rewardname="OptionalTwo" description="$$9508$$">
+    <values>
+      <or id="18" mustfailall="false">
+        <values>
+          <and id="19" mustfailall="false">
+            <values>
+              <timer id="20" description="" failonexpire="false" />
+              <ownsunit id="21" description="" type="Ce_Bldg_SacredGrove" count="4" owningplayerid="4" causesfailure="false" />
+            </values>
+          </and>
+          <dummy id="22" description="$$9708$$" objectivename="UNUSED" autocomplete="false" />
+          <reduceunitsto id="23" description="" type="Ce_Bldg_SacredGrove" count="3" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+          <reduceunitsto id="24" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+  <secondaryobjectives id="25" mustfailall="false" rewardname="OptionalThree" description="$$9509$$">
+    <values>
+      <or id="26" mustfailall="false">
+        <values>
+          <and id="27" mustfailall="false">
+            <values>
+              <timer id="28" description="" failonexpire="false" />
+              <ownsunit id="29" description="" type="Ce_Bldg_SacredGrove" count="6" owningplayerid="4" causesfailure="false" />
+            </values>
+          </and>
+          <dummy id="30" description="$$9709$$" objectivename="UNUSED" autocomplete="false" />
+          <reduceunitsto id="31" description="" type="Ce_Bldg_SacredGrove" count="5" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+          <reduceunitsto id="32" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

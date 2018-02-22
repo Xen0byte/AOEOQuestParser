@@ -1,0 +1,31 @@
+<quest uniqueid="2007" version="2" displayname="$$5482$$" level="0" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="CapitolCity" description="$$6294$$" completiontext="$$6294$$" inprogresstext="$$6294$$" summarytext="$$6118$$" canabandon="false" hiddenquest="true" friendonly="false" suppressnotifications="true" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="true" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="GEN_PDLCStore" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="GEN_FredTheRedeemer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="24" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <or>
+      <blueprint visible="true" unit="Van_Statue11" />
+      <blueprint visible="true" unit="Van_Statue16" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$5496$$">
+        <values>
+          <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
+          <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

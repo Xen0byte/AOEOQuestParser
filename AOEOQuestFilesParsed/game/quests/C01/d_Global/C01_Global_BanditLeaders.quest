@@ -1,0 +1,39 @@
+<quest uniqueid="11043" version="35" displayname="$$1037$$" level="-1" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$4080$$" completiontext="$$4081$$" inprogresstext="$$4082$$" summarytext="$$4083$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <onaccept>
+    <protip visible="false" tip="TIP_Shared_QuestType_Global_01" />
+    <questgiver visible="false" name="C01_R1_VillageScout" status="Unavailable" />
+    <questgiver visible="false" name="C01_R1_VillageScout_V2" status="Available" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C01_R1_VillageScout" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R1_VillageScout" />
+    <protounit unit="C01_R1_VillageScout_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="10" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="ArmorLgt_R017" traitlevel="10" />
+      <trait visible="true" id="Gear_R031" traitlevel="10" />
+      <trait visible="true" id="ArmorClth_R016" traitlevel="10" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <queststatus id="1" description="$$2346$$" questid="160" queststatus="Complete" />
+      <queststatus id="2" description="$$2347$$" questid="5" queststatus="Complete" />
+      <queststatus id="3" description="$$2348$$" questid="9" queststatus="Complete" />
+    </values>
+  </objectives>
+</quest>

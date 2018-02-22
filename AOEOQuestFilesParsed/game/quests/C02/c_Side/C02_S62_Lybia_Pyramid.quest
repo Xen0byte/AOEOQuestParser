@@ -1,0 +1,71 @@
+<quest uniqueid="388" version="63" displayname="$$628$$" level="15" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$8256$$" completiontext="$$5794$$" inprogresstext="$$5792$$" summarytext="$$5791$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.533" maplocationy="0.766" mapmarker="QuestDefault" mappage="Libya" elitespawnchance="1" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2270$$" script="CORE\Rush_Heavy" dataset="C02\C02_Nomad_T2" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="0">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.4" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2271$$" dataset="c02\c02_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Egyptian Sand" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R3M81_LibyaFirstMarch" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R3_Sesostris" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="4" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="qst_Pyramid" protoname="qst_Pyramid" count="1" team="3" area="Quest_Area_E" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable_Bldg" animfile="CivEgyptian\Buildings\Capital\LargePyramid\LargePyramid.xml" displaynameid="56430" obstructionradiusx="8" obstructionradiusz="8" icon="UserInterface\Icons\Vanity\LgStepPyramid_ua" portraiticon="UserInterface\Icons\Vanity\LgStepPyramid_ua" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R3_Sesostris" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="334" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="30000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <questgiver visible="false" name="C02_R3_LostAdmiral" status="Available" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableSiegeDamage_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableSiegeDamage_R" count="3" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <ownsunit id="3" description="$$2570$$" type="qst_Pyramid" count="1" owningplayerid="1" causesfailure="false" />
+              <kill id="4" description="$$2484$$" type="NPC_Badari_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <and id="5" mustfailall="true">
+            <values>
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

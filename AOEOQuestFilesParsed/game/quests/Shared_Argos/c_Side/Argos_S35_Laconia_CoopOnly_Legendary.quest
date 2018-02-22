@@ -1,0 +1,89 @@
+<quest uniqueid="3193" version="15" displayname="$$12560$$" level="43" difficultycoloroverride="2" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="true" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$12585$$" completiontext="$$12582$$" inprogresstext="$$12583$$" summarytext="$$12584$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.69" maplocationy="0.6" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="1" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2316$$" script="core\ramp_heavy" dataset="C01\C01_Clearchus_T4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="ArcherBias" value="0.2" />
+      <aivariable key="EconomyHandicap" value="0" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2316$$" script="core\rush_heavy" dataset="C01\C01_Clearchus_T4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0.2" />
+      <aivariable key="EconomyHandicap" value="0" />
+    </aislidervariables>
+  </playersettings>
+  <timer time="00:20:00" hideonui="false" />
+  <randommap map="Core\Shared_Argos\Argos_RM_ResourceWar" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="Noon" mapsizename="Large">
+    <mapvariables>
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="3193" />
+      <variable name="P2TrainBonusMod" type="Int" value="100" />
+      <variable name="P4TrainBonusMod" type="Int" value="100" />
+      <variable name="IsLEGENDARY" type="Bool" value="true" />
+      <variable name="P2AllowResourcePatrol" type="Bool" value="False" />
+      <variable name="P4AllowResourcePatrol" type="Bool" value="False" />
+      <variable name="P2AddMarketManager" type="Bool" value="True" />
+      <variable name="P4AddMarketManager" type="Bool" value="True" />
+      <variable name="P2AttackDelayMod" type="Int" value="15" />
+      <variable name="P4AttackDelayMod" type="Int" value="8" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Noon" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="10000000" value="Legendary_40-50_01" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosCaptain" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="BadGuys_Main" count="1" team="2" area="Quest_Area_D" groupfilename="C01\Clearchus\C01_Clearchus_Fortress" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="BadGuys_A" count="1" team="4" area="Quest_Area_A" groupfilename="Shared_Start_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="BadGuys_B" count="1" team="4" area="Quest_Area_B" groupfilename="Shared_Start_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosCaptain" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="390" />
+      <level min="40" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="30" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="2000" />
+    <loottable visible="true" type="general_legendary" />
+    <loottable visible="true" type="general_legendary" />
+    <loottable visible="true" type="general_legendary" />
+    <loottable visible="true" type="general_legendary" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1000" />
+    <loottable visible="true" loottable="general_legendary" />
+    <loottable visible="true" loottable="general_legendary" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="4" mustfailall="false" rewardname="Optional" description="$$9656$$">
+    <values>
+      <or id="5" mustfailall="false">
+        <values>
+          <timer id="6" description="$$9656$$" failonexpire="true" />
+          <kill id="7" description="$$10600$$" type="LogicalTypeLandMilitary" count="300" includeconversion="true" onlycountelites="true" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

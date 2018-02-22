@@ -1,0 +1,51 @@
+<quest uniqueid="104000" version="72" displayname="$$12511$$" level="0" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="CapitolCity" description="$$12516$$" completiontext="$$12504$$" inprogresstext="$$12504$$" summarytext="$$12510$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="true" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="C03_Celtica" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <onaccept>
+    <unlockregion visible="true" region="24" />
+    <protip visible="false" tip="TIP_B04_Usage" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C01_R1_Ambassador" />
+    <protounit unit="C02_R1_Ambassador" />
+    <protounit unit="C03_R1_Ambassador" />
+    <protounit unit="C04_R1_Ambassador" />
+    <protounit unit="C06_R1_Ambassador" />
+    <protounit unit="C07_R1_Ambassador" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B04_PrimaryQG" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <and>
+        <values>
+          <or>
+            <values>
+              <questcomplete id="2204" />
+              <level min="20" max="99" />
+            </values>
+          </or>
+          <queststatus id="104001" queststatus="NotAssigned" />
+          <queststatus id="104001" queststatus="NotCompleted" />
+          <queststatus id="104420" queststatus="NotAssigned" />
+          <queststatus id="104420" queststatus="NotCompleted" />
+        </values>
+      </and>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="5" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$12517$$">
+        <values>
+          <unitdiscovered id="2" type="B04_PrimaryQG" count="1" />
+          <unitdiscovered id="3" type="GEN_FredTheRedeemer" count="1" />
+          <ownsunit id="4" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

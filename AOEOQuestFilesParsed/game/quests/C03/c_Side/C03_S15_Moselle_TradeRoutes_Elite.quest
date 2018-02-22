@@ -1,0 +1,77 @@
+<quest uniqueid="13915" version="13" displayname="$$12886$$" level="-1" difficultycoloroverride="2" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$7776$$" completiontext="$$7780$$" inprogresstext="$$7778$$" summarytext="$$7779$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.2" maplocationy="0.37" mapmarker="QuestRepeatable" mappage="C03_Celtica" elitespawnchance="1" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="2000" startingwood="2000" startinggold="2000" startingstone="2000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" dataset="C03\C03_Vanilla_T0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$8154$$" dataset="C03\C03_Vanilla_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$8154$$" dataset="C03\C03_Vanilla_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:03:00" hideonui="false" />
+  <randommap map="Core\C03\C03_Side_TradeRoutes" randommap="true" numplayers="5" mapregionname="Celtic Valley" lightsetname="Noon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_Side_Naval_TradeRoutes" />
+      <variable name="QuestID" type="Int" value="13915" />
+      <variable name="OptionalRestrictNoSwanships" type="Bool" value="true" />
+      <variable name="MainPlayerID" type="Int" value="1" />
+      <variable name="CoopPlayerID" type="Int" value="3" />
+      <variable name="bIsELITE" type="Bool" value="true" />
+      <variable name="region" type="String" value="Celtic Valley" />
+      <variable name="lighting" type="String" value="Noon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R1_PortMaster" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C03_R1_PortMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13072" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="EliteShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteShort" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="ArmorPlt_U021" traitlevel="5" />
+      <trait visible="true" id="ArmorBldg_U014" traitlevel="5" />
+      <trait visible="true" id="Bow1H_U012_VR" traitlevel="7" />
+      <trait visible="true" id="ArrowOH_R016" traitlevel="10" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteOptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <timer id="1" description="$$9088$$" failonexpire="false" />
+      <or id="2" mustfailall="false">
+        <values>
+          <kill id="3" description="$$9043$$" type="Ce_Shp_Warship" count="50" includeconversion="true" onlycountelites="false" />
+          <dummy id="4" description="$$8155$$" objectivename="NotUsed" autocomplete="false" />
+          <reduceunitsto id="5" type="Ce_Bldg_Dock" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="8" mustfailall="false">
+        <values>
+          <dummy id="9" description="$$10419$$" objectivename="OptionalRestrictSwanships" autocomplete="false" />
+          <kill id="10" description="" type="Ce_Shp_Warship" count="50" includeconversion="true" onlycountelites="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

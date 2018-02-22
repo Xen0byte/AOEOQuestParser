@@ -1,0 +1,34 @@
+<quest uniqueid="11717" version="12" displayname="$$12320$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" dataset="c01\c01_bandit_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="core\c01\c01_s17_eleia_farmblitz_r" randommap="true" numplayers="3" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="c01\c01_s17_eleia_farmblitz_r" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="99" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <buildunit id="1" description="$$12380$$" type="Gr_Bldg_Farm" count="10" />
+      <protectunit id="2" description="$$7970$$" type="UnitTypeBldgTownCenter" owningplayerid="3" />
+      <kill id="3" description="$$3707$$" type="UnitTypeBldgBarracks" count="8" includeconversion="true" onlycountelites="false" />
+    </values>
+  </objectives>
+</quest>

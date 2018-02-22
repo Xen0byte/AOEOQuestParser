@@ -1,0 +1,157 @@
+<quest uniqueid="3000" version="182" displayname="$$6445$$" level="30" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6569$$" completiontext="$$6480$$" inprogresstext="$$6451$$" summarytext="$$6571$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.83" maplocationy="0.47" mapmarker="QuestDefault" mappage="Cyprus" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="600" startingwood="600" startinggold="600" startingstone="600" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6608$$" script="CORE\Rush_Moderate" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="100" startingwood="150" startinggold="100" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="1" />
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="600" startingwood="600" startinggold="600" startingstone="600" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2233$$" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6608$$" script="CORE\Rush_Heavy" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="200" startingwood="350" startinggold="100" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="CavalryBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6608$$" script="CORE\Rush_Heavy" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="100" startingwood="100" startinggold="50" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="CavalryBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="7" team="4" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6608$$" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <timereffects event="P2_Podoros_1">
+    <spawnunit visible="false" count="7" placeunittype="Gr_Cav_Podromos" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_Stables" radius="14" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P2_Hippiko_1">
+    <spawnunit visible="false" count="5" placeunittype="Gr_Cav_Hippikon" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_Stables" radius="14" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P2_Sarisso_1">
+    <spawnunit visible="false" count="6" placeunittype="Gr_Cav_Sarissophoroi" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_Stables" radius="14" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P6_Podoros_1">
+    <spawnunit visible="false" count="7" placeunittype="Gr_Cav_Podromos" asplayer="6" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_Stables" radius="12" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P6_Sarisso_1">
+    <spawnunit visible="false" count="8" placeunittype="Gr_Cav_Sarissophoroi" asplayer="6" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_Stables" radius="12" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P6_Hippiko_1">
+    <spawnunit visible="false" count="6" placeunittype="Gr_Cav_Hippikon" asplayer="6" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_Stables" radius="12" useboneposition="false" />
+  </timereffects>
+  <timereffects event="P2_Podoros_2">
+    <spawnunit visible="false" count="5" placeunittype="Gr_Cav_Podromos" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_Stables" radius="12" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core\Shared_Cyprus\Cyprus_a_Loader" randommap="true" numplayers="7" mapregionname="Minoan Crete" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Cyprus/Cyprus_M11_Arsinoe_Defense" />
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="P5AddMarketManager" type="Bool" value="true" />
+      <variable name="P6AddMarketManager" type="Bool" value="true" />
+      <variable name="region" type="String" value="Minoan Crete" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_VillageElder" />
+    <protounit unit="C02_R1_KingNarmer" />
+    <protounit unit="C02_R1_PharoahSesostris" />
+    <protounit unit="C02_R1_CitySesostris_V2" />
+    <protounit unit="C03_R1_Leader" />
+    <protounit unit="C04_R1_Leader" />
+    <protounit unit="C06_R1_Leader" />
+    <protounit unit="C07_R1_Leader" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1_Military1" count="1" team="1" area="Quest_Area_A" groupfilename="shared_start_transport_military" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Player1_Villager" count="1" team="1" area="Quest_Area_B" groupfilename="shared_start_transport" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Player1_Military2" count="1" team="1" area="Quest_Area_C" groupfilename="shared_start_transport_military" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2_Military1" count="1" team="3" area="Player1" groupfilename="shared_start_transport_military" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2_Villager" count="1" team="3" area="Player2" groupfilename="shared_start_transport" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2_Military2" count="1" team="3" area="Player3" groupfilename="shared_start_transport_military" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+    <protounit unit="C02_R1_KingNarmer" />
+    <protounit unit="C02_R1_PharoahSesostris" />
+    <protounit unit="C02_R1_CitySesostris_V2" />
+    <protounit unit="C03_R1_Leader" />
+    <protounit unit="C04_R1_Leader" />
+    <protounit unit="C06_R1_Leader" />
+    <protounit unit="C07_R1_Leader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="29" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
+    <xp visible="true" amount="90000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Ally" team1="2" team2="4" sharedlos="true" />
+    <diplomacy relation="Ally" team1="4" team2="2" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="4" sharedlos="false" />
+    <diplomacy relation="Ally" team1="4" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <buildunit id="1" description="$$2565$$" type="AbstractTownCenter" count="1" />
+      <or id="2" mustfailall="false">
+        <values>
+          <kill id="3" description="$$2508$$" type="Gr_Bldg_TownCenter" count="3" includeconversion="true" onlycountelites="false" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

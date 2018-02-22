@@ -1,0 +1,88 @@
+<quest uniqueid="16701" version="64" displayname="$$10395$$" level="0" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11490$$" completiontext="$$11494$$" inprogresstext="$$10996$$" summarytext="$$12434$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" customloadscreen="loadscreentips\load_shared_upsell_c06.xml" maplocationx="0.208" maplocationy="0.79" mapmarker="QuestRepeatable" mappage="Persia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="3000" startingwood="3000" startinggold="3000" startingstone="3000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11961$$" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2233$$" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="4" color="3" tributablebehavior="Default" playertype="Computer" personality="$$11962$$" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11961$$" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11961$$" script="custom\aidominimal" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="7" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11961$$" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="8" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11961$$" script="core\popcorn_moderate" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.3" />
+      <aivariable key="InfantryBias" value="0.3" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="CavalryBias" value="-0.4" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="Core\C06\C06_Demo" randommap="true" numplayers="8" mapregionname="Meso Valley" lightsetname="Morning" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C06\C06_Demo" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="lighting" type="String" value="Morning" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_Trader" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="C06_BadGuy_Leader" protoname="C06_BadGuy_Leader" count="1" team="7" area="Quest_Area_E" usequesttargetindicator="true">
+      <overrides parent="Ba_Inf_ShieldBearer" visualscale="1.3" initialhitpoints="4000" maxhitpoints="4000" displaynameid="66991" convertresist="100" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_Trader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <or>
+        <values>
+          <civilization id="1" />
+          <civilization id="3" />
+          <civilization id="6" />
+          <civilization id="8" />
+          <civilization id="24" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <protip visible="false" tip="TIP_C06_DemoTurnIn" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableBanditArcher_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableBanditHippikon_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableBanditHorseHunter_U" count="3" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Enemy" team1="2" team2="4" sharedlos="false" />
+    <diplomacy relation="Ally" team1="1" team2="4" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="4" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="4" sharedlos="false" />
+    <diplomacy relation="Enemy" team1="4" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitdiscovered id="3" description="$$10884$$" type="AIStart" count="4" />
+              <kill id="4" description="$$10886$$" type="C06_BadGuy_Leader" count="1" includeconversion="false" onlycountelites="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

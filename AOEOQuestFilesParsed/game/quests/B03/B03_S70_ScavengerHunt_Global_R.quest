@@ -1,0 +1,41 @@
+<quest uniqueid="103070" version="31" displayname="$$11774$$" level="-1" difficultycoloroverride="1" repeatable="true" offertype="eOfferBooster3" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$11952$$" completiontext="$$11953$$" inprogresstext="$$11954$$" summarytext="$$10693$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Persia" elitespawnchance="0" linkedquestid="0" questbasescale="3">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="Babylon_NewFactionLady" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="Babylon_NewFactionLady" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103040" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQLong" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="5000" lookuptable="" />
+    <consumematerial visible="true" materialname="SH_Fungus" count="1" />
+    <consumematerial visible="true" materialname="SH_Seed" count="1" />
+    <consumematerial visible="true" materialname="SH_Spice" count="1" />
+    <consumematerial visible="true" materialname="SH_Honey" count="5" />
+    <consumematerial visible="true" materialname="SH_Tears" count="1" />
+    <consumematerial visible="true" materialname="SH_Umbrella" count="5" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <and id="1" mustfailall="false">
+        <values>
+          <collectmaterial id="2" description="$$10654$$" type="SH_Fungus" amount="1" includeexisting="true" />
+          <collectmaterial id="3" description="$$10660$$" type="SH_Seed" amount="1" includeexisting="true" />
+          <collectmaterial id="4" description="$$10656$$" type="SH_Spice" amount="1" includeexisting="true" />
+          <collectmaterial id="5" description="$$10658$$" type="SH_Honey" amount="5" includeexisting="true" />
+          <collectmaterial id="6" description="$$10659$$" type="SH_Tears" amount="1" includeexisting="true" />
+          <collectmaterial id="7" description="$$10650$$" type="SH_Umbrella" amount="5" includeexisting="true" />
+        </values>
+      </and>
+    </values>
+  </objectives>
+</quest>

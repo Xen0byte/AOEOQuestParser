@@ -1,0 +1,44 @@
+<quest uniqueid="11011" version="126" displayname="$$4346$$" level="0" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$3101$$" completiontext="$$2085$$" inprogresstext="$$4348$$" summarytext="$$4347$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <onaccept />
+  <questgivers>
+    <protounit unit="C01_R1_VillageElder" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="11029" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="100" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="20" />
+    <consumable visible="true" consumablename="ConsumableBanditArcher_U" count="2" />
+    <capitaltech visible="true" captechid="111" />
+    <enableprotip visible="false" tip="TIP_UI_TechTree_Reset" />
+    <protip visible="false" tip="TIP_C01_QuestTechUnlock_Farm" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$4349$$">
+        <values>
+          <ownsequipment id="2" equipmentid="3" />
+          <ownsequipment id="3" equipmentid="44" />
+          <ownsequipment id="4" equipmentid="47" />
+          <ownsequipment id="5" equipmentid="50" />
+          <ownsequipment id="6" equipmentid="53" />
+          <ownsequipment id="7" equipmentid="71" />
+          <ownsequipment id="8" equipmentid="67" />
+          <ownsequipment id="9" equipmentid="838" />
+          <ownsequipment id="10" equipmentid="93" />
+          <ownsequipment id="11" equipmentid="102" />
+          <ownsequipment id="12" equipmentid="58" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

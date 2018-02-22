@@ -1,0 +1,85 @@
+<quest uniqueid="51" version="34" displayname="$$1088$$" level="15" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3396$$" completiontext="$$3397$$" inprogresstext="$$1799$$" summarytext="$$3398$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.511" maplocationy="0.475" mapmarker="QuestDefault" mappage="Troy" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" script="CORE\Rush_Moderate" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="200">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0.6" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="-0.2" />
+      <aivariable key="ArcherBias" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <timer hideonui="false" />
+  <randommap map="Core\C01\C01_R3M61_BuildTowncenters" randommap="true" numplayers="3" mapregionname="Greek Coast" lightsetname="Noon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="P2AddMarketManager" type="Bool" value="True" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Noon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R3_WarriorAgamemnon" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="C01\Troy\C01_Troy_BeachCamp_02" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Troy" count="1" team="2" area="Quest_Area_D" groupfilename="C01\C01_FourTowerBase" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="true" name="TroyF1" count="1" team="2" area="Quest_Area_A" groupfilename="C01\Troy\C01_Troy_FwdTowerBase_01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="true" name="TroyF2" count="1" team="2" area="Quest_Area_B" groupfilename="C01\Troy\C01_Troy_FwdTowerBase_01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="true" name="TroyF3" count="1" team="2" area="Quest_Area_C" groupfilename="C01\Troy\C01_Troy_FwdTowerBase_01" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="true" name="Qst_LookoutMarkerA" protoname="Qst_LookoutMarkerA" count="1" team="1" area="Quest_Area_A" usequesttargetindicator="false">
+      <overrides parent="Qst_ObjectiveMarker" displaynameid="50075" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="true" name="Qst_LookoutMarkerB" protoname="Qst_LookoutMarkerB" count="1" team="1" area="Quest_Area_B" usequesttargetindicator="false">
+      <overrides parent="Qst_ObjectiveMarker" displaynameid="50075" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="true" name="Qst_LookoutMarkerC" protoname="Qst_LookoutMarkerC" count="1" team="1" area="Quest_Area_C" usequesttargetindicator="false">
+      <overrides parent="Qst_ObjectiveMarker" displaynameid="50075" />
+    </protounit>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate90" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R3_WarriorAgamemnon" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="84" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="30000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableBanditArcher4th_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableBanditArcher4th_R" count="3" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitinarea id="3" description="$$2493$$" area="Quest_Area_A" type="AbstractTownCenter" count="1" radius="-1" aidefend="true" />
+              <unitinarea id="4" description="$$2494$$" area="Quest_Area_B" type="AbstractTownCenter" count="1" radius="-1" aidefend="true" />
+              <unitinarea id="5" description="$$2495$$" area="Quest_Area_C" type="AbstractTownCenter" count="1" radius="-1" aidefend="true" />
+            </values>
+          </and>
+          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

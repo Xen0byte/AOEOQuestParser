@@ -1,0 +1,38 @@
+<quest uniqueid="13202" version="74" displayname="$$7204$$" level="0" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$8018$$" completiontext="$$7200$$" inprogresstext="$$8001$$" summarytext="$$2078$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="C03_Celtica" elitespawnchance="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <onaccept>
+    <blueprint visible="true" unit="CeltSkillBldg" />
+    <enableprotip visible="false" tip="TIP_UI_GearHall_FirstUse" />
+    <protip visible="false" proto="Ce_Cap_Warehouse03Starting" tip="TIP_Shared_BuildingBlueprintUsage" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C03_R1_Leader" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C03_R1_Leader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13201" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="100" />
+    <trait visible="true" id="ArmorClth_R003" traitlevel="5" />
+    <trait visible="true" id="ArmorBldg_U013" traitlevel="5" />
+    <trait visible="true" id="Gear_U017" traitlevel="5" />
+    <trait visible="true" id="Scout1H_U001" traitlevel="6" />
+    <trait visible="true" id="ArmorLgt_U012" traitlevel="6" />
+    <trait visible="true" id="ArmorPlt_U020" traitlevel="6" />
+    <trait visible="true" id="FishingNet1H_U008" traitlevel="6" />
+    <trait visible="true" id="Tool1H_U020" traitlevel="6" />
+    <protip visible="false" proto="Ce_Cap_Warehouse03Starting" tip="TIP_Shared_FirstNewGear" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <ownsunit id="1" description="$$3649$$" type="Ce_Cap_SkillBuilding" count="1" />
+    </values>
+  </objectives>
+</quest>

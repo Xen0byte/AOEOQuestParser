@@ -1,0 +1,81 @@
+<quest uniqueid="13085" version="111" displayname="$$8859$$" level="-1" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$9344$$" completiontext="$$9068$$" inprogresstext="$$9095$$" summarytext="$$8864$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.48" maplocationy="0.53" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2301$$" script="CORE\Rush_Weak" dataset="C03\C03_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoBuild" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$8857$$" dataset="C03\C03_CoreRush_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:11:00" hideonui="false">
+    <events>
+      <timerevent event="RaidersS" time="00:02:00" />
+      <timerevent event="RaidersS" time="00:04:00" />
+      <timerevent event="RaidersS" time="00:06:00" />
+      <timerevent event="RaidersS" time="00:07:00" />
+      <timerevent event="RaidersS" time="00:08:00" />
+      <timerevent event="RaidersS" time="00:09:00" />
+      <timerevent event="RaidersS" time="00:09:30" />
+      <timerevent event="RaidersS" time="00:10:00" />
+    </events>
+  </timer>
+  <timereffects event="RaidersS">
+    <spawnunit visible="true" count="2" placeunittype="Ce_Inf_Spearman" asplayer="2" spawntype="SpawnForPlayer" nearunittype="AIStart" radius="10" useboneposition="false" />
+  </timereffects>
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Celtic Shore" lightsetname="Morning" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_Side_Tribute_02" />
+      <variable name="region" type="String" value="Celtic Shore" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R2_Tactician" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C03_R2_Tactician" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13084" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="15000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <and id="3" mustfailall="false">
+            <values>
+              <buildunit id="4" description="$$2628$$" type="Ce_Bldg_Market" count="1" />
+              <tribute id="5" description="$$8856$$" type="Stone" amount="1500" destplayer="3" />
+            </values>
+          </and>
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

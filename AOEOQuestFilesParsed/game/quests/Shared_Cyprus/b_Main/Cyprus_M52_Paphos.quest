@@ -1,0 +1,90 @@
+<quest uniqueid="3008" version="122" displayname="$$6072$$" level="38" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6940$$" completiontext="$$6466$$" inprogresstext="$$6223$$" summarytext="$$6935$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.21" maplocationy="0.7" mapmarker="QuestDefault" mappage="Cyprus" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="3000" startingwood="3000" startinggold="3000" startingstone="3000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6604$$" script="CORE\Boom_Heavy" dataset="C01\C01_CyprusRamp_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="1" />
+      <aivariable key="SiegeBias" value="0.1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="3000" startingwood="3000" startinggold="3000" startingstone="3000" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6604$$" script="Custom\Cyprus_Popcorn_Weak" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="1" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6604$$" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="true" />
+  <randommap map="Core\Shared_Cyprus\Cyprus_a_Loader" randommap="true" numplayers="5" mapregionname="Greek Inland" lightsetname="Afternoon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Cyprus/Cyprus_12Kingdoms_Paphos" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Afternoon" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="CyprusLeaderV2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="CyprusGeneral01" protoname="CyprusGeneral" count="1" team="5" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="NPC_CyprusGeneral" displaynameid="45757" visualscale="1.5" initialhitpoints="2500" maxhitpoints="2500" convertresist="100" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="CyprusGeneral02" protoname="CyprusGeneral" count="1" team="5" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="NPC_CyprusGeneral" displaynameid="45757" visualscale="1.5" initialhitpoints="2500" maxhitpoints="2500" convertresist="100" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="CyprusLeaderV2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <or>
+        <values>
+          <questcomplete id="3009" />
+          <questcomplete id="3005" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="6" />
+    <questgiver visible="false" name="CyprusFlagPaphos" status="Available" />
+    <xp visible="true" amount="180000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="260" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$2507$$" type="Gr_Bldg_Fortress" count="3" includeconversion="true" onlycountelites="false" />
+              <kill id="4" description="$$6585$$" type="CyprusGeneral" count="2" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <and id="5" mustfailall="true">
+            <values>
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,114 @@
+<quest uniqueid="3186" version="9" displayname="$$12903$$" level="-1" difficultycoloroverride="2" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$806$$" completiontext="$$807$$" inprogresstext="$$1643$$" summarytext="$$5877$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.688" maplocationy="0.542" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="1" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="1" color="5" tributablebehavior="Default" playertype="Computer" personality="$$2311$$" script="CORE\Ramp_Weak" dataset="C01\C01_CoreRamp_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Ramp_Heavy" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Ramp_Heavy" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <timer hideonui="false" />
+  <randommap map="core\shared\rm_naval_rescuemission" randommap="true" numplayers="5" mapregionname="Greek Coast">
+    <mapvariables>
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="3186" />
+      <variable name="QuestID" type="Int" value="3186" />
+      <variable name="P2AllowTCBuilding" type="Bool" value="false" />
+      <variable name="bIsELITE" type="Bool" value="true" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosRefugee" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="player 1" count="1" team="1" area="Quest_Area_E" groupfilename="Shared_Start_Transport_Escort01" rottype="RotateRandom" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="SeaPeople1" count="1" team="4" area="Quest_Area_A" groupfilename="C01\SeaPeople\C01_SeaPeople_Barracks" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="SeaPeople2" count="1" team="3" area="Quest_Area_B" groupfilename="C01\SeaPeople\C01_SeaPeople_Barracks" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Ally" count="1" team="2" area="Player1" groupfilename="Shared_Start_Barracks" rottype="RotateRandom" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Scout1" protoname="Gr_Cav_Scout" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Scout2" protoname="Gr_Cav_Scout" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="false" />
+    <grouping cooponly="true" forcetocenter="false" name="player 2" count="1" team="5" area="Quest_Area_E" groupfilename="Shared_Start_Transport" rottype="RotateRandom" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Leader1" protoname="Npc_SP_Chieftan" count="1" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Guards2" protoname="Npc_SP_Bowman" count="4" team="4" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Guards1" protoname="Npc_SP_Bowman" count="4" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Leader2" protoname="Npc_SP_Chieftan" count="1" team="4" area="Quest_Area_A" usequesttargetindicator="false" />
+    <random placeatleast="0" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Luggage1" chance="0.2" />
+        <unit name="Luggage2" chance="0.2" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Luggage1" protoname="PharoahsLuggage" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52637" animfile="CivEgyptian\Units\Civilian\Caravan\Caravan.xml" portraiticon="UserInterface\Icons\Units\AvatarECaravan_ua" icon="UserInterface\Icons\Units\ECaravan64_ua" soundfile="Camel" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Luggage2" protoname="PharoahsLuggage" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52637" animfile="CivEgyptian\Units\Civilian\Caravan\Caravan.xml" portraiticon="UserInterface\Icons\Units\AvatarECaravan_ua" icon="UserInterface\Icons\Units\ECaravan64_ua" soundfile="Camel" />
+        </protounit>
+      </targets>
+    </random>
+    <random placeatleast="0" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Camel1" chance="0.2" />
+        <unit name="Camel2" chance="0.2" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Camel1" protoname="FavoriteCamel" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52641" animfile="World\Animals\Camel\Camel.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarWildCamel_ua" icon="UserInterface\Icons\Units\Gaia\WildCamel64_ua" soundfile="Camel" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Camel2" protoname="FavoriteCamel" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52641" animfile="World\Animals\Camel\Camel.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarWildCamel_ua" icon="UserInterface\Icons\Units\Gaia\WildCamel64_ua" soundfile="Camel" />
+        </protounit>
+      </targets>
+    </random>
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosRefugee" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="207" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="15" />
+    <xp visible="true" amount="1" lookuptable="EliteLong" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteLong" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="FishingNet1H_R008" traitlevel="33" />
+      <trait visible="true" id="ArmorPlt_R001" traitlevel="33" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteOptCoin" />
+    <loottable visible="true" loottable="general" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <protectunit id="3" description="$$4061$$" type="AbstractTownCenter" owningplayerid="2" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="8" mustfailall="false">
+        <values>
+          <dummy id="9" description="$$10523$$" objectivename="FortressProtect" autocomplete="false" />
+          <protectunit id="10" description="" type="UnitTypeBldgFortress" owningplayerid="2" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

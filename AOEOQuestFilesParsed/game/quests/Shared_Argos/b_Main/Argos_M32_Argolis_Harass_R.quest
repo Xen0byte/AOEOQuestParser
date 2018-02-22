@@ -1,0 +1,90 @@
+<quest uniqueid="65" version="51" displayname="$$892$$" level="-1" difficultycoloroverride="1" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$893$$" completiontext="$$894$$" inprogresstext="$$1695$$" summarytext="$$1696$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.638" maplocationy="0.646" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="0.025" linkedquestid="3182" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Heavy" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="800" startingwood="800" startinggold="800" startingstone="800">
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="ArcherBias" value="1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <timer hideonui="false" />
+  <randommap map="core\shared\rm_naval_harasstheseapeople" randommap="true" numplayers="3" mapregionname="Greek Isles" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="65" />
+      <variable name="QuestID" type="Int" value="65" />
+      <variable name="OptionalRestrictTraining" type="Bool" value="true" />
+      <variable name="OptionalRestrictInf" type="Bool" value="true" />
+      <variable name="OptionalRestrictArc" type="Bool" value="true" />
+      <variable name="OptionalRestrictCav" type="Bool" value="true" />
+      <variable name="OptionalRestrictSpc" type="Bool" value="true" />
+      <variable name="OptionalRestrictSie" type="Bool" value="true" />
+      <variable name="OptionalRestrictShp" type="Bool" value="true" />
+      <variable name="MainPlayerID" type="Int" value="1" />
+      <variable name="CoopPlayerID" type="Int" value="3" />
+      <variable name="region" type="String" value="Greek Isles" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosKing" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Ambush1" count="1" team="2" area="Quest_Area_A" groupfilename="C01\SeaPeople\C01_SeaPeople_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Ambush2" count="1" team="2" area="Quest_Area_E" groupfilename="C01\SeaPeople\C01_SeaPeople_Boats_01" rottype="Rotate0" rotateunitorientations="false" />
+    <random placeatleast="0" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Bismarque1" chance="0.33" />
+        <unit name="Bismarque2" chance="0.33" />
+        <unit name="Bismarque3" chance="0.33" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Bismarque1" protoname="Npc_SP_Flagship" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="true" />
+        <protounit cooponly="false" forcetocenter="false" name="Bismarque2" protoname="Npc_SP_Flagship" count="1" team="2" area="Quest_Area_D" usequesttargetindicator="true" />
+        <protounit cooponly="false" forcetocenter="false" name="Bismarque3" protoname="Npc_SP_Flagship" count="1" team="2" area="Quest_Area_E" usequesttargetindicator="true" />
+      </targets>
+    </random>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Guards" protoname="Npc_SP_Bowman" count="3" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosKing" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="81" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="10" />
+    <xp visible="true" amount="1" lookuptable="SQLong" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQLong" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="4" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="5" mustfailall="false">
+        <values>
+          <dummy id="6" description="$$12216$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+          <dummy id="7" description="" objectivename="EnemiesDefeated" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

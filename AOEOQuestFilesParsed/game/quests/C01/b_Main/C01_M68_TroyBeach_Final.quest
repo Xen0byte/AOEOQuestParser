@@ -1,0 +1,91 @@
+<quest uniqueid="78" version="69" displayname="$$1112$$" level="18" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3413$$" completiontext="$$3415$$" inprogresstext="$$1815$$" summarytext="$$3414$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.628" maplocationy="0.47" mapmarker="QuestDefault" mappage="Troy" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="3000" startingwood="3000" startinggold="3000" startingstone="3000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" script="CORE\Turtle_Moderate" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="300">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-0.6" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="-0.2" />
+      <aivariable key="ArcherBias" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2231$$" dataset="C01\C01_Mycenae_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_R3M81_TroyFinal" />
+      <variable name="P2AttackDelayMod" type="Int" value="6" />
+      <variable name="region" type="String" value="Greek Coast" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R3_WarriorAgamemnon" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="Achilles" protoname="Gr_QG_Achilles" count="1" team="1" area="Player3" usequesttargetindicator="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R3_WarriorAgamemnon" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="74" />
+      <questcomplete id="67" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="12" />
+    <xp visible="true" amount="75000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="250" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <blueprint visible="true" unit="GreekTrojanHorse" />
+    <or>
+      <trait visible="true" id="ARROWOH_R014" traitlevel="18" />
+      <trait visible="true" id="SHIELD1H_R017" traitlevel="18" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Enemy" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Enemy" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$2338$$" type="Qst_Bldg_TroyGatehouse" count="1" includeconversion="false" onlycountelites="false" />
+              <kill id="4" description="$$2508$$" type="Gr_Bldg_TownCenter" count="4" includeconversion="false" onlycountelites="false" />
+              <or id="5" mustfailall="false">
+                <values>
+                  <protectunit id="6" type="Gr_QG_Achilles" owningplayerid="1" />
+                  <unitinarea id="7" description="$$2501$$" area="Quest_Area_A" type="Gr_QG_Achilles" count="1" radius="-1" aidefend="true" />
+                </values>
+              </or>
+            </values>
+          </and>
+          <and id="8" mustfailall="true">
+            <values>
+              <reduceunitsto id="9" type="Gr_Bldg_TrojanHorse" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="10" type="Gr_Inf_Spearman" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="11" type="Gr_Inf_Hypaspist" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="12" type="Gr_Inf_Hoplite" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="13" type="Gr_Inf_Pezhetairoi_R" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="14" type="Gr_Inf_Somatophylaz_R" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="15" type="UnitTypeBldgTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

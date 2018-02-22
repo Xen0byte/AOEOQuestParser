@@ -1,0 +1,79 @@
+<quest uniqueid="46" version="69" displayname="$$675$$" level="9" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$5570$$" completiontext="$$3685$$" inprogresstext="$$3688$$" summarytext="$$3690$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c01_specialunit_phalanx.xml" maplocationx="0.45" maplocationy="0.346" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" script="CORE\Ramp_Moderate" dataset="C01\C01_Mycenae_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" dataset="C01\C01_Mycenae_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2236$$" dataset="c01\c01_coreramp_t1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="6" team="2" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2236$$" dataset="c01\c01_coreramp_t1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:08:00" hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="6" mapregionname="Greek Inland" lightsetname="Afternoon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_R1M42_BabyStepsPhalanx" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <onaccept>
+    <protip visible="false" tip="TIP_Shared_CoopReminder" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C01_R1_Agamemnon" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="true" forcetocenter="false" name="CoopSpecialUnits" protoname="Gr_Inf_Phalanx_C" count="4" team="3" area="Quest_Area_A" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_Agamemnon" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="11045" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="12000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="60" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <timer id="1" description="$$3525$$" failonexpire="false" />
+      <or id="2" mustfailall="false">
+        <values>
+          <and id="3" mustfailall="false">
+            <values>
+              <dummy id="4" description="$$3527$$" objectivename="HoldOut" autocomplete="false" />
+              <kill id="5" description="$$3247$$" type="Gr_Bldg_Stables" count="6" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <protectunit id="6" description="$$2472$$" type="Gr_Bldg_TownCenter" owningplayerid="1" />
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,47 @@
+<quest uniqueid="13016" version="122" displayname="$$7386$$" level="6" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$8638$$" completiontext="$$7381$$" inprogresstext="$$7382$$" summarytext="$$7383$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.38" maplocationy="0.31" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" dataset="c03\c03_barbarian_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2298$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2298$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Celtic Alps" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R1M41_RescueDruids" />
+      <variable name="region" type="String" value="Celtic Alps" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R1_VindeliciaDrust" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C03_R1_VindeliciaDrust" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13018" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="6000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="30" />
+    <loottable visible="true" type="tables\_coreloot_celtdruid_reward" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitdiscovered id="2" description="$$9030$$" type="AIStart" count="7" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

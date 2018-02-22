@@ -1,0 +1,75 @@
+<quest uniqueid="54" version="69" displayname="$$732$$" level="10" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6281$$" completiontext="$$3230$$" inprogresstext="$$3232$$" summarytext="$$3233$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.465" maplocationy="0.365" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" script="CORE\Rush_Moderate" dataset="C01\C01_Mycenae_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="500">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0.7" />
+      <aivariable key="SiegeBias" value="-0.4" />
+      <aivariable key="InfantryBias" value="0" />
+      <aivariable key="ArcherBias" value="0.5" />
+      <aivariable key="EconomyHandicap" value="-0.6" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" dataset="C01\C01_Mycenae_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="Small">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_R1M45_Reclaim" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_Agamemnon" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="KingThyestes" protoname="Npc_KingThyestes_Greek" count="1" team="4" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Npc_KingThyestes" visualscale="1.3" initialhitpoints="5000" maxhitpoints="5000" />
+    </protounit>
+    <protounit cooponly="true" forcetocenter="false" name="CoopSpecialUnits_01" protoname="Gr_Inf_Somatophylaz_C" count="2" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="true" forcetocenter="false" name="CoopSpecialUnits_02" protoname="Gr_Cav_Hetairoi_C" count="2" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="true" forcetocenter="false" name="CoopSpecialUnits_03" protoname="Gr_Inf_Phalanx_C" count="2" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="QuestBodyguard" protoname="Gr_Cav_Hippikon" count="25" team="4" area="Quest_Area_A" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_Agamemnon" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="165" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="6" />
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="60" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="ArmorMed_R017" traitlevel="13" />
+      <trait visible="true" id="Bow1H_R002_VR" traitlevel="13" />
+      <trait visible="true" id="Javelin2H_R015" traitlevel="13" />
+    </or>
+    <questgiver visible="true" name="C01_R1_Agamemnon" status="Unavailable" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$2484$$" type="Gr_Bldg_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+              <kill id="4" description="$$2485$$" type="Npc_KingThyestes_Greek" count="1" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

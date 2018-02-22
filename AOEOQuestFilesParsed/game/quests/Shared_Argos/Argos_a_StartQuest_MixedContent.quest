@@ -1,0 +1,64 @@
+<quest uniqueid="510" version="54" displayname="$$592$$" level="0" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="CapitolCity" description="$$4855$$" completiontext="$$4853$$" inprogresstext="$$1612$$" summarytext="$$4852$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="true" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <onaccept>
+    <unlockregion visible="true" region="2" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C01_R1_VillageElder" />
+    <protounit unit="C02_R1_KingNarmer" />
+    <protounit unit="C02_R1_PharoahSesostris" />
+    <protounit unit="C02_R1_CitySesostris_V2" />
+    <protounit unit="C03_R1_Leader" />
+    <protounit unit="C04_R1_Leader" />
+    <protounit unit="C06_R1_Leader" />
+    <protounit unit="C07_R1_Leader" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="ArgosCaptain" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <or>
+        <values>
+          <questcomplete id="77" />
+          <questcomplete id="401" />
+          <questcomplete id="13500" />
+          <or>
+            <values>
+              <questcomplete id="14610" />
+              <queststatus id="14610" queststatus="Assigned" />
+            </values>
+          </or>
+          <or>
+            <values>
+              <questcomplete id="16610" />
+              <queststatus id="16610" queststatus="Assigned" />
+            </values>
+          </or>
+          <or>
+            <values>
+              <questcomplete id="17610" />
+              <queststatus id="17610" queststatus="Assigned" />
+            </values>
+          </or>
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="5" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$4244$$">
+        <values>
+          <unitdiscovered id="2" description="" type="ArgosCaptain" count="1" />
+          <ownsunit id="3" type="ArgosCaptain" count="1" owningplayerid="1" causesfailure="false" />
+          <unitdiscovered id="4" description="" type="GEN_FredTheRedeemer" count="1" />
+          <ownsunit id="5" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

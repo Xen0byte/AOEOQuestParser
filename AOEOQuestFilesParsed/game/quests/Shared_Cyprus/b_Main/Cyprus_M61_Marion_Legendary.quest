@@ -1,0 +1,204 @@
+<quest uniqueid="3019" version="118" displayname="$$8140$$" level="43" difficultycoloroverride="2" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6548$$" completiontext="$$6262$$" inprogresstext="$$6243$$" summarytext="$$6530$$" repeatableduration="144" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.16" maplocationy="0.52" mapmarker="QuestRepeatable" mappage="Cyprus" elitespawnchance="1" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6591$$" script="CORE\Turtle_Hardcore" dataset="C01\C01_CyprusRamp_T4" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6591$$" script="CORE\Rush_Heavy" dataset="C01\C01_CyprusRush_T4" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="CavalryBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6591$$" script="CORE\Rush_Moderate" dataset="C01\C01_CyprusRush_T4" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="CavalryBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6591$$" script="Custom\AIDoNothing" dataset="C01\C01_CyprusRush_T4" cooponly="false" startingfood="100" startingwood="100" startinggold="100" startingstone="100" />
+  <timer time="00:60:00" hideonui="false">
+    <events>
+      <timerevent event="spawnsiege_light" time="00:10:00" />
+      <timerevent event="spawnsiege_light" time="00:14:00" />
+      <timerevent event="spawnarmy" time="00:14:00" />
+      <timerevent event="spawnsiege_light" time="00:16:00" />
+      <timerevent event="spawnarmy" time="00:16:00" />
+      <timerevent event="spawnsiege_light" time="00:18:00" />
+      <timerevent event="spawnsiege" time="00:20:00" />
+      <timerevent event="spawnarmy" time="00:23:05" />
+      <timerevent event="spawnarmy" time="00:23:10" />
+      <timerevent event="spawnarmy" time="00:23:20" />
+      <timerevent event="spawnarmy" time="00:23:30" />
+      <timerevent event="spawnarmy" time="00:23:40" />
+      <timerevent event="spawnarmy" time="00:23:50" />
+      <timerevent event="spawnarmy" time="00:24:00" />
+      <timerevent event="spawnsiege_helio" time="00:30:00" />
+      <timerevent event="spawnsiege_light" time="00:31:00" />
+      <timerevent event="spawnarmy" time="00:31:00" />
+      <timerevent event="spawnsiege_helio" time="00:34:00" />
+      <timerevent event="spawnsiege_light" time="00:35:00" />
+      <timerevent event="spawnarmy" time="00:35:05" />
+      <timerevent event="spawnsiege_helio" time="00:38:00" />
+      <timerevent event="spawnsiege_heavy" time="00:39:00" />
+      <timerevent event="spawnarmy" time="00:39:05" />
+      <timerevent event="spawnsiege" time="00:40:00" />
+      <timerevent event="spawnarmy" time="00:40:10" />
+      <timerevent event="spawnarmy" time="00:40:20" />
+      <timerevent event="spawnarmy" time="00:40:30" />
+      <timerevent event="spawnarmy" time="00:40:40" />
+      <timerevent event="spawnarmy" time="00:40:50" />
+      <timerevent event="spawnarmy" time="00:40:00" />
+      <timerevent event="spawnsiege_helio" time="00:44:00" />
+      <timerevent event="spawnsiege_heavy" time="00:45:00" />
+      <timerevent event="spawnarmy" time="00:45:00" />
+      <timerevent event="spawnarmy" time="00:45:10" />
+      <timerevent event="spawnarmy" time="00:45:20" />
+      <timerevent event="spawnarmy" time="00:45:30" />
+      <timerevent event="spawnsiege_helio" time="00:48:00" />
+      <timerevent event="spawnsiege_heavy" time="00:49:00" />
+      <timerevent event="spawnarmy" time="00:49:10" />
+      <timerevent event="spawnarmy" time="00:49:20" />
+      <timerevent event="spawnarmy" time="00:49:30" />
+      <timerevent event="spawnsiege_helio" time="00:53:00" />
+      <timerevent event="spawnsiege_heavy" time="00:54:00" />
+      <timerevent event="spawnarmy" time="00:54:00" />
+      <timerevent event="spawnarmy" time="00:54:10" />
+      <timerevent event="spawnarmy" time="00:54:20" />
+      <timerevent event="spawnarmy" time="00:54:30" />
+      <timerevent event="spawnsiege_helio" time="00:57:00" />
+      <timerevent event="spawnsiege_heavy" time="00:58:00" />
+      <timerevent event="spawnarmy" time="00:58:10" />
+      <timerevent event="spawnarmy" time="00:58:20" />
+      <timerevent event="spawnarmy" time="00:58:30" />
+    </events>
+  </timer>
+  <timereffects event="spawnsiege">
+    <spawnunit visible="true" count="2" placeunittype="Gr_Sie_Ballista" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_SiegeWorkshop" radius="15" useboneposition="false" />
+  </timereffects>
+  <timereffects event="spawnsiege_light">
+    <spawnunit visible="true" count="1" placeunittype="Gr_Sie_Ballista" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_SiegeWorkshop" radius="15" useboneposition="false" />
+  </timereffects>
+  <timereffects event="spawnsiege_heavy">
+    <spawnunit visible="true" count="4" placeunittype="Gr_Sie_Ballista" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_SiegeWorkshop" radius="15" useboneposition="false" />
+  </timereffects>
+  <timereffects event="spawnsiege_helio">
+    <spawnunit visible="true" count="5" placeunittype="Gr_Sie_Helepolis_C" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_SiegeWorkshop" radius="15" useboneposition="false" />
+  </timereffects>
+  <timereffects event="spawnarmy">
+    <spawnunit visible="true" count="4" placeunittype="Gr_Inf_Hypaspist" asplayer="2" spawntype="SpawnForPlayer" nearunittype="Gr_Bldg_Barracks" radius="15" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core\Shared_Cyprus\Cyprus_a_Loader" randommap="true" numplayers="6" mapregionname="Minoan Crete" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Cyprus/Cyprus_12Kingdoms_Marion" />
+      <variable name="IsREPEAT" type="Bool" value="true" />
+      <variable name="IsLEGENDARY" type="Bool" value="true" />
+      <variable name="GeneralsPlayerID" type="Int" value="6" />
+      <variable name="GeneralsTime" type="Float" value="3000" />
+      <variable name="QuestID" type="Int" value="3019" />
+      <variable name="OptionalRestrictTraining" type="Bool" value="true" />
+      <variable name="OptionalRestrictSie" type="Bool" value="true" />
+      <variable name="MainPlayerID" type="Int" value="1" />
+      <variable name="CoopPlayerID" type="Int" value="3" />
+      <variable name="region" type="String" value="Minoan Crete" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="10000000" value="Legendary_40-50_01" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="CyprusLeaderV2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age3_Fortress" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age3_Fortress" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="CyprusGeneral01" protoname="CyprusGeneral" count="1" team="6" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="NPC_CyprusGeneral" displaynameid="45757" visualscale="1.2" initialhitpoints="5000" maxhitpoints="5000" convertresist="100" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="CyprusGeneral02" protoname="CyprusGeneral" count="1" team="6" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="NPC_CyprusGeneral" displaynameid="45757" visualscale="1.2" initialhitpoints="5000" maxhitpoints="5000" convertresist="100" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="CyprusGeneral03" protoname="CyprusGeneral" count="1" team="6" area="Quest_Area_C" usequesttargetindicator="true">
+      <overrides parent="NPC_CyprusGeneral" displaynameid="45757" visualscale="1.2" initialhitpoints="5000" maxhitpoints="5000" convertresist="100" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="CyprusLeaderV2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="3001" />
+      <level min="40" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="60" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="10000" />
+    <loottable visible="true" type="general_legendary" />
+    <loottable visible="true" type="general_legendary" />
+    <loottable visible="true" type="general_legendary" />
+    <loottable visible="true" type="general_legendary" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="5000" />
+    <loottable visible="true" loottable="general_legendary" />
+    <loottable visible="true" loottable="general_legendary" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <and id="3" mustfailall="false">
+            <values>
+              <kill id="4" description="$$2507$$" type="Gr_Bldg_Fortress" count="5" includeconversion="true" onlycountelites="false" />
+              <kill id="5" description="$$6585$$" type="CyprusGeneral" count="3" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="9" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="10" mustfailall="false">
+        <values>
+          <dummy id="11" description="$$10409$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+          <and id="12" mustfailall="false">
+            <values>
+              <kill id="13" description="" type="Gr_Bldg_Fortress" count="5" includeconversion="true" onlycountelites="false" />
+              <kill id="14" description="" type="CyprusGeneral" count="3" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

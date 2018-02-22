@@ -1,0 +1,86 @@
+<quest uniqueid="12201" version="80" displayname="$$394$$" level="5" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$8253$$" completiontext="$$4725$$" inprogresstext="$$4726$$" summarytext="$$6279$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c02_specialunit_desertswordsman.xml" maplocationx="0.714" maplocationy="0.398" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2253$$" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2253$$" script="CORE\Rush_Weak" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.4" />
+      <aivariable key="InfantryBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Egyptian Marsh" lightsetname="Noon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_M13_Caravan" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" value="Noon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="100000" value="Quest_C02_SecondGuardedNugget" />
+    </nuggetoverrides>
+  </randommap>
+  <onaccept>
+    <protip visible="false" tip="TIP_Shared_SkipAhead_QuestMap" />
+    <protip visible="false" proto="Eg_Cap_Start_Bldg" tip="TIP_C02_SkipAhead_Technology" />
+    <enableprotip visible="false" tip="TIP_UI_Workshop_FirstUse" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C02_R1_KingNarmer" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="C02M13Warleader_A" protoname="C02M13Warleader_01" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="NPC_Badari_WarLeader" visualscale="1.5" initialhitpoints="2200" maxhitpoints="2200" displaynameid="50104" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="C02M13Warleader_B" protoname="C02M13Warleader_01" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="NPC_Badari_WarLeader" visualscale="1.5" initialhitpoints="2200" maxhitpoints="2200" displaynameid="50104" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="C02M13Warleader_C" protoname="C02M13Warleader_01" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="true">
+      <overrides parent="NPC_Badari_WarLeader" visualscale="1.5" initialhitpoints="2200" maxhitpoints="2200" displaynameid="50104" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="C02M13Warleader_D" protoname="C02M13Warleader_01" count="1" team="2" area="Quest_Area_D" usequesttargetindicator="true">
+      <overrides parent="NPC_Badari_WarLeader" visualscale="1.5" initialhitpoints="2200" maxhitpoints="2200" displaynameid="50104" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_KingNarmer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="2" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="4000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <or>
+      <trait visible="true" id="Axe2H_R017_SR" traitlevel="7" />
+      <trait visible="true" id="Sling2H_R003" traitlevel="7" />
+      <trait visible="true" id="Spear2H_R017" traitlevel="7" />
+      <trait visible="true" id="Scepter2H_R008" traitlevel="7" />
+      <trait visible="true" id="Spear2H_U016" traitlevel="7" />
+      <trait visible="true" id="Bow1H_U012_VR" traitlevel="7" />
+    </or>
+    <blueprint visible="true" unit="Gn_Cap_GeneralEmpireStore01" />
+    <protip visible="false" proto="Eg_Cap_Start_Bldg" tip="TIP_C02_TechTreeReminder" />
+    <protip visible="false" proto="" tip="TIP_Shared_SkipAhead_EmpireBazaar" />
+    <unlockregion visible="false" region="7" />
+    <questgiver visible="true" name="C02_R1_EgyptPortMaster" status="Available" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$2545$$" type="Qst_npc_Caravan" count="10" includeconversion="true" onlycountelites="false" />
+              <kill id="4" description="$$4625$$" type="C02M13Warleader_01" count="4" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

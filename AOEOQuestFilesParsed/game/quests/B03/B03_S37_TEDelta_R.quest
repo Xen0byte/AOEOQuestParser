@@ -1,0 +1,86 @@
+<quest uniqueid="103037" version="37" displayname="$$11656$$" level="-1" difficultycoloroverride="1" repeatable="true" offertype="eOfferBooster3" canplaycoop="true" cooprequired="true" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11920$$" completiontext="$$11916$$" inprogresstext="$$11917$$" summarytext="$$11903$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.4" maplocationy="0.71" mapmarker="QuestRepeatable" mappage="Persia" elitespawnchance="0.025" linkedquestid="103937" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$7398$$" dataset="c04\c04_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$7398$$" dataset="c04\c04_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$7398$$" dataset="c04\c04_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$11630$$" dataset="c04\c04_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:30:00" hideonui="false" />
+  <randommap map="Core\Shared_Babylon\Babylon_S33_TEDelta_CoopNaval" randommap="true" numplayers="6" mapregionname="Meso Valley" lightsetname="Evening" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="shared_babylon\babylon_s33_tedelta_coopnaval" />
+      <variable name="QuestID" type="Int" value="103037" />
+      <variable name="OptionalRestrictGuardTowers" type="Bool" value="true" />
+      <variable name="MainPlayerID" type="Int" value="1" />
+      <variable name="CoopPlayerID" type="Int" value="3" />
+      <variable name="IsRepeat" type="Bool" value="true" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="lighting" type="String" value="Evening" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_PortMaster" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="CoopStart" count="1" team="3" area="Player2" groupfilename="shared_player3_age2_barracks" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_PortMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103033" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="10" />
+    <xp visible="true" amount="1" lookuptable="SQLong" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQLong" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="OptionalOne">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <secondaryrewards visible="true" name="OptionalTwo">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$11725$$" type="Ba_Bldg_Ziggurat" owningplayerid="6" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="5" mustfailall="false" rewardname="OptionalOne" description="$$9507$$">
+    <values>
+      <or id="6" mustfailall="false">
+        <values>
+          <timer id="7" description="" failonexpire="true" />
+          <kill id="8" description="$$12373$$" type="Pe_Civ_UtilityBoat" count="5" includeconversion="true" onlycountelites="false" />
+          <dummy id="9" objectivename="OBJECTIVE_FAIL" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+  <secondaryobjectives id="10" mustfailall="false" rewardname="OptionalTwo" description="$$9508$$">
+    <values>
+      <or id="11" mustfailall="false">
+        <values>
+          <timer id="12" description="" failonexpire="false" />
+          <dummy id="13" description="$$11661$$" objectivename="OptionalRestrictGuardTowers" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

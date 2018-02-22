@@ -1,0 +1,24 @@
+<quest uniqueid="69" version="32" displayname="$$838$$" level="-1" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$4143$$" completiontext="$$4144$$" inprogresstext="$$4145$$" summarytext="$$4142$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="ArgosCaptain" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="ArgosKing" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="450" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <kill id="1" description="$$4146$$" type="Npc_SP_Chieftan" count="10" includeconversion="true" onlycountelites="false" />
+    </values>
+  </objectives>
+</quest>

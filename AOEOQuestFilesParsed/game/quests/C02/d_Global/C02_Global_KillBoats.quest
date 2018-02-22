@@ -1,0 +1,32 @@
+<quest uniqueid="261" version="40" displayname="$$4598$$" level="-1" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$5346$$" completiontext="$$4602$$" inprogresstext="$$5348$$" summarytext="$$4601$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Egypt" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <onaccept>
+    <protip visible="true" tip="TIP_Shared_QuestType_Global_01" />
+    <questgiver visible="false" name="C02_R1_EgyptPortMaster" status="Unavailable" />
+    <questgiver visible="false" name="C02_R1_EgyptPortMaster_V2" status="Available" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C02_R1_EgyptPortMaster" />
+    <protounit unit="C02_R1_EgyptPortMaster_V2" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C02_R1_EgyptPortMaster" />
+    <protounit unit="C02_R1_EgyptPortMaster_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="129" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <kill id="1" description="$$2665$$" type="UnitTypeShipFishing1" count="100" includeconversion="true" onlycountelites="false" />
+    </values>
+  </objectives>
+</quest>

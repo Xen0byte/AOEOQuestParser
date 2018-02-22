@@ -1,0 +1,49 @@
+<quest uniqueid="256" version="32" displayname="$$2208$$" level="-1" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$1074$$" completiontext="$$1075$$" inprogresstext="$$1789$$" summarytext="$$1790$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.574" maplocationy="0.501" mapmarker="QuestDefault" mappage="Troy" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2246$$" script="Custom\AIDoMinimal" dataset="C01\C01_CoreRamp_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <timer time="00:15:00" hideonui="false" />
+  <randommap map="set_questland" randommap="true" numplayers="2" mapregionname="Greek Coast" lightsetname="Morning" mapsizename="Standard">
+    <mapvariables>
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R3_Magistrate" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="ProTips" count="1" team="1" area="Player1" groupfilename="C01\Custom\C01_Side_ProTipTrigger_TCPop" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R3_Magistrate" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="269" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <population id="3" description="$$2460$$" currentgoal="140" capgoal="1" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

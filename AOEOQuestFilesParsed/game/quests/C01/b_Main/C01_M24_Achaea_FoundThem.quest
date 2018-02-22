@@ -1,0 +1,64 @@
+<quest uniqueid="10" version="66" displayname="$$1043$$" level="8" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$3243$$" completiontext="$$3065$$" inprogresstext="$$3223$$" summarytext="$$3221$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c01_specialunit_hetairoi.xml" maplocationx="0.181" maplocationy="0.244" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" script="CORE\Rush_Weak" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="-0.4" />
+      <aivariable key="ArcherBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" dataset="c01\c01_bandit_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Greek Coast" lightsetname="Afternoon" mapsizename="Small">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_R1M31_WeFoundHetairoi" />
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="10" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_VillageElder" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player 1" count="1" team="1" area="Player1" groupfilename="C01\Custom\C01_R1M31_WeFoundThemHetairoi_P1Base" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player 2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="true" forcetocenter="false" name="CoopSpecialUnits" protoname="Gr_Cav_Hetairoi_C" count="2" team="3" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Warleader_01" protoname="Warleader_01" count="1" team="4" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="Npc_BanditLeader_01" visualscale="1.5" initialhitpoints="2600" maxhitpoints="2600" displaynameid="56011" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="6" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="8000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+    <questgiver visible="true" name="C01_R1_VillageScout" status="Available" />
+    <protip visible="false" proto="C01_R1_VillageScout" tip="TIP_C01_NewQuests_VillageScout" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,49 @@
+<quest uniqueid="198" version="49" displayname="$$919$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$8991$$" completiontext="$$8992$$" inprogresstext="$$8998$$" summarytext="$$8996$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.357" maplocationy="0.51" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="4500" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="ForceFalse" playertype="Computer" personality="$$7398$$" dataset="C01\C01_CoreRush_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$8995$$" dataset="c01\c01_coreramp_t1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:10:00" hideonui="false" />
+  <randommap map="Core\Shared_Argos\Argos_TradeRequest" randommap="true" numplayers="3" mapregionname="Greek Isles" lightsetname="Afternoon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Argos/Argos_TradeRequest" />
+      <variable name="region" type="String" value="Greek Isles" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosDockForeman" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="ArgosDockForeman" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="510" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="10" />
+    <xp visible="true" amount="1" lookuptable="SQShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQShort" />
+    <material visible="true" materialname="!MosiacTile" count="5" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <unitdiscovered id="3" description="$$8928$$" type="Qst_SpawnPoint1" count="9" />
+          <protectunit id="4" description="$$8929$$" type="UnitTypeShipUtility1" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,53 @@
+<quest uniqueid="103052" version="76" displayname="$$10266$$" level="26" repeatable="false" offertype="eOfferBooster3" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11787$$" completiontext="$$11440$$" inprogresstext="$$11407$$" summarytext="$$11788$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.56" maplocationy="0.75" mapmarker="QuestDefault" mappage="Persia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11793$$" dataset="c04\c04_coreramp_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="4" team="3" color="4" tributablebehavior="Default" playertype="Computer" personality="$$11794$$" dataset="c04\c04_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11793$$" dataset="c06\c06_coreramp_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared_Babylon\Babylon_S52_Susa_Wonder" randommap="true" numplayers="5" mapregionname="Meso Valley" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Babylon/Babylon_S52_Susa_Wonder" />
+      <variable name="QuestID" type="Int" value="103052" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_OldFactionGuy" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="Babylon_OldFactionGuy" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103051" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="120000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="250" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <convertunit id="3" description="$$2342$$" type="UnitTypeVillager1" count="40" />
+              <dummy id="4" description="$$2538$$" objectivename="BuildWonder" autocomplete="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="Ba_Bldg_WonderFoundation" count="0" includeteam="true" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
+          <dummy id="6" objectivename="LoseRequiredUnits" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

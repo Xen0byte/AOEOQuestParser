@@ -1,0 +1,67 @@
+<quest uniqueid="252" version="79" displayname="$$4365$$" level="6" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$5649$$" completiontext="$$4879$$" inprogresstext="$$4880$$" summarytext="$$4484$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.4" maplocationy="0.325" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" script="CORE\Rush_Moderate" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0.4" />
+      <aivariable key="InfantryBias" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$4485$$" dataset="c02\c02_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Egyptian Sand" lightsetname="Noon" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R1M32_Oasis" />
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="252" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" value="Noon" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <onaccept>
+    <protip visible="false" tip="TIP_Shared_CoopReminder" />
+    <questgiver visible="false" name="C02_R1_GeneralAhapitep" status="Unavailable" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C02_R1_GeneralAhapitep_V2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_GeneralAhapitep_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="250" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="6000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="40" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

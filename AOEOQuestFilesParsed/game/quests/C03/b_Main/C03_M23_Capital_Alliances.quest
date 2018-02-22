@@ -1,0 +1,46 @@
+<quest uniqueid="13063" version="107" displayname="$$7343$$" level="0" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$7967$$" completiontext="$$8675$$" inprogresstext="$$7351$$" summarytext="$$7968$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.278" maplocationy="0.2" mapmarker="Blank" mappage="C03_Celtica" elitespawnchance="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <onaccept>
+    <protip visible="false" proto="Ce_Cap_Port" tip="TIP_RegionTravelAway" />
+    <unlockregion visible="false" region="12" />
+    <unlockregion visible="false" region="11" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C03_R1_Leader" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C03_R1_Leader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13018" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <and id="1" mustfailall="false" description="$$8622$$">
+        <values>
+          <or id="2" mustfailall="false">
+            <values>
+              <unitdiscovered id="3" type="C03_R1_SensBrennos" count="1" />
+            </values>
+          </or>
+        </values>
+      </and>
+      <and id="4" mustfailall="false" description="$$2378$$">
+        <values>
+          <or id="5" mustfailall="false">
+            <values>
+              <unitdiscovered id="6" type="C03_R1_VindeliciaDrust" count="1" />
+            </values>
+          </or>
+        </values>
+      </and>
+    </values>
+  </objectives>
+</quest>

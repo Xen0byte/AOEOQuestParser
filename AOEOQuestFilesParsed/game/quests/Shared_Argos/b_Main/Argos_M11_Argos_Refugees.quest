@@ -1,0 +1,96 @@
+<quest uniqueid="55" version="68" displayname="$$883$$" level="21" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4165$$" completiontext="$$4164$$" inprogresstext="$$4163$$" summarytext="$$4162$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.41" maplocationy="0.589" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Heavy" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500">
+    <aiflagvariables>
+      <aivariable key="UseWaves" value="1" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-0.2" />
+      <aivariable key="ArcherBias" value="-0.1" />
+      <aivariable key="EconomyHandicap" value="-0.6" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Heavy" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500">
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0" />
+      <aivariable key="ArcherBias" value="0" />
+      <aivariable key="EconomyHandicap" value="-0.5" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Heavy" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500">
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0" />
+      <aivariable key="ArcherBias" value="0" />
+      <aivariable key="EconomyHandicap" value="-0.5" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="3" color="5" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2319$$" dataset="C01\C01_CoreRamp_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="6" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Argos/Argos_M11_ItBurnsUs" />
+      <variable name="region" type="String" value="Greek Inland" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosCaptain" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="6" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <random placeatleast="1" placenomore="3" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Cow1" chance="0.33" />
+        <unit name="Cow2" chance="0.33" />
+        <unit name="Cow3" chance="0.33" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Cow1" protoname="ArgosCow" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" rollovertextid="57565" soundfile="Cow" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Cow2" protoname="ArgosCow" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" rollovertextid="57565" soundfile="Cow" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Cow3" protoname="ArgosCow" count="1" team="2" area="Quest_Area_D" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" rollovertextid="57565" soundfile="Cow" />
+        </protounit>
+      </targets>
+    </random>
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosRefugee" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="510" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="2" />
+    <xp visible="true" amount="60000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="250" />
+    <questgiver visible="false" name="ArgosRefugee" status="Available" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <ownsunit id="2" description="$$2693$$" type="NPC_ArgosRefugee" count="30" owningplayerid="1" causesfailure="false" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

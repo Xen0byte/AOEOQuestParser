@@ -1,0 +1,96 @@
+<quest uniqueid="7" version="68" displayname="$$1055$$" level="5" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3906$$" completiontext="$$3907$$" inprogresstext="$$3216$$" summarytext="$$3908$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.112" maplocationy="0.238" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" script="core\rush_moderate" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_R1M21_GetTheGoods" />
+      <variable name="region" type="String" value="Greek Inland" />
+    </mapvariables>
+  </randommap>
+  <onaccept>
+    <enableprotip visible="false" tip="TIP_UI_QuestMap_FirstCoop" />
+    <protip visible="false" tip="TIP_Shared_FirstCoop" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C01_R1_VillageElder" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="CoopPlayer" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Qst_MerchantCartAreaA" protoname="Qst_MerchantCart" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57661" shortrollovertextid="57662" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Qst_MerchantCartAreaB" protoname="Qst_MerchantCart" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57661" shortrollovertextid="57662" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Qst_MerchantCartAreaC" protoname="Qst_MerchantCart" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57661" shortrollovertextid="57662" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Qst_MerchantCartAreaD" protoname="Qst_MerchantCart" count="1" team="2" area="Quest_Area_D" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57661" shortrollovertextid="57662" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Qst_MerchantCartAreaE" protoname="Qst_MerchantCart" count="1" team="2" area="Quest_Area_E" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57661" shortrollovertextid="57662" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Qst_MerchantCartAreaP3" protoname="Qst_MerchantCart" count="1" team="2" area="Player3" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57661" shortrollovertextid="57662" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Qst_MerchantCartAreaP4" protoname="Qst_MerchantCart" count="1" team="2" area="Player4" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57661" shortrollovertextid="57662" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="BanditDefendersAreaB" protoname="Npc_Inf_Bandit" count="12" team="4" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="BanditDefendersAreaC" protoname="Npc_Inf_Bandit" count="6" team="4" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="BanditDefendersAreaD" protoname="Npc_Inf_Bandit" count="6" team="4" area="Quest_Area_D" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="BanditDefendersAreaE" protoname="Npc_Inf_Bandit" count="4" team="4" area="Quest_Area_E" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="BanditDefendersPlayer3" protoname="Npc_Inf_Bandit" count="4" team="4" area="Player3" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="BanditDefendersPlayer4" protoname="Npc_Inf_Bandit" count="4" team="4" area="Player4" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <or>
+        <values>
+          <questcomplete id="11013" />
+          <questcomplete id="11201" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="5000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="30" />
+    <loottable visible="true" type="general" />
+    <or>
+      <material visible="true" materialname="StoneBlock" count="50" />
+      <material visible="true" materialname="PinePlank" count="50" />
+      <material visible="true" materialname="CopperIngot" count="50" />
+      <material visible="true" materialname="AnimalHide" count="50" />
+      <material visible="true" materialname="Grain" count="50" />
+    </or>
+    <consumable visible="true" consumablename="ConsumableGrantCow_C" count="3" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitdiscovered id="3" description="$$3905$$" type="Qst_MerchantCart" count="7" />
+              <unitinarea id="4" description="$$3904$$" area="Player1" type="Qst_MerchantCart" count="7" radius="25" aidefend="true" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,25 @@
+<quest uniqueid="408" version="40" displayname="$$616$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$4594$$" completiontext="$$4595$$" inprogresstext="$$4591$$" summarytext="$$4593$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="C02_R2_WantedPoster" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C02_R2_GeneralChafre" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="313" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <kill id="1" description="$$4587$$" type="NPC_Nubian_TownCenter" count="4" includeconversion="true" onlycountelites="false" />
+    </values>
+  </objectives>
+</quest>

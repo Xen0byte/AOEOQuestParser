@@ -1,0 +1,32 @@
+<quest uniqueid="67" version="18" displayname="$$1100$$" level="15" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="CapitolCity" description="$$1101$$" completiontext="$$1102$$" inprogresstext="$$1807$$" summarytext="$$3536$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.612" maplocationy="0.526" mapmarker="Blank" mappage="Troy" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="C01_R3_Odysseus" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R3_Odysseus" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="51" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="45000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableMycHoplite_U" count="5" />
+      <consumable visible="true" consumablename="ConsumableMycBowman_U" count="5" />
+    </or>
+    <consumematerial visible="false" materialname="PinePlank" count="100" />
+    <consumematerial visible="false" materialname="AnimalHide" count="50" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <collectmaterial id="1" description="$$2336$$" type="PinePlank" amount="100" includeexisting="true" />
+      <collectmaterial id="2" description="$$2337$$" type="AnimalHide" amount="50" includeexisting="true" />
+    </values>
+  </objectives>
+</quest>

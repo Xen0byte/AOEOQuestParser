@@ -1,0 +1,47 @@
+<quest uniqueid="13018" version="130" displayname="$$8569$$" level="5" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$8570$$" completiontext="$$8572$$" inprogresstext="$$8573$$" summarytext="$$8574$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.55" maplocationy="0.2" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" dataset="c03\c03_barbarian_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" script="CORE\Rush_Moderate" dataset="C03\C03_Barbarian_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" dataset="C03\C03_Barbarian_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" dataset="C03\C03_Barbarian_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="6" mapregionname="Celtic Alps" lightsetname="&lt;Not Specified&gt;" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R1M22_RecoverCaravans" />
+      <variable name="region" type="String" value="Celtic Alps" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R1_Leader" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player 1" count="1" team="1" area="Player1" groupfilename="shared_start_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player 2" count="1" team="3" area="Player2" groupfilename="shared_start_barracks" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R1_Leader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13012" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="5000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="40" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$9028$$" type="Ce_Civ_Caravan" count="15" includeconversion="true" onlycountelites="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

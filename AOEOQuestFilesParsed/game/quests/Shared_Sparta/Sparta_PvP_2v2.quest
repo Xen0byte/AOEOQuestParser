@@ -1,0 +1,42 @@
+<quest uniqueid="10316" version="47" displayname="$$9496$$" level="-1" repeatable="true" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="PvP" description="$$4768$$" completiontext="$$5299$$" inprogresstext="$$1826$$" summarytext="$$9177$$" canabandon="true" hiddenquest="true" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" customloadscreen="loadscreentips\load_shared_upsell_sparta.xml" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="6" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <victoryconditions>
+    <victorycondition type="HWStyleConquest" />
+    <victorycondition type="WonderVictory" />
+  </victoryconditions>
+  <randommap map="set_multiplayer" randommap="true" numplayers="4" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="SharedPvP_WarCouncil" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="SharedPvP_WarCommander" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="1" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="0" lookuptable="pvpLoserXP" />
+    <alliancepoints visible="true" amount="6" />
+  </rewards>
+  <secondaryrewards visible="true" name="VictoryReward">
+    <xp visible="true" amount="0" lookuptable="pvp2v2" />
+    <alliancepoints visible="true" amount="24" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="pvp2v2" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <completegame id="1" description="$$9777$$" minimumtime="240000" />
+    </values>
+  </objectives>
+  <secondaryobjectives id="2" mustfailall="false" rewardname="VictoryReward" description="$$9776$$">
+    <values>
+      <wingame id="3" description="$$3807$$" suppressfail="false" />
+    </values>
+  </secondaryobjectives>
+</quest>

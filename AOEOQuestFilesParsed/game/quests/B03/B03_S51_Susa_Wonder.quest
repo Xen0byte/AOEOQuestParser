@@ -1,0 +1,45 @@
+<quest uniqueid="103051" version="47" displayname="$$10265$$" level="24" repeatable="false" offertype="eOfferBooster3" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11786$$" completiontext="$$11431$$" inprogresstext="$$11397$$" summarytext="$$11398$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.6" maplocationy="0.74" mapmarker="QuestDefault" mappage="Persia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="1500" startinggold="0" startingstone="2000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11792$$" dataset="c04\c04_coreramp_t1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="0" startingwood="1500" startinggold="0" startingstone="2000" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared_Babylon\Babylon_S51_Susa_Wonder" randommap="true" numplayers="3" mapregionname="Meso Valley" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Babylon/Babylon_S51_Susa_Wonder" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_OldFactionGuy" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="Babylon_OldFactionGuy" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103003" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="120000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitinarea id="3" description="$$2488$$" area="Quest_Area_C" type="UnitTypeBldgFortress" count="1" radius="-1" aidefend="true" />
+              <unitinarea id="4" description="$$2489$$" area="Quest_Area_B" type="UnitTypeBldgFortress" count="1" radius="-1" aidefend="true" />
+              <unitinarea id="5" description="$$2490$$" area="Quest_Area_A" type="UnitTypeBldgFortress" count="1" radius="-1" aidefend="true" />
+            </values>
+          </and>
+          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

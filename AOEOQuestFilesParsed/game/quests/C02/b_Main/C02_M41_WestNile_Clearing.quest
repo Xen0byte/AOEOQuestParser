@@ -1,0 +1,74 @@
+<quest uniqueid="254" version="61" displayname="$$4362$$" level="5" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$5693$$" completiontext="$$5687$$" inprogresstext="$$5691$$" summarytext="$$4487$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.477" maplocationy="0.638" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0">
+  <playersettings id="1" team="1" color="1" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" playertype="Computer" personality="$$2255$$" script="CORE\Rush_Moderate" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="200" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0" />
+      <aivariable key="InfantryBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="3" color="3" playertype="Computer" personality="$$2256$$" dataset="C02\C02_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Egyptian Marsh">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R1M41_ClearingTheNile" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <onaccept>
+    <protip visible="false" tip="TIP_Shared_FirstCoop" />
+    <questgiver visible="false" name="C02_R1_GeneralBatoshipip" status="Unavailable" />
+    <questgiver visible="false" name="C02_R1_GeneralBatoshipip_V2" status="Available" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C02_R1_GeneralBatoshipip" />
+    <protounit unit="C02_R1_GeneralBatoshipip_V2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_GeneralBatoshipip_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <or>
+        <values>
+          <questcomplete id="12013" />
+          <questcomplete id="12201" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="4000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="30" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2546$$" type="Eg_Bldg_GuardTower" count="5" includeconversion="true" onlycountelites="false" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,68 @@
+<quest uniqueid="103074" version="46" displayname="$$10262$$" level="-1" repeatable="true" offertype="eOfferBooster3" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$12125$$" completiontext="$$12130$$" inprogresstext="$$11939$$" summarytext="$$10786$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.1" maplocationy="0.1" mapmarker="QuestRepeatable" mappage="Thrace" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="200" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10645$$" script="core\rush_heavy" dataset="c03\c03_corerush_t3" cooponly="false" startingfood="300" startingwood="300" startinggold="200" startingstone="-1" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10645$$" script="core\rush_moderate" dataset="c03\c03_corerush_t3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$10644$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="4" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$10644$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10645$$" dataset="c03\c03_corerush_t3" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:05:00" hideonui="false" />
+  <randommap map="Core\Shared_Babylon\Babylon_S44_SH_AlpineEscort" randommap="true" numplayers="6" mapregionname="Celtic Alps" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Babylon/Babylon_S44_SH_AlpineEscort" />
+      <variable name="RestrictNuggetScaling" type="Bool" value="true" />
+      <variable name="QuestID" type="Int" value="103074" />
+      <variable name="region" type="String" value="Celtic Alps" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="-1" value="Quest_BabylonSH44_CeCraftStoreNugget" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_NewFactionLady" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Enemy1Start" count="1" team="2" area="Player2" groupfilename="shared_start_small" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Enemy2Start" count="1" team="3" area="Player3" groupfilename="shared_start_small" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_NewFactionLady" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103044" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQShort" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <timer id="3" description="$$10815$$" failonexpire="false" />
+              <dummy id="4" description="$$10306$$" objectivename="BabylonS44_CaravansInArea" autocomplete="false" />
+              <collectmaterial id="5" description="$$10656$$" type="SH_Spice" amount="1" includeexisting="false" />
+            </values>
+          </and>
+          <or id="6" mustfailall="false">
+            <values>
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" description="" type="Ce_Cap_Caravan" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+            </values>
+          </or>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

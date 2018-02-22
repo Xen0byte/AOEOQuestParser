@@ -1,0 +1,88 @@
+<quest uniqueid="180" version="50" displayname="$$889$$" level="25" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4175$$" completiontext="$$9315$$" inprogresstext="$$4173$$" summarytext="$$4172$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.547" maplocationy="0.513" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Ramp_Moderate" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="1000" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2320$$" dataset="C01\C01_CoreRamp_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="1000" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Argos/Argos_M13_RepairDocks" />
+      <variable name="region" type="String" value="Greek Coast" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosKing" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Protip" count="1" team="1" area="Player1" groupfilename="Shared\Shared_ProTipTrigger_Repair" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="4" area="Player2" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <random placeatleast="1" placenomore="4" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Cow1" chance="0.25" />
+        <unit name="Cow2" chance="0.25" />
+        <unit name="Cow3" chance="0.25" />
+        <unit name="Cow4" chance="0.25" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Cow1" protoname="ArgosCow" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Cow2" protoname="ArgosCow" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Cow3" protoname="ArgosCow" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="true" name="Cow4" protoname="ArgosCow" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+      </targets>
+    </random>
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosKing" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="64" />
+      <questcomplete id="75" />
+      <questcomplete id="73" />
+      <questcomplete id="211" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="2" />
+    <xp visible="true" amount="80000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="300" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <repairunit id="2" description="$$2694$$" type="Gr_Bldg_Dock" count="8" playerid="3" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+              <reduceunitsto id="7" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

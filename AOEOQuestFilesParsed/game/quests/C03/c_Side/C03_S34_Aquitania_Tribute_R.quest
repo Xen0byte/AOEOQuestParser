@@ -1,0 +1,139 @@
+<quest uniqueid="13054" version="95" displayname="$$7781$$" level="-1" repeatable="true" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$8658$$" completiontext="$$7783$$" inprogresstext="$$7784$$" summarytext="$$7785$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.35" maplocationy="0.81" mapmarker="QuestRepeatable" mappage="C03_Celtica" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="100" startingwood="100" startinggold="100" startingstone="100" />
+  <playersettings id="2" team="2" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2245$$" script="Custom\AIDoMinimal" dataset="C03\C03_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="-0.5" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2237$$" script="Custom\AIDoMinimal" dataset="C03\C03_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="-0.5" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="2" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2238$$" script="Custom\AIDoMinimal" dataset="C03\C03_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="-0.5" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="100" startingwood="100" startinggold="100" startingstone="100" />
+  <timer time="00:14:00" hideonui="false">
+    <events>
+      <timerevent event="MakeBear_ThisIsJustAHackToGetBearsIn" time="00:00:01" />
+      <timerevent event="MakeBear_ThisIsJustAHackToGetBearsIn" time="00:00:01" />
+      <timerevent event="MakeBear_ThisIsJustAHackToGetBearsIn" time="00:00:01" />
+      <timerevent event="MakeBear_ThisIsJustAHackToGetBearsIn" time="00:00:01" />
+      <timerevent event="MakeBear_ThisIsJustAHackToGetBearsIn" time="00:00:01" />
+    </events>
+  </timer>
+  <timereffects event="MakeBear_ThisIsJustAHackToGetBearsIn">
+    <spawnunit visible="true" count="1" placeunittype="Bear" asplayer="1" spawntype="SpawnForAllies" nearunittype="Ce_Bldg_TownCenter" radius="200" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core\C03\C03_Side_Tribute" randommap="true" numplayers="5" mapregionname="Celtic Shore" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="RestrictNuggetScaling" type="Bool" value="true" />
+      <variable name="region" type="String" value="Celtic Shore" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="1000000" value="CeltLarge_10-14_02" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R2_Bard" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player01" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="NeedyGreeks_01" count="1" team="2" area="Quest_Area_A" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="NeedyGreeks_02" count="1" team="3" area="Quest_Area_B" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="NeedyGreeks_03" count="1" team="4" area="Quest_Area_C" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player02" count="1" team="5" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="ProTips" count="1" team="1" area="Player1" groupfilename="Shared\Shared_ProTipTrigger_Tribute" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R2_Bard" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13022" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQShort" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="2" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="1" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <and id="3" mustfailall="false">
+            <values>
+              <tribute id="4" description="$$2504$$" type="Food" amount="1000" destplayer="2" />
+              <tribute id="5" description="$$2505$$" type="Wood" amount="1000" destplayer="3" />
+              <tribute id="6" description="$$2506$$" type="Stone" amount="1000" destplayer="4" />
+            </values>
+          </and>
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="10" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+              <reduceunitsto id="11" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="12" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="13" mustfailall="false">
+        <values>
+          <dummy id="14" description="$$10378$$" objectivename="UNUSED" autocomplete="false" />
+          <reduceunitsto id="15" type="AbstractNuggetGuard" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="0" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

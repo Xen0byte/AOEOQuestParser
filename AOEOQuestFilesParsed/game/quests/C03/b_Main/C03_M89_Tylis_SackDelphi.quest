@@ -1,0 +1,94 @@
+<quest uniqueid="13038" version="102" displayname="$$7745$$" level="18" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$9594$$" completiontext="$$7698$$" inprogresstext="$$7697$$" summarytext="$$9595$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.285" maplocationy="0.81" mapmarker="QuestDefault" mappage="Thrace" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8969$$" script="core\turtle_heavy" dataset="C01\C01_Delphi_T2" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="-0.5" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="4" team="4" color="3" tributablebehavior="Default" playertype="Computer" personality="$$8877$$" script="core\boom_moderate" dataset="C03\C03_CoreRamp_T2" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="5" team="4" color="5" tributablebehavior="Default" playertype="Computer" personality="$$8883$$" script="core\boom_moderate" dataset="C03\C03_CoreRamp_T2" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8969$$" dataset="C01\C01_Delphi_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="7" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8969$$" dataset="C01\C01_Delphi_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="8" team="5" color="4" tributablebehavior="Default" playertype="Computer" personality="$$8884$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core/C03/C03_R3M88_SackDelphi" randommap="true" numplayers="8" mapregionname="Greek Rocky" lightsetname="Afternoon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R3M88_SackDelphi" />
+      <variable name="region" type="String" value="Greek Rocky" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R3_Brennos" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="HumanPlayerStart" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="CoopPlayerStart" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Ally01PlayerStart" count="1" team="4" area="Player3" groupfilename="Shared_Start_BarracksTowers" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Ally02PlayerStart" count="1" team="5" area="Player4" groupfilename="Shared_Start_BarracksTowers" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Brennos" protoname="Brennos" count="1" team="1" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="Ce_QG_Brennos" initialhitpoints="2200" maxhitpoints="2200" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R3_Brennos" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13037" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="12" />
+    <xp visible="true" amount="75000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="tables\_coreloot_celthigh_reward" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <blueprint visible="true" unit="CeltDelphiTemple" />
+    <or>
+      <trait visible="true" id="Warpaint_E101" traitlevel="23" />
+      <trait visible="true" id="Warpaint_E102" traitlevel="23" />
+      <trait visible="true" id="Warpaint_E103" traitlevel="23" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="4" sharedlos="true" />
+    <diplomacy relation="Ally" team1="4" team2="1" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="2" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="5" team2="2" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="5" sharedlos="true" />
+    <diplomacy relation="Ally" team1="5" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="5" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="5" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="5" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="5" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitinarea id="2" description="$$9042$$" area="Quest_Area_E" type="Brennos" count="1" radius="-1" aidefend="true" />
+          <protectunit id="3" description="$$7535$$" type="Brennos" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

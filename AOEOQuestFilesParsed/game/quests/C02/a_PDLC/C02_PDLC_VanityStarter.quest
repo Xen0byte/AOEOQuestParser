@@ -1,0 +1,43 @@
+<quest uniqueid="2002" version="30" displayname="$$5482$$" level="0" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" description="$$8952$$" completiontext="$$8948$$" inprogresstext="$$8948$$" summarytext="$$8947$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="true" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Egypt" elitespawnchance="0">
+  <timer hideonui="true" />
+  <randommap randommap="true" numplayers="0">
+    <mapvariables>
+      <variable name="region" type="String" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <onaccept>
+    <protip visible="false" tip="TIP_Shared_FirstReturnHome" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C02_R2_Trader_V2" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="GEN_FredTheRedeemer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="12012" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <or>
+      <blueprint visible="true" unit="Van_Statue11" />
+      <blueprint visible="true" unit="Van_Statue16" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$8953$$">
+        <values>
+          <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
+          <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" />
+          <unitdiscovered id="4" type="C02_R2_Trader_V2" count="1" />
+          <ownsunit id="5" type="C02_R2_Trader_V2" count="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

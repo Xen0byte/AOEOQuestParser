@@ -1,0 +1,94 @@
+<quest uniqueid="1101" version="131" displayname="$$9574$$" level="43" repeatable="true" canplaycoop="true" cooprequired="false" ranked="false" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.75" maplocationy="0.625" mapmarker="QuestRepeatable" mappage="Persia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$9516$$" script="Shared_Alliance\Alliance_TributeWars" dataset="C02\C02_CoreRamp_T4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Computer" cooponly="true" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$9516$$" dataset="C02\C02_CoreRamp_T4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="3" color="6" tributablebehavior="Default" playertype="Computer" personality="$$9518$$" script="Shared_Alliance\Alliance_TributeWars" dataset="C04\C04_CoreRamp_T4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="3" color="6" tributablebehavior="Default" playertype="Computer" personality="$$9518$$" dataset="C04\C04_CoreRamp_T4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="7" team="4" color="4" tributablebehavior="Default" playertype="Computer" personality="$$9517$$" script="Shared_Alliance\Alliance_TributeWars" dataset="C02\C02_CoreRamp_T4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="8" team="4" color="4" tributablebehavior="Default" playertype="Computer" personality="$$9517$$" dataset="C02\C02_CoreRamp_T4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="core\shared_alliance\alliance_tributewars" randommap="true" numplayers="8" mapregionname="Persian Rock" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="QuestID" type="Int" value="1101" />
+      <variable name="scenarioFile" type="String" value="Shared_Alliance/Alliance_TributeWars_V1" />
+      <variable name="region" type="String" value="Persian Rock" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="shared_start_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="shared_start_barracks" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <prereqs>
+    <values>
+      <level min="40" max="99" />
+      <questcomplete id="1100" />
+    </values>
+  </prereqs>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="2" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="4" sharedlos="true" />
+    <diplomacy relation="Ally" team1="4" team2="2" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="4" sharedlos="true" />
+    <diplomacy relation="Ally" team1="4" team2="3" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <dummy id="3" description="$$3802$$" objectivename="UNUSED" autocomplete="false" />
+          <and id="4" mustfailall="false">
+            <values>
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="5" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="7" />
+            </values>
+          </and>
+        </values>
+      </or>
+      <or id="8" mustfailall="false">
+        <values>
+          <dummy id="9" description="$$9813$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="10" description="$$9807$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="11" description="$$9811$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="12" description="$$9812$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="13" description="$$9831$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="14" description="$$10120$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="15" description="$$9828$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="16" description="$$10121$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="17" description="$$10182$$" objectivename="UNUSED" autocomplete="false" />
+        </values>
+      </or>
+      <or id="18" mustfailall="false">
+        <values>
+          <dummy id="19" description="$$9818$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="20" description="$$9819$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="21" description="$$9850$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="22" description="$$10122$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="23" description="$$2342$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="24" description="$$10086$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="25" description="$$10078$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="26" description="$$9821$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="27" description="$$10103$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="28" description="$$9848$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="29" description="$$9815$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="30" description="$$10116$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="31" description="$$10180$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="32" description="$$10181$$" objectivename="UNUSED" autocomplete="false" />
+        </values>
+      </or>
+      <or id="33" mustfailall="false">
+        <values>
+          <dummy id="34" description="$$9765$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="35" description="$$9766$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="36" description="$$9767$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="37" description="$$10088$$" objectivename="UNUSED" autocomplete="false" />
+          <dummy id="38" description="$$10089$$" objectivename="UNUSED" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

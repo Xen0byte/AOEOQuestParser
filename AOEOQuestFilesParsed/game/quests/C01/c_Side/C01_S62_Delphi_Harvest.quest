@@ -1,0 +1,61 @@
+<quest uniqueid="49" version="30" displayname="$$735$$" level="14" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4079$$" completiontext="$$4311$$" inprogresstext="$$1605$$" summarytext="$$3576$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.132" maplocationy="0.238" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="300" startingwood="0" startinggold="150" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$4054$$" script="CORE\Rush_Moderate" dataset="C01\C01_CoreRush_T2" cooponly="false" startingfood="50" startingwood="50" startinggold="50" startingstone="0" />
+  <playersettings id="3" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$4054$$" script="CORE\Ramp_Moderate" dataset="C01\C01_CoreRamp_T2" cooponly="false" startingfood="50" startingwood="50" startinggold="50" startingstone="0" />
+  <playersettings id="4" team="4" color="2" tributablebehavior="Default" playertype="Computer" personality="$$4054$$" script="CORE\Turtle_Moderate" dataset="C01\C01_CoreRamp_T1" cooponly="false" startingfood="50" startingwood="50" startinggold="50" startingstone="0" />
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="300" startingwood="0" startinggold="150" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core\C01\C01_Side_Oracle_Harvest" randommap="true" numplayers="5" mapregionname="Greek Inland" lightsetname="Morning" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Morning" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_Oracle" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="FirstVillage" count="1" team="2" area="Quest_Area_A" groupfilename="C01\C01_ArcherTown" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="SecondVillage" count="1" team="3" area="Quest_Area_B" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="ThirdVillage" count="1" team="4" area="Quest_Area_D" groupfilename="C01\C01_FrontierFort" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="CenterValley" count="1" team="0" area="Quest_Area_C" groupfilename="Shared\Shared_Terrain_WoodedValley_01" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="5" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_Oracle" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="45" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="15000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <buildunit id="3" description="$$2467$$" type="Gr_Bldg_Farm" count="12" />
+              <buildunit id="4" description="$$2534$$" type="Gr_Bldg_StoreHouse" count="4" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

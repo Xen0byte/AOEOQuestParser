@@ -1,0 +1,61 @@
+<quest uniqueid="17301" version="17" displayname="$$4824$$" level="-1" repeatable="true" offertype="eOfferCivNorse" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$10277$$" completiontext="$$4819$$" inprogresstext="$$4818$$" summarytext="$$4817$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" customloadscreen="loadscreentips\load_shared_craftingschool.xml" maplocationx="0.86" maplocationy="0.5" mapmarker="QuestRepeatable" mappage="Norse" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12379$$" script="CORE\Turtle_Moderate" dataset="C07\C07_CoreRamp_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2251$$" dataset="C07\C07_Vanilla_T0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12379$$" dataset="C07\C07_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared\Shared_CraftingR_Tier1" randommap="true" numplayers="4" mapregionname="Celtic Shore" lightsetname="Afternoon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared\Shared_CraftingR_Tier1" />
+      <variable name="region" type="String" value="Celtic Shore" />
+      <variable name="lighting" type="String" value="Afternoon" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C07_R1_GuildMaster" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="Shared_Start_For_Crafting_Quest" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Craftsmen" protoname="Craftsmen" count="5" team="3" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57563" animfile="CivGreek\Units\Civilian\Villager\lumberjack.xml" portraiticon="UserInterface\Icons\Units\AvatarVillagerMale_ua" soundfile="Qst_Craftsmen" icon="UserInterface\Icons\Units\VillagerMale64_ua" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C07_R1_GuildMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="24" />
+      <or>
+        <values>
+          <questcomplete id="17610" />
+          <level min="21" max="99" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQVShort" />
+    <or>
+      <material visible="true" materialname="CopperIngot" count="100" />
+      <material visible="true" materialname="PinePlank" count="100" />
+      <material visible="true" materialname="StoneBlock" count="100" />
+      <material visible="true" materialname="Grain" count="100" />
+      <material visible="true" materialname="AnimalHide" count="100" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitinarea id="2" description="$$2539$$" area="Player1" type="craftsmen" count="5" radius="30" aidefend="true" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

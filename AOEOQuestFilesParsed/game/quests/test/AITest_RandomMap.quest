@@ -1,0 +1,32 @@
+<quest uniqueid="222" version="34" displayname="$$5243$$" level="10" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" description="$$5243$$" completiontext="$$5243$$" inprogresstext="$$5243$$" summarytext="$$5243$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" script="core\rush_weak" dataset="c01\c01_corerush_t2" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <timer time="00:30:00" hideonui="false" />
+  <randommap map="Core\Shared\Shared_RM_Land_Baseline" randommap="true" numplayers="2" mapregionname="Egyptian Marsh" lightsetname="Noon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" value="Noon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="PlayerStart" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="EnemyStart" count="1" team="2" area="Quest_Area_A" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="PlayerDefenders" protoname="PT_Uber_Hoplite" count="10" team="1" area="Player1" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="EnemyHouses" protoname="Gr_Bldg_House" count="10" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="EnemyDefenders" protoname="Gr_Inf_Spearman" count="50" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+  </targets>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="99" max="99" />
+    </values>
+  </prereqs>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <buildunit id="1" description="$$2538$$" type="UnitTypeBldgWonder" count="1" />
+      <kill id="2" description="$$5182$$" type="CountsTowardMilitaryScore" count="10000" includeconversion="true" onlycountelites="false" />
+      <timer id="3" description="$$2471$$" failonexpire="true" />
+    </values>
+  </objectives>
+</quest>

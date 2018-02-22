@@ -1,0 +1,63 @@
+<quest uniqueid="13061" version="106" displayname="$$7850$$" level="16" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$9082$$" completiontext="$$7853$$" inprogresstext="$$7854$$" summarytext="$$7855$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.62" maplocationy="0.35" mapmarker="QuestDefault" mappage="Thrace" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2303$$" dataset="C01\C01_CoreRush_T2" cooponly="false" startingfood="150" startingwood="500" startinggold="500" startingstone="0" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2303$$" dataset="C01\C01_Thracian_T2" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2303$$" script="Custom\Thracian_HorsemanRush" dataset="C01\C01_Thracian_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="Core\C03\C03_Side_Thracian_02" randommap="true" numplayers="5" mapregionname="Greek Inland" lightsetname="Afternoon" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_Side_Thracian_02" />
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="13061" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R3_Acichorios" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1Start" count="1" team="1" area="Player1" groupfilename="c03\player1\c03_player1_531_barracks_age2" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="CoOpStart" count="1" team="3" area="Player2" groupfilename="c03\player3\c03_player3_531_barracks_age2" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R3_Acichorios" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13060" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="15000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableFireShips_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableFireShips_R" count="3" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

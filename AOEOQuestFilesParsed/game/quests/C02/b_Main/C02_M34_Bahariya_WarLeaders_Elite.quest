@@ -1,0 +1,57 @@
+<quest uniqueid="12834" version="12" displayname="$$12880$$" level="-1" difficultycoloroverride="2" repeatable="true" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4976$$" completiontext="$$513$$" inprogresstext="$$4977$$" summarytext="$$4978$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.493" maplocationy="0.178" mapmarker="QuestRepeatable" mappage="Egypt" elitespawnchance="1" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" script="CORE\Rush_Heavy" dataset="C02\C02_BadariAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" dataset="C02\C02_BadariAllLevels" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Egyptian Rock" lightsetname="Morning" mapsizename="Small">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_Side_WarLeadersDown" />
+      <variable name="bIsELITE" type="Bool" value="true" />
+      <variable name="QuestID" type="Int" value="12834" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_GeneralAhapitep" />
+    <protounit unit="C02_R1_GeneralAhapitep_V2" />
+    <protounit unit="C02_R1_GeneralAhapitep_V3" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="4" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="WarLeaders" protoname="Custom_WarLeader" count="2" team="3" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="NPC_Badari_WarLeader" visualscale="1.5" initialhitpoints="2600" maxhitpoints="2600" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_GeneralAhapitep" />
+    <protounit unit="C02_R1_GeneralAhapitep_V2" />
+    <protounit unit="C02_R1_GeneralAhapitep_V3" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="253" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="EliteVShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteVShort" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2364$$" type="Custom_WarLeader" count="2" includeconversion="true" onlycountelites="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

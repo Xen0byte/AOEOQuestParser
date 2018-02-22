@@ -1,0 +1,67 @@
+<quest uniqueid="162" version="45" displayname="$$1058$$" level="5" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$3281$$" completiontext="$$3283$$" inprogresstext="$$3284$$" summarytext="$$4310$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" customloadscreen="loadscreentips\load_shared_party_creation.xml" maplocationx="0.247" maplocationy="0.44" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="150" startingwood="200" startinggold="200" startingstone="200" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.4" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="4" color="3" tributablebehavior="Default" playertype="Computer" personality="$$3885$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="5" mapregionname="Greek Inland" lightsetname="Evening" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_R1M22_Support" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Evening" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_VillageElder" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="7" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="6000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="40" />
+    <loottable visible="true" type="general" />
+    <questgiver visible="true" name="C01_R1_PortMaster" status="Available" />
+    <protip visible="false" proto="C01_R1_PortMaster" tip="TIP_C01_NewQuests_PortMaster" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Enemy" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="4" sharedlos="true" />
+    <diplomacy relation="Ally" team1="4" team2="1" sharedlos="true" />
+    <diplomacy relation="Enemy" team1="2" team2="4" sharedlos="false" />
+    <diplomacy relation="Enemy" team1="3" team2="4" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <ownsunit id="2" description="$$3903$$" type="NPC_ArgosRefugee" count="35" owningplayerid="1" causesfailure="false" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

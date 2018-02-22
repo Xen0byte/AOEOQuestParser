@@ -1,0 +1,51 @@
+<quest uniqueid="10114" version="141" displayname="$$3901$$" level="-1" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1200" startingwood="1200" startinggold="1200" startingstone="1200" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:03:00" hideonui="false" />
+  <randommap map="core\shared\shared_transports" randommap="true" numplayers="3" mapregionname="Persian Rock" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared/Shared_Transports" />
+      <variable name="QuestID" type="Int" value="10114" />
+      <variable name="region" type="String" value="Persian Rock" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="99" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional_One">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </secondaryrewards>
+  <secondaryrewards visible="true" name="Optional_Two">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <timer id="1" description="$$9088$$" failonexpire="false" />
+      <or id="2" mustfailall="false">
+        <values>
+          <dummy id="3" description="$$7067$$" objectivename="UnderHundred" autocomplete="false" />
+          <ownsunit id="4" description="$$13308$$" type="Qst_CounterObject" count="100" owningplayerid="1" causesfailure="true" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="5" mustfailall="false" rewardname="Optional_One" description="$$9507$$">
+    <values>
+      <dummy id="6" description="$$7067$$" objectivename="UnderFourty" autocomplete="false" />
+    </values>
+  </secondaryobjectives>
+  <secondaryobjectives id="7" mustfailall="false" rewardname="Optional_Two" description="$$9508$$">
+    <values>
+      <dummy id="8" description="$$7067$$" objectivename="UnderTwenty" autocomplete="false" />
+    </values>
+  </secondaryobjectives>
+</quest>

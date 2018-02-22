@@ -1,0 +1,33 @@
+<quest uniqueid="13066" version="73" displayname="$$8973$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$9098$$" completiontext="$$8978$$" inprogresstext="$$8979$$" summarytext="$$8980$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="C03_Celtica" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="C03_R3_Acichorios" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C03_R3_Acichorios" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13033" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+    <or>
+      <blueprint visible="true" unit="CelticThracianHorse" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$8930$$" type="NPC_ThracianHorseman" count="10" includeconversion="false" onlycountelites="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

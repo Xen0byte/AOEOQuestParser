@@ -1,0 +1,126 @@
+<quest uniqueid="101011" version="136" displayname="$$5988$$" level="5" repeatable="true" offertype="eOfferBooster1" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5995$$" completiontext="$$5996$$" inprogresstext="$$5949$$" summarytext="$$8914$$" canabandon="true" hiddenquest="true" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="InvasionMode" maplocationx="0.65" maplocationy="0.65" mapmarker="QuestRepeatable" mappage="Crete" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2229$$" character="B01\B01_Tier1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResearchMilitary" value="0" />
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2229$$" character="B01\B01_Tier2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResearchMilitary" value="0" />
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2229$$" character="B01\B01_Tier3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResearchMilitary" value="0" />
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2229$$" character="B01\B01_Tier4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResearchMilitary" value="0" />
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2229$$" character="B01\B01_Tier5" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResearchMilitary" value="0" />
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="7" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="8" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2230$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:03:00" hideonui="false" />
+  <randommap map="Core\B01\B01_Main" randommap="true" numplayers="8" mapregionname="Minoan Crete" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="B01/B01_Map08" />
+      <variable name="IsNAVAL" type="Bool" value="true" />
+      <variable name="region" type="String" value="Minoan Crete" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B01_R1_MinoanEmbassy" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="Shared_Start_B01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Coop Player Start" count="1" team="7" area="Player2" groupfilename="Shared_Start_B01" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Revealer Player 1" protoname="SpyglassRevealer" count="1" team="2" area="Player1" usequesttargetindicator="false" />
+    <protounit cooponly="true" forcetocenter="false" name="Revealer Player 2" protoname="SpyglassRevealer" count="1" team="2" area="Player2" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Revealer Wonder" protoname="SpyglassRevealer" count="1" team="2" area="Quest_Area_E" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="B01_R1_KingMinos" />
+  </questreturners>
+  <prereqs>
+    <values />
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="b01cycle1" />
+    <alliancepoints visible="true" amount="8" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="b01cycle1" />
+    <loottable visible="true" type="tables\_coreloot_booster1" />
+    <loottable visible="true" type="general" />
+    <or>
+      <material visible="true" materialname="!CypressWood" count="2" />
+      <material visible="true" materialname="!KnossosMarble" count="2" />
+      <material visible="true" materialname="!MinoanTools" count="2" />
+      <blueprint visible="true" unit="Van_Mn_Wonder" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <protectunit id="2" description="$$2453$$" type="Mn_Bldg_Wonder" owningplayerid="1" />
+          <and id="3" mustfailall="false">
+            <values>
+              <unitdiscovered id="4" description="" type="Qst_SpawnPoint1" count="1" />
+              <unitdiscovered id="5" description="$$2454$$" type="AIStart" count="10" />
+              <timer id="6" description="$$2324$$" failonexpire="false" />
+            </values>
+          </and>
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="7" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

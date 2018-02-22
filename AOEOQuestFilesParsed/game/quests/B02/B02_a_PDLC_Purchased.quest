@@ -1,0 +1,32 @@
+<quest uniqueid="2202" version="32" displayname="$$8302$$" level="0" repeatable="false" offertype="eOfferBooster2" canplaycoop="false" cooprequired="false" ranked="false" description="$$6317$$" completiontext="$$6317$$" inprogresstext="$$6317$$" summarytext="$$8303$$" canabandon="false" hiddenquest="true" friendonly="false" suppressnotifications="true" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Cyprus" elitespawnchance="0.025">
+  <timer hideonui="true" />
+  <randommap randommap="true" numplayers="0">
+    <mapvariables>
+      <variable name="region" type="String" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="GEN_PDLCStore" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="GEN_FredTheRedeemer" />
+  </questreturners>
+  <prereqs>
+    <values />
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="5" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$6315$$">
+        <values>
+          <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
+          <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

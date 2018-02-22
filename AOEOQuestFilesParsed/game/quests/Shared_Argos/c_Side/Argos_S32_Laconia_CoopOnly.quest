@@ -1,0 +1,60 @@
+<quest uniqueid="383" version="46" displayname="$$790$$" level="27" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="true" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$791$$" completiontext="$$792$$" inprogresstext="$$1636$$" summarytext="$$3804$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.65" maplocationy="0.65" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2313$$" script="CORE\Rush_Heavy" dataset="C01\C01_Clearchus_T3" cooponly="false" startingfood="250" startingwood="250" startinggold="250" startingstone="250">
+    <aislidervariables>
+      <aivariable key="ArcherBias" value="1" />
+      <aivariable key="EconomyHandicap" value="0.3" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2313$$" script="CORE\Ramp_Heavy" dataset="C01\C01_Clearchus_T3" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="200">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <timer time="00:61:00" hideonui="true" />
+  <randommap map="Core\Shared_Argos\Argos_RM_FairFight" randommap="true" numplayers="4" mapregionname="Greek Isles" lightsetname="Noon" mapsizename="Large">
+    <mapvariables>
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="383" />
+      <variable name="P2TrainBonusMod" type="Int" value="100" />
+      <variable name="P4TrainBonusMod" type="Int" value="100" />
+      <variable name="region" type="String" value="Greek Isles" />
+      <variable name="lighting" type="String" value="Noon" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosCaptain" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="BadGuy1" count="1" team="2" area="Quest_Area_B" groupfilename="Shared_Start_Barracks" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="BadGuy2" count="1" team="4" area="Quest_Area_C" groupfilename="Shared_Start_Barracks" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosCaptain" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="368" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
+    <xp visible="true" amount="40000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="400" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

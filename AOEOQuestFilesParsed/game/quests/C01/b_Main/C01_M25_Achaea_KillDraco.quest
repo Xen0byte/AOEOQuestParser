@@ -1,0 +1,95 @@
+<quest uniqueid="160" version="61" displayname="$$3344$$" level="8" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3708$$" completiontext="$$3718$$" inprogresstext="$$3719$$" summarytext="$$3720$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.292" maplocationy="0.24" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" script="CORE\Ramp_Moderate" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="-0.100000024" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:11:00" hideonui="true">
+    <events>
+      <timerevent event="Clubman" time="00:02:30" />
+      <timerevent event="Bandit" time="00:02:30" />
+      <timerevent event="Clubman" time="00:04:00" />
+      <timerevent event="Bandit" time="00:04:00" />
+      <timerevent event="Clubman" time="00:06:00" />
+      <timerevent event="Bandit" time="00:06:00" />
+      <timerevent event="Clubman" time="00:08:30" />
+      <timerevent event="Bandit" time="00:08:30" />
+      <timerevent event="Clubman" time="00:10:00" />
+      <timerevent event="Bandit" time="00:10:00" />
+    </events>
+  </timer>
+  <timereffects event="Clubman">
+    <spawnunit visible="false" count="3" placeunittype="Gr_Inf_Clubman" asplayer="2" spawntype="SpawnForAllies" nearunittype="AIStart" radius="5" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Bandit">
+    <spawnunit visible="false" count="3" placeunittype="Npc_Inf_Bandit" asplayer="2" spawntype="SpawnForAllies" nearunittype="AIStart" radius="8" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core\C01\C01_Side_WarLeader_Draco" randommap="true" numplayers="4" mapregionname="Greek Coast" lightsetname="Evening" mapsizename="Small">
+    <mapvariables>
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="160" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Evening" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_VillageScout_V2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Bandits" count="1" team="2" area="Quest_Area_A" groupfilename="C01\Bandit\C01_Bandit_TowerBase_03" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Spawner" protoname="AIStart" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Npc_BanditLeader_04" protoname="Npc_BanditLeader_04" count="1" team="4" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Npc_BanditLeader_01" displaynameid="57574" visualscale="1.5" initialhitpoints="2500" maxhitpoints="2500" shortrollovertextid="57571" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_VillageScout_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="10" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="5000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$2346$$" type="Npc_BanditLeader_04" count="1" includeconversion="true" onlycountelites="false" />
+              <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="6" mustfailall="false">
+            <values>
+              <dummy id="7" objectivename="TIMER_EFFECT_BUGFIX" autocomplete="false" />
+              <timer id="8" failonexpire="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

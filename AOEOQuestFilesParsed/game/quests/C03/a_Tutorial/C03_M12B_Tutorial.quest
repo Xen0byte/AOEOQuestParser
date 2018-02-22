@@ -1,0 +1,69 @@
+<quest uniqueid="13009" version="109" displayname="$$7265$$" level="3" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$8673$$" completiontext="$$7254$$" inprogresstext="$$8630$$" summarytext="$$8665$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c03_r1m12.xml" maplocationx="0.23" maplocationy="0.86" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="300" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2279$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" dataset="c03\c03_barbarian_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Celtic Shore" lightsetname="Evening" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_M12_Rescue" />
+      <variable name="region" type="String" value="Celtic Shore" />
+      <variable name="lighting" type="String" value="Evening" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="1000000" value="Quest_C03_SecondGuardedNugget" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R2_Trader" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="StrandedVillager1" protoname="ConvertVillager01" count="10" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="58477" animfile="CivGreek\Units\Civilian\Villager\Villager.xml" portraiticon="UserInterface\Icons\Units\AvatarVillagers_ua" soundfile="Gr_Civ_Villager" icon="UserInterface\Icons\Units\Villager64_ua" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R2_Trader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13007" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="40" />
+    <material visible="true" materialname="StoneBlock" count="100" />
+    <material visible="true" materialname="PinePlank" count="100" />
+    <questgiver visible="true" name="C03_R2_Trader" status="Unavailable" />
+    <questgiver visible="true" name="C03_R2_Trader_V2" status="Available" />
+    <or>
+      <blueprint visible="true" unit="VanityGarden01" />
+      <blueprint visible="true" unit="VanityGarden02" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="2" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="1" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <buildunit id="3" description="$$2459$$" type="Ce_Bldg_House" count="3" />
+              <techstatus id="4" description="$$2464$$" name="CeltCapAge2" status="Active" />
+              <collectresource id="5" description="$$2373$$" type="Wood" amount="400" includeexisting="false" />
+              <buildunit id="6" description="$$2467$$" type="Ce_Bldg_Farm" count="4" />
+              <unitinarea id="7" description="$$2466$$" area="Player1" type="ConvertVillager01" count="10" radius="20" aidefend="true" />
+            </values>
+          </and>
+          <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

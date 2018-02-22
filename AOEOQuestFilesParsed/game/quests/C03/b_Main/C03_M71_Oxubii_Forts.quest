@@ -1,0 +1,76 @@
+<quest uniqueid="13025" version="103" displayname="$$7695$$" level="13" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$7573$$" completiontext="$$7575$$" inprogresstext="$$7576$$" summarytext="$$7577$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.7" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2301$$" script="CORE\Rush_Moderate" dataset="C03\C03_CoreRamp_T1" cooponly="false" startingfood="150" startingwood="0" startinggold="75" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.25" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2301$$" script="CORE\Rush_Weak" dataset="C03\C03_CoreRush_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.25" />
+      <aivariable key="InfantryBias" value="1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2301$$" script="CORE\Rush_Weak" dataset="C03\C03_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="-1" startinggold="0" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.25" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2301$$" dataset="C03\C03_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="-1" startinggold="0" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="6" mapregionname="Celtic Shore" lightsetname="Afternoon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R2M64_DestroyHillForts" />
+      <variable name="region" type="String" value="Celtic Shore" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R2_Protis" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="CoopPlayerStart" count="1" team="3" area="Player2" groupfilename="shared_start_barracks" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R2_Protis" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13024" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="3" />
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableGrantTrees_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableGrantTrees_R" count="3" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2507$$" type="Ce_Bldg_Fortress" count="3" includeconversion="true" onlycountelites="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

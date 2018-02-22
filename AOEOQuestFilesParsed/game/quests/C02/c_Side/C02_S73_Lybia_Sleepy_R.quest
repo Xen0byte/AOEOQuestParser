@@ -1,0 +1,41 @@
+<quest uniqueid="342" version="40" displayname="$$661$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6648$$" completiontext="$$4951$$" inprogresstext="$$4936$$" summarytext="$$4937$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.6" mapmarker="QuestRepeatable" mappage="Libya" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2274$$" dataset="C02\C02_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2275$$" dataset="C02\C02_CoreRamp_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Egyptian Sand">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_Side_SleepingPrince" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R3_Priestess" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C02_R3_Priestess" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="341" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQVShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQVShort" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <protectunit id="2" description="$$4962$$" type="NPC_PrinceSesostris" owningplayerid="3" />
+          <unitinarea id="3" description="$$4963$$" area="Quest_Area_A" type="Eg_Civ_Villager" count="1" radius="-1" aidefend="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,118 @@
+<quest uniqueid="325" version="53" displayname="$$877$$" level="-1" difficultycoloroverride="1" repeatable="true" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$878$$" completiontext="$$879$$" inprogresstext="$$1686$$" summarytext="$$1681$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.78" maplocationy="0.364" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="0.025" linkedquestid="3181" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Heavy" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="200">
+    <aiflagvariables>
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="NavyBias" value="0.1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="3" color="4" tributablebehavior="Default" playertype="Computer" personality="$$11963$$" dataset="c02\c02_pirate_t4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="core\shared\rm_naval_AllOutWar" randommap="true" numplayers="4" mapregionname="Greek Isles" lightsetname="&lt;Not Specified&gt;" mapsizename="Large">
+    <mapvariables>
+      <variable name="CustomEnemiesDefeatedQuestID" type="Int" value="325" />
+      <variable name="region" type="String" value="Greek Isles" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosKing" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="true" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="true" name="BadGuy" count="1" team="2" area="Quest_Area_A" groupfilename="C01\SeaPeople\C01_SeaPeople_TowerBase_01" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="true" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <random placeatleast="0" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Luggage1" chance="0.2" />
+        <unit name="Luggage2" chance="0.2" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Luggage1" protoname="PharoahsLuggage" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52637" animfile="CivEgyptian\Units\Civilian\Caravan\Caravan.xml" portraiticon="UserInterface\Icons\Units\AvatarECaravan_ua" icon="UserInterface\Icons\Units\ECaravan64_ua" soundfile="Camel" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Luggage2" protoname="PharoahsLuggage" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52637" animfile="CivEgyptian\Units\Civilian\Caravan\Caravan.xml" portraiticon="UserInterface\Icons\Units\AvatarECaravan_ua" icon="UserInterface\Icons\Units\ECaravan64_ua" soundfile="Camel" />
+        </protounit>
+      </targets>
+    </random>
+    <random placeatleast="0" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Camel1" chance="0.2" />
+        <unit name="Camel2" chance="0.2" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Camel1" protoname="FavoriteCamel" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52641" animfile="World\Animals\Camel\Camel.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarWildCamel_ua" icon="UserInterface\Icons\Units\Gaia\WildCamel64_ua" soundfile="Camel" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Camel2" protoname="FavoriteCamel" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52641" animfile="World\Animals\Camel\Camel.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarWildCamel_ua" icon="UserInterface\Icons\Units\Gaia\WildCamel64_ua" soundfile="Camel" />
+        </protounit>
+      </targets>
+    </random>
+    <protounit cooponly="false" forcetocenter="false" name="SecondaryObjective_Catapult" protoname="SecondaryObjective_Catapult" count="1" team="4" area="Player3" usequesttargetindicator="true">
+      <overrides parent="Npc_SP_Flagship" visualscale="1.5" footprint="1.5" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="SecondaryObjective_Trireme" protoname="SecondaryObjective_Trireme" count="2" team="4" area="Player3" usequesttargetindicator="true">
+      <overrides parent="Gr_Shp_Trireme" visualscale="1.2" footprint="1.2" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="SecondaryObjective_Fireship" protoname="SecondaryObjective_Fireship" count="2" team="4" area="Player3" overrides="" usequesttargetindicator="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosKing" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="81" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="10" />
+    <xp visible="true" amount="1" lookuptable="SQLong" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQLong" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="FishingNet1H_R008" traitlevel="33" />
+      <trait visible="true" id="ArmorPlt_R001" traitlevel="33" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="4" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="5" mustfailall="false">
+        <values>
+          <dummy id="6" description="$$10451$$" objectivename="UNUSED" autocomplete="false" />
+          <and id="7" mustfailall="false">
+            <values>
+              <reduceunitsto id="8" type="SecondaryObjective_Catapult" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="4" />
+              <reduceunitsto id="9" type="SecondaryObjective_Trireme" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="4" />
+              <reduceunitsto id="10" type="SecondaryObjective_Fireship" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="4" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

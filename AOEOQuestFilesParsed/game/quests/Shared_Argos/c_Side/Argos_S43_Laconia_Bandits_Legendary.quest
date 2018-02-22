@@ -1,0 +1,94 @@
+<quest uniqueid="3194" version="13" displayname="$$12561$$" level="43" difficultycoloroverride="2" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$12586$$" completiontext="$$12587$$" inprogresstext="$$12588$$" summarytext="$$12589$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.65" maplocationy="0.65" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="1" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="2000" startingwood="2000" startinggold="2000" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" script="CORE\Rush_Heavy" dataset="C01\C01_Bandit_T4" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000">
+    <aiflagvariables>
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="NavyBias" value="0.3" />
+      <aivariable key="EconomyHandicap" value="0.1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="2000" startingwood="2000" startinggold="2000" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" script="CORE\Ramp_Heavy" dataset="C01\C01_Bandit_T4" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000">
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="0.3" />
+      <aivariable key="NavyBias" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" dataset="C01\C01_Bandit_T4" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="core\shared\shared_rm_naval_coastisland" randommap="true" numplayers="5" mapregionname="Greek Isles" lightsetname="Morning" mapsizename="Large">
+    <mapvariables>
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="3194" />
+      <variable name="QuestID" type="Int" value="3194" />
+      <variable name="OptionalRestrictResource" type="Bool" value="true" />
+      <variable name="OptionalNoStone" type="Bool" value="true" />
+      <variable name="MainPlayerID" type="Int" value="1" />
+      <variable name="CoopPlayerID" type="Int" value="3" />
+      <variable name="ForcedPlayerLevel" type="Int" value="15" />
+      <variable name="IsLEGENDARY" type="Bool" value="true" />
+      <variable name="P2AddMarketManager" type="Bool" value="True" />
+      <variable name="P4AddMarketManager" type="Bool" value="True" />
+      <variable name="P2AllowResourcePatrol" type="Bool" value="False" />
+      <variable name="P4AllowResourcePatrol" type="Bool" value="False" />
+      <variable name="region" type="String" value="Greek Isles" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="10000000" value="Legendary_40-50_01" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosCaptain" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="true" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="true" name="BadGuy1" count="1" team="2" area="Quest_Area_B" groupfilename="C01\Bandit\C01_Bandit_LargeBase_01" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="true" name="BadGuy2" count="1" team="4" area="Quest_Area_A" groupfilename="C01\Bandit\C01_Bandit_TowerBase_01" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="true" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Enemyboats1" protoname="Gr_Shp_Trireme" count="3" team="2" area="Quest_Area_E" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosCaptain" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="460" />
+      <level min="40" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="20" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1000" />
+    <loottable visible="true" type="general_legendary" />
+    <loottable visible="true" type="general_legendary" />
+    <loottable visible="true" type="general_legendary" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="500" />
+    <loottable visible="true" loottable="general_legendary" />
+    <loottable visible="true" loottable="general_legendary" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="4" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="5" mustfailall="false">
+        <values>
+          <dummy id="6" description="$$10396$$" objectivename="OptionalNoStone" autocomplete="false" />
+          <dummy id="7" description="" objectivename="EnemiesDefeated" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

@@ -1,0 +1,17 @@
+<quest uniqueid="309" version="11" displayname="$$3524$$" level="50" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" description="$$1217$$" completiontext="$$1218$$" inprogresstext="$$1218$$" summarytext="$$1218$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="40" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="10" />
+    <alliancepoints visible="true" amount="5" />
+  </rewards>
+  <objectives id="0" mustfailall="false" description="$$2442$$">
+    <values />
+  </objectives>
+</quest>

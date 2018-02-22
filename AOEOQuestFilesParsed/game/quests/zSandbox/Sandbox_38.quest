@@ -1,0 +1,33 @@
+<quest uniqueid="10138" version="82" displayname="$$13173$$" level="-1" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="300" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\zSandbox\Shared_Sandbox_Gladiator_Isle" randommap="true" numplayers="4" mapregionname="Italian Country" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="zSandbox\Gladiator_Isle" />
+      <variable name="region" type="String" value="Italian Country" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questreturners>
+    <protounit unit="GEN_FredTheRedeemer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="99" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <protectunit id="1" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
+      <kill id="2" type="Ro_Cav_PrimusPilus" count="1" includeconversion="true" onlycountelites="false" />
+    </values>
+  </objectives>
+</quest>

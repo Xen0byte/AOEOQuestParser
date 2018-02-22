@@ -1,0 +1,78 @@
+<quest uniqueid="13023" version="106" displayname="$$7556$$" level="11" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$9080$$" completiontext="$$7560$$" inprogresstext="$$7561$$" summarytext="$$8651$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.3" maplocationy="0.75" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="400" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2301$$" script="core\rush_heavy" dataset="C03\C03_CoreRush_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.36" />
+      <aivariable key="ArcherBias" value="1" />
+      <aivariable key="InfantryBias" value="-0.8" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2300$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2301$$" dataset="C03\C03_CoreRush_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="5" mapregionname="Celtic Shore" lightsetname="Afternoon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R2M62_BuildSacredGroves" />
+      <variable name="region" type="String" value="Celtic Shore" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R2_Protis" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="CoopPlayerStart" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R2_Protis" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13022" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="18000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="120" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableWoadRaider_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableWoadRaider_R" count="3" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <dummy id="3" description="$$2629$$" objectivename="SacredGroveWest" autocomplete="false" />
+              <dummy id="4" description="$$2631$$" objectivename="SacredGroveEast" autocomplete="false" />
+              <dummy id="5" description="$$2630$$" objectivename="SacredGroveCenter" autocomplete="false" />
+              <kill id="6" description="$$8047$$" type="AbstractTownCenter" count="1" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,50 @@
+<quest uniqueid="103033" version="80" displayname="$$10258$$" level="26" repeatable="false" offertype="eOfferBooster3" canplaycoop="true" cooprequired="true" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11900$$" completiontext="$$11902$$" inprogresstext="$$11905$$" summarytext="$$11903$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.4" maplocationy="0.71" mapmarker="QuestDefault" mappage="Persia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$7398$$" dataset="c04\c04_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$7398$$" dataset="c04\c04_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$7398$$" dataset="c04\c04_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$11901$$" dataset="c04\c04_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:20:00" hideonui="false" />
+  <randommap map="Core\Shared_Babylon\Babylon_S33_TEDelta_CoopNaval" randommap="true" numplayers="6" mapregionname="Meso Valley" lightsetname="Evening" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="shared_babylon\babylon_s33_tedelta_coopnaval" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="lighting" type="String" value="Evening" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_PortMaster" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="CoopStart" count="1" team="3" area="Player2" groupfilename="shared_player3_age2_barracks" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_PortMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103032" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="5" />
+    <xp visible="true" amount="120000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="250" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$11725$$" type="Ba_Bldg_Ziggurat" owningplayerid="6" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

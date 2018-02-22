@@ -1,0 +1,112 @@
+<quest uniqueid="1212" version="80" displayname="$$9756$$" level="43" repeatable="true" canplaycoop="true" cooprequired="false" ranked="false" description="$$9966$$" completiontext="$$10004$$" inprogresstext="$$10006$$" summarytext="$$9768$$" alliance="eAllianceCouncilOfImhotep" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.26" maplocationy="0.55" mapmarker="QuestRepeatable" mappage="Crete" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="9" tributablebehavior="Default" playertype="Computer" personality="$$9727$$" script="Shared_Alliance\Alliance_VillageHunter" dataset="shared_alliance\shared_notech_t4" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$9742$$" script="Shared_Alliance\Alliance_VillageHunter" dataset="shared_alliance\shared_notech_t4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="4" color="4" tributablebehavior="Default" playertype="Computer" personality="$$9576$$" script="Custom\AIDoNothing" dataset="c01\c01_coreramp_t3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="5" color="3" tributablebehavior="Default" playertype="Computer" personality="$$9739$$" dataset="c01\c01_coreramp_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="7" team="5" color="3" tributablebehavior="Default" playertype="Computer" personality="$$9739$$" dataset="c01\c01_coreramp_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="core\shared_alliance\alliance_villagecenter" randommap="true" numplayers="7" mapregionname="Minoan Crete" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="HumanAlliance" type="Int" value="2" />
+      <variable name="region" type="String" value="Minoan Crete" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="A02_AllianceLeader" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="A02_AllianceLeader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="40" max="99" />
+      <questcomplete id="1200" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="12" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="300" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="OptionalOne">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="400" />
+    <loottable visible="true" loottable="general_legendary" />
+  </secondaryrewards>
+  <secondaryrewards visible="true" name="OptionalTwo">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="800" />
+    <loottable visible="true" loottable="general_legendary" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="5" sharedlos="false" />
+    <diplomacy relation="Ally" team1="5" team2="4" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <ownsunit id="2" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="1" causesfailure="false" />
+          <ownsunit id="3" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="4" causesfailure="false" />
+          <ownsunit id="4" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="2" causesfailure="true" />
+          <ownsunit id="5" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="3" causesfailure="true" />
+          <dummy id="6" description="$$9731$$" objectivename="UNUSED" autocomplete="false" />
+          <and id="7" mustfailall="false">
+            <values>
+              <ownsunit id="8" description="$$9732$$" type="Van_Cap_StatueArcher" count="22" owningplayerid="2" causesfailure="false" />
+              <dummy id="9" description="" objectivename="UNUSED" autocomplete="false" />
+            </values>
+          </and>
+          <and id="10" mustfailall="false">
+            <values>
+              <ownsunit id="11" description="$$9740$$" type="Van_Cap_StatueArcher" count="22" owningplayerid="3" causesfailure="false" />
+              <dummy id="12" description="" objectivename="UNUSED" autocomplete="false" />
+            </values>
+          </and>
+          <and id="13" mustfailall="true">
+            <values>
+              <reduceunitsto id="14" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="15" type="UnitTypeBldgBarracks" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="16" type="UnitTypeBldgArcheryRange" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="17" type="UnitTypeBldgStables" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="18" type="UnitTypeBldgTemple" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="19" type="UnitTypeBldgTemple2" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="20" type="UnitTypeBldgTemple3" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="21" type="UnitTypeBldgSiegeWorkshop" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="22" mustfailall="false" rewardname="OptionalOne" description="$$9507$$">
+    <values>
+      <or id="23" mustfailall="false">
+        <values>
+          <ownsunit id="24" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="1" causesfailure="false" />
+          <ownsunit id="25" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="4" causesfailure="false" />
+          <ownsunit id="26" description="" type="Van_Cap_StatueArcher" count="5" owningplayerid="2" causesfailure="true" />
+          <dummy id="27" description="$$9743$$" objectivename="UNUSED" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+  <secondaryobjectives id="28" mustfailall="false" rewardname="OptionalTwo" description="$$9508$$">
+    <values>
+      <or id="29" mustfailall="false">
+        <values>
+          <ownsunit id="30" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="1" causesfailure="false" />
+          <ownsunit id="31" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="4" causesfailure="false" />
+          <ownsunit id="32" description="" type="Van_Cap_StatueArcher" count="5" owningplayerid="3" causesfailure="true" />
+          <dummy id="33" description="$$9744$$" objectivename="UNUSED" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

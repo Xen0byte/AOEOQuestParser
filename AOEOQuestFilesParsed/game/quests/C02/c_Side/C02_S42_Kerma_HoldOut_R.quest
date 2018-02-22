@@ -1,0 +1,106 @@
+<quest uniqueid="336" version="61" displayname="$$571$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6638$$" completiontext="$$5002$$" inprogresstext="$$5001$$" summarytext="$$4999$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.58" maplocationy="0.477" mapmarker="QuestRepeatable" mappage="Nubia" elitespawnchance="0" linkedquestid="12942" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Heavy" dataset="C02\C02_NubianAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoAutoReveal" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Heavy" dataset="C02\C02_NubianAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoAutoReveal" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Heavy" dataset="C02\C02_NubianAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoAutoReveal" value="0" />
+      <aivariable key="NoScout" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Heavy" dataset="C02\C02_NubianAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoAutoReveal" value="0" />
+      <aivariable key="NoScout" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="ArcherBias" value="1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Boom_Heavy" dataset="C02\C02_NubianAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoAutoReveal" value="0" />
+      <aivariable key="NoScout" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="7" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <timer time="00:20:00" hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="7" mapregionname="Egyptian Sand" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_Side_Architect_HoldOut" />
+      <variable name="ForcedPlayerLevel" type="Int" value="7" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_Architect" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="Fortress" protoname="Ancient_Fortress" count="1" team="1" area="Player1" usequesttargetindicator="false">
+      <overrides parent="NPC_Badari_Fortress" displaynameid="58020" initialhitpoints="15000" maxhitpoints="15000" />
+    </protounit>
+    <grouping cooponly="false" forcetocenter="false" name="Player 1" count="1" team="1" area="Player2" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player 2" count="1" team="7" area="Player3" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_Architect" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="335" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQMedium" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQMedium" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$5003$$" type="Ancient_Fortress" owningplayerid="1" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="6" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="7" mustfailall="false">
+        <values>
+          <timer id="8" description="$$2471$$" failonexpire="true" />
+          <kill id="9" description="$$2508$$" type="UnitTypeBldgTownCenter" count="5" includeconversion="true" onlycountelites="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

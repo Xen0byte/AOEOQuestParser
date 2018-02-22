@@ -1,0 +1,55 @@
+<quest uniqueid="344" version="71" displayname="$$601$$" level="-1" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5285$$" completiontext="$$603$$" inprogresstext="$$1523$$" summarytext="$$5006$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.566" maplocationy="0.722" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2262$$" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Boom_Heavy" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoAutoReveal" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Egyptian Rock" lightsetname="Evening" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_Side_Molmot_RescueRangers" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="lighting" type="String" value="Evening" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_ChieftainMolmot" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C02_R2_ChieftainMolmot" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="339" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="15000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <blueprint visible="true" unit="EgyptTreasury" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="2" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$3707$$" type="NPC_Nubian_TownCenter" count="1" includeconversion="true" onlycountelites="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

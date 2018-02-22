@@ -1,0 +1,41 @@
+<quest uniqueid="9003" version="51" displayname="$$3485$$" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" description="$$344$$" completiontext="$$344$$" inprogresstext="$$344$$" summarytext="$$344$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0.025">
+  <playersettings id="1" team="1" color="1" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="DEV/DEV_UNIT_MUSEUM_C03" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R1_TUNING_CHEAT" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C03_R1_TUNING_CHEAT" />
+    <protounit unit="C01_R1_VillageElder" />
+    <protounit unit="C02_R1_KingNarmer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <or>
+        <values>
+          <civilization id="1" />
+          <civilization id="0" />
+          <civilization id="0" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <collectresource id="1" description="$$2389$$" type="Wood" amount="999999" includeexisting="false" />
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,80 @@
+<quest uniqueid="3030" version="124" displayname="$$8258$$" level="32" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6354$$" completiontext="$$6355$$" inprogresstext="$$6357$$" summarytext="$$6358$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.87" maplocationy="0.4" mapmarker="QuestDefault" mappage="Cyprus" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6676$$" script="CORE\Rush_Moderate" dataset="C02\C02_Pirate_T3" cooponly="false" startingfood="500" startingwood="1100" startinggold="-1" startingstone="4500">
+    <aiflagvariables>
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-0.1" />
+      <aivariable key="NavyBias" value="1" />
+      <aivariable key="EconomyHandicap" value="0.4" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6676$$" script="CORE\Rush_Moderate" dataset="C02\C02_Pirate_T3" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000">
+    <aiflagvariables>
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-0.1" />
+      <aivariable key="NavyBias" value="1" />
+      <aivariable key="EconomyHandicap" value="0.4" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6676$$" dataset="C02\C02_Pirate_T3" cooponly="false" startingfood="500" startingwood="1100" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="core\shared_cyprus\cyprus_pirates" randommap="true" numplayers="5" mapregionname="Egyptian Marsh" lightsetname="Morning" mapsizename="Small">
+    <mapvariables>
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="P2NavalPatrolCount" type="Int" value="7" />
+      <variable name="P4NavalPatrolCount" type="Int" value="4" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="CyprusPortMaster" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="PlayerIsland" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_barrackstowers" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="true" name="Enemy1" count="1" team="2" area="Quest_Area_B" groupfilename="shared_start_barrackstowers" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2Island" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="true" forcetocenter="false" name="Enemy2COOP" protoname="Eg_Arc_NomadArc_R" count="5" team="5" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="true" forcetocenter="false" name="EnemyCOOP" protoname="Eg_Arc_NomadArc_R" count="5" team="5" area="Quest_Area_A" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="CyprusPortMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="3000" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="40000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$3707$$" type="Eg_Bldg_TownCenter" count="1" includeconversion="true" onlycountelites="false" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,67 @@
+<quest uniqueid="13019" version="103" displayname="$$7450$$" level="8" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$8642$$" completiontext="$$8027$$" inprogresstext="$$7441$$" summarytext="$$7449$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c03_specialunit_gaesatae.xml" maplocationx="0.71" maplocationy="0.31" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" script="CORE\Ramp_Moderate" dataset="C03\C03_Barbarian_T0" cooponly="false" startingfood="600" startingwood="500" startinggold="500" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" dataset="C03\C03_Barbarian_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Celtic Alps" lightsetname="&lt;Not Specified&gt;" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R1M43_DestroyGroves" />
+      <variable name="region" type="String" value="Celtic Alps" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R1_VindeliciaDrust" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="CoopStart" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R1_VindeliciaDrust" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13017" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="3" />
+    <xp visible="true" amount="10000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <trait visible="true" id="Gear_Prst_R101" traitlevel="11" />
+    <loottable visible="true" type="tables\_coreloot_celtdruid_reward" />
+    <or>
+      <trait visible="true" id="Sword1H_R016_SR" traitlevel="10" />
+      <trait visible="true" id="Bow1H_R015" traitlevel="10" />
+      <trait visible="true" id="Shield1H_U017" traitlevel="10" />
+      <trait visible="true" id="Spear2H_U016" traitlevel="10" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitdiscovered id="3" description="$$8558$$" type="Qst_ObjectiveMarkerHigh" count="4" />
+              <kill id="4" description="$$2624$$" type="Ce_Bldg_SacredGrove" count="4" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <and id="5" mustfailall="true">
+            <values>
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

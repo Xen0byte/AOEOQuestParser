@@ -1,0 +1,36 @@
+<quest uniqueid="11050" version="37" displayname="$$3297$$" level="0" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$6276$$" completiontext="$$3260$$" inprogresstext="$$3261$$" summarytext="$$3533$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <onaccept>
+    <blueprint visible="true" unit="GreekAdvisorHall" />
+    <enableprotip visible="false" tip="TIP_UI_AdvisorHall_FirstUse" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C01_R1_VillageElder" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="8" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <or>
+      <advisor visible="true" unit="Agathon_C_I" />
+      <advisor visible="true" unit="Thutmose_C_I" />
+      <advisor visible="true" unit="Kleon_C_I" />
+      <advisor visible="true" unit="Erastos_C_I" />
+      <advisor visible="true" unit="Aapep_C_I" />
+      <advisor visible="true" unit="Irene_C_I" />
+      <advisor visible="true" unit="Philon_C_I" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <ownsunit id="1" description="$$3651$$" type="Gr_Cap_AdvisorHall" count="1" owningplayerid="1" causesfailure="false" />
+    </values>
+  </objectives>
+</quest>

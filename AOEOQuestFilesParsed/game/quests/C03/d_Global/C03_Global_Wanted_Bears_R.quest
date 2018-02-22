@@ -1,0 +1,29 @@
+<quest uniqueid="13098" version="69" displayname="$$7488$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$9076$$" completiontext="$$8644$$" inprogresstext="$$7490$$" summarytext="$$8579$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="C03_Celtica" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="C03_R3_SuperBearHunter" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C03_R3_SuperBearHunter" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <level min="15" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2659$$" type="AbstractBear" count="15" includeconversion="false" onlycountelites="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

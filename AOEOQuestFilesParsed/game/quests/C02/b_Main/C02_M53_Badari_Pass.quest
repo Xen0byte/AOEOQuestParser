@@ -1,0 +1,49 @@
+<quest uniqueid="253" version="74" displayname="$$487$$" level="9" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5722$$" completiontext="$$5101$$" inprogresstext="$$5102$$" summarytext="$$5723$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" customloadscreen="loadscreentips\load_shared_party_creation.xml" maplocationx="0.242" maplocationy="0.8" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" script="CORE\Turtle_Weak" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\C02\C02_R1M53_ToThePass" randommap="true" numplayers="3" mapregionname="Egyptian Sand" lightsetname="Morning" mapsizename="Small">
+    <mapvariables>
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_CitySesostris" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="C02\Custom\C02_R1M53_Player" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Badari" count="1" team="2" area="Quest_Area_A" groupfilename="C02\Custom\C02_R1M53_Enemy4" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="cliffs" count="1" team="2" area="Quest_Area_B" groupfilename="c02\custom\C02_R1M53_Enemy3" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Badari Tower2" count="1" team="2" area="Quest_Area_D" groupfilename="C02\Custom\C02_R1M53_Enemy2" rottype="Rotate90" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Badari Tower1" count="1" team="2" area="Quest_Area_C" groupfilename="C02\Custom\C02_R1M53_Enemy1" rottype="Rotate90" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_CitySesostris" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="343" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="12000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2546$$" type="Eg_Bldg_GuardTower" count="10" includeconversion="true" onlycountelites="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

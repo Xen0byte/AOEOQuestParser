@@ -1,0 +1,59 @@
+<quest uniqueid="1102" version="124" displayname="$$9573$$" level="43" repeatable="true" canplaycoop="true" cooprequired="false" ranked="false" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.225" maplocationy="0.65" mapmarker="QuestRepeatable" mappage="C03_Celtica" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$9570$$" script="Shared_Alliance\Alliance_TributeWars" dataset="c01\c01_coreramp_t4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$9570$$" dataset="c01\c01_coreramp_t4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="3" color="6" tributablebehavior="Default" playertype="Computer" personality="$$9571$$" script="Shared_Alliance\Alliance_TributeWars" dataset="c03\c03_coreramp_t4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="3" color="6" tributablebehavior="Default" playertype="Computer" personality="$$9571$$" dataset="c03\c03_coreramp_t4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="0.2" />
+      <aivariable key="InfantryBias" value="0.1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="7" team="4" color="4" tributablebehavior="Default" playertype="Computer" personality="$$9572$$" script="Shared_Alliance\Alliance_TributeWars" dataset="c01\c01_coreramp_t4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="8" team="4" color="4" tributablebehavior="Default" playertype="Computer" personality="$$9572$$" dataset="c01\c01_coreramp_t4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="core\shared_alliance\alliance_tributewars_V2" randommap="true" numplayers="8" mapregionname="Celtic Alps" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="QuestID" type="Int" value="1102" />
+      <variable name="scenarioFile" type="String" value="Shared_Alliance/Alliance_TributeWars_V2" />
+      <variable name="region" type="String" value="Celtic Alps" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="shared_start_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="shared_start_barracks" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <prereqs>
+    <values>
+      <level min="40" max="99" />
+      <questcomplete id="1100" />
+    </values>
+  </prereqs>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="2" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="4" sharedlos="true" />
+    <diplomacy relation="Ally" team1="4" team2="2" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="4" sharedlos="true" />
+    <diplomacy relation="Ally" team1="4" team2="3" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <dummy id="3" description="$$3802$$" objectivename="UNUSED" autocomplete="false" />
+          <and id="4" mustfailall="false">
+            <values>
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="5" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="7" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

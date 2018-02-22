@@ -1,0 +1,109 @@
+<quest uniqueid="6" version="51" displayname="$$1064$$" level="6" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$3057$$" completiontext="$$3056$$" inprogresstext="$$3062$$" summarytext="$$3061$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c01_upsell.xml" maplocationx="0.157" maplocationy="0.257" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" script="CORE\Rush_Hardcore" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="UseWaves" value="1" />
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" dataset="c01\c01_bandit_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:15:00" hideonui="false">
+    <events>
+      <timerevent event="Clubman" time="00:01:00" />
+      <timerevent event="Clubman" time="00:02:00" />
+      <timerevent event="Bandits" time="00:03:00" />
+      <timerevent event="Clubman" time="00:04:00" />
+      <timerevent event="Bandits" time="00:05:00" />
+      <timerevent event="Clubman" time="00:06:00" />
+      <timerevent event="Bandits" time="00:06:10" />
+      <timerevent event="Bandits" time="00:06:20" />
+      <timerevent event="Bandits" time="00:07:00" />
+      <timerevent event="Clubman" time="00:08:00" />
+      <timerevent event="Bandits" time="00:08:10" />
+      <timerevent event="Bandits" time="00:08:20" />
+      <timerevent event="Clubman" time="00:09:00" />
+      <timerevent event="Bandits" time="00:09:10" />
+      <timerevent event="Bandits" time="00:09:20" />
+      <timerevent event="Clubman" time="00:10:00" />
+      <timerevent event="Bandits" time="00:10:10" />
+      <timerevent event="Bandits" time="00:10:20" />
+      <timerevent event="Clubman" time="00:11:00" />
+      <timerevent event="Bandits" time="00:11:10" />
+      <timerevent event="Bandits" time="00:11:20" />
+      <timerevent event="Clubman" time="00:12:00" />
+      <timerevent event="Bandits" time="00:12:10" />
+      <timerevent event="Bandits" time="00:12:20" />
+      <timerevent event="Leader" time="00:13:00" />
+      <timerevent event="Clubman" time="00:13:00" />
+      <timerevent event="Bandits" time="00:13:10" />
+      <timerevent event="Bandits" time="00:13:10" />
+      <timerevent event="Bandits" time="00:13:20" />
+      <timerevent event="Bandits" time="00:13:20" />
+      <timerevent event="Clubman" time="00:13:30" />
+      <timerevent event="Bandits" time="00:14:00" />
+      <timerevent event="Bandits" time="00:14:00" />
+      <timerevent event="Bandits" time="00:14:00" />
+      <timerevent event="Clubman" time="00:14:30" />
+    </events>
+  </timer>
+  <timereffects event="Clubman">
+    <spawnunit visible="false" count="3" placeunittype="Gr_Inf_Clubman" asplayer="2" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_WarHut" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Bandits">
+    <spawnunit visible="true" count="4" placeunittype="Npc_Inf_Bandit" asplayer="2" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_WarHut" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Leader">
+    <spawnunit visible="true" count="1" placeunittype="Npc_BanditLeader_01" asplayer="2" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_TownCenter" radius="10" useboneposition="false" />
+  </timereffects>
+  <randommap map="core\c01\c01_r1m23_heretheycome" randommap="true" numplayers="4" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="Small">
+    <mapvariables>
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_VillageElder" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="C01\C01_P1Base" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Bad Banditos" count="1" team="2" area="Quest_Area_A" groupfilename="C01\Bandit\C01_Bandit_TowerBase_02" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="ProTip" count="1" team="0" area="Player1" groupfilename="Shared\Shared_ProTipTrigger_FirstTimedDefense" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="TestSpawn" protoname="Npc_Inf_Bandit" count="4" team="4" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Leaders at Start" protoname="Npc_BanditLeader_01" count="2" team="4" area="Quest_Area_A" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="162" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="2" />
+    <xp visible="true" amount="7000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <or>
+      <trait visible="true" id="ArmorClth_U017" traitlevel="9" />
+      <trait visible="true" id="ArmorBldg_U014" traitlevel="9" />
+      <trait visible="true" id="ArmorPlt_U021" traitlevel="9" />
+      <trait visible="true" id="ArmorMed_U012" traitlevel="9" />
+      <trait visible="true" id="ArmorLgt_U013" traitlevel="9" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$2472$$" type="Gr_Bldg_TownCenter" owningplayerid="1" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

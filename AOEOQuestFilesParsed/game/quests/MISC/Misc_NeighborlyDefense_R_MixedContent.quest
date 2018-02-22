@@ -1,0 +1,68 @@
+<quest uniqueid="10102" version="111" displayname="$$5338$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$12146$$" completiontext="$$5913$$" inprogresstext="$$5414$$" summarytext="$$5912$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="true" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestRepeatable" mappage="AmbassadorMap" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$24$$" dataset="C02\C02_Vanilla_T0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2233$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:03:00" hideonui="false" />
+  <randommap map="Core\MISC\Misc_NeighborlyDefense" randommap="true" numplayers="3" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="MISC/Misc_NeighborlyDefense" />
+      <variable name="QuestID" type="Int" value="10102" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_Ambassador_VISITPLAYER" />
+    <protounit unit="C02_R1_Ambassador_VISITPLAYER" />
+    <protounit unit="C03_R1_Ambassador_VISITPLAYER" />
+    <protounit unit="C04_R1_Ambassador_VISITPLAYER" />
+    <protounit unit="C06_R1_Ambassador_VISITPLAYER" />
+    <protounit unit="C07_R1_Ambassador_VISITPLAYER" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R1_Ambassador_VISITPLAYER" />
+    <protounit unit="C02_R1_Ambassador_VISITPLAYER" />
+    <protounit unit="C03_R1_Ambassador_VISITPLAYER" />
+    <protounit unit="C04_R1_Ambassador_VISITPLAYER" />
+    <protounit unit="C06_R1_Ambassador_VISITPLAYER" />
+    <protounit unit="C07_R1_Ambassador_VISITPLAYER" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="10100" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="socialQuests" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="socialQuests" />
+    <mailreward visible="true" subject="$$5424$$" message="$$5419$$" gold="100" sendtovisittarget="true" reward="sets\coregame\general\generalsetallmaterials" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <protectunit id="2" description="$$5260$$" type="AbstractPalace" owningplayerid="3" />
+          <reduceunitsto id="3" type="AbstractPalace" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="5" mustfailall="true">
+            <values>
+              <and id="6" mustfailall="false" description="$$5940$$">
+                <values>
+                  <dummy id="7" description="" objectivename="ClearedEnemies01" autocomplete="false" />
+                </values>
+              </and>
+              <and id="8" mustfailall="false" description="$$5941$$">
+                <values>
+                  <dummy id="9" description="" objectivename="ClearedEnemies02" autocomplete="false" />
+                </values>
+              </and>
+              <timer id="10" description="$$5918$$" failonexpire="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

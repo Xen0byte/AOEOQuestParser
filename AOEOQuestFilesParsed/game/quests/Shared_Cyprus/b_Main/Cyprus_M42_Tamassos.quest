@@ -1,0 +1,110 @@
+<quest uniqueid="3004" version="121" displayname="$$6075$$" level="36" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6462$$" completiontext="$$6237$$" inprogresstext="$$6236$$" summarytext="$$6565$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.43" maplocationy="0.49" mapmarker="QuestDefault" mappage="Cyprus" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6607$$" script="CORE\Rush_Moderate" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="0.2" />
+      <aivariable key="ArcherBias" value="0.2" />
+      <aivariable key="CavalryBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6607$$" script="CORE\Rush_Moderate" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="100" startingwood="100" startinggold="100" startingstone="100">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6607$$" script="CORE\Ramp_Moderate" dataset="C01\C01_CyprusRamp_T3" cooponly="false" startingfood="100" startingwood="100" startinggold="100" startingstone="100">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoFish" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6607$$" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="100" startingwood="100" startinggold="100" startingstone="100">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="Core\Shared_Cyprus\Cyprus_a_Loader" randommap="true" numplayers="6" mapregionname="Greek Inland" lightsetname="Afternoon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Cyprus/Cyprus_12Kingdoms_Tamassos" />
+      <variable name="TamassosID" type="Int" value="3004" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Afternoon" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="CyprusLeaderV2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="true" forcetocenter="false" name="CoopGoldMine" protoname="MineGold" count="1" team="0" area="Player3" usequesttargetindicator="false" />
+    <protounit cooponly="true" forcetocenter="false" name="CoopStoneMine" protoname="MineStone" count="1" team="0" area="Player4" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="CyprusLeaderV2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <or>
+        <values>
+          <questcomplete id="3003" />
+          <questcomplete id="3023" />
+          <questcomplete id="3010" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
+    <questgiver visible="false" name="CyprusFlagTamassos" status="Available" />
+    <xp visible="true" amount="130000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="240" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <dummy id="3" description="$$6181$$" objectivename="C12_CaptureGoldMine" autocomplete="false" />
+              <dummy id="4" description="$$6182$$" objectivename="C12_CaptureStoneMine" autocomplete="false" />
+              <kill id="5" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

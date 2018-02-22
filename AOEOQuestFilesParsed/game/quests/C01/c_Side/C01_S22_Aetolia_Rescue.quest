@@ -1,0 +1,86 @@
+<quest uniqueid="96" version="61" displayname="$$684$$" level="7" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3712$$" completiontext="$$686$$" inprogresstext="$$3714$$" summarytext="$$3713$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.35" maplocationy="0.189" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" script="CORE\Rush_Moderate" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="2000" startingwood="2000" startinggold="2000" startingstone="2000">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="0.6" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="CavalryBias" value="0.5" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-0.6" />
+      <aivariable key="EconomyHandicap" value="-0.6" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2232$$" script="CORE\Turtle_Weak" dataset="C01\C01_Bandit_T0" cooponly="false" startingfood="2000" startingwood="2000" startinggold="2000" startingstone="2000">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="NavyBias" value="0.4" />
+      <aivariable key="EconomyHandicap" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared\Shared_RM_Naval_CenterIsland" randommap="true" numplayers="4" mapregionname="Greek Isles" lightsetname="&lt;Not Specified&gt;" mapsizename="Large">
+    <mapvariables>
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="P3AddMarketManager" type="Bool" value="true" />
+      <variable name="P2AttackDelayMod" type="Int" value="1" />
+      <variable name="P3AttackDelayMod" type="Int" value="12" />
+      <variable name="P3NavalPatrolCount" type="Int" value="4" />
+      <variable name="region" type="String" value="Greek Isles" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_PortMaster" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="C01\C01_P1Base_WithParkingLot" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="FirstVillage" count="1" team="2" area="Quest_Area_A" groupfilename="C01\C01_ArcherTown" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="SecondVillage" count="1" team="3" area="Quest_Area_B" groupfilename="C01\C01_ArcherTown" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="4" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="AgeUpPlyr1" count="1" team="1" area="Player1" groupfilename="C01\C01_Trigger_P1_to_A2" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Qst_Elpis" protoname="Qst_Elpis" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" animfile="CivGreek\Units\Civilian\Villager\VillagerFemale.xml" visualscale="0.70" displaynameid="57851" initialhitpoints="500" maxhitpoints="500" portraiticon="UserInterface\Icons\Units\AvatarFemaleChild_ua" shortrollovertextid="57853" icon="UserInterface\Icons\Units\FemaleChild64_ua" soundfile="Qst_VillagerFemale" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Qst_Hesiod" protoname="Qst_Hesiod" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" animfile="CivGreek\Units\Civilian\Villager\VillagerMale.xml" visualscale="0.70" displaynameid="57852" initialhitpoints="500" maxhitpoints="500" portraiticon="UserInterface\Icons\Units\AvatarMaleChild_ua" shortrollovertextid="57853" icon="UserInterface\Icons\Units\MaleChild64_ua" soundfile="Qst_VillagerMale" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="P2Scout" protoname="Gr_Cav_Scout" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="P3Scout" protoname="Gr_Cav_Scout" count="1" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_PortMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="8" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="5000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitinarea id="3" description="$$3183$$" area="Player1" type="Qst_Elpis" count="1" radius="20" aidefend="true" />
+              <unitinarea id="4" description="$$3184$$" area="Player1" type="Qst_Hesiod" count="1" radius="20" aidefend="true" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

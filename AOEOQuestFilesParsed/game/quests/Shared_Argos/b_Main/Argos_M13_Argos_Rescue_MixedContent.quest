@@ -1,0 +1,69 @@
+<quest uniqueid="73" version="62" displayname="$$853$$" level="23" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4152$$" completiontext="$$4153$$" inprogresstext="$$4154$$" summarytext="$$4155$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.573" maplocationy="0.732" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Heavy" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="100" startingwood="600" startinggold="100" startingstone="100" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Argos/Argos_M13_AdmiralRescue" />
+      <variable name="region" type="String" value="Greek Coast" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosRefugee" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small_WithArrow" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="EnemyBoats1" count="1" team="2" area="Quest_Area_B" groupfilename="C01\SeaPeople\C01_SeaPeople_Boats_01" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="EgyptianAdmiral" protoname="CapturedAdmiral" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" animfile="NPC\CivEgyptian\Units\QuestGivers\AdmiralQG\AdmiralQG.xml" displaynameid="52650" portraiticon="UserInterface\Icons\Units\AvatarEGeneral_ua" icon="UserInterface\Icons\Units\EGeneral64_ua" soundfile="Eg_Inf_Spearman" />
+    </protounit>
+    <grouping cooponly="false" forcetocenter="false" name="EnemyBoats2" count="1" team="2" area="Quest_Area_D" groupfilename="C01\SeaPeople\C01_SeaPeople_Boats_01" rottype="Rotate0" rotateunitorientations="true" />
+    <random placeatleast="1" placenomore="2" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Cow1" chance="0.5" />
+        <unit name="Cow2" chance="0.5" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Cow1" protoname="ArgosCow" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="true" name="Cow2" protoname="ArgosCow" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+      </targets>
+    </random>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosRefugee" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="211" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="80000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="250" />
+    <loottable visible="true" type="general" />
+    <or>
+      <blueprint visible="true" unit="EgyptWarehouse16Slot" />
+      <blueprint visible="true" unit="GreekWarehouse16Slot" />
+      <blueprint visible="true" unit="CeltWarehouse16Slot" />
+      <blueprint visible="true" unit="PersianWarehouse16Slot" />
+      <blueprint visible="true" unit="BabylonianWarehouse16Slot" />
+      <blueprint visible="true" unit="NorseWarehouse16Slot" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitinarea id="2" description="$$4156$$" area="Player1" type="CapturedAdmiral" count="1" radius="30" aidefend="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

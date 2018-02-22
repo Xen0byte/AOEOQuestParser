@@ -1,0 +1,60 @@
+<quest uniqueid="103046" version="42" displayname="$$11951$$" level="-1" repeatable="false" offertype="eOfferBooster3" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11956$$" completiontext="$$11947$$" inprogresstext="$$11948$$" summarytext="$$10773$$" repeatableduration="0" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.4" maplocationy="0.51" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="300" startinggold="0" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10647$$" script="Core\Rush_Heavy" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared_Babylon\Babylon_S46_SH_WaltzingTigers" randommap="true" numplayers="2" mapregionname="Egyptian Rock" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Babylon/Babylon_S46_SH_WaltzingTigers" />
+      <variable name="RestrictNuggetScaling" type="Bool" value="true" />
+      <variable name="P2AttackDelayMod" type="Int" value="3" />
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="103046" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="-1" value="Quest_BabylonSH46_IsisTempleNugget" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_NewFactionLady" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="Babylon_NewFactionLady" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <or>
+        <values>
+          <queststatus id="103040" queststatus="Assigned" />
+          <questcomplete id="103040" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQShort" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <dummy id="3" description="$$11949$$" objectivename="EnemiesDefeated" autocomplete="false" />
+              <collectmaterial id="4" description="$$10659$$" type="SH_Tears" amount="1" includeexisting="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

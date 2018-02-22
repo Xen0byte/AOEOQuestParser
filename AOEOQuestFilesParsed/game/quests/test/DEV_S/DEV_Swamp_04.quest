@@ -1,0 +1,28 @@
+<quest uniqueid="9304" version="3" displayname="$$3799$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.495" maplocationy="0.57" mapmarker="QuestRepeatable" mappage="Persia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="150" startingwood="150" startinggold="1000" startingstone="150" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" dataset="c06\c06_coreramp_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" dataset="c04\c04_coreramp_t4" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" dataset="c04\c04_coreramp_t4" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:15:00" hideonui="false" />
+  <randommap map="Core\DEV\DEV_S\DEV_Swamp_04" randommap="true" numplayers="2" mapregionname="Meso Valley" lightsetname="Afternoon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="DEV/DEV_S/DEV_Swamp_04" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <prereqs>
+    <values />
+  </prereqs>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$2472$$" type="UnitTypeBldgTownCenter" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,29 @@
+<quest uniqueid="9311" version="7" displayname="$$3799$$" level="99" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.3" maplocationy="0.87" mapmarker="QuestDefault" mappage="Persia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="750" startingwood="750" startinggold="750" startingstone="750" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="8" mapregionname="Meso Valley" lightsetname="Morning" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <prereqs>
+    <values>
+      <level min="99" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

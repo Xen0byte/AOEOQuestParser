@@ -1,0 +1,102 @@
+<quest uniqueid="11754" version="52" displayname="$$12324$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4059$$" completiontext="$$1120$$" inprogresstext="$$4058$$" summarytext="$$1820$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.531" maplocationy="0.402" mapmarker="QuestRepeatable" mappage="Troy" elitespawnchance="0.025" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" script="core\rush_heavy" dataset="c01\c01_trojan_t3" cooponly="false" startingfood="100" startingwood="100" startinggold="100" startingstone="100">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2231$$" script="Custom\AIDoMinimal" dataset="C01\C01_CoreRamp_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <timer time="00:20:00" hideonui="false">
+    <events>
+      <timerevent event="Rams" time="8:00" />
+      <timerevent event="Ballistas" time="12:00" />
+      <timerevent event="Palintonon" time="15:00" />
+    </events>
+  </timer>
+  <timereffects event="Rams">
+    <spawnunit visible="false" count="4" placeunittype="Gr_Sie_BatteringRam" asplayer="2" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_TownCenter" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Ballistas">
+    <spawnunit visible="false" count="2" placeunittype="Gr_Sie_Ballista" asplayer="2" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_TownCenter" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Palintonon">
+    <spawnunit visible="false" count="1" placeunittype="Gr_Sie_Palintonon" asplayer="2" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_TownCenter" radius="20" useboneposition="false" />
+  </timereffects>
+  <randommap map="set_questland" randommap="true" numplayers="4" mapregionname="Greek Coast" lightsetname="Noon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Noon" />
+    </mapvariables>
+  </randommap>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Troy" count="1" team="2" area="Quest_Area_A" groupfilename="c01\sharedstarts\c01_shared_start_fortress" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="true" name="PlayerF1" count="1" team="1" area="Quest_Area_B" groupfilename="C01\Troy\C01_Troy_BeachFort_01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="TroyF1" count="1" team="2" area="Quest_Area_C" groupfilename="C01\Troy\C01_Troy_FwdBaseSiege_01" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="true" name="Beach Stronghold" protoname="Beach Stronghold" count="1" team="4" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="Gr_Bldg_Fortress" initialhitpoints="7500" maxhitpoints="12000" displaynameid="57668" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Revealer" protoname="SpyglassRevealer" count="1" team="2" area="Quest_Area_B" overrides="" usequesttargetindicator="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate90" rotateunitorientations="false" />
+  </targets>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <or>
+        <values>
+          <queststatus id="60" queststatus="Assigned" />
+          <questcomplete id="56" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="40000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="OptionalOne">
+    <xp visible="true" xp="1" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$4060$$" type="Beach Stronghold" owningplayerid="4" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+          <and id="5" mustfailall="true">
+            <values>
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="8" mustfailall="false" rewardname="OptionalOne" description="$$9658$$">
+    <values>
+      <or id="9" mustfailall="false">
+        <values>
+          <dummy id="10" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <reduceunitsto id="11" description="" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

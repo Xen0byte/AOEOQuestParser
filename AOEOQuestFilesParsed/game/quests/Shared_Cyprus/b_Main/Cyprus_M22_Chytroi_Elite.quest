@@ -1,0 +1,132 @@
+<quest uniqueid="3083" version="7" displayname="$$12908$$" level="-1" difficultycoloroverride="2" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6634$$" completiontext="$$6242$$" inprogresstext="$$6243$$" summarytext="$$6635$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.63" maplocationy="0.37" mapmarker="QuestRepeatable" mappage="Cyprus" elitespawnchance="1" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="200" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6244$$" script="CORE\Ramp_Hardcore" dataset="C01\C01_CyprusRamp_T4" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="0.4" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="200" startingwood="200" startinggold="200" startingstone="200" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6244$$" script="Custom\Cyprus_Popcorn_Heavy" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="1000" startingwood="1000" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="-0.1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6244$$" script="Custom\Cyprus_Popcorn_Heavy" dataset="C01\C01_CyprusRamp_T3" cooponly="false" startingfood="1000" startingwood="1000" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="-0.1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6244$$" dataset="C01\C01_CyprusRush_T4" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared_Cyprus\Cyprus_a_Loader" randommap="true" numplayers="6" mapregionname="Minoan Crete" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Cyprus/Cyprus_12Kingdoms_Chytroi" />
+      <variable name="IsREPEAT" type="Bool" value="true" />
+      <variable name="QuestID" type="Int" value="3083" />
+      <variable name="OptionalRestrictTraining" type="Bool" value="true" />
+      <variable name="OptionalRestrictArc" type="Bool" value="true" />
+      <variable name="MainPlayerID" type="Int" value="1" />
+      <variable name="CoopPlayerID" type="Int" value="3" />
+      <variable name="bIsELITE" type="Bool" value="true" />
+      <variable name="region" type="String" value="Minoan Crete" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="CyprusLeaderV2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="ObjectiveHets1" protoname="Custom_Hippikon" count="2" team="6" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Gr_Cav_Hippikon" visualscale="1.3" initialhitpoints="1200" maxhitpoints="1200" convertresist="100" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="ObjectiveHets2" protoname="Custom_Hippikon" count="2" team="6" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="Gr_Cav_Hippikon" visualscale="1.3" initialhitpoints="1200" maxhitpoints="1200" convertresist="100" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="ObjectiveHets3" protoname="Custom_Hippikon" count="2" team="6" area="Quest_Area_C" usequesttargetindicator="true">
+      <overrides parent="Gr_Cav_Hippikon" visualscale="1.3" initialhitpoints="1200" maxhitpoints="1200" convertresist="100" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="CyprusLeaderV2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="3001" />
+      <level min="34" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="15" />
+    <xp visible="true" amount="1" lookuptable="EliteLong" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteLong" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteOptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$6628$$" type="Custom_Hippikon" count="6" includeconversion="true" onlycountelites="false" />
+              <kill id="4" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <and id="5" mustfailall="true">
+            <values>
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="8" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="9" mustfailall="false">
+        <values>
+          <dummy id="10" description="$$10407$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+          <and id="11" mustfailall="false">
+            <values>
+              <kill id="12" description="" type="Custom_Hippikon" count="6" includeconversion="true" onlycountelites="false" />
+              <kill id="13" description="" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

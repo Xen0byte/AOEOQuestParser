@@ -1,0 +1,99 @@
+<quest uniqueid="384" version="87" displayname="$$2216$$" level="-1" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5684$$" completiontext="$$5679$$" inprogresstext="$$5670$$" summarytext="$$5668$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.33" maplocationy="0.86" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="2000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2280$$" dataset="C02\C02_Badari_T1" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2281$$" script="CORE\Boom_Moderate" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0.4" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2281$$" script="CORE\Boom_Moderate" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0.4" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2281$$" script="CORE\Boom_Moderate" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0.4" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="5" mapregionname="Egyptian Sand" lightsetname="Morning" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_Side_BuildPyramid_02" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" value="Morning" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_KingNarmer" />
+    <protounit unit="C02_R1_PharoahSesostris" />
+    <protounit unit="C02_R1_CitySesostris_V2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Village1" count="1" team="3" area="Quest_Area_A" groupfilename="C02\C02_Egypt_SmallBase01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Village2" count="1" team="3" area="Quest_Area_B" groupfilename="C02\C02_Egypt_SmallBase01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Village3" count="1" team="4" area="Quest_Area_C" groupfilename="C02\C02_Egypt_SmallBase01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Village4" count="1" team="5" area="Quest_Area_D" groupfilename="C02\C02_Egypt_SmallBase01" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_KingNarmer" />
+    <protounit unit="C02_R1_PharoahSesostris" />
+    <protounit unit="C02_R1_CitySesostris_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="326" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="10000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <buildunit id="3" description="$$5674$$" type="Eg_Bldg_WonderFoundation" count="1" />
+              <buildunit id="4" description="$$5675$$" type="Eg_Bldg_WonderFoundationSmall" count="1" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="Eg_Bldg_WonderFoundation" count="0" includeteam="false" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
+          <reduceunitsto id="6" type="Eg_Bldg_WonderFoundationSmall" count="0" includeteam="false" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="Eg_Bldg_TownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="Eg_Civ_Villager" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

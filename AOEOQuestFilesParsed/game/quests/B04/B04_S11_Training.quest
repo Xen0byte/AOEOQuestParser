@@ -1,0 +1,47 @@
+<quest uniqueid="104011" version="94" displayname="$$12638$$" level="-1" repeatable="false" offertype="eOfferBooster4" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$13151$$" completiontext="$$13152$$" inprogresstext="$$13153$$" summarytext="$$13001$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.6" maplocationy="0.45" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="50" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12666$$" dataset="c07\c07_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$12672$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$12672$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:15:00" hideonui="false" />
+  <randommap map="Core\B04\B04_Arc1_1" randommap="true" numplayers="4" mapregionname="Celtic Valley" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="B04/B04_Arc1_1" />
+      <variable name="region" type="String" value="Celtic Valley" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B04_PrimaryQG" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B04_PrimaryQG" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="104001" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="B04Short" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="B04Short" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$10080$$" type="Ce_Bldg_SacredGrove" owningplayerid="4" />
+          <protectunit id="4" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,88 @@
+<quest uniqueid="74" version="42" displayname="$$1091$$" level="17" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3410$$" completiontext="$$1093$$" inprogresstext="$$1801$$" summarytext="$$8257$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.585" maplocationy="0.569" mapmarker="QuestDefault" mappage="Troy" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" script="CORE\Turtle_Heavy" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="2000" startingwood="2000" startinggold="2000" startingstone="2000">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" script="CORE\Turtle_Heavy" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" script="CORE\Turtle_Heavy" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="Core\C01\C01_R3M65_DontLetThemSeeYouComing" randommap="true" numplayers="4" mapregionname="Greek Coast" lightsetname="Afternoon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="P2LandPatrolCount" type="Int" value="12" />
+      <variable name="P3LandPatrolCount" type="Int" value="12" />
+      <variable name="P4LandPatrolCount" type="Int" value="12" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Afternoon" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R3_Odysseus" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Trojans1" count="1" team="3" area="Quest_Area_A" groupfilename="C01\Troy\C01_Troy_FwdTowerArmy_01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Trojans2" count="1" team="4" area="Quest_Area_B" groupfilename="C01\Troy\C01_Troy_FwdTowerArmy_01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Trojans3" count="1" team="2" area="Quest_Area_C" groupfilename="C01\Troy\C01_Troy_BeachCamp_01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Quest_Area_D" groupfilename="C01\Troy\C01_Troy_EscortArmy_01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Player1SafeZone" count="1" team="1" area="Quest_Area_E" groupfilename="C01\Troy\C01_Troy_SafeZone_01" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Greek_Camp" protoname="Greek_Camp" count="1" team="1" area="Quest_Area_D" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" visualscale="1.5" maxvelocity="4.0" maxrunvelocity="6.0" soundfile="Gr_Civ_Caravan" displaynameid="57855" obstructionradiusx="1.5" obstructionradiusz="1.5" shortrollovertextid="57854" />
+    </protounit>
+    <grouping cooponly="false" forcetocenter="false" name="AgeUpPlyr1" count="1" team="1" area="Player1" groupfilename="C01\Custom\C01_R3M65_P1_to_Age3" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="MainBaseDefenders" protoname="Gr_Cav_Sarissophoroi" count="12" team="2" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="MainBaseVillagers" protoname="Gr_Civ_Villager" count="12" team="2" area="Quest_Area_C" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R3_Odysseus" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="61" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="45000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitinarea id="2" description="$$2500$$" area="Quest_Area_E" type="Greek_Camp" count="1" radius="-1" aidefend="true" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="Greek_Camp" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

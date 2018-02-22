@@ -1,0 +1,77 @@
+<quest uniqueid="129" version="64" displayname="$$4363$$" level="8" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$5708$$" completiontext="$$5704$$" inprogresstext="$$5705$$" summarytext="$$5701$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c02_specialunit_khopeshswordsman.xml" maplocationx="0.519" maplocationy="0.281" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" script="CORE\Rush_Heavy" dataset="C02\C02_Badari_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.6" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2256$$" dataset="C02\C02_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" dataset="C02\C02_Badari_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\C02\C02_R1M43_RescueElders" randommap="true" numplayers="5" mapregionname="Egyptian Marsh" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R1M43_RescueElders" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_GeneralBatoshipip_V2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="4" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="WarriorSpawn" protoname="CustomChiefs" count="6" team="3" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="NPC_Badari_WarLeader" displaynameid="60594" initialhitpoints="5500" maxhitpoints="5500" visualscale="1.4" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_GeneralBatoshipip_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="140" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="3" />
+    <xp visible="true" amount="8000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <questgiver visible="false" name="C02_R1_GeneralBatoshipip_V2" status="Unavailable" />
+    <questgiver visible="false" name="C02_R1_GeneralBatoshipip_V3" status="Available" />
+    <or>
+      <trait visible="true" id="Axe2H_R017_SR" traitlevel="10" />
+      <trait visible="true" id="Sling2H_R003" traitlevel="10" />
+      <trait visible="true" id="Shield1H_U017" traitlevel="10" />
+      <trait visible="true" id="Spear2H_U016" traitlevel="10" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <dummy id="3" description="$$5711$$" objectivename="M43RescueChief" autocomplete="false" />
+              <kill id="4" description="$$5842$$" type="Eg_Bldg_Temple2" count="3" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <and id="5" mustfailall="true">
+            <values>
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

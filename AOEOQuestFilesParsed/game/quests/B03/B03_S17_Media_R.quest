@@ -1,0 +1,86 @@
+<quest uniqueid="103017" version="31" displayname="$$11283$$" level="-1" difficultycoloroverride="1" repeatable="true" offertype="eOfferBooster3" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11379$$" completiontext="$$11382$$" inprogresstext="$$11384$$" summarytext="$$11380$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.52" maplocationy="0.51" mapmarker="QuestRepeatable" mappage="Persia" elitespawnchance="0.025" linkedquestid="103917" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11791$$" script="shared_babylon\babylon_siegetower" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="-1" />
+  <playersettings id="4" team="3" color="6" tributablebehavior="Default" playertype="Computer" personality="$$11328$$" script="core\rush_moderate" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoAutoReveal" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11791$$" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared_Babylon\Babylon_S17_Media_R" randommap="true" numplayers="5" mapregionname="Persian Rock" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="shared_babylon\babylon_s14_media" />
+      <variable name="P2AllowTCBuilding" type="Bool" value="False" />
+      <variable name="P4AllowTCBuilding" type="Bool" value="False" />
+      <variable name="P2HatedEnemyOverride" type="Int" value="4" />
+      <variable name="P4HatedEnemyOverride" type="Int" value="1" />
+      <variable name="QuestID" type="Int" value="103017" />
+      <variable name="OptionalRestrictTraining" type="Bool" value="true" />
+      <variable name="OptionalRestrictInf" type="Bool" value="true" />
+      <variable name="OptionalRestrictArc" type="Bool" value="true" />
+      <variable name="OptionalRestrictSpc" type="Bool" value="true" />
+      <variable name="OptionalRestrictShp" type="Bool" value="true" />
+      <variable name="OptionalRestrictSie" type="Bool" value="true" />
+      <variable name="MainPlayerID" type="Int" value="1" />
+      <variable name="CoopPlayerID" type="Int" value="3" />
+      <variable name="region" type="String" value="Persian Rock" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_Leader" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barrackstowers" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player 2 Start" count="1" team="3" area="Player2" groupfilename="shared_player3_age2_barrackstowers" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_Leader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103003" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="10" />
+    <xp visible="true" amount="1" lookuptable="SQLong" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQLong" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Enemy" team1="1" team2="3" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitdiscovered id="2" description="$$11545$$" type="Qst_SpawnPoint1" count="3" />
+          <protectunit id="3" description="$$11072$$" type="UnitTypeBldgTownCenter" owningplayerid="4" />
+          <reduceunitsto id="4" description="" type="UnitTypeBldgTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="5" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="6" mustfailall="false">
+        <values>
+          <dummy id="7" description="$$10397$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+          <unitdiscovered id="8" description="" type="Qst_SpawnPoint1" count="3" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

@@ -1,0 +1,60 @@
+<quest uniqueid="104761" version="76" displayname="$$13116$$" level="-1" repeatable="true" offertype="eOfferBooster4" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$13168$$" completiontext="$$13169$$" inprogresstext="$$13158$$" summarytext="$$13170$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.8" maplocationy="0.9" mapmarker="QuestRepeatable" mappage="Norse" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="100" startingstone="0" />
+  <playersettings id="2" team="2" color="4" tributablebehavior="Default" playertype="Computer" personality="$$4054$$" dataset="c07\c07_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12666$$" dataset="c07\C07_CoreRushAllLevels" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="4" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12666$$" dataset="c07\C07_CoreRushAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2233$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\B04\B04_Arc3_2_Bandits" randommap="true" numplayers="5" mapregionname="Celtic Alps" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="B04/B04_Arc3_2_Bandits" />
+      <variable name="IsRepeat" type="Bool" value="True" />
+      <variable name="region" type="String" value="Celtic Alps" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B04_Bard" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="B04_Bard" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="104061" />
+      <questcomplete id="104012" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="B04Short" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="B04Short" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="2" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="1" team2="5" sharedlos="false" />
+    <diplomacy relation="Ally" team1="5" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <ownsunit id="2" description="$$2546$$" type="Qst_CounterObject" count="4" owningplayerid="1" causesfailure="false" />
+          <protectunit id="3" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
+          <dummy id="4" objectivename="OBJECTIVE_FAIL" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

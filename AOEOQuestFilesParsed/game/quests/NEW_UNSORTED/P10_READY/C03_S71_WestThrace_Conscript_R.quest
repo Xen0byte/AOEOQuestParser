@@ -1,0 +1,68 @@
+<quest uniqueid="13771" version="152" displayname="$$12359$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$9593$$" completiontext="$$9089$$" inprogresstext="$$8275$$" summarytext="$$9602$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.58" maplocationy="0.23" mapmarker="QuestRepeatable" mappage="Thrace" elitespawnchance="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2303$$" dataset="C03\C03_CoreRush_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$8277$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$8277$$" dataset="C01\C01_CoreRamp_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:15:00" hideonui="false" />
+  <randommap map="Core/C03/C03_R3M81_KingoftheHill" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="Morning" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03\C03_R3M81_KingoftheHill" />
+      <variable name="questID" type="Int" value="13771" />
+      <variable name="secondaryObjectiveName" type="String" value="TrainNoCavalry" />
+      <variable name="isRepeatableVersion" type="Bool" value="True" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Morning" />
+    </mapvariables>
+  </randommap>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="Brennos" protoname="Ce_QG_Brennos" count="1" team="1" area="Player1" usequesttargetindicator="true" />
+  </targets>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13031" />
+      <or>
+        <values>
+          <questcomplete id="13032" />
+          <queststatus id="13032" queststatus="Assigned" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="30000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="OptionalOne">
+    <xp visible="true" xp="1" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$7970$$" type="Gr_Bldg_TownCenter" owningplayerid="4" />
+          <protectunit id="4" description="$$7535$$" type="Ce_QG_Brennos" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="5" mustfailall="false" rewardname="OptionalOne" description="$$9658$$">
+    <values>
+      <or id="6" mustfailall="false">
+        <values>
+          <dummy id="7" description="$$10406$$" objectivename="TrainNoCavalry" autocomplete="false" />
+          <timer id="8" description="$$2471$$" failonexpire="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

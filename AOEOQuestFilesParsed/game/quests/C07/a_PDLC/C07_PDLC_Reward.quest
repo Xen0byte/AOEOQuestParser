@@ -1,0 +1,44 @@
+<quest uniqueid="2507" version="3" displayname="$$6312$$" level="0" repeatable="false" offertype="eOfferCivNorse" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="CapitolCity" description="$$6301$$" completiontext="$$6301$$" inprogresstext="$$6301$$" summarytext="$$6302$$" canabandon="false" hiddenquest="true" friendonly="false" suppressnotifications="true" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="true" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <onaccept>
+    <protip visible="false" tip="TIP_C07_StartTech" />
+    <protip visible="false" tip="TIP_C07_StartGear" />
+    <protip visible="false" tip="TIP_C07_StartPlay" />
+    <enableprotip visible="false" tip="TIP_UI_TechTree_FirstOpen" />
+    <enableprotip visible="false" tip="TIP_UI_GearHall_FirstUse" />
+    <enableprotip visible="false" tip="TIP_UI_AdvisorHall_FirstUse" />
+    <enableprotip visible="false" tip="TIP_UI_Arena_FirstUse" />
+    <enableprotip visible="false" tip="TIP_UI_CraftingHall_FirstUse" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="GEN_PDLCStore" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="GEN_FredTheRedeemer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="24" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <advisor visible="true" unit="Irene_R_I_CivReward" />
+    <blueprint visible="true" unit="NorseWarehouse12SlotCivReward" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableCivBuff" count="5" />
+      <consumable visible="true" consumablename="ConsumableCivReinforcements" count="5" />
+      <consumable visible="true" consumablename="ConsumableCivDebuff" count="5" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$6300$$">
+        <values>
+          <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
+          <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

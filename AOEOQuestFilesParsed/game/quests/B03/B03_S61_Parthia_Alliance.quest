@@ -1,0 +1,63 @@
+<quest uniqueid="103061" version="64" displayname="$$11840$$" level="24" repeatable="false" offertype="eOfferBooster3" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11860$$" completiontext="$$11842$$" inprogresstext="$$12208$$" summarytext="$$11716$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.7" maplocationy="0.47" mapmarker="QuestDefault" mappage="Persia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="400" startingwood="400" startinggold="400" startingstone="400" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11715$$" dataset="c04\c04_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="5" tributablebehavior="Default" playertype="Computer" personality="$$10348$$" dataset="c04\c04_corerush_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11715$$" dataset="c04\c04_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="1" color="5" tributablebehavior="Default" playertype="Computer" personality="$$10348$$" dataset="c04\c04_corerush_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared_Babylon\Babylon_S61_Parthia_Villages" randommap="true" numplayers="6" mapregionname="Persian Rock" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Babylon/Babylon_S61_Parthia_Villages" />
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="103061" />
+      <variable name="region" type="String" value="Persian Rock" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_Leader" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="CoopStart" count="1" team="3" area="Player2" groupfilename="shared_player3_age2_barracks" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_Leader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103003" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="60000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <or id="2" mustfailall="false">
+            <values>
+              <and id="3" mustfailall="false">
+                <values>
+                  <unitdiscovered id="4" description="$$10381$$" type="Qst_SpawnPoint1" count="4" />
+                  <dummy id="5" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+                </values>
+              </and>
+              <dummy id="6" description="$$10881$$" objectivename="ParthiaVilDepot" autocomplete="false" />
+            </values>
+          </or>
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

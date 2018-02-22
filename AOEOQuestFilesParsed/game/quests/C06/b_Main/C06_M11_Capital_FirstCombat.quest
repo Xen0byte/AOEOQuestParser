@@ -1,0 +1,97 @@
+<quest uniqueid="16610" version="62" displayname="$$10369$$" level="-1" repeatable="false" offertype="eOfferCivBabylonian" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11707$$" completiontext="$$10448$$" inprogresstext="$$10443$$" summarytext="$$11706$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.185" maplocationy="0.71" mapmarker="QuestDefault" mappage="Persia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10387$$" dataset="C06\C06_CoreRushAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2233$$" dataset="C06\C06_CoreRush_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="4" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2233$$" dataset="C06\C06_CoreRush_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10387$$" script="core\rush_weak" dataset="C06\C06_CoreRushAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="5" color="2" tributablebehavior="Default" playertype="Computer" personality="$$10387$$" dataset="C06\C06_CoreRushAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\C06\C06_Capital_FirstCombat" randommap="true" numplayers="6" mapregionname="Meso Valley" lightsetname="Afternoon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C06\C06_M11_Capital_FirstCombat" />
+      <variable name="P7HatedEnemyOverride" type="Int" value="1" />
+      <variable name="P7LandPatrolCount" type="Int" value="6" />
+      <variable name="P7AddMarketManager" type="Bool" value="true" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="lighting" type="String" value="Afternoon" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C06_R1_Leader" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="Merodach" protoname="Merodach" count="1" team="2" area="Quest_Area_E" usequesttargetindicator="true">
+      <overrides parent="Ba_Inf_ShieldBearer" visualscale="1.35" initialhitpoints="7500" maxhitpoints="7500" displaynameid="66992" convertresist="100" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Merodach Lieutenants" protoname="MerodachLieutenant" count="8" team="2" area="Quest_Area_D" usequesttargetindicator="true">
+      <overrides parent="Ba_Arc_Bowman" visualscale="1.2" initialhitpoints="1500" maxhitpoints="1500" convertresist="100" displaynameid="66993" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C06_R1_Leader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="22" />
+      <level min="20" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQMedium" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQMedium" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="Spear1H_R003" traitlevel="23" />
+      <trait visible="true" id="Spear2H_R004" traitlevel="23" />
+      <trait visible="true" id="Gear_Siege_R003" traitlevel="23" />
+      <trait visible="true" id="RamHead2H_R003" traitlevel="23" />
+      <trait visible="true" id="Gear_Prst_R002" traitlevel="23" />
+      <trait visible="true" id="FishingNet1H_R001" traitlevel="23" />
+      <trait visible="true" id="Ballista2H_R001" traitlevel="23" />
+      <trait visible="true" id="ArmorBldg_R003" traitlevel="23" />
+      <trait visible="true" id="Shield1H_R006" traitlevel="23" />
+      <advisor visible="true" unit="Herakleides_C_II" />
+      <advisor visible="true" unit="Onesiphoros_C_III" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="5" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="5" sharedlos="false" />
+    <diplomacy relation="Ally" team1="5" team2="2" sharedlos="false" />
+    <diplomacy relation="Ally" team1="2" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <ownsunit id="3" description="$$11692$$" type="Van_Cap_Fountain1" count="1" owningplayerid="1" causesfailure="false" />
+              <techstatus id="4" description="$$2464$$" name="BabylonCapAge2" status="Active" />
+              <kill id="5" description="$$10694$$" type="Merodach" count="1" includeconversion="true" onlycountelites="false" />
+              <kill id="6" description="$$10697$$" type="MerodachLieutenant" count="8" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

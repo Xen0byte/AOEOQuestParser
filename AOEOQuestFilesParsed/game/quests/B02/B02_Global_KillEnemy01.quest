@@ -1,0 +1,31 @@
+<quest uniqueid="102006" version="143" displayname="$$8346$$" level="0" repeatable="false" offertype="eOfferBooster2" canplaycoop="false" cooprequired="false" ranked="false" description="$$8747$$" completiontext="$$8748$$" inprogresstext="$$8402$$" summarytext="$$8836$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="Global" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Cyprus" elitespawnchance="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B02_R1_KingSkirmish" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B02_R1_KingSkirmish" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="1" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <advisor visible="true" unit="Odysseus_E_I" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$8820$$" objectivename="SKIRMISHACHIEVEMENT1" autocomplete="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

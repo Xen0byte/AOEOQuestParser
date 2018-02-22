@@ -1,0 +1,31 @@
+<quest uniqueid="217" version="14" displayname="$$1103$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$6930$$" completiontext="$$1105$$" inprogresstext="$$1809$$" summarytext="$$1810$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Troy" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0">
+    <mapvariables>
+      <variable name="region" type="String" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R3_Magistrate" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R3_Magistrate" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="269" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <kill id="1" description="$$2341$$" type="AbstractTransportable" count="20" includeconversion="true" onlycountelites="true" />
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,69 @@
+<quest uniqueid="60" version="34" displayname="$$1097$$" level="16" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3401$$" completiontext="$$3402$$" inprogresstext="$$3403$$" summarytext="$$3535$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.328" maplocationy="0.329" mapmarker="QuestDefault" mappage="Troy" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="200" startingwood="150" startinggold="100" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2239$$" script="core\turtle_moderate" dataset="C01\C01_Trojan_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="0.6" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2240$$" dataset="c01\c01_trojan_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="200" startingwood="150" startinggold="100" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared\Shared_RM_Land_Baseline" randommap="true" numplayers="4" mapregionname="Greek Coast" lightsetname="Morning" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Morning" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R3_WarriorAgamemnon" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="C01\C01_P1Base_WithParkingLot" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Trojans" count="1" team="2" area="Quest_Area_C" groupfilename="C01\Troy\C01_Troy_BeachCamp_01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Pen1" count="1" team="2" area="Quest_Area_A" groupfilename="C01\Troy\C01_Troy_HeroPen_02" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Pen2" count="1" team="2" area="Quest_Area_B" groupfilename="C01\Troy\C01_Troy_HeroPen_01" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Shrine_3" count="1" team="2" area="Quest_Area_D" groupfilename="C01\Troy\C01_Troy_HeroPen_01" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Hero_1" protoname="HeroTroy" count="1" team="3" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" animfile="NPC\CivMycenaean\Units\Infantry\Chieftan\Chieftan.xml" portraiticon="UserInterface\Icons\Units\AvatarMycenaeanHoplite_ua" visualscale="1.125" displaynameid="57667" maxvelocity="6" initialhitpoints="1000" maxhitpoints="1000" containedattack="50" soundfile="Gr_Inf_Hoplite" icon="UserInterface\Icons\Units\MycenaeanHoplite64_ua" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Hero_2" protoname="HeroTroy" count="1" team="3" area="Quest_Area_B" overrides="" usequesttargetindicator="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Hero_3" protoname="HeroTroy" count="1" team="3" area="Quest_Area_D" overrides="" usequesttargetindicator="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="4" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="P2 Farms" protoname="Gr_Bldg_Farm" count="6" team="2" area="Quest_Area_C" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R3_WarriorAgamemnon" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="56" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="45000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <advisor visible="true" unit="Herakleides_U_II" />
+      <advisor visible="true" unit="Gaiana_U_II" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitinarea id="2" description="$$2497$$" area="Player1" type="HeroTroy" count="3" radius="20" aidefend="true" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

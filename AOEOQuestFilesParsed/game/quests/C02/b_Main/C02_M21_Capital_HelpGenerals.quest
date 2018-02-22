@@ -1,0 +1,82 @@
+<quest uniqueid="141" version="29" displayname="$$4471$$" level="8" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$5692$$" completiontext="$$4871$$" inprogresstext="$$4872$$" summarytext="$$4472$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <onaccept>
+    <questgiver visible="false" name="C02_R1_GeneralAhapitep" status="Available" />
+    <questgiver visible="false" name="C02_R1_GeneralBatoshipip" status="Available" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C02_R1_KingNarmer" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C02_R1_KingNarmer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <or>
+        <values>
+          <questcomplete id="12013" />
+          <questcomplete id="12201" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="10000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
+    <or>
+      <trait visible="true" id="Axe2H_R016_SR" traitlevel="11" />
+      <trait visible="true" id="Scepter2H_R015" traitlevel="11" />
+      <trait visible="true" id="Sling2H_R016" traitlevel="11" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <and id="1" mustfailall="false" description="$$4474$$">
+        <values>
+          <or id="2" mustfailall="false">
+            <values>
+              <ownsunit id="3" type="C02_R1_GeneralAhapitep_V2" count="1" />
+              <ownsunit id="4" type="C02_R1_GeneralAhapitep_V3" count="1" />
+              <unitdiscovered id="5" type="C02_R1_GeneralAhapitep_V2" count="1" />
+              <unitdiscovered id="6" type="C02_R1_GeneralAhapitep_V3" count="1" />
+            </values>
+          </or>
+        </values>
+      </and>
+      <and id="7" mustfailall="false" description="$$4475$$">
+        <values>
+          <or id="8" mustfailall="false" description="$$4475$$">
+            <values>
+              <ownsunit id="9" type="C02_R1_GeneralBatoshipip_V2" count="1" />
+              <ownsunit id="10" type="C02_R1_GeneralBatoshipip_V3" count="1" />
+              <unitdiscovered id="11" type="C02_R1_GeneralBatoshipip_V2" count="1" />
+              <unitdiscovered id="12" type="C02_R1_GeneralBatoshipip_V3" count="1" />
+            </values>
+          </or>
+        </values>
+      </and>
+      <and id="13" mustfailall="false" description="$$4477$$">
+        <values>
+          <or id="14" mustfailall="false" description="$$4477$$">
+            <values>
+              <ownsunit id="15" type="C02_R1_GeneralAhapitep_V3" count="1" />
+              <unitdiscovered id="16" type="C02_R1_GeneralAhapitep_V3" count="1" />
+            </values>
+          </or>
+        </values>
+      </and>
+      <and id="17" mustfailall="false" description="$$4478$$">
+        <values>
+          <or id="18" mustfailall="false" description="$$4478$$">
+            <values>
+              <ownsunit id="19" type="C02_R1_GeneralBatoshipip_V3" count="1" />
+              <unitdiscovered id="20" type="C02_R1_GeneralBatoshipip_V3" count="1" />
+            </values>
+          </or>
+        </values>
+      </and>
+    </values>
+  </objectives>
+</quest>

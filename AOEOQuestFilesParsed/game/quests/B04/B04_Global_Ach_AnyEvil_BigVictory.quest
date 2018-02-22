@@ -1,0 +1,30 @@
+<quest uniqueid="104131" version="39" displayname="$$12975$$" level="-1" difficultycoloroverride="1" repeatable="false" offertype="eOfferBooster4" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$13127$$" completiontext="$$13068$$" inprogresstext="$$13069$$" summarytext="$$12956$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Norse" elitespawnchance="0" linkedquestid="0" questbasescale="3">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="B04_Bard" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B04_Bard" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="104051" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="B04Global" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$12949$$" objectivename="BIG_VICTORY_COMPLETE" autocomplete="false" />
+          <kill id="3" type="AILandPoint2" count="1" includeconversion="false" onlycountelites="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

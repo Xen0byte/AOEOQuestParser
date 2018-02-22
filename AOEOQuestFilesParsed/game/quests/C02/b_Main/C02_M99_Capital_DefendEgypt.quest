@@ -1,0 +1,71 @@
+<quest uniqueid="401" version="69" displayname="$$4861$$" level="20" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5186$$" completiontext="$$5187$$" inprogresstext="$$1515$$" summarytext="$$5190$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.545" maplocationy="0.119" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Heavy" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000">
+    <aiflagvariables>
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="0.4" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Egyptian Marsh" lightsetname="Afternoon" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R3M91_DefendEgypt" />
+      <variable name="P2NavalPatrolCount" type="Int" value="8" />
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="401" />
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="P2AttackDelayMod" type="Int" value="5" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_GeneralChafre" />
+    <protounit unit="C02_R1_KingNarmer" />
+    <protounit unit="C02_R1_PharoahSesostris" />
+    <protounit unit="C02_R3_Sesostris" />
+    <protounit unit="C02_R1_CitySesostris_V2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="CoOp Player" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_KingNarmer" />
+    <protounit unit="C02_R1_PharoahSesostris" />
+    <protounit unit="C02_R1_CitySesostris_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <level min="19" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="12" />
+    <xp visible="true" amount="120000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="250" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableFireShips_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableFireShips_R" count="3" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

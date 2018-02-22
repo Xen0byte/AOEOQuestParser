@@ -1,0 +1,27 @@
+<quest uniqueid="2902" version="41" displayname="$$11087$$" level="33" repeatable="true" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" description="$$11108$$" completiontext="$$11101$$" inprogresstext="$$11100$$" summarytext="$$11099$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="Global" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="WorldMapMed" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="GEN_FredTheRedeemer" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="GEN_FredTheRedeemer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="30" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <loottable visible="true" binditem="true" type="General_GoldenTicketUncommon" />
+    <loottable visible="true" binditem="true" type="General_GoldenTicketUncommon" />
+    <loottable visible="true" binditem="true" type="General_GoldenTicketUncommon" />
+    <loottable visible="true" binditem="true" type="General_GoldenTicketUncommon" />
+    <consumematerial visible="true" materialname="!GoldenTicket" count="1" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <collectmaterial id="1" description="$$11076$$" type="!GoldenTicket" amount="1" includeexisting="true" />
+    </values>
+  </objectives>
+</quest>

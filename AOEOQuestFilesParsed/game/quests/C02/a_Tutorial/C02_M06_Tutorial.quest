@@ -1,0 +1,72 @@
+<quest uniqueid="12006" version="89" displayname="$$385$$" level="2" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$6283$$" completiontext="$$4672$$" inprogresstext="$$4673$$" summarytext="$$4407$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c02_r1m06.xml" maplocationx="0.451" maplocationy="0.383" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="250" startingwood="250" startinggold="25" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" script="core\rush_weak" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="150" startingwood="150" startinggold="50" startingstone="50">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="0" color="2" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Egyptian Marsh" lightsetname="Afternoon" mapsizename="Small">
+    <mapvariables>
+      <variable name="scenariofile" type="String" value="C02/C02_M06_Tutorial" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="100000" value="Quest_C02_SecondGuardedNugget" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_KingNarmer" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="C02\Custom\C02_R1M06_Oasis" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="ProTips" count="1" team="0" area="Player1" groupfilename="C02\Custom\C02_R1M06_ProTipTriggers" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Revealer Patch" count="1" team="1" area="Quest_Area_A" groupfilename="shared\shared_revealerpatch" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="EnemiesKilledTriggerGrouping" count="1" team="1" area="Player1" groupfilename="C02\Custom\C02_R1M06_EnemiesKilledTrigger" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_KingNarmer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="12005" />
+      <questcomplete id="12004" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="2000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <trait visible="true" id="Scout1H_U001" traitlevel="6" />
+    <trait visible="true" id="ArmorLgt_U012" traitlevel="6" />
+    <enableprotip visible="false" tip="TIP_UI_TechTree_FirstAgeUp" />
+    <protip visible="false" proto="Eg_Cap_Start_Bldg" tip="TIP_Shared_LevelUpAgeUp" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <collectresource id="3" description="$$2427$$" type="Gold" amount="200" includeexisting="false" />
+              <buildunit id="4" description="$$2461$$" type="Eg_Bldg_Barracks" count="1" />
+              <buildunit id="5" description="$$2462$$" type="Eg_Inf_Spearman" count="10" />
+              <dummy id="6" description="$$3802$$" objectivename="FirstSkirmishEnemiesKilled" autocomplete="false" />
+            </values>
+          </and>
+          <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="8" mustfailall="true">
+            <values>
+              <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="10" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

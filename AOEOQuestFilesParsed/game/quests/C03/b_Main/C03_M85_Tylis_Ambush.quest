@@ -1,0 +1,69 @@
+<quest uniqueid="13034" version="102" displayname="$$7767$$" level="16" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$9036$$" completiontext="$$7721$$" inprogresstext="$$7722$$" summarytext="$$9035$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.257" maplocationy="0.635" mapmarker="QuestDefault" mappage="Thrace" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8121$$" dataset="C01\C01_CoreRush_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8121$$" dataset="C01\C01_CoreRush_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="4" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8121$$" dataset="C01\C01_CoreRush_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="5" color="3" tributablebehavior="Default" playertype="Computer" personality="$$8122$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core/C03/C03_R3M84_RiverAmbush" randommap="true" numplayers="5" mapregionname="Greek Inland" lightsetname="Evening" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03\C03_R3M84_RiverAmbush" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Evening" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R3_Brennos" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C03_R3_Brennos" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13033" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="30000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
+    <questgiver visible="true" name="C03_R3_Comontorios" status="Available" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="1" sharedlos="false" />
+    <diplomacy relation="Ally" team1="2" team2="4" sharedlos="false" />
+    <diplomacy relation="Ally" team1="4" team2="2" sharedlos="false" />
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Ally" team1="4" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="5" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="5" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="5" team2="4" sharedlos="false" />
+    <diplomacy relation="Ally" team1="1" team2="5" sharedlos="true" />
+    <diplomacy relation="Ally" team1="5" team2="1" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <dummy id="3" description="$$8869$$" objectivename="ArmyRescued" autocomplete="false" />
+              <dummy id="4" description="$$2644$$" objectivename="ArmyDestroyed" autocomplete="false" />
+            </values>
+          </and>
+          <protectunit id="5" description="$$8248$$" type="Ce_QG_Comontorios" owningplayerid="1" />
+          <reduceunitsto id="6" type="unit" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

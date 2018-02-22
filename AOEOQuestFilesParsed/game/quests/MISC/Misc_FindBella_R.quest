@@ -1,0 +1,50 @@
+<quest uniqueid="398" version="56" displayname="$$358$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$359$$" completiontext="$$360$$" inprogresstext="$$1385$$" summarytext="$$1386$$" repeatableduration="144" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.16" maplocationy="0.236" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="200" />
+  <playersettings id="2" team="2" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2321$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="1" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2321$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core\MISC\Misc_FindBella" randommap="true" numplayers="3" mapregionname="Greek Inland" lightsetname="Evening" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="MISC/Misc_FindBella" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Evening" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="GEN_OlManFischer" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="GEN_OlManFischer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="15" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="10000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$2408$$">
+        <values>
+          <dummy id="2" objectivename="BellaHome" autocomplete="false" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="UnitTypeScout1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="Bella" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="Bella" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="2" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

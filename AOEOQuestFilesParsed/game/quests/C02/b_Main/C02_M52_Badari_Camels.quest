@@ -1,0 +1,62 @@
+<quest uniqueid="343" version="71" displayname="$$412$$" level="9" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5719$$" completiontext="$$5720$$" inprogresstext="$$5098$$" summarytext="$$4684$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" customloadscreen="loadscreentips\load_shared_upsell_advisors.xml" maplocationx="0.364" maplocationy="0.553" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2260$$" script="CORE\Rush_Weak" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2260$$" script="CORE\Rush_Weak" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2260$$" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared\Shared_RM_Land_FairFight" randommap="true" numplayers="5" mapregionname="Egyptian Sand" lightsetname="Evening" mapsizename="Standard">
+    <mapvariables>
+      <variable name="P2LandPatrolCount" type="Int" value="2" />
+      <variable name="P3LandPatrolCount" type="Int" value="2" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" value="Evening" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_CitySesostris" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="C02\C02_MediumWithCorral" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Nomads1" count="1" team="2" area="Quest_Area_A" groupfilename="C02\Badari\C02_Badari_OasisSmallCamp" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Nomads2" count="1" team="3" area="Quest_Area_C" groupfilename="C02\Badari\C02_Badari_OasisSmallCamp" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="5" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Camels1" protoname="QuestCamel" count="3" team="4" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57562" animfile="NPC\CivEgyptian\Units\Civilian\RiderlessCamel\RiderlessCamel.xml" icon="UserInterface\Icons\Units\Gaia\WildCamel64_ua" portraiticon="UserInterface\Icons\Units\Gaia\AvatarWildCamel_ua" soundfile="Camel" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Camels2" protoname="QuestCamel" count="3" team="4" area="Quest_Area_C" usequesttargetindicator="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Guards1" protoname="NPC_Nomad_Cavalry" count="4" team="4" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Guards2" protoname="NPC_Nomad_Cavalry" count="4" team="4" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Prince" protoname="NPC_PrinceSesostris2" count="1" team="1" area="Player1" usequesttargetindicator="true" />
+    <protounit cooponly="false" forcetocenter="false" name="ExtraMilitary" protoname="Eg_Inf_Axeman" count="6" team="4" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="ExtraMilitary2" protoname="Eg_Inf_Axeman" count="6" team="4" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="ExtraMilitary3" protoname="Eg_Inf_Spearman" count="2" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="ExtraMilitary4" protoname="Eg_Inf_Spearman" count="2" team="3" area="Quest_Area_C" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_CitySesostris" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="12051" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="8000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+    <consumable visible="true" consumablename="ConsumableNubianArc_C" count="3" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitinarea id="2" description="$$2558$$" area="Player1" type="QuestCamel" count="5" radius="25" aidefend="true" />
+          <protectunit id="3" description="$$5712$$" type="NPC_PrinceSesostris2" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

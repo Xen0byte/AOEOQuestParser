@@ -1,0 +1,48 @@
+<quest uniqueid="10123" version="119" displayname="$$3897$$" level="-1" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="5000" startingwood="5000" startinggold="5000" startingstone="5000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="5000" startingwood="5000" startinggold="5000" startingstone="5000" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:10:00" hideonui="false" />
+  <randommap map="core\shared\shared_survival_coop" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="shared\shared_survival_coop" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="99" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Enemy" team1="1" team2="2" sharedlos="false" />
+    <diplomacy relation="Enemy" team1="2" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <or id="3" mustfailall="false">
+            <values>
+              <dummy id="4" description="$$13332$$" objectivename="UNUSED" autocomplete="false" />
+              <or id="5" mustfailall="true">
+                <values>
+                  <protectunit id="6" description="" type="UnitTypeBldgFortress" owningplayerid="1" />
+                  <protectunit id="7" description="" type="UnitTypeBldgFortress" owningplayerid="3" />
+                </values>
+              </or>
+            </values>
+          </or>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

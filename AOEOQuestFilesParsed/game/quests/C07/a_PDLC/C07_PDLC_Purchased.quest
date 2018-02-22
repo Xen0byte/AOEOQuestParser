@@ -1,0 +1,13 @@
+<quest uniqueid="2107" version="4" displayname="$$12263$$" level="0" repeatable="false" offertype="eOfferCivNorse" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="CapitolCity" canabandon="false" hiddenquest="true" friendonly="false" suppressnotifications="true" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="true" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="GEN_PDLCStore" />
+  </questgivers>
+  <prereqs>
+    <values />
+  </prereqs>
+  <objectives id="0" mustfailall="false">
+    <values />
+  </objectives>
+</quest>

@@ -1,0 +1,105 @@
+<quest uniqueid="161" version="77" displayname="$$1034$$" level="8" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3067$$" completiontext="$$3068$$" inprogresstext="$$3069$$" summarytext="$$3224$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.362" maplocationy="0.314" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" script="CORE\Rush_Moderate" dataset="C01\C01_Mycenae_T1" cooponly="false" startingfood="1000" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="ArcherBias" value="-0.3" />
+      <aivariable key="CavalryBias" value="-0.3" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" script="CORE\Rush_Moderate" dataset="C01\C01_Mycenae_T1" cooponly="false" startingfood="1000" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="ArcherBias" value="0.3" />
+      <aivariable key="InfantryBias" value="0.3" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="NavyBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2235$$" script="CORE\Turtle_Moderate" dataset="C01\C01_CoreRamp_T1" cooponly="false" startingfood="800" startingwood="500" startinggold="50" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="CavalryBias" value="0.2" />
+      <aivariable key="InfantryBias" value="0.2" />
+      <aivariable key="EconomyHandicap" value="-0.4" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\C01\C01_R1M32_HelpingSicyon" randommap="true" numplayers="5" mapregionname="Greek Coast" lightsetname="Afternoon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="P2AddMarketManager" type="Bool" value="True" />
+      <variable name="P3AddMarketManager" type="Bool" value="True" />
+      <variable name="P4AddMarketManager" type="Bool" value="True" />
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="161" />
+      <variable name="ForcedPlayerLevel" type="Int" value="7" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_VillageElder" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Bandits01" count="1" team="2" area="Quest_Area_A" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Bandits02" count="1" team="3" area="Quest_Area_B" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="SicyonVillage" count="1" team="4" area="Quest_Area_C" groupfilename="c01\Custom\C01_R1M32_AllyFort" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="5" area="Player2" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Farms AreaA" protoname="Gr_Bldg_Farm" count="2" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Farms AreaB" protoname="Gr_Bldg_Farm" count="2" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Farms AreaC" protoname="Gr_Bldg_Farm" count="1" team="4" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="P2 Farms" protoname="Gr_Bldg_Farm" count="6" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="P3 Farms" protoname="Gr_Bldg_Farm" count="6" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="10" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="9000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+    <questgiver visible="true" name="C01_R1_HeliceMerchant" status="Available" />
+    <protip visible="false" proto="C01_R1_HeliceMerchant" tip="TIP_C01_NewQuests_HeliceMerchant" />
+    <consumable visible="true" consumablename="ConsumableSlow_C" count="3" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <protectunit id="2" description="$$4061$$" type="Gr_Bldg_TownCenter" owningplayerid="4" />
+          <dummy id="3" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,54 @@
+<quest uniqueid="9211" version="22" displayname="$$8923$$" level="43" repeatable="true" offertype="eOfferBooster1" canplaycoop="true" cooprequired="false" ranked="false" description="$$1844$$" completiontext="$$1845$$" inprogresstext="$$1846$$" summarytext="$$1847$$" repeatableduration="144" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.635" maplocationy="0.45" mapmarker="QuestRepeatable" mappage="Crete" elitespawnchance="0">
+  <playersettings id="1" team="1" color="1" playertype="Human" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="2" team="2" color="2" playertype="Computer" personality="$$2229$$" character="B01\B01_Weekly" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainArmy" value="0" />
+      <aivariable key="NoBuild" value="0" />
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResearchEcon" value="0" />
+      <aivariable key="NoResearchMilitary" value="0" />
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" playertype="Human" cooponly="true" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000" />
+  <playersettings id="4" team="3" color="3" playertype="Computer" personality="$$2230$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="1" color="3" playertype="Computer" personality="$$2230$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:03:00" hideonui="false" />
+  <randommap map="Core\DEV\DEV_StressTest" randommap="true" numplayers="5" mapregionname="Minoan Crete" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="DEV/DEV_Stress_Test_AI" />
+      <variable name="region" type="String" value="Minoan Crete" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questreturners>
+    <protounit unit="GEN_FredTheRedeemer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="35" max="99" />
+    </values>
+  </prereqs>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <protectunit id="2" description="$$2453$$" type="Mn_Bldg_Wonder2" owningplayerid="5" />
+          <and id="3" mustfailall="false">
+            <values>
+              <unitdiscovered id="4" description="" type="Qst_SpawnPoint1" count="1" />
+              <unitdiscovered id="5" description="$$2454$$" type="AIStart" count="40" />
+              <timer id="6" description="$$2324$$" failonexpire="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

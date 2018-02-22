@@ -1,0 +1,60 @@
+<quest uniqueid="17701" version="40" displayname="$$12547$$" level="0" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$12970$$" completiontext="$$12596$$" inprogresstext="$$12597$$" summarytext="$$12546$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.435" maplocationy="0.755" mapmarker="QuestDefault" mappage="Norse" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="3000" startingwood="3000" startinggold="3000" startingstone="3000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12536$$" script="Core\Ramp_Moderate" dataset="C03\C03_CoreRamp_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="0.3" />
+      <aivariable key="InfantryBias" value="0.3" />
+      <aivariable key="NavyBias" value="-0.8" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12536$$" dataset="C03\C03_CoreRush_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\C07\C07_Demo" randommap="true" numplayers="4" mapregionname="Celtic Alps" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenariofile" type="String" value="C07\C07_Demo" />
+      <variable name="P2IncreaseBaseScale" type="Int" value="4" />
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="region" type="String" value="Celtic Alps" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B04_PortMaster" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B04_PortMaster" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <or>
+        <values>
+          <civilization id="1" />
+          <civilization id="3" />
+          <civilization id="6" />
+          <civilization id="8" />
+          <civilization id="22" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <protip visible="false" tip="TIP_C07_DemoTurnIn" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableBanditArcher_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableBanditHippikon_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableBanditHorseHunter_U" count="3" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2507$$" type="Ce_Bldg_Fortress" count="3" includeconversion="true" onlycountelites="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

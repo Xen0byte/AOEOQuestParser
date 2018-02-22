@@ -1,0 +1,73 @@
+<quest uniqueid="13033" version="120" displayname="$$7719$$" level="15" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$9346$$" completiontext="$$9039$$" inprogresstext="$$9608$$" summarytext="$$8903$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.49" maplocationy="0.26" mapmarker="QuestDefault" mappage="Thrace" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2304$$" script="CORE\Ramp_Heavy" dataset="C01\C01_CoreRamp_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="0.8" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2304$$" dataset="C01\C01_CoreRush_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <timereffects event="DropSiege">
+    <spawnunit visible="true" count="2" placeunittype="Gr_Sie_BatteringRam" asplayer="2" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_SiegeWorkshop" preferredoffset="5" radius="0" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core/C03/C03_R3M83_Naval" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="Afternoon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R3M83_Naval" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Afternoon" />
+    </mapvariables>
+  </randommap>
+  <onaccept>
+    <questgiver visible="true" name="C03_R3_Comontorios" status="Unavailable" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C03_R3_Acichorios" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="true" forcetocenter="false" name="CoOpTracker" protoname="AIStart" count="1" team="4" area="Player1" usequesttargetindicator="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2Start" count="1" team="3" area="Player2" groupfilename="shared_start_transport" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="AcicTrireme" protoname="AcicTrireme" count="1" team="1" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="Gr_Shp_CatTrireme" visualscale="1.35" convertresist="100" displaynameid="63604" initialhitpoints="5000" maxhitpoints="5000" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R3_Acichorios" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13032" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
+    <xp visible="true" amount="40000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="Gear_Boat_R101" traitlevel="19" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$4813$$" type="UnitTypeBldgTownCenter" count="1" includeconversion="true" onlycountelites="false" />
+              <unitinarea id="4" description="$$7093$$" area="Quest_Area_A" type="transport" count="5" radius="-1" aidefend="true" />
+            </values>
+          </and>
+          <protectunit id="5" description="$$8246$$" type="AcicTrireme" owningplayerid="1" />
+          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

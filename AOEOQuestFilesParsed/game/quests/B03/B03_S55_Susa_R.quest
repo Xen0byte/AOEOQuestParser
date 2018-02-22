@@ -1,0 +1,61 @@
+<quest uniqueid="103055" version="53" displayname="$$10268$$" level="-1" difficultycoloroverride="1" repeatable="true" offertype="eOfferBooster3" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11527$$" completiontext="$$11530$$" inprogresstext="$$11531$$" summarytext="$$11529$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.6" maplocationy="0.74" mapmarker="QuestRepeatable" mappage="Persia" elitespawnchance="0" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="4" tributablebehavior="Default" playertype="Computer" personality="$$11792$$" script="shared_babylon\babylon_templewrecker" dataset="c04\c04_corerush_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11793$$" script="shared_babylon\babylon_templewrecker" dataset="c04\c04_corerush_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:10:00" hideonui="false" />
+  <randommap map="Core\Shared_Babylon\Babylon_S55_Susa_R" randommap="true" numplayers="4" mapregionname="Meso Valley" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Babylon/Babylon_S55_Susa_R_v2" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_OldFactionGuy" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="Babylon_OldFactionGuy" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103053" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="5" />
+    <xp visible="true" amount="1" lookuptable="SQShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQShort" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <kill id="3" description="$$4708$$" type="NPC_SusaTemple" count="12" includeconversion="false" onlycountelites="false" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="LogicalTypeScout" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <and id="8" mustfailall="false">
+        <values>
+          <kill id="9" description="$$2482$$" type="Pe_Bldg_House" count="36" includeconversion="false" onlycountelites="false" />
+          <kill id="10" description="" type="NPC_SusaTemple" count="12" includeconversion="false" onlycountelites="false" />
+        </values>
+      </and>
+    </values>
+  </secondaryobjectives>
+</quest>

@@ -1,0 +1,63 @@
+<quest uniqueid="395" version="51" displayname="$$649$$" level="17" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4964$$" completiontext="$$651$$" inprogresstext="$$1555$$" summarytext="$$4960$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.8" maplocationy="0.32" mapmarker="QuestDefault" mappage="Libya" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="400" startingwood="400" startinggold="400" startingstone="400" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2287$$" script="CORE\Turtle_Heavy" dataset="C02\C02_Libyan_T2" cooponly="false" startingfood="400" startingwood="400" startinggold="400" startingstone="400">
+    <aislidervariables>
+      <aivariable key="NavyBias" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="400" startingwood="400" startinggold="400" startingstone="400" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared\Shared_RM_Naval_CenterIsland" randommap="true" numplayers="3" mapregionname="Egyptian Marsh" mapsizename="Large">
+    <mapvariables>
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="395" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R3_LostAdmiral" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Quest_Area_C" groupfilename="Shared_Start_Transport" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Quest_Area_D" groupfilename="Shared_Start_Transport" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Lib1" count="1" team="2" area="Player1" groupfilename="Shared_Start_BarracksTowers" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="revealer" protoname="Con_SpyglassRevealer_E" count="1" team="1" area="Player1" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R3_LostAdmiral" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="387" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <buildunit id="3" description="$$2565$$" type="AbstractTownCenter" count="1" />
+              <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

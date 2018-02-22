@@ -1,0 +1,22 @@
+<quest uniqueid="1504" version="43" displayname="$$11089$$" level="0" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" description="$$11112$$" completiontext="$$11113$$" inprogresstext="$$11102$$" summarytext="$$11097$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="Global" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="Vanity_PrimaryQG" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="Vanity_PrimaryQG" />
+  </questreturners>
+  <prereqs>
+    <values />
+  </prereqs>
+  <rewards visible="true">
+    <loottable visible="true" type="tables\_coreloot_vanityticket" />
+    <consumematerial visible="true" materialname="!VanityTicket" count="1" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <collectmaterial id="1" description="$$11077$$" type="!VanityTicket" amount="1" includeexisting="true" />
+    </values>
+  </objectives>
+</quest>

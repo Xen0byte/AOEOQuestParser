@@ -1,0 +1,33 @@
+<quest uniqueid="99" version="14" displayname="$$1082$$" level="0" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" description="$$1083$$" completiontext="$$1084$$" inprogresstext="$$1795$$" summarytext="$$3537$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="true" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="C01_R3_WarriorAgamemnon" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="78" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
+    <lockregion visible="false" region="1" />
+    <unlockregion visible="false" region="6" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false" description="$$4246$$">
+        <values>
+          <unitdiscovered id="2" type="C01_R1_VillageElder" count="1" />
+          <ownsunit id="3" type="C01_R1_VillageElder" count="1" />
+          <unitdiscovered id="4" type="C01_R3_WarriorAgamemnon" count="1" />
+          <ownsunit id="5" type="C01_R3_WarriorAgamemnon" count="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

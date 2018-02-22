@@ -1,0 +1,53 @@
+<quest uniqueid="102004" version="111" displayname="$$7532$$" level="0" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$7533$$" completiontext="$$6125$$" inprogresstext="$$6126$$" summarytext="$$6127$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="1" color="7" tributablebehavior="Default" playertype="Computer" personality="$$6128$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Computer" personality="$$6446$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Computer" personality="$$6447$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6096$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6097$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="7" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6098$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="8" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$6108$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="core\b02\b02_prototype" randommap="true" numplayers="8" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="MapType" type="Int" value="16" />
+      <variable name="MapResources" type="Int" value="2" />
+      <variable name="MapReveal" type="Int" value="2" />
+      <variable name="StartingResources" type="Int" value="0" />
+      <variable name="AIDifficulty" type="Int" value="1" />
+      <variable name="AIStrategy" type="Int" value="1" />
+      <variable name="AIFocus" type="Int" value="1" />
+      <variable name="RewardsOn" type="Int" value="1" />
+      <variable name="MapSizeTemp" type="Int" value="3" />
+      <variable name="VictoryCondition" type="Int" value="0" />
+      <variable name="NumHumanTeamPlayers" type="Int" value="4" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questreturners>
+    <protounit unit="C01_R1_VillageElder" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="1" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="500" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <or id="2" mustfailall="false">
+            <values>
+              <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="5" />
+              <dummy id="4" description="$$3802$$" objectivename="UNUSED" autocomplete="false" />
+            </values>
+          </or>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

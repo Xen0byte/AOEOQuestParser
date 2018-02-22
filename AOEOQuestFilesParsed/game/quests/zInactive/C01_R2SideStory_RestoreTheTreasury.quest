@@ -1,0 +1,53 @@
+<quest uniqueid="171" version="47" displayname="$$723$$" level="12" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$8251$$" completiontext="$$725$$" inprogresstext="$$1597$$" summarytext="$$8254$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.34" maplocationy="0.361" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="200" startingwood="100" startinggold="0" startingstone="100" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" script="CORE\Rush_Moderate" dataset="C01\C01_CoreRush_T1" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="200">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0.6" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="-0.1" />
+      <aivariable key="ArcherBias" value="-0.1" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="true" />
+  <randommap map="scenarioloader" randommap="true" numplayers="2" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_Side_GatherGold" />
+      <variable name="region" type="String" value="Greek Coast" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R2_Treasurer" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R2_Treasurer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="57" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="15000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <collectresource id="2" description="$$2523$$" type="Gold" amount="5000" includeexisting="true" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

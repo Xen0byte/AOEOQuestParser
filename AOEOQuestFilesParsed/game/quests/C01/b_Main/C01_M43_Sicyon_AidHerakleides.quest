@@ -1,0 +1,66 @@
+<quest uniqueid="50" version="56" displayname="$$753$$" level="9" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$3700$$" completiontext="$$3693$$" inprogresstext="$$3197$$" summarytext="$$3682$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.458" maplocationy="0.35" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="2000" startingwood="2000" startinggold="2000" startingstone="2000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" dataset="C01\C01_Mycenae_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="2000" startingwood="2000" startinggold="2000" startingstone="2000" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$3675$$" dataset="c01\c01_coreramp_t1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:06:00" hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="Evening" mapsizename="Small">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C01/C01_R1M43_ShowOurPower" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Evening" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_Agamemnon" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="RevealerForPlayer1" protoname="SpyglassRevealer" count="1" team="1" area="Quest_Area_C" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_Agamemnon" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="46" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="14000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="60" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <timer id="1" description="$$3673$$" failonexpire="false" />
+      <or id="2" mustfailall="false">
+        <values>
+          <and id="3" mustfailall="false">
+            <values>
+              <kill id="4" description="$$3630$$" type="Gr_Sie_BatteringRam" count="6" includeconversion="true" onlycountelites="false" />
+              <unitdiscovered id="5" description="$$3674$$" type="AIStart" count="3" />
+            </values>
+          </and>
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

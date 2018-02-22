@@ -1,0 +1,58 @@
+<quest uniqueid="405" version="80" displayname="$$361$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4085$$" completiontext="$$363$$" inprogresstext="$$1387$$" summarytext="$$6184$$" repeatableduration="144" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.927" maplocationy="0.569" mapmarker="QuestRepeatable" mappage="Troy" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="200" />
+  <playersettings id="2" team="2" color="5" tributablebehavior="ForceFalse" playertype="Computer" personality="$$361$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\MISC\Misc_GoodOlPeepaw" randommap="true" numplayers="3" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="MISC/Misc_GoodOlPeepaw" />
+      <variable name="RestrictNuggetScaling" type="Bool" value="true" />
+      <variable name="region" type="String" value="Greek Inland" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="1000000" value="Quest_MapleTreeNugget" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="GEN_MamuShannon" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="GEN_MamuShannon" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="15" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="10000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+    <consumematerial visible="false" materialname="!MapleSap" count="5" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <ownsunit id="3" description="$$2698$$" type="Npc_PeePaw" count="1" owningplayerid="1" causesfailure="false" />
+              <collectmaterial id="4" description="$$4086$$" type="!MapleSap" amount="5" includeexisting="true" />
+              <unitinarea id="5" description="$$4087$$" area="Quest_Area_D" type="Npc_PeePaw" count="1" radius="-1" aidefend="false" />
+            </values>
+          </and>
+          <or id="6" mustfailall="false">
+            <values>
+              <reduceunitsto id="7" type="Gr_Bldg_House" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="2" />
+              <reduceunitsto id="8" type="EquipmentFilterMilitary" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </or>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

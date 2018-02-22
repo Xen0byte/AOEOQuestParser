@@ -1,0 +1,25 @@
+<quest uniqueid="1374" version="34" displayname="$$9914$$" level="0" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceLegionOfCarthage" questtype="Global" description="$$9906$$" completiontext="$$9884$$" inprogresstext="$$9883$$" summarytext="$$9882$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="A03_AllianceCollector" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="A03_AllianceCollector" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="40" max="99" />
+      <questcomplete id="1300" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="5" />
+    <consumematerial visible="true" materialname="StoneBlock" count="1000" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <collectmaterial id="1" description="$$9915$$" type="StoneBlock" amount="1000" includeexisting="true" />
+    </values>
+  </objectives>
+</quest>

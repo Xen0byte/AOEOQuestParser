@@ -1,0 +1,33 @@
+<quest uniqueid="1" version="45" displayname="$$8935$$" level="0" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" canabandon="false" hiddenquest="true" friendonly="false" suppressnotifications="true" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="true" />
+  <randommap randommap="true" numplayers="0">
+    <mapvariables>
+      <variable name="region" type="String" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <onaccept>
+    <unlockregion visible="true" region="13" />
+    <unlockregion visible="true" region="14" />
+    <unlockregion visible="true" region="15" />
+    <enableprotip visible="false" tip="TIP_UI_TechTree_FirstOpen" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="GEN_PDLCStore" />
+  </questgivers>
+  <prereqs>
+    <values>
+      <or>
+        <values>
+          <civilization id="1" />
+          <civilization id="3" />
+          <civilization id="6" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <objectives id="0" mustfailall="false">
+    <values />
+  </objectives>
+</quest>

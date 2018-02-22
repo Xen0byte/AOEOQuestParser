@@ -1,0 +1,56 @@
+<quest uniqueid="104021" version="110" displayname="$$13154$$" level="-1" repeatable="false" offertype="eOfferBooster4" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$13155$$" completiontext="$$13052$$" inprogresstext="$$13053$$" summarytext="$$12731$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.65" maplocationy="0.4" mapmarker="QuestDefault" mappage="Thrace" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="200" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12666$$" dataset="c07\C07_CoreRushAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="5" tributablebehavior="Default" playertype="Computer" personality="$$12732$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$12736$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12666$$" dataset="c07\C07_CoreRushAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="1" color="5" tributablebehavior="Default" playertype="Computer" personality="$$12732$$" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\B04\B04_Arc2_1_Gauntlet" randommap="true" numplayers="6" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="B04/B04_Arc2_1_Gauntlet" />
+      <variable name="QuestID" type="Int" value="104021" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B04_PrimaryQG" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B04_PrimaryQG" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="104012" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="B04Short" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="B04Short" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <ownsunit id="3" description="$$13118$$" type="Qst_CounterObject" count="4" owningplayerid="1" causesfailure="false" />
+              <dummy id="4" description="$$12735$$" objectivename="B04_Gauntlet_Ally" autocomplete="false" />
+              <dummy id="5" description="$$4813$$" objectivename="B04_Gauntlet_TC" autocomplete="false" />
+            </values>
+          </and>
+          <protectunit id="6" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

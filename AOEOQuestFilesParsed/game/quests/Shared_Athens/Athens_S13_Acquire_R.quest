@@ -1,0 +1,39 @@
+<quest uniqueid="3213" version="56" displayname="$$9161$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" description="$$9254$$" completiontext="$$9253$$" inprogresstext="$$9251$$" summarytext="$$9250$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.96" maplocationy="0.435" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="200" startingwood="200" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" script="CORE\Turtle_Moderate" dataset="C01\C01_Bandit_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2233$$" dataset="C01\C01_Vanilla_T0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:10:00" hideonui="false" />
+  <randommap map="Core\Shared_Athens\Athens_Attica_Acquire" randommap="true" numplayers="3" mapregionname="Greek Rocky" lightsetname="Afternoon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="region" type="String" value="Greek Rocky" />
+      <variable name="lighting" type="String" value="Afternoon" />
+    </mapvariables>
+  </randommap>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="99" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="6000" />
+    <or>
+      <material visible="true" materialname="CopperIngot" count="100" />
+      <material visible="true" materialname="PinePlank" count="100" />
+      <material visible="true" materialname="StoneBlock" count="100" />
+      <material visible="true" materialname="Grain" count="100" />
+      <material visible="true" materialname="AnimalHide" count="100" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <collectresource id="3" description="$$2523$$" type="Gold" amount="3000" includeexisting="true" />
+          <timer id="4" description="$$2471$$" failonexpire="true" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

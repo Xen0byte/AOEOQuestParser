@@ -1,0 +1,104 @@
+<quest uniqueid="201" version="68" displayname="$$4092$$" level="-1" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$770$$" completiontext="$$771$$" inprogresstext="$$1625$$" summarytext="$$8156$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.559" maplocationy="0.603" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="5" tributablebehavior="Default" playertype="Computer" personality="$$2311$$" script="CORE\Ramp_Weak" dataset="C01\C01_CoreRamp_T2" cooponly="false" startingfood="100" startingwood="200" startinggold="100" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:11:00" hideonui="false">
+    <events>
+      <timerevent event="Attack1" time="00:06:00" />
+      <timerevent event="Attack1" time="00:08:00" />
+      <timerevent event="Attack2" time="00:08:00" />
+      <timerevent event="Attack1" time="00:10:00" />
+      <timerevent event="Attack2" time="00:10:00" />
+      <timerevent event="Attack3" time="00:10:00" />
+    </events>
+  </timer>
+  <timereffects event="Attack1">
+    <spawnunit visible="false" count="12" placeunittype="Npc_SP_Swordsman" asplayer="3" spawntype="SpawnForEnemies" nearunittype="AIStart" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Attack2">
+    <spawnunit visible="false" count="6" placeunittype="Npc_SP_Bowman" asplayer="3" spawntype="SpawnForEnemies" nearunittype="AIStart" radius="20" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Attack3">
+    <spawnunit visible="false" count="3" placeunittype="Npc_SP_Chieftan" asplayer="3" spawntype="SpawnForEnemies" nearunittype="AIStart" radius="20" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core\Shared_Argos\Argos_RM_RefugeeRiver" randommap="true" numplayers="4" mapregionname="Greek Rocky" lightsetname="Morning" mapsizename="Small">
+    <mapvariables>
+      <variable name="region" type="String" value="Greek Rocky" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosRefugee" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="PlayerStart1" count="1" team="1" area="Player1" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Survivors" count="1" team="2" area="Quest_Area_A" groupfilename="Shared_Start_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="ExtraVills" protoname="Gr_Civ_Villager" count="10" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="ExtraSpearmen" protoname="Gr_Inf_Spearman" count="10" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <grouping cooponly="true" forcetocenter="false" name="PlayerStart2" count="1" team="4" area="Player2" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <random placeatleast="0" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Camel1" chance="0.5" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Camel1" protoname="FavoriteCamel" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="52641" animfile="World\Animals\Camel\Camel.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarWildCamel_ua" icon="UserInterface\Icons\Units\Gaia\WildCamel64_ua" soundfile="Camel" />
+        </protounit>
+      </targets>
+    </random>
+    <protounit cooponly="false" forcetocenter="false" name="AiTarget" protoname="AIStart" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosRefugee" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="75" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQShort" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="2" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <and id="3" mustfailall="false">
+            <values>
+              <ownsunit id="4" description="$$2673$$" type="UnitTypeShipUtility1" count="1" owningplayerid="1" causesfailure="false" />
+              <ownsunit id="5" description="$$8088$$" type="UnitTypeShipBasic1" count="8" owningplayerid="1" causesfailure="false" />
+            </values>
+          </and>
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

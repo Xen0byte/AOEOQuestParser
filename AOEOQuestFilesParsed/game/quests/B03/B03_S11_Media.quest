@@ -1,0 +1,67 @@
+<quest uniqueid="103011" version="68" displayname="$$11222$$" level="21" repeatable="false" offertype="eOfferBooster3" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11539$$" completiontext="$$11247$$" inprogresstext="$$11242$$" summarytext="$$11543$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.47" mapmarker="QuestDefault" mappage="Persia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="200" startingwood="200" startinggold="150" startingstone="300" />
+  <playersettings id="2" team="2" color="6" tributablebehavior="Default" playertype="Computer" personality="$$11328$$" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="200" startingwood="200" startinggold="150" startingstone="300" />
+  <playersettings id="4" team="4" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$10282$$" dataset="c06\c06_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="6" tributablebehavior="Default" playertype="Computer" personality="$$11328$$" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="4" color="5" tributablebehavior="ForceFalse" playertype="Computer" personality="$$11186$$" dataset="c06\c06_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="7" team="3" color="5" tributablebehavior="ForceFalse" playertype="Computer" personality="$$11186$$" dataset="c06\c06_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="8" team="5" color="6" tributablebehavior="Default" playertype="Computer" personality="$$11328$$" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:20:00" hideonui="false" />
+  <randommap map="core\shared_babylon\babylon_s11_medianalliance" randommap="true" numplayers="8" mapregionname="Persian Rock" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="shared_babylon\babylon_s11_media_v2" />
+      <variable name="region" type="String" value="Persian Rock" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_NewFactionLady" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Coop Player Start" count="1" team="3" area="Player2" groupfilename="shared_player3_age2_barracks" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_NewFactionLady" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="103002" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="90000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="1" team2="4" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="1" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="4" sharedlos="false" />
+    <diplomacy relation="Ally" team1="2" team2="5" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="2" sharedlos="false" />
+    <diplomacy relation="Ally" team1="4" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="5" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="5" team2="1" sharedlos="false" />
+    <diplomacy relation="Ally" team1="5" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="5" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="5" team2="4" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <ownsunit id="3" description="$$11783$$" type="Ba_Sie_SiegeTower" count="5" owningplayerid="4" causesfailure="false" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

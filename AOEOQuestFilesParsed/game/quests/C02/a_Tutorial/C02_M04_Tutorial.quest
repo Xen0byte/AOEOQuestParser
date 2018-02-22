@@ -1,0 +1,68 @@
+<quest uniqueid="12004" version="57" displayname="$$376$$" level="2" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$9598$$" completiontext="$$4657$$" inprogresstext="$$4659$$" summarytext="$$4402$$" canabandon="false" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c02_r1m04.xml" maplocationx="0.431" maplocationy="0.242" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="250" startingwood="100" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2253$$" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="2" mapregionname="Egyptian Marsh" lightsetname="Evening" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_M04_Storehouse" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" value="Evening" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="100000" value="Quest_C02_FirstGuardedNugget" />
+    </nuggetoverrides>
+  </randommap>
+  <onaccept>
+    <protip visible="false" tip="TIP_Shared_QuestMapAccessCityReminder" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="C02_R1_KingNarmer" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C02_R1_KingNarmer" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="12002" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1500" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="20" />
+    <capitaltech visible="true" captechid="154" />
+    <capitaltech visible="true" captechid="155" />
+    <protip visible="false" tip="TIP_C02_QuestTechUnlock_BarracksSpearmen" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <and id="3" mustfailall="false">
+                <values>
+                  <buildunit id="4" description="$$2458$$" type="Eg_Bldg_StoreHouse" count="1" />
+                  <collectresource id="5" description="$$2373$$" type="Wood" amount="200" includeexisting="false" />
+                  <buildunit id="6" description="$$4508$$" type="Eg_Bldg_House" count="1" />
+                </values>
+              </and>
+              <and id="7" mustfailall="false">
+                <values>
+                  <population id="8" description="$$2460$$" currentgoal="15" capgoal="1" />
+                </values>
+              </and>
+            </values>
+          </and>
+          <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="10" mustfailall="true">
+            <values>
+              <reduceunitsto id="11" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="12" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

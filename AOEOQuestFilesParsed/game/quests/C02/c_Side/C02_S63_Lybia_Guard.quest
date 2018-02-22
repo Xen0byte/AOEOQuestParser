@@ -1,0 +1,68 @@
+<quest uniqueid="392" version="77" displayname="$$631$$" level="16" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6642$$" completiontext="$$5799$$" inprogresstext="$$5802$$" summarytext="$$5803$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.457" maplocationy="0.83" mapmarker="QuestDefault" mappage="Libya" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2272$$" script="CORE\Rush_Heavy" dataset="C02\C02_Libyan_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2272$$" script="CORE\Rush_Moderate" dataset="C02\C02_Libyan_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="1" color="5" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2273$$" dataset="C02\C02_CoreRamp_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="1" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2271$$" dataset="C02\C02_CoreRamp_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:10:00" hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="6" mapregionname="Egyptian Sand" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R3M82_ProtectTreasures" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R3_Sesostris" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="6" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Libyan1" count="1" team="2" area="Quest_Area_B" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Libyan2" count="1" team="3" area="Quest_Area_C" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R3_Sesostris" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="388" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="30000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <timer id="3" description="$$5825$$" failonexpire="false" />
+              <unitinarea id="4" description="$$2572$$" area="Quest_Area_A" type="NPC_PrinceSesostris2" count="1" radius="20" aidefend="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="Qst_TreasureCaravan" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

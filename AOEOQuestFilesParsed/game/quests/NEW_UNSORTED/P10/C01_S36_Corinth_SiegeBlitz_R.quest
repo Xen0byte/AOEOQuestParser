@@ -1,0 +1,41 @@
+<quest uniqueid="11736" version="13" displayname="$$12321$$" level="20" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$15$$" completiontext="$$5$$" inprogresstext="$$1224$$" summarytext="$$1832$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="1" color="3" tributablebehavior="Default" playertype="Computer" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared\Shared_SiegeBlitz.cs" randommap="true" numplayers="5" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="shared\shared_siegeblitz" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <level min="99" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$6374$$" objectivename="UNUSED" autocomplete="false" />
+          <and id="3" mustfailall="false">
+            <values>
+              <reduceunitsto id="4" description="" type="UnitTypeBldgTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="4" />
+              <reduceunitsto id="5" description="" type="UnitTypeBldgTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="3" />
+              <reduceunitsto id="6" description="" type="UnitTypeBldgTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

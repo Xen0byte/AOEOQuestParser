@@ -1,0 +1,136 @@
+<quest uniqueid="315" version="77" displayname="$$2225$$" level="-1" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5743$$" completiontext="$$5750$$" inprogresstext="$$5581$$" summarytext="$$5064$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.2" maplocationy="0.73" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="99999" startingwood="99999" startinggold="99999" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2283$$" script="CORE\Rush_Moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="UseWaves" value="0" />
+      <aivariable key="NoAutoReveal" value="0" />
+      <aivariable key="NoScout" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2284$$" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2285$$" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoScout" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="99999" startingwood="99999" startinggold="99999" startingstone="0" />
+  <timer time="00:13:00" hideonui="false">
+    <events>
+      <timerevent event="EnemyTroops" time="00:00:01" />
+      <timerevent event="EnemyTroops" time="00:01:00" />
+      <timerevent event="Reinforcements3" time="00:02:00" />
+      <timerevent event="EnemyTroops" time="00:03:00" />
+      <timerevent event="Reinforcements2" time="00:03:28" />
+      <timerevent event="Reinforcements1" time="00:04:00" />
+      <timerevent event="Reinforcements2" time="00:04:30" />
+      <timerevent event="Reinforcements2" time="00:05:00" />
+      <timerevent event="Reinforcements3" time="00:05:30" />
+      <timerevent event="Reinforcements2" time="00:06:00" />
+      <timerevent event="RevealMid" time="00:06:30" />
+      <timerevent event="Reinforcements1" time="00:0700" />
+      <timerevent event="Reinforcements2" time="00:07:30" />
+      <timerevent event="Reinforcements3" time="00:08:00" />
+      <timerevent event="Reinforcements2" time="00:08:30" />
+      <timerevent event="Reinforcements3" time="00:09:00" />
+      <timerevent event="Reinforcements1" time="00:09:30" />
+      <timerevent event="Reinforcements3" time="00:10:00" />
+      <timerevent event="Reinforcements2" time="00:10:30" />
+      <timerevent event="Reinforcements2" time="00:11:30" />
+      <timerevent event="Reinforcements1" time="00:12:00" />
+      <timerevent event="Reinforcements3" time="00:12:30" />
+      <timerevent event="RevealPlayer" time="00:10:00" />
+    </events>
+  </timer>
+  <timereffects event="EnemyTroops">
+    <spawnunit visible="true" count="4" placeunittype="NPC_Nubian_Elephant" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Fortress" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="EnemyTroops">
+    <spawnunit visible="true" count="20" placeunittype="NPC_Nubian_Warrior" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Fortress" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="EnemyTroops">
+    <spawnunit visible="true" count="2" placeunittype="Eg_Sie_SiegeTower" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Fortress" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Reinforcements1">
+    <spawnunit visible="true" count="10" placeunittype="NPC_Nubian_Warrior" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Fortress" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Reinforcements2">
+    <spawnunit visible="true" count="10" placeunittype="NPC_Nubian_Archer" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Fortress" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="Reinforcements3">
+    <spawnunit visible="true" count="5" placeunittype="Eg_Cav_CamelRider" asplayer="2" spawntype="SpawnForAllies" nearunittype="Eg_Bldg_Fortress" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="RevealMid">
+    <spawnunit visible="true" count="1" placeunittype="SpyglassRevealer" asplayer="2" spawntype="SpawnForEnemies" nearunittype="AIStart" radius="1" useboneposition="false" />
+  </timereffects>
+  <timereffects event="RevealPlayer">
+    <spawnunit visible="true" count="1" placeunittype="SpyglassRevealer" asplayer="2" spawntype="SpawnForEnemies" nearunittype="Eg_Bldg_SiegeWorkshop" radius="1" useboneposition="false" />
+  </timereffects>
+  <randommap map="Core\C02\C02_MultiUse_NileRiver" randommap="true" numplayers="5" mapregionname="Egyptian Marsh" lightsetname="Noon" mapsizename="Large">
+    <mapvariables>
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="lighting" type="String" value="Noon" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_Architect" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="C02\C02_P1Base_SiegeStart" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="5" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Hill Fort" count="1" team="2" area="Quest_Area_D" groupfilename="C02\Nubian\C02_Nubian_GiantFort_01" rottype="RotateRandom" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Egypt Fort 1" count="1" team="3" area="Quest_Area_A" groupfilename="C02\C02_AllyHillFort" rottype="RotateRandom" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Egypt Fort 2" count="1" team="3" area="Quest_Area_B" groupfilename="C02\C02_AllyHillFort" rottype="RotateRandom" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Egypt Fort 3" count="1" team="3" area="Quest_Area_C" groupfilename="C02\C02_AllyHillFort" rottype="RotateRandom" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Revealer1" protoname="SpyglassRevealer" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Revealer2" protoname="AIStart" count="1" team="1" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Revealer3" protoname="SpyglassRevealer" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="true" name="Revealer4" protoname="SpyglassRevealer" count="1" team="1" area="Quest_Area_D" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Guard1" protoname="Eg_Arc_Slinger" count="10" team="3" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Guard2" protoname="Eg_Arc_Slinger" count="10" team="3" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Guard3" protoname="Eg_Arc_Slinger" count="10" team="3" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="FortGuards" protoname="Eg_Cav_CamelRider" count="14" team="4" area="Quest_Area_D" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_Architect" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="314" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="15000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <kill id="3" description="$$2484$$" type="Eg_Bldg_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="UnitTypeBldgArcheryRange" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="UnitTypeBldgBarracks" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="UnitTypeBldgFortress" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="UnitTypeBldgSiegeWorkshop" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="10" type="UnitTypeBldgStables" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="11" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+              <reduceunitsto id="12" type="UnitTypeBldgArcheryRange" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+              <reduceunitsto id="13" type="UnitTypeBldgBarracks" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+              <reduceunitsto id="14" type="UnitTypeBldgFortress" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+              <reduceunitsto id="15" type="UnitTypeBldgSiegeWorkshop" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+              <reduceunitsto id="16" type="UnitTypeBldgStables" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

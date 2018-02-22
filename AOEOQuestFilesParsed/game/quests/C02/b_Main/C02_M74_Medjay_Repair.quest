@@ -1,0 +1,78 @@
+<quest uniqueid="330" version="92" displayname="$$577$$" level="15" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5770$$" completiontext="$$579$$" inprogresstext="$$5771$$" summarytext="$$1508$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.47" maplocationy="0.776" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="400" startingwood="400" startinggold="400" startingstone="400" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Heavy" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="400" startingwood="400" startinggold="400" startingstone="400" />
+  <playersettings id="4" team="1" color="5" tributablebehavior="Default" playertype="Computer" personality="$$2269$$" script="core\rush_moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+      <aivariable key="" value="0" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="Core\C02\C02_MultiUse_Napata" randommap="true" numplayers="4" mapregionname="Egyptian Rock" lightsetname="Morning" mapsizename="Large">
+    <mapvariables>
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="330" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_GeneralChafre" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="shared_start_barrackstowers" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="shared_start_barrackstowers" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Napata" count="1" team="2" area="Quest_Area_B" groupfilename="C02\Custom\C02_R2M72_NapataUnconquered" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Medjay" count="1" team="4" area="Quest_Area_A" groupfilename="C02\Nubian\C02_Nubian_TowersBase" rottype="RotateRandom" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="revealer" protoname="Con_SpyglassRevealer_E" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Scout" protoname="Eg_Cav_Scout" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Medjayrevealer" protoname="Con_SpyglassRevealer_E" count="1" team="4" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="MedjayWarriors" protoname="NPC_Nubian_Warrior" count="8" team="4" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="MedjayChief" protoname="NPC_Nubian_Chief" count="1" team="4" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Defenders" protoname="NPC_Nubian_Warrior" count="8" team="2" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Vills" protoname="Eg_Civ_Villager" count="6" team="2" area="Quest_Area_B" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_GeneralChafre" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="329" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <questgiver visible="false" name="C02_R2_ChieftainMolmot" status="Available" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableGrantGold_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableGrantGold_R" count="3" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+          <protectunit id="3" description="$$4061$$" type="AbstractTownCenter" owningplayerid="4" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

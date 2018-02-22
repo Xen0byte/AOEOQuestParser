@@ -1,0 +1,25 @@
+<quest uniqueid="410" version="40" displayname="$$613$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$762$$" completiontext="$$763$$" inprogresstext="$$1531$$" summarytext="$$3544$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.1" maplocationy="0.1" mapmarker="Blank" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
+  <questgivers>
+    <protounit unit="C01_R2_WantedPoster" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="C01_R2_DockForeman" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="57" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <kill id="1" description="$$2344$$" type="AbstractNuggetGuard" count="50" includeconversion="true" onlycountelites="false" />
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,82 @@
+<quest uniqueid="13036" version="109" displayname="$$7737$$" level="16" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$9101$$" completiontext="$$7734$$" inprogresstext="$$7735$$" summarytext="$$8907$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.33" maplocationy="0.74" mapmarker="QuestDefault" mappage="Thrace" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2306$$" script="CORE\Rush_Moderate" dataset="C01\C01_CoreRush_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2306$$" script="CORE\Rush_Moderate" dataset="C01\C01_CoreRush_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2306$$" script="CORE\ramp_Weak" dataset="C01\C01_CoreRamp_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.4" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2306$$" script="CORE\Rush_Weak" dataset="C01\C01_CoreRush_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoFish" value="0" />
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="7" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2306$$" dataset="C01\C01_CoreRush_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <timereffects event="spawnlight">
+    <spawnunit visible="true" count="10" placeunittype="Gr_Inf_Spearman" asplayer="4" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_TownCenter" radius="10" useboneposition="false" />
+  </timereffects>
+  <timereffects event="spawnmedium">
+    <spawngroup visible="true" grouping="C03/Custom/C03_R3M86_SpawnMedium01" asplayer="4" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_TownCenter" radius="10" />
+  </timereffects>
+  <timereffects event="spawnheavy">
+    <spawngroup visible="true" grouping="C03/Custom/C03_R3M86_SpawnHeavy01" asplayer="4" spawntype="SpawnForAllies" nearunittype="Gr_Bldg_TownCenter" radius="10" />
+  </timereffects>
+  <randommap map="scenarioloader" randommap="true" numplayers="7" mapregionname="Greek Inland" lightsetname="Morning" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03\C03_R3M86_DestroyTowns" />
+      <variable name="P2AllowTCBuilding" type="Bool" value="False" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R3_Comontorios" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="Player2 Start" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_barrackstowers" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Comontorios" protoname="Ce_QG_Comontorios" count="1" team="1" area="Player1" usequesttargetindicator="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R3_Comontorios" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13035" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="40000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="120" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2508$$" type="Gr_Bldg_TownCenter" count="3" includeconversion="true" onlycountelites="false" />
+          <protectunit id="3" description="$$8248$$" type="Ce_QG_Comontorios" owningplayerid="1" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

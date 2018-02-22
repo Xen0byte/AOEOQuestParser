@@ -1,0 +1,90 @@
+<quest uniqueid="248" version="81" displayname="$$478$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5339$$" completiontext="$$5340$$" inprogresstext="$$1448$$" summarytext="$$4616$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.51" maplocationy="0.101" mapmarker="QuestRepeatable" mappage="Egypt" elitespawnchance="0" linkedquestid="12824" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" script="CORE\Rush_Moderate" dataset="C02\C02_BadariAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="NavyBias" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" script="CORE\Rush_Weak" dataset="C02\C02_BadariAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="NavyBias" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="core\c02\c02_multiuse_navalislands" randommap="true" numplayers="4" mapregionname="Egyptian Marsh" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="RestrictNuggetScaling" type="Bool" value="true" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="1000000" value="EgyptLarge_10-14_03" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_EgyptPortMaster_V2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="true" name="Player" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="true" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Trireme 1" protoname="Eg_Shp_Trireme" count="1" team="4" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Trireme 2" protoname="Eg_Shp_Trireme" count="1" team="2" area="Quest_Area_D" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Trireme 3" protoname="Eg_Shp_Trireme" count="1" team="2" area="Quest_Area_E" usequesttargetindicator="false" />
+    <grouping cooponly="false" forcetocenter="true" name="BadariVillage2" count="1" team="4" area="Quest_Area_A" groupfilename="C02\Badari\C02_Badari_FortifiedTown" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="true" name="BadariVillage" count="1" team="2" area="Quest_Area_B" groupfilename="C02\Badari\C02_Badari_FortifiedTown" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_EgyptPortMaster_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="247" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQMedium" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQMedium" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="Javalin2H_R016" traitlevel="10" />
+      <trait visible="true" id="Axe2H_R017_SR" traitlevel="10" />
+      <trait visible="true" id="Sling2H_R003" traitlevel="10" />
+      <trait visible="true" id="Spear2H_R017" traitlevel="10" />
+      <trait visible="true" id="Shield1H_U017" traitlevel="10" />
+      <trait visible="true" id="Bow1H_U012_VR" traitlevel="10" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2508$$" type="AbstractTownCenter" count="2" includeconversion="true" onlycountelites="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="4" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="5" mustfailall="false">
+        <values>
+          <dummy id="6" description="$$10378$$" objectivename="UNUSED" autocomplete="false" />
+          <reduceunitsto id="7" type="AbstractNuggetGuard" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="0" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

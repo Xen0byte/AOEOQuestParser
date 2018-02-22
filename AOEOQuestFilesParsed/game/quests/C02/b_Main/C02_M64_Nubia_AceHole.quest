@@ -1,0 +1,87 @@
+<quest uniqueid="324" version="79" displayname="$$529$$" level="13" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5765$$" completiontext="$$8269$$" inprogresstext="$$1480$$" summarytext="$$5766$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.272" maplocationy="0.308" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="200" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Turtle_Moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="200" startingwood="200" startinggold="0" startingstone="300">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2265$$" script="CORE\Rush_Moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="200" startingwood="200" startinggold="100" startingstone="0">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2266$$" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="200" startingstone="300" />
+  <timer hideonui="false" />
+  <randommap map="Core\C02\C02_MultiUse_NileRiver" randommap="true" numplayers="5" mapregionname="Egyptian Rock" lightsetname="Morning" mapsizename="Large">
+    <mapvariables>
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="324" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_Sesostris" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Quest_Area_E" groupfilename="Shared_Start_Transport" rottype="Rotate180" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Cliff1" count="1" team="4" area="Quest_Area_A" groupfilename="Shared\Shared_Terrain_DesertCliff_01" rottype="RotateRandom" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="NubianCamp" count="1" team="2" area="Quest_Area_B" groupfilename="C02\Nubian\C02_Nubian_TowersBase" rottype="Rotate90" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Cliff2" count="1" team="4" area="Quest_Area_C" groupfilename="Shared\Shared_Terrain_DesertCliff_01" rottype="RotateRandom" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="AllyCamp" count="1" team="3" area="Quest_Area_D" groupfilename="C02\C02_Egypt_SmallBase01" rottype="Rotate90" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="true" name="GuardReveal1" protoname="Con_SpyglassRevealer_C" count="1" team="1" area="Player1" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="CliffReveal1" protoname="Con_SpyglassRevealer_E" count="1" team="1" area="Quest_Area_A" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="CliffReveal2" protoname="Con_SpyglassRevealer_E" count="1" team="1" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="EnemyReveal" protoname="Con_SpyglassRevealer_E" count="1" team="1" area="Quest_Area_B" usequesttargetindicator="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="5" area="Quest_Area_E" groupfilename="Shared_Start_Transport" rottype="Rotate180" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="guardStation" count="1" team="4" area="Player1" groupfilename="C02\Nubian\C02_Nubian_GuardPost" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_Sesostris" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="323" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="15000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <consumable visible="true" consumablename="ConsumableNubianEle_U" count="3" />
+      <consumable visible="true" consumablename="ConsumableNubianEle_R" count="3" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <buildunit id="3" description="$$2565$$" type="AbstractTownCenter" count="1" />
+              <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+            </values>
+          </and>
+          <and id="5" mustfailall="true">
+            <values>
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+            </values>
+          </and>
+          <and id="8" mustfailall="true">
+            <values>
+              <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="10" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+              <reduceunitsto id="11" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="12" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

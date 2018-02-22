@@ -1,0 +1,88 @@
+<quest uniqueid="209" version="95" displayname="$$865$$" level="-1" difficultycoloroverride="1" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$860$$" completiontext="$$861$$" inprogresstext="$$1679$$" summarytext="$$4109$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.486" maplocationy="0.613" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="0.025" linkedquestid="3184" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="5000" startingwood="5000" startinggold="5000" startingstone="5000" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2318$$" script="Custom\AIDoMinimal" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="5000" startingwood="5000" startinggold="5000" startingstone="5000" />
+  <timer time="00:02:30" hideonui="false" />
+  <randommap map="Core\Shared_Argos\Argos_Side_King_Ambush" randommap="true" numplayers="3" mapregionname="Greek Inland" lightsetname="Evening">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Argos/Argos_Side_King_Ambush" />
+      <variable name="QuestID" type="Int" value="209" />
+      <variable name="OptionalRestrictTraining" type="Bool" value="true" />
+      <variable name="OptionalRestrictInf" type="Bool" value="true" />
+      <variable name="OptionalRestrictArc" type="Bool" value="true" />
+      <variable name="OptionalRestrictSie" type="Bool" value="true" />
+      <variable name="OptionalRestrictSpc" type="Bool" value="true" />
+      <variable name="OptionalRestrictShp" type="Bool" value="true" />
+      <variable name="MainPlayerID" type="Int" value="1" />
+      <variable name="CoopPlayerID" type="Int" value="3" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Evening" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosKing" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosKing" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="81" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="5" />
+    <xp visible="true" amount="1" lookuptable="SQLong" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQLong" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$4110$$" type="Eg_Sie_Catapult" count="6" includeconversion="true" onlycountelites="false" />
+              <kill id="4" description="$$3630$$" type="Gr_Sie_BatteringRam" count="5" includeconversion="true" onlycountelites="false" />
+              <kill id="5" description="$$6284$$" type="Gr_Inf_Somatophylaz_E" count="20" includeconversion="true" onlycountelites="false" />
+              <kill id="6" description="$$4112$$" type="Npc_SP_Chieftan" count="5" includeconversion="true" onlycountelites="false" />
+              <timer id="7" description="$$2379$$" failonexpire="false" />
+            </values>
+          </and>
+          <protectunit id="8" description="$$2472$$" type="UnitTypeBldgTownCenter" owningplayerid="1" />
+          <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="10" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="11" mustfailall="false">
+        <values>
+          <dummy id="12" description="$$10397$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+          <and id="13" mustfailall="false">
+            <values>
+              <kill id="14" description="" type="Eg_Sie_Catapult" count="6" includeconversion="true" onlycountelites="false" />
+              <kill id="15" description="" type="Gr_Sie_BatteringRam" count="5" includeconversion="true" onlycountelites="false" />
+              <kill id="16" description="" type="Gr_Inf_Somatophylaz_E" count="20" includeconversion="true" onlycountelites="false" />
+              <kill id="17" description="" type="Npc_SP_Chieftan" count="5" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

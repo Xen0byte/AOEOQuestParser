@@ -1,0 +1,76 @@
+<quest uniqueid="64" version="42" displayname="$$880$$" level="24" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4179$$" completiontext="$$882$$" inprogresstext="$$4178$$" summarytext="$$4177$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.527" maplocationy="0.609" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Heavy" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="200">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" dataset="C01\C01_SeaPeople_T2" cooponly="false" startingfood="200" startingwood="200" startinggold="200" startingstone="200" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Greek Coast" lightsetname="Evening" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="Shared_Argos/Argos_M15_HousesBack" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Evening" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosKing" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="true" />
+    <random placeatleast="1" placenomore="3" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="Cow1" chance="0.2" />
+        <unit name="Cow2" chance="0.2" />
+        <unit name="Cow3" chance="0.2" />
+        <unit name="Cow4" chance="0.2" />
+        <unit name="Cow5" chance="0.2" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="Cow1" protoname="ArgosCow" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Cow2" protoname="ArgosCow" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Cow3" protoname="ArgosCow" count="1" team="2" area="Quest_Area_B" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Cow4" protoname="ArgosCow" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+        <protounit cooponly="false" forcetocenter="false" name="Cow5" protoname="ArgosCow" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="true">
+          <overrides parent="Qst_Convertable" displaynameid="57565" animfile="World\Resources\Cow\Cow.xml" portraiticon="UserInterface\Icons\Units\Gaia\AvatarCow_ua" icon="UserInterface\Icons\Units\Gaia\Cow64_ua" soundfile="Cow" />
+        </protounit>
+      </targets>
+    </random>
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosKing" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="75" />
+      <questcomplete id="73" />
+      <questcomplete id="211" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="2" />
+    <xp visible="true" amount="60000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="300" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <ownsunit id="2" description="$$4176$$" type="Qst_Convertable_Bldg" count="10" owningplayerid="1" causesfailure="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,31 @@
+<quest uniqueid="53" version="24" displayname="$$826$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="Global" description="$$827$$" completiontext="$$828$$" inprogresstext="$$1654$$" summarytext="$$4129$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <nuggetoverrides>
+      <nuggetoverride overrideweight="250" value="Quest_TwoCows" />
+    </nuggetoverrides>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosCaptain" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="ArgosCaptain" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="510" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
+    <or>
+      <blueprint visible="true" unit="Van_ArgosCow" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <unitnearunit id="1" description="$$2400$$" neededunittype="ArgosCow" nearunittype="AbstractTownCenter" count="1" radius="30" />
+    </values>
+  </objectives>
+</quest>

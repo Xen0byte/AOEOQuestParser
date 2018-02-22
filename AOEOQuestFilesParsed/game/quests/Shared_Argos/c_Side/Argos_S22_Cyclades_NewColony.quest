@@ -1,0 +1,79 @@
+<quest uniqueid="200" version="68" displayname="$$4099$$" level="-1" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$773$$" completiontext="$$774$$" inprogresstext="$$1627$$" summarytext="$$4121$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.738" maplocationy="0.553" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Moderate" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Moderate" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Rush_Moderate" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <timer time="00:17:00" hideonui="false" />
+  <randommap map="core\shared_argos\argos_side_newcolony" randommap="true" numplayers="5" mapregionname="Greek Isles">
+    <mapvariables>
+      <variable name="targetRequiredAge" type="Int" value="4" />
+      <variable name="questID" type="Int" value="200" />
+      <variable name="humanPlayer1ID" type="Int" value="1" />
+      <variable name="humanPlayer2ID" type="Int" value="5" />
+      <variable name="targetRequiredAgeObjectiveName" type="String" value="ageUpObjective" />
+      <variable name="region" type="String" value="Greek Isles" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosRefugee" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="player 1" count="1" team="1" area="Quest_Area_E" groupfilename="Shared_Start_Transport_Escort02" rottype="RotateRandom" rotateunitorientations="true" />
+    <random placeatleast="1" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="SeaPeople1" chance="0.33" />
+        <unit name="SeaPeople2" chance="0.33" />
+        <unit name="SeaPeople3" chance="0.34" />
+      </unitprobability>
+      <targets />
+    </random>
+    <random placeatleast="2" placenomore="4" cooponly="false" forcetocenter="false">
+      <unitprobability>
+        <unit name="SeaTrireme1" chance="0.25" />
+        <unit name="SeaTrireme2" chance="0.25" />
+        <unit name="SeaFireboat1" chance="0.25" />
+        <unit name="SeaFireBoat2" chance="0.25" />
+      </unitprobability>
+      <targets>
+        <protounit cooponly="false" forcetocenter="false" name="SeaTrireme1" protoname="Gr_Shp_Trireme" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="false" />
+        <protounit cooponly="false" forcetocenter="false" name="SeaTrireme2" protoname="Gr_Shp_Trireme" count="1" team="4" area="Quest_Area_D" usequesttargetindicator="false" />
+        <protounit cooponly="false" forcetocenter="false" name="SeaFireBoat1" protoname="Gr_Shp_FireShip" count="1" team="2" area="Quest_Area_C" usequesttargetindicator="false" />
+        <protounit cooponly="false" forcetocenter="false" name="SeaFireBoat2" protoname="Gr_Shp_FireShip" count="1" team="3" area="Quest_Area_D" usequesttargetindicator="false" />
+      </targets>
+    </random>
+    <grouping cooponly="true" forcetocenter="false" name="player 2" count="1" team="5" area="Quest_Area_E" groupfilename="Shared_Start_Transport" rottype="RotateRandom" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosRefugee" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="201" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQShort" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <dummy id="3" description="$$3741$$" objectivename="ageUpObjective" autocomplete="false" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

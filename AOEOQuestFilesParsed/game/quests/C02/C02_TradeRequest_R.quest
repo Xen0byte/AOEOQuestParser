@@ -1,0 +1,55 @@
+<quest uniqueid="338" version="70" displayname="$$4761$$" level="-1" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$8988$$" completiontext="$$4762$$" inprogresstext="$$8997$$" summarytext="$$8996$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" customloadscreen="loadscreentips\load_shared_craftingitems.xml" maplocationx="0.765" maplocationy="0.171" mapmarker="QuestRepeatable" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="3000" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="ForceFalse" playertype="Computer" personality="$$7398$$" dataset="C02\C02_CoreRush_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$8995$$" dataset="c02\c02_coreramp_t1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="4" team="3" color="2" tributablebehavior="ForceFalse" playertype="Computer" personality="$$7398$$" dataset="C02\C02_CoreRush_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="5" team="2" color="2" tributablebehavior="ForceFalse" playertype="Computer" personality="$$7398$$" dataset="C02\C02_CoreRush_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="6" team="3" color="2" tributablebehavior="ForceFalse" playertype="Computer" personality="$$7398$$" dataset="C02\C02_CoreRush_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:05:00" hideonui="false" />
+  <randommap map="Core\Shared\Shared_TradeRequest" randommap="true" numplayers="6" mapregionname="Egyptian Sand" lightsetname="Afternoon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02\C02_TradeRequest" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_DockForeman" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="PlayerStartTransport" protoname="Eg_Civ_UtilityBoat" count="1" team="1" area="Player1" usequesttargetindicator="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_DockForeman" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="318" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQShort" />
+    <material visible="true" materialname="!GizaLimestone" count="5" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <unitdiscovered id="3" description="$$8928$$" type="AIStart" count="6" />
+          <protectunit id="4" description="$$8929$$" type="UnitTypeShipUtility1" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

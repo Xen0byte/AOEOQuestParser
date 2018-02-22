@@ -1,0 +1,96 @@
+<quest uniqueid="104942" version="89" displayname="$$12642$$" level="-1" difficultycoloroverride="2" repeatable="true" offertype="eOfferBooster4" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$12857$$" completiontext="$$12834$$" inprogresstext="$$12835$$" summarytext="$$13014$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.26" maplocationy="0.65" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="0" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="50" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12710$$" script="ainodecapturecore" dataset="b04\b04_c01_dataset" cooponly="false" startingfood="0" startingwood="0" startinggold="50" startingstone="0" />
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="0" startingwood="0" startinggold="50" startingstone="0" />
+  <playersettings id="4" team="1" color="1" tributablebehavior="Default" playertype="Computer" personality="$$12701$$" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="5" team="3" color="5" tributablebehavior="Default" playertype="Computer" personality="$$12702$$" character="c01\skirmish\c01_skirmish_l40" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$12704$$" character="c01\skirmish\c01_skirmish_l40" dataset="c01\c01_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="7" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$12710$$" dataset="b04\b04_c01_dataset" cooponly="false" startingfood="0" startingwood="0" startinggold="50" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core\B04\B04_Arc4_Mode4A_Sparta" randommap="true" numplayers="7" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="B04/B04_Arc4_Mode4A_Sparta" />
+      <variable name="isRepeatable" type="Bool" value="true" />
+      <variable name="isFlipMode" type="Bool" value="true" />
+      <variable name="QuestID" type="Int" value="104942" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B04_SecondaryQG" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B04_SecondaryQG" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="104051" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="18" />
+    <xp visible="true" amount="1" lookuptable="B04Long" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="B04Long" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional_One">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteOptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <secondaryrewards visible="true" name="Optional_Two">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteOptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Enemy" team1="1" team2="2" sharedlos="false" />
+    <diplomacy relation="Enemy" team1="2" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <dummy id="2" description="$$12684$$" objectivename="UNUSED" autocomplete="false" />
+          <ownsunit id="3" description="$$12108$$" type="Qst_CounterObject" count="80" owningplayerid="4" causesfailure="false" />
+          <ownsunit id="4" description="$$12109$$" type="Qst_CounterObject" count="80" owningplayerid="2" causesfailure="true" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="5" mustfailall="false" rewardname="Optional_One" description="$$9507$$">
+    <values>
+      <or id="6" mustfailall="false">
+        <values>
+          <dummy id="7" description="$$13022$$" objectivename="HERO_SURVIVES" autocomplete="false" />
+          <or id="8" mustfailall="false">
+            <values>
+              <ownsunit id="9" description="" type="Qst_CounterObject" count="80" owningplayerid="4" causesfailure="false" />
+              <ownsunit id="10" description="" type="Qst_CounterObject" count="80" owningplayerid="2" causesfailure="true" />
+            </values>
+          </or>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+  <secondaryobjectives id="11" mustfailall="false" rewardname="Optional_Two" description="$$9508$$">
+    <values>
+      <or id="12" mustfailall="false">
+        <values>
+          <dummy id="13" description="$$12964$$" objectivename="NO_TOWERS_LOST" autocomplete="false" />
+          <or id="14" mustfailall="false">
+            <values>
+              <ownsunit id="15" description="" type="Qst_CounterObject" count="80" owningplayerid="2" causesfailure="true" />
+              <ownsunit id="16" description="" type="Qst_CounterObject" count="80" owningplayerid="4" causesfailure="false" />
+            </values>
+          </or>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

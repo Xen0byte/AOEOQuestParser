@@ -1,0 +1,51 @@
+<quest uniqueid="102007" version="161" displayname="$$8347$$" level="0" repeatable="false" offertype="eOfferBooster2" canplaycoop="false" cooprequired="false" ranked="false" description="$$8734$$" completiontext="$$8431$$" inprogresstext="$$8429$$" summarytext="$$8793$$" canabandon="true" hiddenquest="true" friendonly="false" suppressnotifications="false" customquest="false" questtype="Global" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" mappage="Cyprus" elitespawnchance="0">
+  <timer hideonui="false" />
+  <randommap randommap="false" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="B02_R1_SkirmishHall" />
+  </questgivers>
+  <questreturners>
+    <protounit unit="B02_R1_KingSkirmish" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <level min="1" max="99" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="500" />
+    <blueprint visible="true" unit="Van_Sk_Trophy_WinAllMaps" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <and id="1" mustfailall="false" description="$$8848$$">
+        <values>
+          <dummy id="2" description="" objectivename="SKIRMISHACHIEVEMENT2-1" autocomplete="false" />
+          <dummy id="3" description="" objectivename="SKIRMISHACHIEVEMENT2-2" autocomplete="false" />
+          <dummy id="4" description="" objectivename="SKIRMISHACHIEVEMENT2-3" autocomplete="false" />
+          <dummy id="5" description="" objectivename="SKIRMISHACHIEVEMENT2-4" autocomplete="false" />
+          <dummy id="6" description="" objectivename="SKIRMISHACHIEVEMENT2-5" autocomplete="false" />
+          <dummy id="7" description="" objectivename="SKIRMISHACHIEVEMENT2-6" autocomplete="false" />
+          <dummy id="8" description="" objectivename="SKIRMISHACHIEVEMENT2-7" autocomplete="false" />
+          <dummy id="9" description="" objectivename="SKIRMISHACHIEVEMENT2-8" autocomplete="false" />
+          <dummy id="10" description="" objectivename="SKIRMISHACHIEVEMENT2-9" autocomplete="false" />
+          <dummy id="11" description="" objectivename="SKIRMISHACHIEVEMENT2-10" autocomplete="false" />
+          <dummy id="12" description="" objectivename="SKIRMISHACHIEVEMENT2-11" autocomplete="false" />
+          <dummy id="13" description="" objectivename="SKIRMISHACHIEVEMENT2-12" autocomplete="false" />
+          <dummy id="14" description="" objectivename="SKIRMISHACHIEVEMENT2-13" autocomplete="false" />
+          <dummy id="15" description="" objectivename="SKIRMISHACHIEVEMENT2-14" autocomplete="false" />
+          <dummy id="16" description="" objectivename="SKIRMISHACHIEVEMENT2-15" autocomplete="false" />
+          <dummy id="17" description="" objectivename="SKIRMISHACHIEVEMENT2-16" autocomplete="false" />
+          <dummy id="18" objectivename="SKIRMISHACHIEVEMENT2-17" autocomplete="false" />
+          <dummy id="19" objectivename="SKIRMISHACHIEVEMENT2-18" autocomplete="false" />
+          <dummy id="20" objectivename="SKIRMISHACHIEVEMENT2-19" autocomplete="false" />
+          <dummy id="21" objectivename="SKIRMISHACHIEVEMENT2-20" autocomplete="false" />
+        </values>
+      </and>
+    </values>
+  </objectives>
+</quest>

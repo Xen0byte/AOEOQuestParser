@@ -1,0 +1,22 @@
+<quest uniqueid="3" version="48" displayname="$$8935$$" level="0" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" canabandon="false" hiddenquest="true" friendonly="false" suppressnotifications="true" customquest="false" questtype="CapitolCity" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.5" mapmarker="Blank" elitespawnchance="0" questbasescale="0">
+  <timer hideonui="true" />
+  <randommap randommap="true" numplayers="0">
+    <mapvariables>
+      <variable name="region" type="String" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <onaccept>
+    <unlockregion visible="true" region="19" />
+  </onaccept>
+  <questgivers>
+    <protounit unit="GEN_PDLCStore" />
+  </questgivers>
+  <prereqs>
+    <values />
+  </prereqs>
+  <objectives id="0" mustfailall="false">
+    <values />
+  </objectives>
+</quest>

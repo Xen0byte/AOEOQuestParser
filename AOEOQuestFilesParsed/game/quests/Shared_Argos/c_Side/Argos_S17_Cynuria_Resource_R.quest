@@ -1,0 +1,83 @@
+<quest uniqueid="192" version="56" displayname="$$898$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$899$$" completiontext="$$4199$$" inprogresstext="$$1698$$" summarytext="$$4198$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.434" maplocationy="0.621" mapmarker="QuestRepeatable" mappage="Greece" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2243$$" script="CORE\Boom_Weak" dataset="C01\C01_SeaPeople_T3" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300">
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0.3" />
+    </aislidervariables>
+  </playersettings>
+  <timer time="00:25:00" hideonui="false" />
+  <randommap map="set_questland" randommap="true" numplayers="2" mapregionname="Greek Inland" lightsetname="Morning" mapsizename="Small">
+    <mapvariables>
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Small" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="ArgosDockForeman" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="false" />
+    <random placeatleast="1" placenomore="1" cooponly="false" forcetocenter="false">
+      <unitprobability />
+      <targets />
+    </random>
+  </targets>
+  <questreturners>
+    <protounit unit="ArgosDockForeman" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="81" />
+      <questcomplete id="186" />
+      <questcomplete id="189" />
+      <questcomplete id="187" />
+      <questcomplete id="191" />
+      <questcomplete id="188" />
+      <questcomplete id="190" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="10" />
+    <xp visible="true" amount="1" lookuptable="SQLong" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQLong" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <and id="3" mustfailall="false">
+            <values>
+              <collectresource id="4" description="$$2597$$" type="Food" amount="3000" includeexisting="true" />
+              <collectresource id="5" description="$$2695$$" type="Wood" amount="3000" includeexisting="true" />
+              <collectresource id="6" description="$$2696$$" type="Stone" amount="3000" includeexisting="true" />
+            </values>
+          </and>
+          <and id="7" mustfailall="true">
+            <values>
+              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="10" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="11" mustfailall="false">
+        <values>
+          <dummy id="12" description="$$3707$$" objectivename="Optional" autocomplete="false" />
+          <reduceunitsto id="13" type="UnitTypeBldgTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

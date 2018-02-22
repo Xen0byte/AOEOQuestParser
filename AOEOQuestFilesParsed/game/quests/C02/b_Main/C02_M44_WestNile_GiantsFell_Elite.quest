@@ -1,0 +1,162 @@
+<quest uniqueid="12844" version="13" displayname="$$12881$$" level="-1" difficultycoloroverride="2" repeatable="true" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4979$$" completiontext="$$510$$" inprogresstext="$$4980$$" summarytext="$$12928$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.529" maplocationy="0.74" mapmarker="QuestRepeatable" mappage="Egypt" elitespawnchance="1" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" script="CORE\Rush_Heavy" dataset="C02\C02_BadariAllLevels" cooponly="false" startingfood="200" startingwood="2000" startinggold="2000" startingstone="-1" />
+  <playersettings id="3" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2286$$" dataset="C02\C02_BadariAllLevels" cooponly="false" startingfood="10000" startingwood="10000" startinggold="10000" startingstone="10000">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoAttack" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.7" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="4" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2286$$" dataset="C02\C02_BadariAllLevels" cooponly="false" startingfood="10000" startingwood="10000" startinggold="10000" startingstone="10000">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoAttack" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.7" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="5" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2286$$" dataset="C02\C02_BadariAllLevels" cooponly="false" startingfood="10000" startingwood="10000" startinggold="10000" startingstone="10000">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoResign" value="0" />
+      <aivariable key="NoAttack" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.7" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="6" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2256$$" dataset="C02\C02_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="7" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="8" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" dataset="C02\C02_BadariAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\C02\C02_MultiUse_NileRiver" randommap="true" numplayers="8" mapregionname="Egyptian Marsh" lightsetname="&lt;Not Specified&gt;" mapsizename="Large">
+    <mapvariables>
+      <variable name="QuestID" type="Int" value="12844" />
+      <variable name="OptionalRestrictTraining" type="Bool" value="true" />
+      <variable name="OptionalRestrictInf" type="Bool" value="true" />
+      <variable name="OptionalRestrictSpc" type="Bool" value="true" />
+      <variable name="OptionalRestrictSie" type="Bool" value="true" />
+      <variable name="OptionalRestrictCav" type="Bool" value="true" />
+      <variable name="MainPlayerID" type="Int" value="1" />
+      <variable name="CoopPlayerID" type="Int" value="7" />
+      <variable name="ForcedPlayerLevel" type="Int" value="7" />
+      <variable name="P2AttackDelayMod" type="Int" value="6" />
+      <variable name="bIsELITE" type="Bool" value="true" />
+      <variable name="region" type="String" value="Egyptian Marsh" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_GeneralBatoshipip" />
+    <protounit unit="C02_R1_GeneralBatoshipip_V2" />
+    <protounit unit="C02_R1_GeneralBatoshipip_V3" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="7" area="Player2" groupfilename="Shared_Start_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="transports" protoname="Eg_Civ_UtilityBoat" count="7" team="6" area="Quest_Area_E" usequesttargetindicator="false" />
+    <grouping cooponly="false" forcetocenter="false" name="RaiderOutpost" count="1" team="2" area="Quest_Area_B" groupfilename="C02\Badari\C02_Badari_FortifiedTown" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="MercArchers3" count="1" team="5" area="Quest_Area_D" groupfilename="C02\Badari\C02_Badari_SlingerCamp" rottype="RotateRandom" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="MercArchers2" count="1" team="4" area="Quest_Area_C" groupfilename="C02\Badari\C02_Badari_SlingerCamp" rottype="RotateRandom" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="MercArchers1" count="1" team="3" area="Quest_Area_A" groupfilename="C02\Badari\C02_Badari_SlingerCamp" rottype="RotateRandom" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="WarLeadersA" protoname="Custom_WarLeader" count="1" team="8" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="NPC_Badari_WarLeader" visualscale="1.5" initialhitpoints="2600" maxhitpoints="2600" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="WarLeadersC" protoname="Custom_WarLeader" count="1" team="8" area="Quest_Area_C" usequesttargetindicator="true">
+      <overrides parent="NPC_Badari_WarLeader" visualscale="1.5" initialhitpoints="2600" maxhitpoints="2600" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="WarLeadersD" protoname="Custom_WarLeader" count="1" team="8" area="Quest_Area_D" usequesttargetindicator="true">
+      <overrides parent="NPC_Badari_WarLeader" visualscale="1.5" initialhitpoints="2600" maxhitpoints="2600" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="ExtraVills" protoname="Eg_Civ_Villager" count="8" team="2" area="Quest_Area_B" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_GeneralBatoshipip" />
+    <protounit unit="C02_R1_GeneralBatoshipip_V2" />
+    <protounit unit="C02_R1_GeneralBatoshipip_V3" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="253" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="EliteVShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteVShort" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <trait visible="true" id="ArrowOH_R016" traitlevel="10" />
+      <trait visible="true" id="ArmorClth_U017" traitlevel="10" />
+      <trait visible="true" id="ArmorBldg_U014" traitlevel="10" />
+      <trait visible="true" id="ArmorPlt_U021" traitlevel="10" />
+      <trait visible="true" id="ArmorMed_U012" traitlevel="10" />
+      <trait visible="true" id="ArmorLgt_U013" traitlevel="10" />
+      <loottable visible="true" type="general" />
+    </or>
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteOptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="4" sharedlos="true" />
+    <diplomacy relation="Ally" team1="2" team2="5" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="2" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="5" sharedlos="false" />
+    <diplomacy relation="Ally" team1="4" team2="2" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="4" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="5" sharedlos="false" />
+    <diplomacy relation="Ally" team1="5" team2="2" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="5" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="5" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="1" team2="6" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="6" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$2599$$" type="NPC_Badari_Slinger" count="30" includeconversion="true" onlycountelites="false" />
+              <kill id="4" description="$$2364$$" type="Custom_WarLeader" count="3" includeconversion="true" onlycountelites="false" />
+              <kill id="5" description="$$2598$$" type="NPC_Badari_SlingerRange" count="3" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <and id="6" mustfailall="true">
+            <values>
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="7" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="9" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="10" mustfailall="false">
+        <values>
+          <dummy id="11" description="$$10388$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+          <and id="12" mustfailall="false">
+            <values>
+              <kill id="13" description="" type="NPC_Badari_Slinger" count="30" includeconversion="true" onlycountelites="false" />
+              <kill id="14" description="" type="Custom_WarLeader" count="3" includeconversion="true" onlycountelites="false" />
+              <kill id="15" description="" type="NPC_Badari_SlingerRange" count="3" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

@@ -1,0 +1,45 @@
+<quest uniqueid="340" version="39" displayname="$$4938$$" level="16" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4939$$" completiontext="$$4935$$" inprogresstext="$$4936$$" summarytext="$$4937$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.5" maplocationy="0.6" mapmarker="QuestDefault" mappage="Libya" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2274$$" dataset="C02\C02_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="1" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2275$$" dataset="C02\C02_CoreRamp_T2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Egyptian Rock">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_Side_SleepingPrince" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R3_Priestess" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="Player1Axeman" protoname="Eg_Inf_Axeman" count="1" team="1" area="Player1" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Player1Slinger" protoname="Eg_Arc_Slinger" count="1" team="1" area="Player1" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R3_Priestess" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="394" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="12000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="120" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <protectunit id="2" description="$$4962$$" type="NPC_PrinceSesostris" owningplayerid="3" />
+          <unitinarea id="3" description="$$4963$$" area="Quest_Area_A" type="Eg_Civ_Villager" count="1" radius="-1" aidefend="false" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

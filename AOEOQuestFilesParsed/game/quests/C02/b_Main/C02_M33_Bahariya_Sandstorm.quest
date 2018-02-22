@@ -1,0 +1,62 @@
+<quest uniqueid="127" version="68" displayname="$$4364$$" level="8" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5644$$" completiontext="$$4885$$" inprogresstext="$$4883$$" summarytext="$$4486$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" customloadscreen="loadscreentips\load_c02_specialunit_nomadarchers.xml" maplocationx="0.4" maplocationy="0.325" mapmarker="QuestDefault" mappage="Egypt" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="400" startingwood="400" startinggold="400" startingstone="400" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2255$$" dataset="C02\C02_Badari_T0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$4485$$" dataset="c02\c02_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="3" color="3" tributablebehavior="ForceFalse" playertype="Computer" personality="$$4485$$" dataset="c02\c02_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer time="00:15:00" hideonui="false" />
+  <randommap map="Core\C02\C02_R1M33_Oasis" randommap="true" numplayers="4" mapregionname="Egyptian Sand" lightsetname="Morning" mapsizename="Large">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_R1M33_Oasis" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R1_GeneralAhapitep_V2" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Tip" count="1" team="1" area="Player1" groupfilename="Shared\Shared_ProTipTrigger_FirstTimedDefense" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R1_GeneralAhapitep_V2" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="252" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="2" />
+    <xp visible="true" amount="8000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <questgiver visible="false" name="C02_R1_GeneralAhapitep_V2" status="Unavailable" />
+    <questgiver visible="false" name="C02_R1_GeneralAhapitep_V3" status="Available" />
+    <or>
+      <trait visible="true" id="ArmorClth_U017" traitlevel="9" />
+      <trait visible="true" id="ArmorBldg_U014" traitlevel="9" />
+      <trait visible="true" id="ArmorPlt_U021" traitlevel="9" />
+      <trait visible="true" id="ArmorMed_U012" traitlevel="9" />
+      <trait visible="true" id="ArmorLgt_U013" traitlevel="9" />
+    </or>
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="false" />
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="false" />
+          <protectunit id="3" description="$$2472$$" type="Eg_Bldg_TownCenter" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

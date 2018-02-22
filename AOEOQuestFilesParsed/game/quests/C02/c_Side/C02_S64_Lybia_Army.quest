@@ -1,0 +1,43 @@
+<quest uniqueid="393" version="85" displayname="$$634$$" level="17" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5811$$" completiontext="$$5812$$" inprogresstext="$$5813$$" summarytext="$$5815$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.277" maplocationy="0.6" mapmarker="QuestDefault" mappage="Libya" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <timer time="00:18:00" hideonui="false" />
+  <randommap map="Core\C02\C02_R3M83_BuildArmy" randommap="true" numplayers="1" mapregionname="Egyptian Sand" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R3_Sesostris" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Quest_Area_C" groupfilename="Shared_Player1_Age2_Barracks" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R3_Sesostris" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="392" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="30000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <questgiver visible="false" name="C02_R3_Priestess" status="Available" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <ownsunit id="2" description="$$2573$$" type="Eg_Cav_WarElephant" count="20" owningplayerid="1" causesfailure="false" />
+          <timer id="3" description="$$2471$$" failonexpire="true" />
+          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

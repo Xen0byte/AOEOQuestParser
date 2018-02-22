@@ -1,0 +1,70 @@
+<quest uniqueid="320" version="50" displayname="$$6923$$" level="11" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6924$$" completiontext="$$8260$$" inprogresstext="$$6926$$" summarytext="$$6927$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.887" maplocationy="0.126" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2262$$" script="CORE\Rush_Moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="0" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="5" tributablebehavior="ForceFalse" playertype="Computer" personality="$$2263$$" dataset="C02\C02_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="Core\C02\C02_R2M63_Skirmish" randommap="true" numplayers="3" mapregionname="Egyptian Sand" lightsetname="Evening" mapsizename="Large">
+    <mapvariables>
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" value="Evening" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_Sesostris" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Enemy1" count="1" team="2" area="Quest_Area_A" groupfilename="c02\nubian\c02_nubian_largestart_01" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Cliff1" count="1" team="2" area="Quest_Area_B" groupfilename="shared\shared_terrain_desertcliff_01" rottype="Rotate90" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="Cliff2" count="1" team="2" area="Quest_Area_E" groupfilename="Shared\Shared_Terrain_DesertCliff_02" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Compound" count="1" team="3" area="Quest_Area_C" groupfilename="C02\Custom\C02_R2M63_TempleHill" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="Desert_Wolf" protoname="Desert_Wolf" count="12" team="0" area="Quest_Area_C" usequesttargetindicator="false">
+      <overrides parent="Wolf" displaynameid="57681" animfile="World\Animals\Wolf\Wolf.xml" initialhitpoints="400" maxhitpoints="400" convertresist="100" bounty="1" />
+    </protounit>
+    <grouping cooponly="false" forcetocenter="false" name="Cliff3" count="1" team="2" area="Quest_Area_D" groupfilename="Shared\Shared_Terrain_DesertCliff_01" rottype="Rotate270" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="EnemySpearmen" protoname="NPC_Nubian_Warrior" count="3" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_Sesostris" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="317" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="15000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="120" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <unitinarea id="2" description="$$2563$$" area="Quest_Area_C" type="Eg_Spc_PriestRa" count="10" radius="10" aidefend="true" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="4" mustfailall="true">
+            <values>
+              <reduceunitsto id="5" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="7" type="Eg_Bldg_Temple1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="8" type="Eg_Spc_PriestRa" count="9" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

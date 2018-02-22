@@ -1,0 +1,103 @@
+<quest uniqueid="63" version="37" displayname="$$711$$" level="16" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3584$$" completiontext="$$3583$$" inprogresstext="$$3582$$" summarytext="$$3581$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.183" maplocationy="0.34" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$4054$$" script="CORE\Ramp_Moderate" dataset="C01\C01_CoreRamp_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$4054$$" script="CORE\Rush_Weak" dataset="C01\C01_CoreRamp_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$4054$$" script="CORE\Rush_Weak" dataset="C01\C01_CoreRamp_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+      <aivariable key="ArcherBias" value="0.6" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="Core\Shared\Shared_RM_Land_TwinLakes" randommap="true" numplayers="5" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="Large">
+    <mapvariables>
+      <variable name="P2AddMarketManager" type="Bool" value="True" />
+      <variable name="P4AddMarketManager" type="Bool" value="True" />
+      <variable name="P5AddMarketManager" type="Bool" value="True" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="mapSize" type="String" value="Large" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R1_Oracle" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="C01\C01_P1Base_WithPriest_Large" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="true" name="FirstVillage" count="1" team="2" area="Quest_Area_A" groupfilename="C01\C01_FrontierFort" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="true" name="SecondVillage" count="1" team="4" area="Quest_Area_B" groupfilename="C01\C01_MedStartCliff" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="true" name="ThirdVillage" count="1" team="5" area="Quest_Area_C" groupfilename="C01\C01_ArcherTown" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="true" name="Qst_LookoutMarkerA" protoname="Qst_LookoutMarkerA" count="1" team="1" area="Quest_Area_A" usequesttargetindicator="false">
+      <overrides parent="Qst_ObjectiveMarker" displaynameid="50075" los="1.0000" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="true" name="Qst_LookoutMarkerB" protoname="Qst_LookoutMarkerB" count="1" team="1" area="Quest_Area_B" usequesttargetindicator="false">
+      <overrides parent="Qst_ObjectiveMarker" displaynameid="50075" los="1.0000" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="true" name="Qst_LookoutMarkerC" protoname="Qst_LookoutMarkerC" count="1" team="1" area="Quest_Area_C" usequesttargetindicator="false">
+      <overrides parent="Qst_ObjectiveMarker" displaynameid="50075" los="1.0000" />
+    </protounit>
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R1_Oracle" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="58" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitinarea id="3" description="$$2535$$" area="Quest_Area_A" type="Gr_Bldg_Temple" count="1" radius="-1" aidefend="true" />
+              <unitinarea id="4" description="$$2536$$" area="Quest_Area_B" type="Gr_Bldg_Temple" count="1" radius="-1" aidefend="true" />
+              <unitinarea id="5" description="$$2537$$" area="Quest_Area_C" type="Gr_Bldg_Temple" count="1" radius="-1" aidefend="true" />
+              <collectresource id="6" description="$$2427$$" type="Gold" amount="5000" includeexisting="true" />
+            </values>
+          </and>
+          <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <and id="8" mustfailall="true">
+            <values>
+              <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="10" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

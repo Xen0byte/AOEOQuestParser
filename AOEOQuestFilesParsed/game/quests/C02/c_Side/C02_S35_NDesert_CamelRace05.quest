@@ -1,0 +1,57 @@
+<quest uniqueid="266" version="51" displayname="$$2222$$" level="-1" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5831$$" completiontext="$$552$$" inprogresstext="$$1493$$" summarytext="$$5065$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.62" maplocationy="0.23" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2282$$" character="c02\c02_customcamelrace" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:03:00" hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="2" mapregionname="Egyptian Rock" lightsetname="Morning" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_Side_CamelRace" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="lighting" type="String" value="Morning" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_DesertTrader" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="PlayerCamels" protoname="Qst_CamelRider" count="5" team="1" area="Player1" usequesttargetindicator="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_DesertTrader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="265" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="10000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Enemy" team1="1" team2="2" sharedlos="true" />
+    <diplomacy relation="Enemy" team1="2" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <timer id="2" description="$$2471$$" failonexpire="true" />
+          <and id="3" mustfailall="false">
+            <values>
+              <unitinarea id="4" description="$$2587$$" area="Quest_Area_A" type="Qst_CamelRider" count="5" radius="-1" aidefend="false" />
+              <unitinarea id="5" description="$$2588$$" area="Quest_Area_B" type="Qst_CamelRider" count="5" radius="-1" aidefend="false" />
+              <unitinarea id="6" description="$$2589$$" area="Quest_Area_C" type="Qst_CamelRider" count="5" radius="-1" aidefend="false" />
+              <unitinarea id="7" description="$$2590$$" area="Quest_Area_D" type="Qst_CamelRider" count="5" radius="-1" aidefend="false" />
+              <unitinarea id="8" description="$$2591$$" area="Quest_Area_E" type="Qst_CamelRider" count="5" radius="-1" aidefend="false" />
+              <unitinarea id="9" description="$$2592$$" area="Player2" type="Qst_CamelRider" count="5" radius="-1" aidefend="false" />
+            </values>
+          </and>
+          <reduceunitsto id="10" type="Qst_CamelRider" count="4" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

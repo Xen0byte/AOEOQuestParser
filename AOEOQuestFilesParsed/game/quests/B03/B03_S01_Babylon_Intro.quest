@@ -1,0 +1,90 @@
+<quest uniqueid="103001" version="64" displayname="$$11161$$" level="21" repeatable="false" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$11779$$" completiontext="$$11189$$" inprogresstext="$$11178$$" summarytext="$$12486$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" customloadscreen="loadscreentips\randoms\load_random_upsell_b03.xml" maplocationx="0.52" maplocationy="0.69" mapmarker="QuestDefault" mappage="Persia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11161$$" script="core\rush_heavy" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="1" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="3" color="6" tributablebehavior="Default" playertype="Computer" personality="$$11328$$" script="shared_babylon\babylon_reluctantally" dataset="c06\c06_coreramp_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="InfantryBias" value="-1" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="3" color="5" tributablebehavior="Default" playertype="Computer" personality="$$11186$$" script="shared_babylon\babylon_reluctantally" dataset="c06\c06_coreramp_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="0.7" />
+      <aivariable key="InfantryBias" value="0.3" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$11161$$" dataset="c06\c06_corerush_t2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="7" team="3" color="6" tributablebehavior="ForceFalse" playertype="Computer" personality="$$11328$$" dataset="c06\c06_coreramp_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="8" team="3" color="5" tributablebehavior="ForceFalse" playertype="Computer" personality="$$11186$$" dataset="c06\c06_coreramp_t2" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="8" mapregionname="Meso Valley" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="shared_babylon\babylon_m11_babylon_intro" />
+      <variable name="EnemiesDefeatedQuestID" type="Int" value="103001" />
+      <variable name="region" type="String" value="Meso Valley" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="Babylon_Leader" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="shared_player1_age2_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player 2 Start" count="1" team="3" area="Player2" groupfilename="shared_player3_age2_barracks" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="Babylon_Leader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <or>
+        <values>
+          <questcomplete id="103000" />
+          <questcomplete id="103420" />
+        </values>
+      </or>
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="90000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <protip visible="false" tip="TIP_B03_DemoTurnIn" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <tribute id="3" description="$$11599$$" type="Stone" amount="1000" destplayer="5" />
+              <tribute id="4" description="$$11534$$" type="Gold" amount="1000" destplayer="4" />
+              <dummy id="5" description="$$11781$$" objectivename="EnemiesDefeated" autocomplete="false" />
+            </values>
+          </and>
+          <dummy id="6" description="$$11777$$" objectivename="UNUSED" autocomplete="false" />
+          <protectunit id="7" description="" type="UnitTypeBldgTownCenter" owningplayerid="4" />
+          <protectunit id="8" description="" type="UnitTypeBldgTownCenter" owningplayerid="5" />
+          <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

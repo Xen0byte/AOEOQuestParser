@@ -1,0 +1,77 @@
+<quest uniqueid="13032" version="112" displayname="$$7710$$" level="15" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" description="$$8899$$" completiontext="$$9038$$" inprogresstext="$$7708$$" summarytext="$$8902$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.51" maplocationy="0.24" mapmarker="QuestDefault" mappage="Thrace" elitespawnchance="0.025" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8678$$" script="core\boom_heavy" dataset="C01\C01_CoreRamp_T1" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="NoScout" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8678$$" script="core\rush_moderate" dataset="C01\C01_CoreRush_T1" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="3" color="2" tributablebehavior="ForceFalse" playertype="Computer" personality="$$8678$$" dataset="C01\C01_CoreRamp_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$8678$$" dataset="C01\C01_CoreRamp_T1" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="6" mapregionname="Greek Inland" lightsetname="Noon" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C03/C03_R3M82_DestroyRiverTown" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="lighting" type="String" value="Noon" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R3_Brennos" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="PlayerStart" count="1" team="1" area="Player1" groupfilename="shared_start_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="CoopPlayerStart" count="1" team="3" area="Player2" groupfilename="shared_start_barracks" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Comontorios" protoname="Ce_QG_Comontorios" count="1" team="1" area="Quest_Area_B" usequesttargetindicator="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R3_Brennos" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13031" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="30000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$3392$$" type="UnitTypeBldgDock" count="3" includeconversion="true" onlycountelites="false" />
+              <ownsunit id="4" description="$$9033$$" type="Gr_Shp_CatTrireme" count="3" owningplayerid="1" causesfailure="false" />
+              <kill id="5" description="$$2508$$" type="AbstractTownCenter" count="2" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+          <protectunit id="7" description="$$8248$$" type="Ce_QG_Comontorios" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

@@ -1,0 +1,87 @@
+<quest uniqueid="12867" version="14" displayname="$$12882$$" level="-1" difficultycoloroverride="2" repeatable="true" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$5011$$" completiontext="$$609$$" inprogresstext="$$1527$$" summarytext="$$6641$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.333" maplocationy="0.5" mapmarker="QuestRepeatable" mappage="Nubia" elitespawnchance="1" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="400" startingwood="1000" startinggold="400" startingstone="400" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Moderate" dataset="C02\C02_NubianAllLevels" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="NavyBias" value="0.5" />
+      <aivariable key="InfantryBias" value="0" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="0.8" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="800" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Weak" dataset="C02\C02_NubianAllLevels" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000">
+    <aiflagvariables>
+      <aivariable key="NoResign" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="Custom\AIDoNothing" dataset="C02\C02_NubianAllLevels" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <timer time="00:15:00" hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="5" mapregionname="Egyptian Sand" lightsetname="Morning">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_Side_Naval_FishingHole" />
+      <variable name="bIsELITE" type="Bool" value="true" />
+      <variable name="QuestID" type="Int" value="12867" />
+      <variable name="region" type="String" value="Egyptian Sand" />
+      <variable name="lighting" type="String" value="Morning" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_DockForeman" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player" count="1" team="1" area="Player1" groupfilename="Shared_Start_Small_NoFood" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small_NoFood" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_DockForeman" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="331" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="EliteVShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteVShort" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteOptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <collectresource id="2" description="$$2597$$" type="Food" amount="5000" includeexisting="true" />
+          <and id="3" mustfailall="true">
+            <values>
+              <reduceunitsto id="4" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="5" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+              <reduceunitsto id="6" type="UnitTypeBldgDock" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9656$$">
+    <values>
+      <or id="8" mustfailall="false">
+        <values>
+          <timer id="9" description="$$9656$$" failonexpire="true" />
+          <dummy id="10" description="$$10373$$" objectivename="UNUSED" autocomplete="false" />
+          <collectresource id="11" description="" type="Food" amount="5000" includeexisting="true" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

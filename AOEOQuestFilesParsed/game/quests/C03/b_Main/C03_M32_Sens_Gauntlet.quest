@@ -1,0 +1,55 @@
+<quest uniqueid="13014" version="93" displayname="$$7366$$" level="7" repeatable="false" canplaycoop="false" cooprequired="false" ranked="false" description="$$8568$$" completiontext="$$7365$$" inprogresstext="$$1369$$" summarytext="$$8554$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questtype="RandomMap" questgamemodetype="Normal" maplocationx="0.65" maplocationy="0.1" mapmarker="QuestDefault" mappage="C03_Celtica" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="1000" startingwood="800" startinggold="1000" startingstone="0" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2296$$" dataset="c03\c03_barbarian_t0" cooponly="false" startingfood="0" startingwood="0" startinggold="0" startingstone="0" />
+  <playersettings id="3" team="3" color="3" tributablebehavior="Default" playertype="Computer" personality="$$2233$$" dataset="c03\c03_vanilla_t0" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="3" mapregionname="Celtic Alps" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="c03\c03_r1m32_gauntlet" />
+      <variable name="region" type="String" value="Celtic Alps" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C03_R1_SensBrennos" />
+  </questgivers>
+  <targets>
+    <protounit cooponly="false" forcetocenter="false" name="Brennos" protoname="Ce_QG_Brennos" count="1" team="1" area="Player1" usequesttargetindicator="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="C03_R1_SensBrennos" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="6" />
+      <questcomplete id="13013" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="8000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="40" />
+    <loottable visible="true" type="tables\_coreloot_celtwarrior_reward" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="true" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitinarea id="3" description="$$8299$$" area="Quest_Area_A" type="Ce_QG_Brennos" count="1" radius="-1" aidefend="true" />
+              <unitinarea id="4" description="$$8555$$" area="Quest_Area_B" type="Ce_QG_Brennos" count="1" radius="-1" aidefend="true" />
+            </values>
+          </and>
+          <dummy id="5" description="$$7535$$" autocomplete="false" />
+          <protectunit id="6" type="Ce_QG_Brennos" owningplayerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

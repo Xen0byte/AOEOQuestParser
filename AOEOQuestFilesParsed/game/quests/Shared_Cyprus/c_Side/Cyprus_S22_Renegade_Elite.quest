@@ -1,0 +1,109 @@
+<quest uniqueid="3072" version="7" displayname="$$12916$$" level="-1" difficultycoloroverride="2" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6341$$" completiontext="$$6337$$" inprogresstext="$$6338$$" summarytext="$$6340$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.74" maplocationy="0.3" mapmarker="QuestRepeatable" mappage="Cyprus" elitespawnchance="1" linkedquestid="0" questbasescale="3">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$5452$$" script="CORE\Rush_Moderate" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="1000" startingwood="1000" startinggold="1000" startingstone="1000">
+    <aiflagvariables>
+      <aivariable key="NoTrainNavy" value="0" />
+      <aivariable key="UseWaves" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="NavyBias" value="-1" />
+      <aivariable key="CavalryBias" value="1" />
+      <aivariable key="InfantryBias" value="-0.4" />
+      <aivariable key="EconomyHandicap" value="0.4" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$5452$$" script="Custom\AIDoNothing" dataset="C01\C01_CyprusRush_T3" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <timer hideonui="false" />
+  <randommap map="Core\Shared_Cyprus\Cyprus_Renegade" randommap="true" numplayers="4" mapregionname="Greek Inland" lightsetname="&lt;Not Specified&gt;" mapsizename="Standard">
+    <mapvariables>
+      <variable name="IsREPEAT" type="Bool" value="true" />
+      <variable name="P2AddMarketManager" type="Bool" value="true" />
+      <variable name="P2AllowTCBuilding" type="Bool" value="false" />
+      <variable name="QuestID" type="Int" value="3072" />
+      <variable name="OptionalRestrictSpearmen" type="Bool" value="true" />
+      <variable name="MainPlayerID" type="Int" value="1" />
+      <variable name="CoopPlayerID" type="Int" value="3" />
+      <variable name="bIsELITE" type="Bool" value="true" />
+      <variable name="region" type="String" value="Greek Inland" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="CyprusTrader" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="true" name="Enemy 01" count="1" team="2" area="Quest_Area_A" groupfilename="Shared_Cyprus\Cyprus_Renegade_EnemyStart" rottype="Rotate0" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Revealer" protoname="SpyglassRevealer" count="1" team="2" area="Player1" usequesttargetindicator="false" />
+    <grouping cooponly="false" forcetocenter="false" name="RoadA" count="1" team="2" area="Quest_Area_B" groupfilename="Shared_Cyprus\Cyprus_Renegade_Road" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="false" forcetocenter="false" name="RoadB" count="1" team="2" area="Quest_Area_D" groupfilename="Shared_Cyprus\Cyprus_Renegade_Road" rottype="Rotate180" rotateunitorientations="true" />
+    <protounit cooponly="false" forcetocenter="false" name="Enemy Leader" protoname="CyprusGeneral" count="1" team="4" area="Quest_Area_E" usequesttargetindicator="true">
+      <overrides parent="Gr_Cav_Hetairoi_E" visualscale="1.5" initialhitpoints="3500" maxhitpoints="3500" displaynameid="41974" convertresist="100" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="General Bodyguards" protoname="Npc_BanditLeader_01" count="10" team="4" area="Quest_Area_E" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="General Bodyguards 2" protoname="Gr_Arc_Toxotai" count="2" team="4" area="Quest_Area_E" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="General Bodyguards 3" protoname="Gr_Cav_Podromos" count="2" team="4" area="Quest_Area_E" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="RoadB Archers" protoname="Gr_Arc_Gastrophes" count="4" team="4" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="RoadC Archers" protoname="Gr_Arc_Gastrophes" count="4" team="4" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="RoadD Archers" protoname="Gr_Arc_Gastrophes" count="4" team="4" area="Quest_Area_D" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="RoadB Cav" protoname="Gr_Cav_Hippikon" count="4" team="4" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="RoadC Cav" protoname="Gr_Cav_Hippikon" count="4" team="4" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="RoadD Cav" protoname="Gr_Cav_Hippikon" count="4" team="4" area="Quest_Area_D" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="RoadB Siege" protoname="Gr_Sie_Catapult" count="1" team="4" area="Quest_Area_B" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="RoadC Siege" protoname="Gr_Sie_Catapult" count="1" team="4" area="Quest_Area_C" usequesttargetindicator="false" />
+    <protounit cooponly="false" forcetocenter="false" name="RoadD Siege" protoname="Gr_Sie_Catapult" count="1" team="4" area="Quest_Area_B" usequesttargetindicator="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Player 1 Phalanx" count="1" team="1" area="Player1" groupfilename="Shared_Cyprus\Cyprus_Renegade_PlayerPhalanx" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player CoOp Phalanx" count="1" team="3" area="Player2" groupfilename="Shared_Cyprus\Cyprus_Renegade_PlayerPhalanx" rottype="Rotate0" rotateunitorientations="true" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_BarracksTowers" rottype="Rotate0" rotateunitorientations="true" />
+  </targets>
+  <questreturners>
+    <protounit unit="CyprusTrader" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <questcomplete id="3026" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <alliancepoints visible="true" amount="8" />
+    <xp visible="true" amount="1" lookuptable="EliteShort" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteShort" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteOptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <kill id="3" description="$$3707$$" type="AbstractTownCenter" count="1" includeconversion="true" onlycountelites="false" />
+              <kill id="4" description="$$5517$$" type="CyprusGeneral" count="1" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="6" mustfailall="false" rewardname="Optional" description="$$9658$$">
+    <values>
+      <or id="7" mustfailall="false">
+        <values>
+          <dummy id="8" description="$$10441$$" objectivename="OptionalRestrictSpearmen" autocomplete="false" />
+          <and id="9" mustfailall="false">
+            <values>
+              <kill id="10" description="" type="AbstractTownCenter" count="1" includeconversion="true" onlycountelites="false" />
+              <kill id="11" description="" type="CyprusGeneral" count="1" includeconversion="true" onlycountelites="false" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

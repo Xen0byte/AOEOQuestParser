@@ -1,0 +1,88 @@
+<quest uniqueid="218" version="52" displayname="$$1106$$" level="-1" repeatable="true" offertype="eOfferNone" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$3569$$" completiontext="$$3568$$" inprogresstext="$$3567$$" summarytext="$$12924$$" repeatableduration="12" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.891" maplocationy="0.293" mapmarker="QuestRepeatable" mappage="Troy" elitespawnchance="0.025" linkedquestid="11953" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2246$$" script="CORE\Ramp_Moderate" dataset="C01\C01_TrojanAllLevels" cooponly="false" startingfood="300" startingwood="300" startinggold="300" startingstone="300">
+    <aislidervariables>
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="InfantryBias" value="0.3" />
+      <aivariable key="ArcherBias" value="0.1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2246$$" script="Custom\AIDoMinimal" dataset="C01\C01_TrojanAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoScout" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="5" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2246$$" script="Custom\AIDoMinimal" dataset="C01\C01_TrojanAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoScout" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <playersettings id="6" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2246$$" script="Custom\AIDoMinimal" dataset="C01\C01_TrojanAllLevels" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="NoAttack" value="0" />
+      <aivariable key="NoScout" value="0" />
+    </aiflagvariables>
+  </playersettings>
+  <timer time="00:10:00" hideonui="false" />
+  <randommap map="set_questland" randommap="true" numplayers="6" mapregionname="Greek Coast" lightsetname="Afternoon" mapsizename="Standard">
+    <mapvariables>
+      <variable name="OptionalRestrictTime" type="Bool" value="true" />
+      <variable name="region" type="String" value="Greek Coast" />
+      <variable name="lighting" type="String" value="Afternoon" />
+      <variable name="mapSize" type="String" value="Standard" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R3_Magistrate" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player Start" count="1" team="1" area="Player1" groupfilename="Shared_Player1_Age2_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="ComputerStart" count="1" team="2" area="Quest_Area_A" groupfilename="C01\C01_FourTowerBase" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Temple_Player4_AreaB" count="1" team="4" area="Quest_Area_B" groupfilename="C01\Troy\C01_Troy_Temple_01" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Temple_Player5_AreaC" count="1" team="5" area="Quest_Area_C" groupfilename="C01\Troy\C01_Troy_Temple_01" rottype="Rotate0" rotateunitorientations="false" />
+    <grouping cooponly="false" forcetocenter="false" name="Temple_Player6_AreaD" count="1" team="6" area="Quest_Area_D" groupfilename="C01\Troy\C01_Troy_Temple_01" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R3_Magistrate" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="269" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="1" lookuptable="SQMedium" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="SQMedium" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <secondaryrewards visible="true" name="Optional">
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="OptCoin" />
+    <loottable visible="true" loottable="general" />
+  </secondaryrewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <kill id="2" description="$$2532$$" type="Gr_Bldg_Temple" count="3" includeconversion="true" onlycountelites="false" />
+          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+  <secondaryobjectives id="4" mustfailall="false" rewardname="Optional" description="$$9656$$">
+    <values>
+      <or id="5" mustfailall="false">
+        <values>
+          <timer id="6" description="$$9656$$" failonexpire="true" />
+          <dummy id="7" description="$$10372$$" objectivename="TimeFailed" autocomplete="false" />
+          <kill id="8" description="" type="Gr_Bldg_Temple" count="3" includeconversion="true" onlycountelites="false" />
+        </values>
+      </or>
+    </values>
+  </secondaryobjectives>
+</quest>

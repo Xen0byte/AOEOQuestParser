@@ -1,0 +1,95 @@
+<quest uniqueid="335" version="51" displayname="$$568$$" level="14" repeatable="false" offertype="eOfferNone" canplaycoop="false" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$6646$$" completiontext="$$4993$$" inprogresstext="$$4994$$" summarytext="$$4995$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.64" maplocationy="0.41" mapmarker="QuestDefault" mappage="Nubia" elitespawnchance="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Moderate" dataset="C02\C02_Nubian_T3" cooponly="false" startingfood="400" startingwood="400" startinggold="400" startingstone="400">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoAutoReveal" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="InfantryBias" value="1" />
+      <aivariable key="EconomyHandicap" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="3" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Rush_Moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="400" startingwood="400" startinggold="400" startingstone="400">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoAutoReveal" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="1" />
+      <aivariable key="EconomyHandicap" value="0.2" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="InfantryBias" value="0" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="4" team="4" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2261$$" script="CORE\Boom_Moderate" dataset="C02\C02_Nubian_T2" cooponly="false" startingfood="800" startingwood="800" startinggold="800" startingstone="800">
+    <aiflagvariables>
+      <aivariable key="NoScout" value="0" />
+      <aivariable key="NoAutoReveal" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="0.2" />
+      <aivariable key="SiegeBias" value="1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="InfantryBias" value="0" />
+      <aivariable key="CavalryBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="5" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="250" startingwood="250" startinggold="250" startingstone="250" />
+  <timer time="00:20:00" hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="5" mapregionname="Egyptian Rock">
+    <mapvariables>
+      <variable name="scenarioFile" type="String" value="C02/C02_Side_Architect_HighGround" />
+      <variable name="region" type="String" value="Egyptian Rock" />
+      <variable name="lighting" type="String" />
+      <variable name="mapSize" type="String" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C02_R2_Architect" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="5" area="Player1" groupfilename="Shared_Start_Small" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C02_R2_Architect" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="3" />
+      <questcomplete id="321" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="15000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="150" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+  </rewards>
+  <diplomacysettings>
+    <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="2" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="3" team2="4" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="2" sharedlos="false" />
+    <diplomacy relation="Neutral" team1="4" team2="3" sharedlos="false" />
+  </diplomacysettings>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <protectunit id="2" description="$$2472$$" type="Eg_Bldg_TownCenter" owningplayerid="1" />
+          <timer id="3" description="$$2471$$" failonexpire="false" />
+          <and id="4" mustfailall="false">
+            <values>
+              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="3" />
+              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="4" />
+            </values>
+          </and>
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>

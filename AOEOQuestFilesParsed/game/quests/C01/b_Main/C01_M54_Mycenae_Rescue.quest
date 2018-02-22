@@ -1,0 +1,80 @@
+<quest uniqueid="43" version="40" displayname="$$720$$" level="12" repeatable="false" canplaycoop="true" cooprequired="false" ranked="false" alliance="eAllianceNone" questtype="RandomMap" description="$$4078$$" completiontext="$$4077$$" inprogresstext="$$1595$$" summarytext="$$3556$$" canabandon="true" hiddenquest="false" friendonly="false" suppressnotifications="false" customquest="false" questgamemodetype="Normal" maplocationx="0.79" maplocationy="0.525" mapmarker="QuestDefault" mappage="Greece" elitespawnchance="0.025" linkedquestid="0" questbasescale="0">
+  <playersettings id="1" team="1" color="1" tributablebehavior="Default" playertype="Human" cooponly="false" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="2" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" script="core\rush_weak" dataset="C01\C01_Mycenae_T2" cooponly="false" startingfood="-1" startingwood="-1" startinggold="-1" startingstone="-1">
+    <aiflagvariables>
+      <aivariable key="" value="0" />
+    </aiflagvariables>
+    <aislidervariables>
+      <aivariable key="EconomyHandicap" value="-0.2" />
+      <aivariable key="SiegeBias" value="-1" />
+      <aivariable key="ArcherBias" value="-1" />
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="InfantryBias" value="0.2" />
+    </aislidervariables>
+  </playersettings>
+  <playersettings id="3" team="1" color="7" tributablebehavior="Default" playertype="Human" cooponly="true" startingfood="500" startingwood="500" startinggold="500" startingstone="500" />
+  <playersettings id="4" team="2" color="2" tributablebehavior="Default" playertype="Computer" personality="$$2234$$" script="core\rush_weak" dataset="C01\C01_Mycenae_T2" cooponly="false" startingfood="-1" startingwood="2000" startinggold="-1" startingstone="-1">
+    <aislidervariables>
+      <aivariable key="CavalryBias" value="-1" />
+      <aivariable key="EconomyHandicap" value="-0.3" />
+      <aivariable key="SiegeBias" value="-1" />
+    </aislidervariables>
+  </playersettings>
+  <timer hideonui="false" />
+  <randommap map="scenarioloader" randommap="true" numplayers="4" mapregionname="Greek Coast" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;">
+    <mapvariables>
+      <variable name="P2AddMarketManager" type="Bool" value="True" />
+      <variable name="P4AddMarketManager" type="Bool" value="True" />
+      <variable name="scenarioFile" type="String" value="C01/C01_M54_Mycenae_Rescue" />
+      <variable name="P2AttackDelayMod" type="Int" value="6" />
+      <variable name="region" type="String" value="Greek Coast" />
+    </mapvariables>
+  </randommap>
+  <questgivers>
+    <protounit unit="C01_R2_KingAgamemnon" />
+  </questgivers>
+  <targets>
+    <grouping cooponly="false" forcetocenter="false" name="Player1" count="1" team="1" area="Player1" groupfilename="C01\C01_P1Base_WithParkingLot" rottype="Rotate0" rotateunitorientations="false" />
+    <protounit cooponly="false" forcetocenter="false" name="GeneralHeron" protoname="Npc_GeneralHeron" count="1" team="2" area="Quest_Area_A" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57820" animfile="CivGreek\Units\Mounted\Podromos\Podromos.xml" icon="UserInterface\Icons\Units\Prodromos64_ua" portraiticon="UserInterface\Icons\Units\AvatarPodromos_ua" maxvelocity="9.00" maxrunvelocity="13.50" />
+    </protounit>
+    <protounit cooponly="false" forcetocenter="false" name="Agathon" protoname="Npc_Agathon" count="1" team="4" area="Quest_Area_B" usequesttargetindicator="true">
+      <overrides parent="Qst_Convertable" displaynameid="57821" animfile="CivGreek\Units\Civilian\Villager\VillagerMale.xml" icon="UserInterface\Icons\Units\VillagerMale64_ua" portraiticon="UserInterface\Icons\Units\AvatarVillagerMale_ua" maxvelocity="6.0" maxrunvelocity="7.0" soundfile="Qst_Craftsmen" />
+    </protounit>
+    <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Player3_Age2_Barracks" rottype="Rotate0" rotateunitorientations="false" />
+  </targets>
+  <questreturners>
+    <protounit unit="C01_R2_KingAgamemnon" />
+  </questreturners>
+  <prereqs>
+    <values>
+      <civilization id="1" />
+      <questcomplete id="62" />
+    </values>
+  </prereqs>
+  <rewards visible="true">
+    <xp visible="true" amount="20000" />
+    <capitalresource visible="true" capitalresource="cCapResCoin" amount="120" />
+    <loottable visible="true" type="general" />
+    <loottable visible="true" type="general" />
+    <or>
+      <advisor visible="true" unit="Agathon_R_I" />
+      <advisor visible="true" unit="Heron_R_II" />
+    </or>
+  </rewards>
+  <objectives id="0" mustfailall="false">
+    <values>
+      <or id="1" mustfailall="false">
+        <values>
+          <and id="2" mustfailall="false">
+            <values>
+              <unitinarea id="3" description="$$2528$$" area="Player1" type="Npc_GeneralHeron" count="1" radius="20" aidefend="true" />
+              <unitinarea id="4" description="$$2529$$" area="Player1" type="Npc_Agathon" count="1" radius="20" aidefend="true" />
+            </values>
+          </and>
+          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        </values>
+      </or>
+    </values>
+  </objectives>
+</quest>
