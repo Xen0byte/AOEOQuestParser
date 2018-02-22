@@ -23,6 +23,7 @@ namespace AOEOQuestParser
         static int secondaryrewardCounter = 0;
         static int diplomacysettingsCounter = 0;
         static int objectiveCounter = 0;
+        static int secondaryobjectiveCounter = 0;
         #endregion
 
         //1. Processes elements from the source file individually or in groups of similar elements.
@@ -53,6 +54,7 @@ namespace AOEOQuestParser
                 secondaryrewards(currentQuestFile, tempFile);
                 diplomacysettings(currentQuestFile, tempFile);
                 objectives(currentQuestFile, tempFile);
+                secondaryobjectives(currentQuestFile, tempFile);
                 #endregion
 
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
@@ -65,7 +67,7 @@ namespace AOEOQuestParser
             Console.WriteLine("\n" + nodescendantsCounter + " nodescendants | " + playersettingsCounter + " playersettings | " + timersCounter + " timers | " + timereffectsCounter + " timereffects");
             Console.WriteLine(victoryconditionsCounter + " victoryconditions | " + randommapCounter + " randommaps | " + onacceptCounter + " onaccepts | " + questgiverCounter + " questgivers");
             Console.WriteLine(targetCounter + " targets | " + questreturnerCounter + " questreturners | " + prereqCounter + " prereqs | " + rewardCounter + " rewards");
-            Console.WriteLine(secondaryrewardCounter + " secondaryrewards | " + diplomacysettingsCounter + " diplomacysettings | " + objectiveCounter + " objectives | ");
+            Console.WriteLine(secondaryrewardCounter + " secondaryrewards | " + diplomacysettingsCounter + " diplomacysettings | " + objectiveCounter + " objectives | " + secondaryobjectiveCounter + " secondaryobjectives");
         }
 
         // Writes the quest element to the temporary XML file. This is the root element.
@@ -201,6 +203,7 @@ namespace AOEOQuestParser
                     description.Remove();
                 }
 
+                descriptions = new List<XElement>();
                 elementsToWrite.Add(objective);
             }
 
@@ -979,9 +982,76 @@ namespace AOEOQuestParser
             tempXDocInstance.Save(tempFile);
         }
 
-        public static void secondaryobjectives()
+        // Writes the secondaryobjectives element and all it's descendants as a direct child of the root element.
+        public static void secondaryobjectives(string currentQuestFile, string tempFile)
         {
+            XDocument questFileInstance = XDocument.Load(currentQuestFile);
 
+            List<XElement> secondaryobjectives = new List<XElement>();
+            List<XElement> descriptions = new List<XElement>();
+            List<XElement> elementsToWrite = new List<XElement>();
+
+            foreach (XElement element in questFileInstance.Descendants())
+            {
+                if (element.Name.ToString() == "secondaryobjectives" && element.Parent.Name.ToString() == "quest" && element.Descendants().Count() > 0)
+                {
+                    secondaryobjectives.Add(element);
+                }
+            }
+
+            foreach (XElement secondaryobjective in secondaryobjectives)
+            {
+                foreach (XElement descendant in secondaryobjective.Descendants())
+                {
+                    if (descendant.Descendants().Count() > 0 && descendant.Name.ToString() != "values" && descendant.Name.ToString() != "or" && descendant.Name.ToString() != "and")
+                    {
+                        foreach (XElement subdescendant in descendant.Descendants())
+                        {
+                            descendant.Add(new XAttribute(subdescendant.Name.ToString(), subdescendant.Value.ToString()));
+                        }
+
+                        descendant.RemoveNodes();
+                    }
+
+                    else if (descendant.Descendants().Count() == 0 && descendant.Name.ToString() == "description" && descendant.Value.ToString() != "" && (descendant.Parent.Name.ToString() == "secondaryobjectives" || descendant.Parent.Name.ToString() == "or" || descendant.Parent.Name.ToString() == "and"))
+                    {
+                        descendant.Parent.Add(new XAttribute(descendant.Name.ToString(), descendant.Value.ToString()));
+                    }
+
+                    else if (descendant.Name.ToString() != "values" && descendant.Name.ToString() != "or" && descendant.Name.ToString() != "and" && descendant.Name.ToString() != "description")
+                    {
+                        Console.WriteLine("\n" + "[ERROR] The secondaryobjective\\*\\" + descendant.Name.ToString() + " element has not been fully processed.");
+                        Console.WriteLine("[FILE] " + currentQuestFile + "\n");
+                    }
+                }
+
+                foreach (XElement descendant in secondaryobjective.Descendants())
+                {
+                    if (descendant.Name.ToString() == "description")
+                    {
+                        descriptions.Add(descendant);
+                    }
+                }
+
+                foreach (XElement description in descriptions)
+                {
+                    description.Remove();
+                }
+
+                descriptions = new List<XElement>();
+                elementsToWrite.Add(secondaryobjective);
+            }
+
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            foreach (XElement parsedElement in elementsToWrite)
+            {
+                questElement.Add(parsedElement);
+                secondaryobjectiveCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
         }
 
         // Writes the secondaryrewards element and all it's descendants as a direct child of the root element.
