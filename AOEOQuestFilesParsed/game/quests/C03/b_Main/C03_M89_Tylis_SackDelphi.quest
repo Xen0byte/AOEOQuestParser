@@ -45,10 +45,8 @@
     <protounit unit="C03_R3_Brennos" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13037" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13037" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="12" />
@@ -82,13 +80,9 @@
     <diplomacy relation="Neutral" team1="4" team2="5" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <unitinarea id="2" description="$$9042$$" area="Quest_Area_E" type="Brennos" count="1" radius="-1" aidefend="true" />
-          <protectunit id="3" description="$$7535$$" type="Brennos" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <unitinarea id="2" description="$$9042$$" area="Quest_Area_E" type="Brennos" count="1" radius="-1" aidefend="true" />
+      <protectunit id="3" description="$$7535$$" type="Brennos" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

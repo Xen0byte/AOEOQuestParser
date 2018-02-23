@@ -27,9 +27,7 @@
     <protounit unit="B04_PrimaryQG" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="104021" />
-    </values>
+    <questcomplete id="104021" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="B04Med" />
@@ -38,19 +36,13 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <ownsunit id="2" description="$$2507$$" type="Qst_CounterObject" count="4" owningplayerid="1" causesfailure="false" />
-          <protectunit id="3" description="$$4065$$" type="Ce_Cap_TylisPalaceA" owningplayerid="2" />
-          <and id="4" mustfailall="true">
-            <values>
-              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <ownsunit id="2" description="$$2507$$" type="Qst_CounterObject" count="4" owningplayerid="1" causesfailure="false" />
+      <protectunit id="3" description="$$4065$$" type="Ce_Cap_TylisPalaceA" owningplayerid="2" />
+      <and id="4" mustfailall="true">
+        <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
 </quest>

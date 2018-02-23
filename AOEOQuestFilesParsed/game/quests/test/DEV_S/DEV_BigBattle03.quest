@@ -10,20 +10,14 @@
     </mapvariables>
   </randommap>
   <prereqs>
-    <values>
-      <level min="99" max="99" />
-    </values>
+    <level min="99" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

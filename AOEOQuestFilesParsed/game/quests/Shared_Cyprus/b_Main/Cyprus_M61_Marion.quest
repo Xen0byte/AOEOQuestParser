@@ -84,19 +84,17 @@
     <protounit unit="CyprusLeaderV2" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="3013" />
-      <questcomplete id="3012" />
-      <questcomplete id="3006" />
-      <questcomplete id="3011" />
-      <questcomplete id="3003" />
-      <questcomplete id="3010" />
-      <questcomplete id="3002" />
-      <questcomplete id="3004" />
-      <questcomplete id="3009" />
-      <questcomplete id="3005" />
-      <questcomplete id="3008" />
-    </values>
+    <questcomplete id="3013" />
+    <questcomplete id="3012" />
+    <questcomplete id="3006" />
+    <questcomplete id="3011" />
+    <questcomplete id="3003" />
+    <questcomplete id="3010" />
+    <questcomplete id="3002" />
+    <questcomplete id="3004" />
+    <questcomplete id="3009" />
+    <questcomplete id="3005" />
+    <questcomplete id="3008" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="8" />
@@ -108,29 +106,19 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2507$$" type="Gr_Bldg_Fortress" count="5" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$6585$$" type="CyprusGeneral" count="3" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <and id="5" mustfailall="true">
-            <values>
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-          <and id="8" mustfailall="false">
-            <values>
-              <dummy id="9" objectivename="TIMER_EFFECT_BUGFIX" autocomplete="false" />
-              <timer id="10" failonexpire="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2507$$" type="Gr_Bldg_Fortress" count="5" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$6585$$" type="CyprusGeneral" count="3" includeconversion="true" onlycountelites="false" />
+      </and>
+      <and id="5" mustfailall="true">
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+      <and id="8" mustfailall="false">
+        <dummy id="9" objectivename="TIMER_EFFECT_BUGFIX" autocomplete="false" />
+        <timer id="10" failonexpire="false" />
+      </and>
+    </or>
   </objectives>
 </quest>

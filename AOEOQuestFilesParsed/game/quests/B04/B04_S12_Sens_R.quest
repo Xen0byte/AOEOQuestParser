@@ -24,9 +24,7 @@
     <protounit unit="B04_PrimaryQG" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="104021" />
-    </values>
+    <questcomplete id="104021" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="5" />
@@ -52,44 +50,28 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$12679$$" objectivename="UNUSED" autocomplete="false" />
-          <ownsunit id="3" description="$$12108$$" type="Qst_CounterObject" count="30" owningplayerid="4" causesfailure="false" />
-          <ownsunit id="4" description="$$12109$$" type="Qst_CounterObject" count="30" owningplayerid="2" causesfailure="true" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$12679$$" objectivename="UNUSED" autocomplete="false" />
+      <ownsunit id="3" description="$$12108$$" type="Qst_CounterObject" count="30" owningplayerid="4" causesfailure="false" />
+      <ownsunit id="4" description="$$12109$$" type="Qst_CounterObject" count="30" owningplayerid="2" causesfailure="true" />
+    </or>
   </objectives>
   <secondaryobjectives id="5" mustfailall="false" rewardname="Optional_One" description="$$9507$$">
-    <values>
-      <or id="6" mustfailall="false">
-        <values>
-          <dummy id="7" description="$$12659$$" objectivename="HERO_SURVIVES" autocomplete="false" />
-          <or id="8" mustfailall="false">
-            <values>
-              <ownsunit id="9" description="" type="Qst_CounterObject" count="30" owningplayerid="4" causesfailure="false" />
-              <ownsunit id="10" description="" type="Qst_CounterObject" count="30" owningplayerid="2" causesfailure="true" />
-            </values>
-          </or>
-        </values>
+    <or id="6" mustfailall="false">
+      <dummy id="7" description="$$12659$$" objectivename="HERO_SURVIVES" autocomplete="false" />
+      <or id="8" mustfailall="false">
+        <ownsunit id="9" description="" type="Qst_CounterObject" count="30" owningplayerid="4" causesfailure="false" />
+        <ownsunit id="10" description="" type="Qst_CounterObject" count="30" owningplayerid="2" causesfailure="true" />
       </or>
-    </values>
+    </or>
   </secondaryobjectives>
   <secondaryobjectives id="11" mustfailall="false" rewardname="Optional_Two" description="$$9508$$">
-    <values>
-      <or id="12" mustfailall="false">
-        <values>
-          <dummy id="13" description="$$12964$$" objectivename="NO_TOWERS_LOST" autocomplete="false" />
-          <or id="14" mustfailall="false">
-            <values>
-              <ownsunit id="15" description="" type="Qst_CounterObject" count="30" owningplayerid="2" causesfailure="true" />
-              <ownsunit id="16" description="" type="Qst_CounterObject" count="30" owningplayerid="4" causesfailure="false" />
-            </values>
-          </or>
-        </values>
+    <or id="12" mustfailall="false">
+      <dummy id="13" description="$$12964$$" objectivename="NO_TOWERS_LOST" autocomplete="false" />
+      <or id="14" mustfailall="false">
+        <ownsunit id="15" description="" type="Qst_CounterObject" count="30" owningplayerid="2" causesfailure="true" />
+        <ownsunit id="16" description="" type="Qst_CounterObject" count="30" owningplayerid="4" causesfailure="false" />
       </or>
-    </values>
+    </or>
   </secondaryobjectives>
 </quest>

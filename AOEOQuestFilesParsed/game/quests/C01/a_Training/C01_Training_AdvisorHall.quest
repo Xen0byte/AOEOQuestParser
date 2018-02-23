@@ -12,10 +12,8 @@
     <protounit unit="C01_R1_VillageElder" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="8" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="8" max="99" />
   </prereqs>
   <rewards visible="true">
     <or>
@@ -29,8 +27,6 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <ownsunit id="1" description="$$3651$$" type="Gr_Cap_AdvisorHall" count="1" owningplayerid="1" causesfailure="false" />
-    </values>
+    <ownsunit id="1" description="$$3651$$" type="Gr_Cap_AdvisorHall" count="1" owningplayerid="1" causesfailure="false" />
   </objectives>
 </quest>

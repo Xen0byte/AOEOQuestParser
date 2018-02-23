@@ -12,24 +12,18 @@
     <protounit unit="C03_R3_Brennos" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13027" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13027" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$8045$$">
-        <values>
-          <unitdiscovered id="2" type="C03_R2_Protis" count="1" />
-          <ownsunit id="3" type="C03_R2_Protis" count="1" />
-          <unitdiscovered id="4" type="C03_R3_Brennos" count="1" />
-          <ownsunit id="5" type="C03_R3_Brennos" count="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$8045$$">
+      <unitdiscovered id="2" type="C03_R2_Protis" count="1" />
+      <ownsunit id="3" type="C03_R2_Protis" count="1" />
+      <unitdiscovered id="4" type="C03_R3_Brennos" count="1" />
+      <ownsunit id="5" type="C03_R3_Brennos" count="1" />
+    </or>
   </objectives>
 </quest>

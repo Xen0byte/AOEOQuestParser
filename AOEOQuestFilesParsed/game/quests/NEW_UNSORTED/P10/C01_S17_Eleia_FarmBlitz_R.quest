@@ -11,10 +11,8 @@
     </mapvariables>
   </randommap>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="99" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="99" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" />
@@ -25,10 +23,8 @@
     <diplomacy relation="Ally" team1="3" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <buildunit id="1" description="$$12380$$" type="Gr_Bldg_Farm" count="10" />
-      <protectunit id="2" description="$$7970$$" type="UnitTypeBldgTownCenter" owningplayerid="3" />
-      <kill id="3" description="$$3707$$" type="UnitTypeBldgBarracks" count="8" includeconversion="true" onlycountelites="false" />
-    </values>
+    <buildunit id="1" description="$$12380$$" type="Gr_Bldg_Farm" count="10" />
+    <protectunit id="2" description="$$7970$$" type="UnitTypeBldgTownCenter" owningplayerid="3" />
+    <kill id="3" description="$$3707$$" type="UnitTypeBldgBarracks" count="8" includeconversion="true" onlycountelites="false" />
   </objectives>
 </quest>

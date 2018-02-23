@@ -22,10 +22,8 @@
     <protounit unit="A01_AllianceLeader" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="40" max="99" />
-      <questcomplete id="1100" />
-    </values>
+    <level min="40" max="99" />
+    <questcomplete id="1100" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="20" />
@@ -56,59 +54,39 @@
     <diplomacy relation="Enemy" team1="2" team2="3" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="false" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <reduceunitsto id="4" type="AIStart" count="1" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <dummy id="5" description="$$9545$$" objectivename="UNUSED" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="false" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <reduceunitsto id="4" type="AIStart" count="1" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <dummy id="5" description="$$9545$$" objectivename="UNUSED" autocomplete="false" />
+    </or>
   </objectives>
   <secondaryobjectives id="6" mustfailall="false" rewardname="OptionalOne" description="$$9507$$">
-    <values>
-      <or id="7" mustfailall="false">
-        <values>
-          <reduceunitsto id="8" description="" type="AIStart" count="2" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <dummy id="9" description="$$9546$$" objectivename="UNUSED" autocomplete="false" />
-          <timer id="10" failonexpire="false" />
-        </values>
-      </or>
-    </values>
+    <or id="7" mustfailall="false">
+      <reduceunitsto id="8" description="" type="AIStart" count="2" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <dummy id="9" description="$$9546$$" objectivename="UNUSED" autocomplete="false" />
+      <timer id="10" failonexpire="false" />
+    </or>
   </secondaryobjectives>
   <secondaryobjectives id="11" mustfailall="false" rewardname="OptionalTwo" description="$$9508$$">
-    <values>
-      <or id="12" mustfailall="false">
-        <values>
-          <reduceunitsto id="13" type="AIStart" count="3" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <dummy id="14" description="$$9547$$" objectivename="UNUSED" autocomplete="false" />
-          <timer id="15" failonexpire="false" />
-        </values>
-      </or>
-    </values>
+    <or id="12" mustfailall="false">
+      <reduceunitsto id="13" type="AIStart" count="3" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <dummy id="14" description="$$9547$$" objectivename="UNUSED" autocomplete="false" />
+      <timer id="15" failonexpire="false" />
+    </or>
   </secondaryobjectives>
   <secondaryobjectives id="16" mustfailall="false" rewardname="OptionalThree" description="$$9509$$">
-    <values>
-      <or id="17" mustfailall="false">
-        <values>
-          <reduceunitsto id="18" type="AIStart" count="5" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <dummy id="19" description="$$9550$$" objectivename="UNUSED" autocomplete="false" />
-          <timer id="20" failonexpire="false" />
-        </values>
-      </or>
-    </values>
+    <or id="17" mustfailall="false">
+      <reduceunitsto id="18" type="AIStart" count="5" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <dummy id="19" description="$$9550$$" objectivename="UNUSED" autocomplete="false" />
+      <timer id="20" failonexpire="false" />
+    </or>
   </secondaryobjectives>
   <secondaryobjectives id="21" mustfailall="false" rewardname="OptionalFour" description="$$9510$$">
-    <values>
-      <or id="22" mustfailall="false">
-        <values>
-          <reduceunitsto id="23" type="AIStart" count="7" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <dummy id="24" description="$$9551$$" objectivename="UNUSED" autocomplete="false" />
-          <timer id="25" failonexpire="false" />
-        </values>
-      </or>
-    </values>
+    <or id="22" mustfailall="false">
+      <reduceunitsto id="23" type="AIStart" count="7" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <dummy id="24" description="$$9551$$" objectivename="UNUSED" autocomplete="false" />
+      <timer id="25" failonexpire="false" />
+    </or>
   </secondaryobjectives>
 </quest>

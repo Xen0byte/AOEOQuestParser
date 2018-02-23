@@ -68,10 +68,8 @@
     <protounit unit="C02_R2_Architect" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="335" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="335" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="EliteMedium" />
@@ -85,25 +83,17 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="false" />
-          <protectunit id="3" description="$$5003$$" type="Ancient_Fortress" owningplayerid="1" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="false" />
+      <protectunit id="3" description="$$5003$$" type="Ancient_Fortress" owningplayerid="1" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="6" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="7" mustfailall="false">
-        <values>
-          <timer id="8" description="$$2471$$" failonexpire="true" />
-          <kill id="9" description="$$2508$$" type="UnitTypeBldgTownCenter" count="5" includeconversion="true" onlycountelites="false" />
-        </values>
-      </or>
-    </values>
+    <or id="7" mustfailall="false">
+      <timer id="8" description="$$2471$$" failonexpire="true" />
+      <kill id="9" description="$$2508$$" type="UnitTypeBldgTownCenter" count="5" includeconversion="true" onlycountelites="false" />
+    </or>
   </secondaryobjectives>
 </quest>

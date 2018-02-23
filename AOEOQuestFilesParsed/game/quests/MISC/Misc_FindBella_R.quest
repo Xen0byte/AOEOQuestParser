@@ -17,9 +17,7 @@
     <protounit unit="GEN_OlManFischer" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="15" max="99" />
-    </values>
+    <level min="15" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="10000" />
@@ -27,24 +25,16 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$2408$$">
-        <values>
-          <dummy id="2" objectivename="BellaHome" autocomplete="false" />
-          <and id="3" mustfailall="true">
-            <values>
-              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="5" type="UnitTypeScout1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="Bella" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="Bella" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="2" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$2408$$">
+      <dummy id="2" objectivename="BellaHome" autocomplete="false" />
+      <and id="3" mustfailall="true">
+        <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="5" type="UnitTypeScout1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="Bella" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="Bella" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="2" />
+      </and>
+    </or>
   </objectives>
 </quest>

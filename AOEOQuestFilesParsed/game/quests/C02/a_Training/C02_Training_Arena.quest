@@ -13,16 +13,12 @@
     <protounit unit="C02_R1_ArenaPromoter" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-    </values>
+    <civilization id="3" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="5" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <ownsunit id="1" description="$$3656$$" type="Eg_Cap_Arena" count="1" owningplayerid="1" causesfailure="false" />
-    </values>
+    <ownsunit id="1" description="$$3656$$" type="Eg_Cap_Arena" count="1" owningplayerid="1" causesfailure="false" />
   </objectives>
 </quest>

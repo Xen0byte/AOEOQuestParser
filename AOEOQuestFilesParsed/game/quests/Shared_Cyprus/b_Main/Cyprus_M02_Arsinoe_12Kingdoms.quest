@@ -14,9 +14,7 @@
     <protounit unit="CyprusLeaderV2" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="3035" />
-    </values>
+    <questcomplete id="3035" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="10" />
@@ -29,94 +27,62 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="true">
-        <values>
-          <dummy id="2" description="$$6507$$" objectivename="UNUSED" autocomplete="false" />
-          <and id="3" mustfailall="false">
-            <values>
-              <or id="4" mustfailall="false">
-                <values>
-                  <unitdiscovered id="5" type="CyprusFlagPaphos" count="1" />
-                  <ownsunit id="6" type="CyprusFlagPaphos" count="1" />
-                </values>
-              </or>
-              <or id="7" mustfailall="false">
-                <values>
-                  <unitdiscovered id="8" type="CyprusFlagMarion" count="1" />
-                  <ownsunit id="9" type="CyprusFlagMarion" count="1" />
-                </values>
-              </or>
-              <or id="10" mustfailall="false">
-                <values>
-                  <unitdiscovered id="11" description="" type="CyprusFlagSalamis" count="1" />
-                  <ownsunit id="12" type="CyprusFlagSalamis" count="1" />
-                </values>
-              </or>
-              <or id="13" mustfailall="false">
-                <values>
-                  <unitdiscovered id="14" type="CyprusFlagKition" count="1" />
-                  <ownsunit id="15" type="CyprusFlagKition" count="1" />
-                </values>
-              </or>
-              <or id="16" mustfailall="false">
-                <values>
-                  <unitdiscovered id="17" type="CyprusFlagSoloi" count="1" />
-                  <ownsunit id="18" type="CyprusFlagSoloi" count="1" />
-                </values>
-              </or>
-              <or id="19" mustfailall="false">
-                <values>
-                  <unitdiscovered id="20" type="CyprusFlagTamassos" count="1" />
-                  <ownsunit id="21" type="CyprusFlagTamassos" count="1" />
-                </values>
-              </or>
-              <or id="22" mustfailall="false">
-                <values>
-                  <unitdiscovered id="23" type="CyprusFlagKourion" count="1" />
-                  <ownsunit id="24" type="CyprusFlagKourion" count="1" />
-                </values>
-              </or>
-              <or id="25" mustfailall="false">
-                <values>
-                  <unitdiscovered id="26" type="CyprusFlagLapithos" count="1" />
-                  <ownsunit id="27" type="CyprusFlagLapithos" count="1" />
-                </values>
-              </or>
-              <or id="28" mustfailall="false">
-                <values>
-                  <unitdiscovered id="29" type="CyprusFlagAmathus" count="1" />
-                  <ownsunit id="30" type="CyprusFlagAmathus" count="1" />
-                </values>
-              </or>
-              <or id="31" mustfailall="false">
-                <values>
-                  <unitdiscovered id="32" type="CyprusFlagIdalion" count="1" />
-                  <ownsunit id="33" type="CyprusFlagIdalion" count="1" />
-                </values>
-              </or>
-              <or id="34" mustfailall="false">
-                <values>
-                  <unitdiscovered id="35" type="CyprusFlagLedrai" count="1" />
-                  <ownsunit id="36" type="CyprusFlagLedrai" count="1" />
-                </values>
-              </or>
-              <or id="37" mustfailall="false">
-                <values>
-                  <unitdiscovered id="38" type="CyprusFlagChytroi" count="1" />
-                  <ownsunit id="39" type="CyprusFlagChytroi" count="1" />
-                </values>
-              </or>
-            </values>
-          </and>
-        </values>
-      </or>
-      <or id="40" mustfailall="false">
-        <values>
-          <ownsunit id="41" type="CyprusLeaderV2" count="1" />
-          <unitdiscovered id="42" type="CyprusLeaderV2" count="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="true">
+      <dummy id="2" description="$$6507$$" objectivename="UNUSED" autocomplete="false" />
+      <and id="3" mustfailall="false">
+        <or id="4" mustfailall="false">
+          <unitdiscovered id="5" type="CyprusFlagPaphos" count="1" />
+          <ownsunit id="6" type="CyprusFlagPaphos" count="1" />
+        </or>
+        <or id="7" mustfailall="false">
+          <unitdiscovered id="8" type="CyprusFlagMarion" count="1" />
+          <ownsunit id="9" type="CyprusFlagMarion" count="1" />
+        </or>
+        <or id="10" mustfailall="false">
+          <unitdiscovered id="11" description="" type="CyprusFlagSalamis" count="1" />
+          <ownsunit id="12" type="CyprusFlagSalamis" count="1" />
+        </or>
+        <or id="13" mustfailall="false">
+          <unitdiscovered id="14" type="CyprusFlagKition" count="1" />
+          <ownsunit id="15" type="CyprusFlagKition" count="1" />
+        </or>
+        <or id="16" mustfailall="false">
+          <unitdiscovered id="17" type="CyprusFlagSoloi" count="1" />
+          <ownsunit id="18" type="CyprusFlagSoloi" count="1" />
+        </or>
+        <or id="19" mustfailall="false">
+          <unitdiscovered id="20" type="CyprusFlagTamassos" count="1" />
+          <ownsunit id="21" type="CyprusFlagTamassos" count="1" />
+        </or>
+        <or id="22" mustfailall="false">
+          <unitdiscovered id="23" type="CyprusFlagKourion" count="1" />
+          <ownsunit id="24" type="CyprusFlagKourion" count="1" />
+        </or>
+        <or id="25" mustfailall="false">
+          <unitdiscovered id="26" type="CyprusFlagLapithos" count="1" />
+          <ownsunit id="27" type="CyprusFlagLapithos" count="1" />
+        </or>
+        <or id="28" mustfailall="false">
+          <unitdiscovered id="29" type="CyprusFlagAmathus" count="1" />
+          <ownsunit id="30" type="CyprusFlagAmathus" count="1" />
+        </or>
+        <or id="31" mustfailall="false">
+          <unitdiscovered id="32" type="CyprusFlagIdalion" count="1" />
+          <ownsunit id="33" type="CyprusFlagIdalion" count="1" />
+        </or>
+        <or id="34" mustfailall="false">
+          <unitdiscovered id="35" type="CyprusFlagLedrai" count="1" />
+          <ownsunit id="36" type="CyprusFlagLedrai" count="1" />
+        </or>
+        <or id="37" mustfailall="false">
+          <unitdiscovered id="38" type="CyprusFlagChytroi" count="1" />
+          <ownsunit id="39" type="CyprusFlagChytroi" count="1" />
+        </or>
+      </and>
+    </or>
+    <or id="40" mustfailall="false">
+      <ownsunit id="41" type="CyprusLeaderV2" count="1" />
+      <unitdiscovered id="42" type="CyprusLeaderV2" count="1" />
+    </or>
   </objectives>
 </quest>

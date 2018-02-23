@@ -59,10 +59,8 @@
     <protounit unit="C01_R3_Odysseus" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="61" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="61" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="45000" />
@@ -71,18 +69,12 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <unitinarea id="2" description="$$2500$$" area="Quest_Area_E" type="Greek_Camp" count="1" radius="-1" aidefend="true" />
-          <and id="3" mustfailall="true">
-            <values>
-              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="5" type="Greek_Camp" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <unitinarea id="2" description="$$2500$$" area="Quest_Area_E" type="Greek_Camp" count="1" radius="-1" aidefend="true" />
+      <and id="3" mustfailall="true">
+        <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="5" type="Greek_Camp" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

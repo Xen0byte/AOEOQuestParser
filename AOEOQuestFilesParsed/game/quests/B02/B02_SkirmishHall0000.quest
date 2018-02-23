@@ -31,9 +31,7 @@
     <protounit unit="B02_R1_KingSkirmish" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="1" max="99" />
-    </values>
+    <level min="1" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="b02Cycle" />
@@ -43,13 +41,9 @@
     <loottable visible="true" type="general_skirmish" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$3802$$" objectivename="VICTORY" autocomplete="false" />
-          <dummy id="3" objectivename="LOSS" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$3802$$" objectivename="VICTORY" autocomplete="false" />
+      <dummy id="3" objectivename="LOSS" autocomplete="false" />
+    </or>
   </objectives>
 </quest>

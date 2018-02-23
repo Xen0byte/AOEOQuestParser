@@ -21,11 +21,9 @@
     <protounit unit="C02_R1_EgyptPortMaster_V2" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="453" />
-      <level min="3" max="8" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="453" />
+    <level min="3" max="8" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1000" />
@@ -33,25 +31,17 @@
     <trait visible="true" id="Tool1H_U020" traitlevel="6" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <and id="3" mustfailall="false">
-            <values>
-              <techstatus id="4" description="$$2464$$" name="EgyptCapAge2" status="Active" />
-              <buildunit id="5" description="$$2467$$" type="Eg_Bldg_Farm" count="4" />
-            </values>
-          </and>
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <and id="3" mustfailall="false">
+        <techstatus id="4" description="$$2464$$" name="EgyptCapAge2" status="Active" />
+        <buildunit id="5" description="$$2467$$" type="Eg_Bldg_Farm" count="4" />
+      </and>
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

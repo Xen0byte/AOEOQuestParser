@@ -33,11 +33,9 @@
     <protounit unit="C01_R1_VillageElder" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="11006" />
-      <questcomplete id="11004" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="11006" />
+    <questcomplete id="11004" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="2000" />
@@ -48,26 +46,18 @@
     <protip visible="false" proto="Gr_Cap_Start_Bldg" tip="TIP_Shared_LevelUpAgeUp" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <collectresource id="3" description="$$2427$$" type="Gold" amount="200" includeexisting="false" />
-              <buildunit id="4" description="$$2461$$" type="Gr_Bldg_Barracks" count="1" />
-              <buildunit id="5" description="$$2462$$" type="Gr_Inf_Spearman" count="10" />
-              <dummy id="6" description="$$3802$$" objectivename="FirstSkirmishEnemiesKilled" autocomplete="false" />
-            </values>
-          </and>
-          <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="8" mustfailall="true">
-            <values>
-              <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="10" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <collectresource id="3" description="$$2427$$" type="Gold" amount="200" includeexisting="false" />
+        <buildunit id="4" description="$$2461$$" type="Gr_Bldg_Barracks" count="1" />
+        <buildunit id="5" description="$$2462$$" type="Gr_Inf_Spearman" count="10" />
+        <dummy id="6" description="$$3802$$" objectivename="FirstSkirmishEnemiesKilled" autocomplete="false" />
+      </and>
+      <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="8" mustfailall="true">
+        <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="10" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

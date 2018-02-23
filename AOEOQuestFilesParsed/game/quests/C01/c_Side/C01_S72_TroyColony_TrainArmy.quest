@@ -24,10 +24,8 @@
     <protounit unit="C01_R3_Magistrate" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="256" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="256" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="25000" />
@@ -36,14 +34,10 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <population id="3" description="$$2460$$" currentgoal="160" capgoal="1" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <population id="3" description="$$2460$$" currentgoal="160" capgoal="1" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

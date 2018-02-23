@@ -12,23 +12,17 @@
     <protounit unit="B02_R1_KingSkirmish" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="1" max="99" />
-    </values>
+    <level min="1" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="500" />
     <blueprint visible="true" unit="Van_Sk_Trophy_AllVictories" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <and id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$8769$$" objectivename="SKIRMISHACHIEVEMENT13-1" autocomplete="false" />
-          <dummy id="3" description="$$8770$$" objectivename="SKIRMISHACHIEVEMENT13-2" autocomplete="false" />
-          <dummy id="4" description="$$8771$$" objectivename="SKIRMISHACHIEVEMENT13-3" autocomplete="false" />
-        </values>
-      </and>
-    </values>
+    <and id="1" mustfailall="false">
+      <dummy id="2" description="$$8769$$" objectivename="SKIRMISHACHIEVEMENT13-1" autocomplete="false" />
+      <dummy id="3" description="$$8770$$" objectivename="SKIRMISHACHIEVEMENT13-2" autocomplete="false" />
+      <dummy id="4" description="$$8771$$" objectivename="SKIRMISHACHIEVEMENT13-3" autocomplete="false" />
+    </and>
   </objectives>
 </quest>

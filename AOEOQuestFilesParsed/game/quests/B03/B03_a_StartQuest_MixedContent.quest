@@ -17,35 +17,25 @@
     <protounit unit="Babylon_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <and>
-        <values>
-          <or>
-            <values>
-              <questcomplete id="2203" />
-              <level min="20" max="99" />
-            </values>
-          </or>
-          <queststatus id="103001" queststatus="NotAssigned" />
-          <queststatus id="103001" queststatus="NotCompleted" />
-          <queststatus id="103420" queststatus="NotAssigned" />
-          <queststatus id="103420" queststatus="NotCompleted" />
-        </values>
-      </and>
-    </values>
+    <and>
+      <or>
+        <questcomplete id="2203" />
+        <level min="20" max="99" />
+      </or>
+      <queststatus id="103001" queststatus="NotAssigned" />
+      <queststatus id="103001" queststatus="NotCompleted" />
+      <queststatus id="103420" queststatus="NotAssigned" />
+      <queststatus id="103420" queststatus="NotCompleted" />
+    </and>
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="5" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$10810$$">
-        <values>
-          <unitdiscovered id="2" type="Babylon_Leader" count="1" />
-          <unitdiscovered id="3" type="GEN_FredTheRedeemer" count="1" />
-          <ownsunit id="4" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$10810$$">
+      <unitdiscovered id="2" type="Babylon_Leader" count="1" />
+      <unitdiscovered id="3" type="GEN_FredTheRedeemer" count="1" />
+      <ownsunit id="4" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+    </or>
   </objectives>
 </quest>

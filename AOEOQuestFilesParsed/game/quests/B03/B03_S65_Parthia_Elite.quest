@@ -26,9 +26,7 @@
     <protounit unit="Babylon_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103063" />
-    </values>
+    <questcomplete id="103063" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="15" />
@@ -43,35 +41,23 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <or id="2" mustfailall="false">
-            <values>
-              <dummy id="3" description="$$10355$$" objectivename="UNUSED" autocomplete="false" />
-              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-            </values>
-          </or>
-          <protectunit id="5" description="$$7970$$" type="Pe_Bldg_TownCenter" owningplayerid="3" />
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
+    <or id="1" mustfailall="false">
+      <or id="2" mustfailall="false">
+        <dummy id="3" description="$$10355$$" objectivename="UNUSED" autocomplete="false" />
+        <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
       </or>
-    </values>
+      <protectunit id="5" description="$$7970$$" type="Pe_Bldg_TownCenter" owningplayerid="3" />
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="8" mustfailall="false">
-        <values>
-          <dummy id="9" description="$$11662$$" objectivename="OptionalRestrictBuildNothing" autocomplete="false" />
-          <or id="10" mustfailall="false">
-            <values>
-              <dummy id="11" description="" objectivename="UNUSED" autocomplete="false" />
-              <reduceunitsto id="12" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-            </values>
-          </or>
-          <protectunit id="13" description="" type="Pe_Bldg_TownCenter" owningplayerid="3" />
-        </values>
+    <or id="8" mustfailall="false">
+      <dummy id="9" description="$$11662$$" objectivename="OptionalRestrictBuildNothing" autocomplete="false" />
+      <or id="10" mustfailall="false">
+        <dummy id="11" description="" objectivename="UNUSED" autocomplete="false" />
+        <reduceunitsto id="12" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
       </or>
-    </values>
+      <protectunit id="13" description="" type="Pe_Bldg_TownCenter" owningplayerid="3" />
+    </or>
   </secondaryobjectives>
 </quest>

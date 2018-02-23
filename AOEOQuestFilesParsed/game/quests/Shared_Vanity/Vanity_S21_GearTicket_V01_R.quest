@@ -7,16 +7,12 @@
   <questreturners>
     <protounit unit="Vanity_PrimaryQG" />
   </questreturners>
-  <prereqs>
-    <values />
-  </prereqs>
+  <prereqs />
   <rewards visible="true">
     <loottable visible="true" type="tables\_coreloot_vanityticket" />
     <consumematerial visible="true" materialname="!VanityTicket" count="1" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <collectmaterial id="1" description="$$11077$$" type="!VanityTicket" amount="1" includeexisting="true" />
-    </values>
+    <collectmaterial id="1" description="$$11077$$" type="!VanityTicket" amount="1" includeexisting="true" />
   </objectives>
 </quest>

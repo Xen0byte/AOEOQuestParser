@@ -25,10 +25,8 @@
     <protounit unit="C02_R1_CitySesostris_V2" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="127" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="127" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="5000" lookuptable="" />
@@ -36,25 +34,17 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <and id="3" mustfailall="false">
-            <values>
-              <buildunit id="4" description="$$4509$$" type="Eg_Bldg_Temple1" count="1" />
-              <buildunit id="5" description="$$2462$$" type="Eg_Inf_Spearman" count="20" />
-            </values>
-          </and>
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <and id="3" mustfailall="false">
+        <buildunit id="4" description="$$4509$$" type="Eg_Bldg_Temple1" count="1" />
+        <buildunit id="5" description="$$2462$$" type="Eg_Inf_Spearman" count="20" />
+      </and>
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

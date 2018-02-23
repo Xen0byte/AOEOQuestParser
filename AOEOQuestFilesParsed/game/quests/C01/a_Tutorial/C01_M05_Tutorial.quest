@@ -13,15 +13,11 @@
     <protounit unit="C01_R1_VillageElder" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <or>
-        <values>
-          <questcomplete id="11004" />
-          <level min="3" max="99" />
-        </values>
-      </or>
-    </values>
+    <civilization id="1" />
+    <or>
+      <questcomplete id="11004" />
+      <level min="3" max="99" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="100" />
@@ -31,8 +27,6 @@
     <protip visible="false" proto="Gr_Cap_Warehouse03Starting" tip="TIP_Shared_FirstNewGear" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <ownsunit id="1" description="$$3649$$" type="Gr_Cap_SkillBuilding" count="1" />
-    </values>
+    <ownsunit id="1" description="$$3649$$" type="Gr_Cap_SkillBuilding" count="1" />
   </objectives>
 </quest>

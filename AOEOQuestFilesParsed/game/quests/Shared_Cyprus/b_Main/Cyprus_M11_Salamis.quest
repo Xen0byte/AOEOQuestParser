@@ -46,9 +46,7 @@
     <protounit unit="CyprusLeaderV2" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="3000" />
-    </values>
+    <questcomplete id="3000" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
@@ -59,18 +57,12 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <kill id="2" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
-          <and id="3" mustfailall="true">
-            <values>
-              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <kill id="2" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
+      <and id="3" mustfailall="true">
+        <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
 </quest>

@@ -25,9 +25,7 @@
     <protounit unit="Babylon_NewFactionLady" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103042" />
-    </values>
+    <questcomplete id="103042" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQShort" />
@@ -35,18 +33,12 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <dummy id="3" description="$$10816$$" objectivename="BabylonS42_MineStone" autocomplete="false" />
-              <collectmaterial id="4" description="$$10660$$" type="SH_Seed" amount="1" includeexisting="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <dummy id="3" description="$$10816$$" objectivename="BabylonS42_MineStone" autocomplete="false" />
+        <collectmaterial id="4" description="$$10660$$" type="SH_Seed" amount="1" includeexisting="false" />
+      </and>
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

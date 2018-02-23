@@ -62,9 +62,7 @@
     <protounit unit="ArgosRefugee" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="510" />
-    </values>
+    <questcomplete id="510" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="2" />
@@ -79,18 +77,12 @@
     <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <ownsunit id="2" description="$$2693$$" type="NPC_ArgosRefugee" count="30" owningplayerid="1" causesfailure="false" />
-          <and id="3" mustfailall="true">
-            <values>
-              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <ownsunit id="2" description="$$2693$$" type="NPC_ArgosRefugee" count="30" owningplayerid="1" causesfailure="false" />
+      <and id="3" mustfailall="true">
+        <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
+      </and>
+    </or>
   </objectives>
 </quest>

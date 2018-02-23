@@ -13,22 +13,16 @@
   <questreturners>
     <protounit unit="GEN_FredTheRedeemer" />
   </questreturners>
-  <prereqs>
-    <values />
-  </prereqs>
+  <prereqs />
   <rewards visible="true">
     <material visible="true" materialname="!CypressWood" count="5" />
     <material visible="true" materialname="!KnossosMarble" count="5" />
     <material visible="true" materialname="!MinoanTools" count="5" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$6315$$">
-        <values>
-          <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
-          <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$6315$$">
+      <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
+      <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+    </or>
   </objectives>
 </quest>

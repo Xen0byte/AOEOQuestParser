@@ -12,20 +12,14 @@
     <protounit unit="B02_R1_KingSkirmish" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="1" max="99" />
-    </values>
+    <level min="1" max="99" />
   </prereqs>
   <rewards visible="true">
     <advisor visible="true" unit="Narmer_E_II" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$8821$$" objectivename="SKIRMISHACHIEVEMENT3" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$8821$$" objectivename="SKIRMISHACHIEVEMENT3" autocomplete="false" />
+    </or>
   </objectives>
 </quest>

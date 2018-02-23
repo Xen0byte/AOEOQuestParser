@@ -19,10 +19,8 @@
     <protounit unit="A03_AllianceLeader" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="40" max="99" />
-      <questcomplete id="1300" />
-    </values>
+    <level min="40" max="99" />
+    <questcomplete id="1300" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="16" />
@@ -44,60 +42,40 @@
     <loottable visible="true" loottable="general_legendary" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$9584$$" objectivename="UNUSED" autocomplete="false" />
-          <ownsunit id="3" type="Qst_Obelisk" count="6" owningplayerid="5" causesfailure="false" />
-          <ownsunit id="4" type="Qst_Obelisk" count="6" owningplayerid="2" causesfailure="true" />
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <or id="6" mustfailall="false">
-            <values>
-              <dummy id="7" objectivename="UNUSED" autocomplete="false" />
-              <ownsunit id="8" description="$$9581$$" type="Qst_Obelisk" count="11" owningplayerid="5" causesfailure="false" />
-            </values>
-          </or>
-          <or id="9" mustfailall="false">
-            <values>
-              <dummy id="10" objectivename="UNUSED" autocomplete="false" />
-              <ownsunit id="11" description="$$9582$$" type="Qst_Obelisk" count="11" owningplayerid="2" causesfailure="false" />
-            </values>
-          </or>
-        </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$9584$$" objectivename="UNUSED" autocomplete="false" />
+      <ownsunit id="3" type="Qst_Obelisk" count="6" owningplayerid="5" causesfailure="false" />
+      <ownsunit id="4" type="Qst_Obelisk" count="6" owningplayerid="2" causesfailure="true" />
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <or id="6" mustfailall="false">
+        <dummy id="7" objectivename="UNUSED" autocomplete="false" />
+        <ownsunit id="8" description="$$9581$$" type="Qst_Obelisk" count="11" owningplayerid="5" causesfailure="false" />
       </or>
-    </values>
+      <or id="9" mustfailall="false">
+        <dummy id="10" objectivename="UNUSED" autocomplete="false" />
+        <ownsunit id="11" description="$$9582$$" type="Qst_Obelisk" count="11" owningplayerid="2" causesfailure="false" />
+      </or>
+    </or>
   </objectives>
   <secondaryobjectives id="12" mustfailall="false" rewardname="OptionalOne" description="$$9507$$">
-    <values>
-      <or id="13" mustfailall="false">
-        <values>
-          <dummy id="14" description="$$9750$$" objectivename="UNUSED" autocomplete="false" />
-          <ownsunit id="15" type="Qst_Obelisk" count="6" owningplayerid="5" causesfailure="false" />
-          <ownsunit id="16" description="" type="Qst_Obelisk" count="5" owningplayerid="2" causesfailure="true" />
-        </values>
-      </or>
-    </values>
+    <or id="13" mustfailall="false">
+      <dummy id="14" description="$$9750$$" objectivename="UNUSED" autocomplete="false" />
+      <ownsunit id="15" type="Qst_Obelisk" count="6" owningplayerid="5" causesfailure="false" />
+      <ownsunit id="16" description="" type="Qst_Obelisk" count="5" owningplayerid="2" causesfailure="true" />
+    </or>
   </secondaryobjectives>
   <secondaryobjectives id="17" mustfailall="false" rewardname="OptionalTwo" description="$$9508$$">
-    <values>
-      <or id="18" mustfailall="false">
-        <values>
-          <dummy id="19" description="$$9678$$" objectivename="UNUSED" autocomplete="false" />
-          <ownsunit id="20" type="Qst_Obelisk" count="6" owningplayerid="5" causesfailure="false" />
-          <ownsunit id="21" description="" type="Qst_Obelisk" count="4" owningplayerid="2" causesfailure="true" />
-        </values>
-      </or>
-    </values>
+    <or id="18" mustfailall="false">
+      <dummy id="19" description="$$9678$$" objectivename="UNUSED" autocomplete="false" />
+      <ownsunit id="20" type="Qst_Obelisk" count="6" owningplayerid="5" causesfailure="false" />
+      <ownsunit id="21" description="" type="Qst_Obelisk" count="4" owningplayerid="2" causesfailure="true" />
+    </or>
   </secondaryobjectives>
   <secondaryobjectives id="22" mustfailall="false" rewardname="OptionalThree" description="$$9509$$">
-    <values>
-      <or id="23" mustfailall="false">
-        <values>
-          <dummy id="24" description="$$9676$$" objectivename="UNUSED" autocomplete="false" />
-          <ownsunit id="25" type="Qst_Obelisk" count="6" owningplayerid="5" causesfailure="false" />
-          <ownsunit id="26" description="" type="Qst_Obelisk" count="3" owningplayerid="2" causesfailure="true" />
-        </values>
-      </or>
-    </values>
+    <or id="23" mustfailall="false">
+      <dummy id="24" description="$$9676$$" objectivename="UNUSED" autocomplete="false" />
+      <ownsunit id="25" type="Qst_Obelisk" count="6" owningplayerid="5" causesfailure="false" />
+      <ownsunit id="26" description="" type="Qst_Obelisk" count="3" owningplayerid="2" causesfailure="true" />
+    </or>
   </secondaryobjectives>
 </quest>

@@ -26,9 +26,7 @@
     <protounit unit="Babylon_NewFactionLady" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103002" />
-    </values>
+    <questcomplete id="103002" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="90000" />
@@ -54,14 +52,10 @@
     <diplomacy relation="Neutral" team1="5" team2="4" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <ownsunit id="3" description="$$11783$$" type="Ba_Sie_SiegeTower" count="5" owningplayerid="4" causesfailure="false" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <ownsunit id="3" description="$$11783$$" type="Ba_Sie_SiegeTower" count="5" owningplayerid="4" causesfailure="false" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

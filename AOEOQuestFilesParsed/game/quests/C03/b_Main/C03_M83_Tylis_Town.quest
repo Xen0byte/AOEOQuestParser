@@ -40,10 +40,8 @@
     <protounit unit="C03_R3_Brennos" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13031" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13031" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="30000" />
@@ -58,20 +56,14 @@
     <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$3392$$" type="UnitTypeBldgDock" count="3" includeconversion="true" onlycountelites="false" />
-              <ownsunit id="4" description="$$9033$$" type="Gr_Shp_CatTrireme" count="3" owningplayerid="1" causesfailure="false" />
-              <kill id="5" description="$$2508$$" type="AbstractTownCenter" count="2" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <protectunit id="7" description="$$8248$$" type="Ce_QG_Comontorios" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$3392$$" type="UnitTypeBldgDock" count="3" includeconversion="true" onlycountelites="false" />
+        <ownsunit id="4" description="$$9033$$" type="Gr_Shp_CatTrireme" count="3" owningplayerid="1" causesfailure="false" />
+        <kill id="5" description="$$2508$$" type="AbstractTownCenter" count="2" includeconversion="true" onlycountelites="false" />
+      </and>
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <protectunit id="7" description="$$8248$$" type="Ce_QG_Comontorios" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

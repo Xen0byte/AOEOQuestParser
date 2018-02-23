@@ -38,10 +38,8 @@
     <protounit unit="C06_R1_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="22" />
-      <level min="20" max="99" />
-    </values>
+    <civilization id="22" />
+    <level min="20" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQMedium" />
@@ -78,20 +76,14 @@
     <diplomacy relation="Neutral" team1="4" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <ownsunit id="3" description="$$11692$$" type="Van_Cap_Fountain1" count="1" owningplayerid="1" causesfailure="false" />
-              <techstatus id="4" description="$$2464$$" name="BabylonCapAge2" status="Active" />
-              <kill id="5" description="$$10694$$" type="Merodach" count="1" includeconversion="true" onlycountelites="false" />
-              <kill id="6" description="$$10697$$" type="MerodachLieutenant" count="8" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <ownsunit id="3" description="$$11692$$" type="Van_Cap_Fountain1" count="1" owningplayerid="1" causesfailure="false" />
+        <techstatus id="4" description="$$2464$$" name="BabylonCapAge2" status="Active" />
+        <kill id="5" description="$$10694$$" type="Merodach" count="1" includeconversion="true" onlycountelites="false" />
+        <kill id="6" description="$$10697$$" type="MerodachLieutenant" count="8" includeconversion="true" onlycountelites="false" />
+      </and>
+      <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

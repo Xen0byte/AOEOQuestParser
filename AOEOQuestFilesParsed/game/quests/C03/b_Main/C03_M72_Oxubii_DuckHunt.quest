@@ -26,10 +26,8 @@
     <protounit unit="C03_R2_Gyptis" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13025" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13025" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="20000" />
@@ -48,21 +46,15 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <kill id="2" description="$$9126$$" type="Ship" count="45" includeconversion="true" onlycountelites="false" />
-          <protectunit id="3" description="$$7970$$" type="Gr_Bldg_TownCenter" owningplayerid="4" />
-          <protectunit id="4" description="" type="Gr_Bldg_TownCenter" owningplayerid="3" />
-          <and id="5" mustfailall="true">
-            <values>
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-      <timer id="8" description="$$9087$$" failonexpire="false" />
-    </values>
+    <or id="1" mustfailall="false">
+      <kill id="2" description="$$9126$$" type="Ship" count="45" includeconversion="true" onlycountelites="false" />
+      <protectunit id="3" description="$$7970$$" type="Gr_Bldg_TownCenter" owningplayerid="4" />
+      <protectunit id="4" description="" type="Gr_Bldg_TownCenter" owningplayerid="3" />
+      <and id="5" mustfailall="true">
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
+    <timer id="8" description="$$9087$$" failonexpire="false" />
   </objectives>
 </quest>

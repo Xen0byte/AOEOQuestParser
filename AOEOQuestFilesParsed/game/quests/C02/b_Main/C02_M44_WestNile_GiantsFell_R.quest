@@ -84,10 +84,8 @@
     <protounit unit="C02_R1_GeneralBatoshipip_V3" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="253" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="253" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQVShort" />
@@ -124,40 +122,26 @@
     <diplomacy relation="Neutral" team1="6" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2599$$" type="NPC_Badari_Slinger" count="30" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$2364$$" type="Custom_WarLeader" count="3" includeconversion="true" onlycountelites="false" />
-              <kill id="5" description="$$2598$$" type="NPC_Badari_SlingerRange" count="3" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="7" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2599$$" type="NPC_Badari_Slinger" count="30" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$2364$$" type="Custom_WarLeader" count="3" includeconversion="true" onlycountelites="false" />
+        <kill id="5" description="$$2598$$" type="NPC_Badari_SlingerRange" count="3" includeconversion="true" onlycountelites="false" />
+      </and>
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="7" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="9" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="10" mustfailall="false">
-        <values>
-          <dummy id="11" description="$$10388$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
-          <and id="12" mustfailall="false">
-            <values>
-              <kill id="13" description="" type="NPC_Badari_Slinger" count="30" includeconversion="true" onlycountelites="false" />
-              <kill id="14" description="" type="Custom_WarLeader" count="3" includeconversion="true" onlycountelites="false" />
-              <kill id="15" description="" type="NPC_Badari_SlingerRange" count="3" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="10" mustfailall="false">
+      <dummy id="11" description="$$10388$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+      <and id="12" mustfailall="false">
+        <kill id="13" description="" type="NPC_Badari_Slinger" count="30" includeconversion="true" onlycountelites="false" />
+        <kill id="14" description="" type="Custom_WarLeader" count="3" includeconversion="true" onlycountelites="false" />
+        <kill id="15" description="" type="NPC_Badari_SlingerRange" count="3" includeconversion="true" onlycountelites="false" />
+      </and>
+    </or>
   </secondaryobjectives>
 </quest>

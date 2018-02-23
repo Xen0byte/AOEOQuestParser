@@ -90,10 +90,8 @@
     <protounit unit="C02_R2_Architect" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="315" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="315" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="15000" />
@@ -106,29 +104,23 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <kill id="3" description="$$2484$$" type="Eg_Bldg_Fortress" count="1" includeconversion="true" onlycountelites="false" />
-          <and id="4" mustfailall="true">
-            <values>
-              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="6" type="UnitTypeBldgArcheryRange" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="UnitTypeBldgBarracks" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="UnitTypeBldgFortress" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="UnitTypeBldgSiegeWorkshop" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="10" type="UnitTypeBldgStables" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="11" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-              <reduceunitsto id="12" type="UnitTypeBldgArcheryRange" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-              <reduceunitsto id="13" type="UnitTypeBldgBarracks" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-              <reduceunitsto id="14" type="UnitTypeBldgFortress" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-              <reduceunitsto id="15" type="UnitTypeBldgSiegeWorkshop" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-              <reduceunitsto id="16" type="UnitTypeBldgStables" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <kill id="3" description="$$2484$$" type="Eg_Bldg_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+      <and id="4" mustfailall="true">
+        <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="6" type="UnitTypeBldgArcheryRange" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="UnitTypeBldgBarracks" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="UnitTypeBldgFortress" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="UnitTypeBldgSiegeWorkshop" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="10" type="UnitTypeBldgStables" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="11" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+        <reduceunitsto id="12" type="UnitTypeBldgArcheryRange" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+        <reduceunitsto id="13" type="UnitTypeBldgBarracks" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+        <reduceunitsto id="14" type="UnitTypeBldgFortress" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+        <reduceunitsto id="15" type="UnitTypeBldgSiegeWorkshop" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+        <reduceunitsto id="16" type="UnitTypeBldgStables" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+      </and>
+    </or>
   </objectives>
 </quest>

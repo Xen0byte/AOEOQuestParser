@@ -11,10 +11,8 @@
     </mapvariables>
   </randommap>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="99" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="99" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" />
@@ -27,9 +25,7 @@
     <diplomacy relation="Ally" team1="3" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <timer id="1" description="$$8103$$" failonexpire="false" />
-      <kill id="2" description="$$7067$$" type="UnitTypeInfantryBasic1" count="20" includeconversion="true" onlycountelites="false" />
-    </values>
+    <timer id="1" description="$$8103$$" failonexpire="false" />
+    <kill id="2" description="$$7067$$" type="UnitTypeInfantryBasic1" count="20" includeconversion="true" onlycountelites="false" />
   </objectives>
 </quest>

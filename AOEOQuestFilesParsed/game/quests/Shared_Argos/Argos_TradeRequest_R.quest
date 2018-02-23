@@ -18,9 +18,7 @@
     <protounit unit="ArgosDockForeman" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="510" />
-    </values>
+    <questcomplete id="510" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="10" />
@@ -36,14 +34,10 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <unitdiscovered id="3" description="$$8928$$" type="Qst_SpawnPoint1" count="9" />
-          <protectunit id="4" description="$$8929$$" type="UnitTypeShipUtility1" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <unitdiscovered id="3" description="$$8928$$" type="Qst_SpawnPoint1" count="9" />
+      <protectunit id="4" description="$$8929$$" type="UnitTypeShipUtility1" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

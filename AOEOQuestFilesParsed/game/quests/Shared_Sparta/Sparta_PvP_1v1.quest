@@ -14,9 +14,7 @@
     <protounit unit="SharedPvP_WarCommander" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="1" max="99" />
-    </values>
+    <level min="1" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="0" lookuptable="pvpLoserXP" />
@@ -28,13 +26,9 @@
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="pvp1v1" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <completegame id="1" description="$$9777$$" minimumtime="240000" />
-    </values>
+    <completegame id="1" description="$$9777$$" minimumtime="240000" />
   </objectives>
   <secondaryobjectives id="2" mustfailall="false" rewardname="VictoryReward" description="$$9776$$">
-    <values>
-      <wingame id="3" description="$$3807$$" suppressfail="false" />
-    </values>
+    <wingame id="3" description="$$3807$$" suppressfail="false" />
   </secondaryobjectives>
 </quest>

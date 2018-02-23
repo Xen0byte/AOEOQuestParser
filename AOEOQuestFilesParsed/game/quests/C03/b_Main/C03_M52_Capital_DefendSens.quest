@@ -22,10 +22,8 @@
     <protounit unit="C03_R1_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13020" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13020" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="20000" />
@@ -48,15 +46,11 @@
     <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <dummy id="1" description="$$8785$$" objectivename="M52_ReachSens" autocomplete="false" />
-      <or id="2" mustfailall="false">
-        <values>
-          <timer id="3" description="$$2471$$" failonexpire="false" />
-          <protectunit id="4" description="$$8050$$" type="Ce_Cap_VillageHall01" owningplayerid="4" />
-          <protectunit id="5" description="$$8562$$" type="Ce_QG_Brennos" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <dummy id="1" description="$$8785$$" objectivename="M52_ReachSens" autocomplete="false" />
+    <or id="2" mustfailall="false">
+      <timer id="3" description="$$2471$$" failonexpire="false" />
+      <protectunit id="4" description="$$8050$$" type="Ce_Cap_VillageHall01" owningplayerid="4" />
+      <protectunit id="5" description="$$8562$$" type="Ce_QG_Brennos" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

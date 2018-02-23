@@ -32,10 +32,8 @@
     <protounit unit="C02_R1_GeneralAhapitep_V3" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="253" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="253" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="EliteVShort" />
@@ -45,13 +43,9 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <kill id="2" description="$$2364$$" type="Custom_WarLeader" count="2" includeconversion="true" onlycountelites="false" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <kill id="2" description="$$2364$$" type="Custom_WarLeader" count="2" includeconversion="true" onlycountelites="false" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

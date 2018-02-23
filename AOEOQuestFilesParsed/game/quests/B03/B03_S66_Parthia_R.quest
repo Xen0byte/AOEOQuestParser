@@ -36,9 +36,7 @@
     <protounit unit="Babylon_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103063" />
-    </values>
+    <questcomplete id="103063" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="10" />
@@ -64,44 +62,28 @@
     <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <dummy id="3" description="$$11745$$" objectivename="BaS63_MainFreed" autocomplete="false" />
-              <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-            </values>
-          </and>
-          <protectunit id="5" description="$$11748$$" type="Pe_Bldg_TownCenter" owningplayerid="5" />
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <dummy id="3" description="$$11745$$" objectivename="BaS63_MainFreed" autocomplete="false" />
+        <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      </and>
+      <protectunit id="5" description="$$11748$$" type="Pe_Bldg_TownCenter" owningplayerid="5" />
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="9" mustfailall="false" rewardname="OptionalOne" description="$$11875$$">
-    <values>
-      <or id="10" mustfailall="false">
-        <values>
-          <timer id="11" description="$$9656$$" failonexpire="true" />
-          <unitdiscovered id="12" description="$$11878$$" type="Qst_SpawnPoint2" count="3" />
-        </values>
-      </or>
-    </values>
+    <or id="10" mustfailall="false">
+      <timer id="11" description="$$9656$$" failonexpire="true" />
+      <unitdiscovered id="12" description="$$11878$$" type="Qst_SpawnPoint2" count="3" />
+    </or>
   </secondaryobjectives>
   <secondaryobjectives id="13" mustfailall="false" rewardname="OptionalTwo" description="$$11874$$">
-    <values>
-      <or id="14" mustfailall="false">
-        <values>
-          <timer id="15" description="" failonexpire="true" />
-          <dummy id="16" description="$$11745$$" objectivename="BaS63_MainFreed" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="14" mustfailall="false">
+      <timer id="15" description="" failonexpire="true" />
+      <dummy id="16" description="$$11745$$" objectivename="BaS63_MainFreed" autocomplete="false" />
+    </or>
   </secondaryobjectives>
 </quest>

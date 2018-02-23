@@ -12,10 +12,8 @@
     <protounit unit="B02_R1_KingSkirmish" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="102021" />
-      <level min="1" max="39" />
-    </values>
+    <questcomplete id="102021" />
+    <level min="1" max="39" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="b02Global" />
@@ -26,8 +24,6 @@
     <loottable visible="true" type="general_skirmish" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <counter id="1" description="$$8464$$" objectivename="DEFEATENEMY" reqcount="10" />
-    </values>
+    <counter id="1" description="$$8464$$" objectivename="DEFEATENEMY" reqcount="10" />
   </objectives>
 </quest>

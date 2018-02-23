@@ -49,12 +49,10 @@
     <protounit unit="ArgosKing" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="64" />
-      <questcomplete id="75" />
-      <questcomplete id="73" />
-      <questcomplete id="211" />
-    </values>
+    <questcomplete id="64" />
+    <questcomplete id="75" />
+    <questcomplete id="73" />
+    <questcomplete id="211" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="2" />
@@ -69,20 +67,14 @@
     <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <repairunit id="2" description="$$2694$$" type="Gr_Bldg_Dock" count="8" playerid="3" />
-          <and id="3" mustfailall="true">
-            <values>
-              <reduceunitsto id="4" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="5" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="6" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
-              <reduceunitsto id="7" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <repairunit id="2" description="$$2694$$" type="Gr_Bldg_Dock" count="8" playerid="3" />
+      <and id="3" mustfailall="true">
+        <reduceunitsto id="4" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="5" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="6" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+        <reduceunitsto id="7" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+      </and>
+    </or>
   </objectives>
 </quest>

@@ -83,10 +83,8 @@
     <protounit unit="C03_R2_Bard" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13022" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13022" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQShort" />
@@ -103,37 +101,25 @@
     <diplomacy relation="Ally" team1="2" team2="1" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <and id="3" mustfailall="false">
-            <values>
-              <tribute id="4" description="$$2504$$" type="Food" amount="1000" destplayer="2" />
-              <tribute id="5" description="$$2505$$" type="Wood" amount="1000" destplayer="3" />
-              <tribute id="6" description="$$2506$$" type="Stone" amount="1000" destplayer="4" />
-            </values>
-          </and>
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="10" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-              <reduceunitsto id="11" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <and id="3" mustfailall="false">
+        <tribute id="4" description="$$2504$$" type="Food" amount="1000" destplayer="2" />
+        <tribute id="5" description="$$2505$$" type="Wood" amount="1000" destplayer="3" />
+        <tribute id="6" description="$$2506$$" type="Stone" amount="1000" destplayer="4" />
+      </and>
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="10" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+        <reduceunitsto id="11" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="12" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="13" mustfailall="false">
-        <values>
-          <dummy id="14" description="$$10378$$" objectivename="UNUSED" autocomplete="false" />
-          <reduceunitsto id="15" type="AbstractNuggetGuard" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="0" />
-        </values>
-      </or>
-    </values>
+    <or id="13" mustfailall="false">
+      <dummy id="14" description="$$10378$$" objectivename="UNUSED" autocomplete="false" />
+      <reduceunitsto id="15" type="AbstractNuggetGuard" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="0" />
+    </or>
   </secondaryobjectives>
 </quest>

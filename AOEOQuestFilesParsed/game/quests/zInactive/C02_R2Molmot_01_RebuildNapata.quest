@@ -72,10 +72,8 @@
     <protounit unit="C02_R2_ChieftainMolmot" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="330" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="330" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQMedium" />
@@ -84,14 +82,10 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="false" />
-          <protectunit id="3" description="$$2472$$" type="NPC_Nubian_TownCenter" owningplayerid="1" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="false" />
+      <protectunit id="3" description="$$2472$$" type="NPC_Nubian_TownCenter" owningplayerid="1" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+    </or>
   </objectives>
 </quest>

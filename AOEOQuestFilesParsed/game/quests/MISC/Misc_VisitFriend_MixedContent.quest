@@ -21,26 +21,20 @@
     <protounit unit="C07_R1_Ambassador" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="5" max="99" />
-    </values>
+    <level min="5" max="99" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="5" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$5425$$">
-        <values>
-          <unitdiscovered id="2" type="C01_R1_Ambassador_VISITPLAYER" count="1" />
-          <unitdiscovered id="3" type="C02_R1_Ambassador_VISITPLAYER" count="1" />
-          <unitdiscovered id="4" type="C03_R1_Ambassador_VISITPLAYER" count="1" />
-          <unitdiscovered id="5" type="C04_R1_Ambassador_VISITPLAYER" count="1" />
-          <unitdiscovered id="6" type="C06_R1_Ambassador_VISITPLAYER" count="1" />
-          <unitdiscovered id="7" type="C07_R1_Ambassador_VISITPLAYER" count="1" />
-        </values>
-      </or>
-      <queststatus id="8" description="$$13121$$" questid="10100" queststatus="Complete" />
-    </values>
+    <or id="1" mustfailall="false" description="$$5425$$">
+      <unitdiscovered id="2" type="C01_R1_Ambassador_VISITPLAYER" count="1" />
+      <unitdiscovered id="3" type="C02_R1_Ambassador_VISITPLAYER" count="1" />
+      <unitdiscovered id="4" type="C03_R1_Ambassador_VISITPLAYER" count="1" />
+      <unitdiscovered id="5" type="C04_R1_Ambassador_VISITPLAYER" count="1" />
+      <unitdiscovered id="6" type="C06_R1_Ambassador_VISITPLAYER" count="1" />
+      <unitdiscovered id="7" type="C07_R1_Ambassador_VISITPLAYER" count="1" />
+    </or>
+    <queststatus id="8" description="$$13121$$" questid="10100" queststatus="Complete" />
   </objectives>
 </quest>

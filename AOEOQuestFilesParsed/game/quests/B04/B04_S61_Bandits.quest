@@ -22,9 +22,7 @@
     <protounit unit="B04_Bard" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="104011" />
-    </values>
+    <questcomplete id="104011" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="B04Short" />
@@ -45,14 +43,10 @@
     <diplomacy relation="Ally" team1="5" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <ownsunit id="2" description="$$2546$$" type="Qst_CounterObject" count="4" owningplayerid="1" causesfailure="false" />
-          <protectunit id="3" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
-          <dummy id="4" objectivename="OBJECTIVE_FAIL" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <ownsunit id="2" description="$$2546$$" type="Qst_CounterObject" count="4" owningplayerid="1" causesfailure="false" />
+      <protectunit id="3" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
+      <dummy id="4" objectivename="OBJECTIVE_FAIL" autocomplete="false" />
+    </or>
   </objectives>
 </quest>

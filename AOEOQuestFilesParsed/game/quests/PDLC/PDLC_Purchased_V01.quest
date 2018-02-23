@@ -13,20 +13,14 @@
   <questreturners>
     <protounit unit="GEN_FredTheRedeemer" />
   </questreturners>
-  <prereqs>
-    <values />
-  </prereqs>
+  <prereqs />
   <rewards visible="true">
     <blueprint visible="true" unit="VanityStore01" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$5481$$">
-        <values>
-          <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
-          <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$5481$$">
+      <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
+      <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" />
+    </or>
   </objectives>
 </quest>

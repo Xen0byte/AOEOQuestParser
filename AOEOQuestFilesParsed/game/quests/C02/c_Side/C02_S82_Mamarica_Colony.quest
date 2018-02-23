@@ -28,10 +28,8 @@
     <protounit unit="C02_R3_LostAdmiral" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="387" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="387" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="20000" />
@@ -40,24 +38,16 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <buildunit id="3" description="$$2565$$" type="AbstractTownCenter" count="1" />
-              <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <buildunit id="3" description="$$2565$$" type="AbstractTownCenter" count="1" />
+        <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      </and>
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

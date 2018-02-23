@@ -11,24 +11,18 @@
     <protounit unit="C01_R2_KingAgamemnon" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="54" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="54" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
   </rewards>
   <objectives id="0" mustfailall="false" description="$$750$$">
-    <values>
-      <or id="1" mustfailall="false" description="$$4248$$">
-        <values>
-          <unitdiscovered id="2" type="C01_R2_KingAgamemnon" count="1" />
-          <ownsunit id="3" type="C01_R2_KingAgamemnon" count="1" owningplayerid="1" causesfailure="false" />
-          <unitdiscovered id="4" type="C01_R1_VillageElder" count="1" />
-          <ownsunit id="5" type="C01_R1_VillageElder" count="1" owningplayerid="1" causesfailure="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$4248$$">
+      <unitdiscovered id="2" type="C01_R2_KingAgamemnon" count="1" />
+      <ownsunit id="3" type="C01_R2_KingAgamemnon" count="1" owningplayerid="1" causesfailure="false" />
+      <unitdiscovered id="4" type="C01_R1_VillageElder" count="1" />
+      <ownsunit id="5" type="C01_R1_VillageElder" count="1" owningplayerid="1" causesfailure="false" />
+    </or>
   </objectives>
 </quest>

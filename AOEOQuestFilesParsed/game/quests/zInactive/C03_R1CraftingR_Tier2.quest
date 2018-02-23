@@ -27,11 +27,9 @@
     <protounit unit="C03_R1_GuildMaster" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <level min="16" max="99" />
-      <questcomplete id="13404" />
-    </values>
+    <civilization id="6" />
+    <level min="16" max="99" />
+    <questcomplete id="13404" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQShort" />
@@ -48,13 +46,9 @@
     <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <unitinarea id="2" description="$$3904$$" area="Player1" type="Qst_MerchantCart" count="5" radius="25" aidefend="true" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <unitinarea id="2" description="$$3904$$" area="Player1" type="Qst_MerchantCart" count="5" radius="25" aidefend="true" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

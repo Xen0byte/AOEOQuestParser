@@ -8,30 +8,22 @@
     <protounit unit="B04_PrimaryQG" />
   </questreturners>
   <prereqs>
-    <values>
-      <and>
-        <values>
-          <questcomplete id="2204" />
-          <queststatus id="104001" queststatus="NotAssigned" />
-          <queststatus id="104001" queststatus="NotCompleted" />
-          <queststatus id="104000" queststatus="NotAssigned" />
-          <queststatus id="104000" queststatus="NotCompleted" />
-          <questcomplete id="17700" />
-        </values>
-      </and>
-    </values>
+    <and>
+      <questcomplete id="2204" />
+      <queststatus id="104001" queststatus="NotAssigned" />
+      <queststatus id="104001" queststatus="NotCompleted" />
+      <queststatus id="104000" queststatus="NotAssigned" />
+      <queststatus id="104000" queststatus="NotCompleted" />
+      <questcomplete id="17700" />
+    </and>
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="5" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$12509$$">
-        <values>
-          <unitdiscovered id="2" type="B04_PrimaryQG" count="1" />
-          <ownsunit id="3" type="B04_PrimaryQG" count="1" owningplayerid="1" causesfailure="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$12509$$">
+      <unitdiscovered id="2" type="B04_PrimaryQG" count="1" />
+      <ownsunit id="3" type="B04_PrimaryQG" count="1" owningplayerid="1" causesfailure="false" />
+    </or>
   </objectives>
 </quest>

@@ -26,10 +26,8 @@
     <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="shared_start_barracks" rottype="Rotate0" rotateunitorientations="true" />
   </targets>
   <prereqs>
-    <values>
-      <level min="40" max="99" />
-      <questcomplete id="1100" />
-    </values>
+    <level min="40" max="99" />
+    <questcomplete id="1100" />
   </prereqs>
   <diplomacysettings>
     <diplomacy relation="Ally" team1="2" team2="3" sharedlos="true" />
@@ -40,20 +38,14 @@
     <diplomacy relation="Ally" team1="4" team2="3" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <dummy id="3" description="$$3802$$" objectivename="UNUSED" autocomplete="false" />
-          <and id="4" mustfailall="false">
-            <values>
-              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="5" />
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="7" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <dummy id="3" description="$$3802$$" objectivename="UNUSED" autocomplete="false" />
+      <and id="4" mustfailall="false">
+        <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="5" />
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="7" />
+      </and>
+    </or>
   </objectives>
 </quest>

@@ -18,23 +18,17 @@
     <protounit unit="CyprusLeader" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="3000" />
-    </values>
+    <questcomplete id="3000" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="5" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$6584$$">
-        <values>
-          <ownsunit id="2" type="CyprusLeader" count="1" owningplayerid="1" causesfailure="false" />
-          <unitdiscovered id="3" type="CyprusLeader" count="1" />
-          <ownsunit id="4" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
-          <unitdiscovered id="5" type="GEN_FredTheRedeemer" count="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$6584$$">
+      <ownsunit id="2" type="CyprusLeader" count="1" owningplayerid="1" causesfailure="false" />
+      <unitdiscovered id="3" type="CyprusLeader" count="1" />
+      <ownsunit id="4" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+      <unitdiscovered id="5" type="GEN_FredTheRedeemer" count="1" />
+    </or>
   </objectives>
 </quest>

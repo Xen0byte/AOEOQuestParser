@@ -26,11 +26,9 @@
     <protounit unit="ArgosDockForeman" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="186" />
-      <questcomplete id="187" />
-      <questcomplete id="188" />
-    </values>
+    <questcomplete id="186" />
+    <questcomplete id="187" />
+    <questcomplete id="188" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="40000" />
@@ -39,19 +37,13 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <collectresource id="2" description="$$2597$$" type="Food" amount="7500" includeexisting="true" />
-          <and id="3" mustfailall="true">
-            <values>
-              <reduceunitsto id="4" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="5" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="6" type="UnitTypeBldgDock" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <collectresource id="2" description="$$2597$$" type="Food" amount="7500" includeexisting="true" />
+      <and id="3" mustfailall="true">
+        <reduceunitsto id="4" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="5" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="6" type="UnitTypeBldgDock" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

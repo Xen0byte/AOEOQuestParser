@@ -12,28 +12,22 @@
     <protounit unit="B02_R1_KingSkirmish" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="1" max="99" />
-    </values>
+    <level min="1" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="500" />
     <blueprint visible="true" unit="Van_Sk_Trophy_KillAll" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <and id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$8524$$" objectivename="SKIRMISHACHIEVEMENT10-1" autocomplete="false" />
-          <dummy id="3" description="$$8525$$" objectivename="SKIRMISHACHIEVEMENT10-2" autocomplete="false" />
-          <dummy id="4" description="$$8526$$" objectivename="SKIRMISHACHIEVEMENT10-3" autocomplete="false" />
-          <dummy id="5" description="$$8527$$" objectivename="SKIRMISHACHIEVEMENT10-4" autocomplete="false" />
-          <dummy id="6" description="$$8528$$" objectivename="SKIRMISHACHIEVEMENT10-5" autocomplete="false" />
-          <dummy id="7" description="$$8529$$" objectivename="SKIRMISHACHIEVEMENT10-6" autocomplete="false" />
-          <dummy id="8" description="$$8530$$" objectivename="SKIRMISHACHIEVEMENT10-7" autocomplete="false" />
-          <dummy id="9" description="$$8531$$" objectivename="SKIRMISHACHIEVEMENT10-8" autocomplete="false" />
-        </values>
-      </and>
-    </values>
+    <and id="1" mustfailall="false">
+      <dummy id="2" description="$$8524$$" objectivename="SKIRMISHACHIEVEMENT10-1" autocomplete="false" />
+      <dummy id="3" description="$$8525$$" objectivename="SKIRMISHACHIEVEMENT10-2" autocomplete="false" />
+      <dummy id="4" description="$$8526$$" objectivename="SKIRMISHACHIEVEMENT10-3" autocomplete="false" />
+      <dummy id="5" description="$$8527$$" objectivename="SKIRMISHACHIEVEMENT10-4" autocomplete="false" />
+      <dummy id="6" description="$$8528$$" objectivename="SKIRMISHACHIEVEMENT10-5" autocomplete="false" />
+      <dummy id="7" description="$$8529$$" objectivename="SKIRMISHACHIEVEMENT10-6" autocomplete="false" />
+      <dummy id="8" description="$$8530$$" objectivename="SKIRMISHACHIEVEMENT10-7" autocomplete="false" />
+      <dummy id="9" description="$$8531$$" objectivename="SKIRMISHACHIEVEMENT10-8" autocomplete="false" />
+    </and>
   </objectives>
 </quest>

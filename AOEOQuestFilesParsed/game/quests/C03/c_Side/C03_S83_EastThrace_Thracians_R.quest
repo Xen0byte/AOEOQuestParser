@@ -45,10 +45,8 @@
     <protounit unit="C03_R3_Acichorios" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13061" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13061" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQMedium" />
@@ -61,29 +59,19 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$4735$$" type="Gr_Bldg_SiegeWorkshop" count="5" includeconversion="true" onlycountelites="false" />
-              <reduceunitsto id="4" description="$$7040$$" type="Unit" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="true" causesfailure="false" playerid="1" />
-            </values>
-          </and>
-          <dummy id="5" description="$$8927$$" objectivename="EarlyWipe" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$4735$$" type="Gr_Bldg_SiegeWorkshop" count="5" includeconversion="true" onlycountelites="false" />
+        <reduceunitsto id="4" description="$$7040$$" type="Unit" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="true" causesfailure="false" playerid="1" />
+      </and>
+      <dummy id="5" description="$$8927$$" objectivename="EarlyWipe" autocomplete="false" />
+    </or>
   </objectives>
   <secondaryobjectives id="6" mustfailall="false" rewardname="Optional" description="$$10992$$">
-    <values>
-      <or id="7" mustfailall="false">
-        <values>
-          <timer id="8" description="$$10992$$" failonexpire="true" />
-          <dummy id="9" description="$$10604$$" objectivename="Optional" autocomplete="false" />
-          <kill id="10" type="CrushedSpirits" count="1" includeconversion="true" onlycountelites="false" />
-        </values>
-      </or>
-    </values>
+    <or id="7" mustfailall="false">
+      <timer id="8" description="$$10992$$" failonexpire="true" />
+      <dummy id="9" description="$$10604$$" objectivename="Optional" autocomplete="false" />
+      <kill id="10" type="CrushedSpirits" count="1" includeconversion="true" onlycountelites="false" />
+    </or>
   </secondaryobjectives>
 </quest>

@@ -11,23 +11,17 @@
     <protounit unit="Vanity_PrimaryQG" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="4" max="99" />
-    </values>
+    <level min="4" max="99" />
   </prereqs>
   <rewards visible="true">
     <trait visible="true" id="VanityHelm_007" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$10129$$">
-        <values>
-          <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
-          <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
-          <unitdiscovered id="4" type="Vanity_PrimaryQG" count="1" />
-          <ownsunit id="5" type="Vanity_PrimaryQG" count="1" owningplayerid="1" causesfailure="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$10129$$">
+      <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
+      <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+      <unitdiscovered id="4" type="Vanity_PrimaryQG" count="1" />
+      <ownsunit id="5" type="Vanity_PrimaryQG" count="1" owningplayerid="1" causesfailure="false" />
+    </or>
   </objectives>
 </quest>

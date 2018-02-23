@@ -38,10 +38,8 @@
     <protounit unit="C01_R1_Agamemnon" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="11045" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="11045" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="12000" />
@@ -55,25 +53,17 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <timer id="1" description="$$3525$$" failonexpire="false" />
-      <or id="2" mustfailall="false">
-        <values>
-          <and id="3" mustfailall="false">
-            <values>
-              <dummy id="4" description="$$3527$$" objectivename="HoldOut" autocomplete="false" />
-              <kill id="5" description="$$3247$$" type="Gr_Bldg_Stables" count="6" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <protectunit id="6" description="$$2472$$" type="Gr_Bldg_TownCenter" owningplayerid="1" />
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <timer id="1" description="$$3525$$" failonexpire="false" />
+    <or id="2" mustfailall="false">
+      <and id="3" mustfailall="false">
+        <dummy id="4" description="$$3527$$" objectivename="HoldOut" autocomplete="false" />
+        <kill id="5" description="$$3247$$" type="Gr_Bldg_Stables" count="6" includeconversion="true" onlycountelites="false" />
+      </and>
+      <protectunit id="6" description="$$2472$$" type="Gr_Bldg_TownCenter" owningplayerid="1" />
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
 </quest>

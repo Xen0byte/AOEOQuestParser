@@ -33,10 +33,8 @@
     <protounit unit="C02_R3_Sesostris" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="388" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="388" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="30000" />
@@ -45,24 +43,16 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <timer id="3" description="$$5825$$" failonexpire="false" />
-              <unitinarea id="4" description="$$2572$$" area="Quest_Area_A" type="NPC_PrinceSesostris2" count="1" radius="20" aidefend="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="Qst_TreasureCaravan" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <timer id="3" description="$$5825$$" failonexpire="false" />
+        <unitinarea id="4" description="$$2572$$" area="Quest_Area_A" type="NPC_PrinceSesostris2" count="1" radius="20" aidefend="false" />
+      </and>
+      <reduceunitsto id="5" type="Qst_TreasureCaravan" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
+      </and>
+    </or>
   </objectives>
 </quest>

@@ -43,9 +43,7 @@
     <protounit unit="Babylon_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103003" />
-    </values>
+    <questcomplete id="103003" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="10" />
@@ -63,24 +61,16 @@
     <diplomacy relation="Enemy" team1="1" team2="3" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <unitdiscovered id="2" description="$$11545$$" type="Qst_SpawnPoint1" count="3" />
-          <protectunit id="3" description="$$11072$$" type="UnitTypeBldgTownCenter" owningplayerid="4" />
-          <reduceunitsto id="4" description="" type="UnitTypeBldgTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <unitdiscovered id="2" description="$$11545$$" type="Qst_SpawnPoint1" count="3" />
+      <protectunit id="3" description="$$11072$$" type="UnitTypeBldgTownCenter" owningplayerid="4" />
+      <reduceunitsto id="4" description="" type="UnitTypeBldgTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="5" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="6" mustfailall="false">
-        <values>
-          <dummy id="7" description="$$10397$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
-          <unitdiscovered id="8" description="" type="Qst_SpawnPoint1" count="3" />
-        </values>
-      </or>
-    </values>
+    <or id="6" mustfailall="false">
+      <dummy id="7" description="$$10397$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+      <unitdiscovered id="8" description="" type="Qst_SpawnPoint1" count="3" />
+    </or>
   </secondaryobjectives>
 </quest>

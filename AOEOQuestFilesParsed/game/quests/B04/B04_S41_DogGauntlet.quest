@@ -24,9 +24,7 @@
     <protounit unit="B04_PrimaryQG" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="104033" />
-    </values>
+    <questcomplete id="104033" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="B04Med" />
@@ -35,25 +33,17 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <unitinarea id="3" description="$$13119$$" area="Quest_Area_A" type="NPC_NorthernHero01" count="1" radius="-1" aidefend="true" />
-              <kill id="4" description="$$2484$$" type="No_Bldg_Fortress" count="1" includeconversion="true" onlycountelites="false" />
-              <kill id="5" description="$$13120$$" type="No_Bldg_LookoutTower" count="20" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <protectunit id="6" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="NPC_NorthernHero01" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <unitinarea id="3" description="$$13119$$" area="Quest_Area_A" type="NPC_NorthernHero01" count="1" radius="-1" aidefend="true" />
+        <kill id="4" description="$$2484$$" type="No_Bldg_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+        <kill id="5" description="$$13120$$" type="No_Bldg_LookoutTower" count="20" includeconversion="true" onlycountelites="false" />
+      </and>
+      <protectunit id="6" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="NPC_NorthernHero01" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

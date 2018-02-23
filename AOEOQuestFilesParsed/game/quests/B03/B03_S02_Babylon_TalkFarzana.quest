@@ -8,21 +8,15 @@
     <protounit unit="Babylon_NewFactionLady" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103001" />
-    </values>
+    <questcomplete id="103001" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$11197$$">
-        <values>
-          <unitdiscovered id="2" type="Babylon_NewFactionLady" count="1" />
-          <ownsunit id="3" type="Babylon_NewFactionLady" count="1" owningplayerid="1" causesfailure="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$11197$$">
+      <unitdiscovered id="2" type="Babylon_NewFactionLady" count="1" />
+      <ownsunit id="3" type="Babylon_NewFactionLady" count="1" owningplayerid="1" causesfailure="false" />
+    </or>
   </objectives>
 </quest>

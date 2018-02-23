@@ -20,10 +20,8 @@
     <protounit unit="C03_R1_SensBrennos" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13013" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13013" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="8000" />
@@ -37,19 +35,13 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <unitinarea id="3" description="$$8299$$" area="Quest_Area_A" type="Ce_QG_Brennos" count="1" radius="-1" aidefend="true" />
-              <unitinarea id="4" description="$$8555$$" area="Quest_Area_B" type="Ce_QG_Brennos" count="1" radius="-1" aidefend="true" />
-            </values>
-          </and>
-          <dummy id="5" description="$$7535$$" autocomplete="false" />
-          <protectunit id="6" type="Ce_QG_Brennos" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <unitinarea id="3" description="$$8299$$" area="Quest_Area_A" type="Ce_QG_Brennos" count="1" radius="-1" aidefend="true" />
+        <unitinarea id="4" description="$$8555$$" area="Quest_Area_B" type="Ce_QG_Brennos" count="1" radius="-1" aidefend="true" />
+      </and>
+      <dummy id="5" description="$$7535$$" autocomplete="false" />
+      <protectunit id="6" type="Ce_QG_Brennos" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

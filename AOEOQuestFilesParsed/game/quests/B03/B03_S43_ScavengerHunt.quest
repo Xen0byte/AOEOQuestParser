@@ -39,14 +39,10 @@
     <protounit unit="Babylon_NewFactionLady" />
   </questreturners>
   <prereqs>
-    <values>
-      <or>
-        <values>
-          <queststatus id="103040" queststatus="Assigned" />
-          <questcomplete id="103040" />
-        </values>
-      </or>
-    </values>
+    <or>
+      <queststatus id="103040" queststatus="Assigned" />
+      <questcomplete id="103040" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQShort" />
@@ -60,19 +56,13 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <unitdiscovered id="3" description="$$11936$$" type="NPC_SH_TikiPriestess" count="5" />
-              <collectmaterial id="4" description="$$10650$$" type="SH_Umbrella" amount="5" includeexisting="false" />
-            </values>
-          </and>
-          <timer id="5" description="$$2471$$" failonexpire="true" />
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <unitdiscovered id="3" description="$$11936$$" type="NPC_SH_TikiPriestess" count="5" />
+        <collectmaterial id="4" description="$$10650$$" type="SH_Umbrella" amount="5" includeexisting="false" />
+      </and>
+      <timer id="5" description="$$2471$$" failonexpire="true" />
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

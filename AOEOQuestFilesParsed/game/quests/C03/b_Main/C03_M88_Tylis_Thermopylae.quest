@@ -22,10 +22,8 @@
     <protounit unit="C03_R3_Brennos" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13036" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13036" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
@@ -40,20 +38,14 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="3" mustfailall="false">
-            <values>
-              <kill id="4" description="$$3247$$" type="UnitTypeBldgStables" count="3" includeconversion="true" onlycountelites="false" />
-              <kill id="5" description="$$3244$$" type="UnitTypeBldgBarracks" count="7" includeconversion="true" onlycountelites="false" />
-              <kill id="6" description="$$8972$$" type="UnitTypeBldgArcheryRange" count="5" includeconversion="true" onlycountelites="false" />
-              <dummy id="7" description="$$3802$$" objectivename="CrossThermopylae" autocomplete="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <reduceunitsto id="2" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="3" mustfailall="false">
+        <kill id="4" description="$$3247$$" type="UnitTypeBldgStables" count="3" includeconversion="true" onlycountelites="false" />
+        <kill id="5" description="$$3244$$" type="UnitTypeBldgBarracks" count="7" includeconversion="true" onlycountelites="false" />
+        <kill id="6" description="$$8972$$" type="UnitTypeBldgArcheryRange" count="5" includeconversion="true" onlycountelites="false" />
+        <dummy id="7" description="$$3802$$" objectivename="CrossThermopylae" autocomplete="false" />
+      </and>
+    </or>
   </objectives>
 </quest>

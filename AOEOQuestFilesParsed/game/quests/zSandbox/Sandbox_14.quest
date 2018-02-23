@@ -12,10 +12,8 @@
     </mapvariables>
   </randommap>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="99" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="99" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" />
@@ -28,24 +26,16 @@
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <timer id="1" description="$$9088$$" failonexpire="false" />
-      <or id="2" mustfailall="false">
-        <values>
-          <dummy id="3" description="$$7067$$" objectivename="UnderHundred" autocomplete="false" />
-          <ownsunit id="4" description="$$13308$$" type="Qst_CounterObject" count="100" owningplayerid="1" causesfailure="true" />
-        </values>
-      </or>
-    </values>
+    <timer id="1" description="$$9088$$" failonexpire="false" />
+    <or id="2" mustfailall="false">
+      <dummy id="3" description="$$7067$$" objectivename="UnderHundred" autocomplete="false" />
+      <ownsunit id="4" description="$$13308$$" type="Qst_CounterObject" count="100" owningplayerid="1" causesfailure="true" />
+    </or>
   </objectives>
   <secondaryobjectives id="5" mustfailall="false" rewardname="Optional_One" description="$$9507$$">
-    <values>
-      <dummy id="6" description="$$7067$$" objectivename="UnderFourty" autocomplete="false" />
-    </values>
+    <dummy id="6" description="$$7067$$" objectivename="UnderFourty" autocomplete="false" />
   </secondaryobjectives>
   <secondaryobjectives id="7" mustfailall="false" rewardname="Optional_Two" description="$$9508$$">
-    <values>
-      <dummy id="8" description="$$7067$$" objectivename="UnderTwenty" autocomplete="false" />
-    </values>
+    <dummy id="8" description="$$7067$$" objectivename="UnderTwenty" autocomplete="false" />
   </secondaryobjectives>
 </quest>

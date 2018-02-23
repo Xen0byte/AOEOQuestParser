@@ -55,10 +55,8 @@
     <protounit unit="C01_R3_WarriorAgamemnon" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="51" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="51" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="40000" />
@@ -75,20 +73,14 @@
     <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="false" />
-          <protectunit id="3" description="$$4060$$" type="Beach Stronghold" owningplayerid="4" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-          <and id="5" mustfailall="true">
-            <values>
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="false" />
+      <protectunit id="3" description="$$4060$$" type="Beach Stronghold" owningplayerid="4" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+      <and id="5" mustfailall="true">
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
 </quest>

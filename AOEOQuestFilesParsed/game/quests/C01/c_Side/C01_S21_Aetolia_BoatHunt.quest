@@ -56,10 +56,8 @@
     <protounit unit="C01_R1_PortMaster" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="162" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="162" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="5000" />
@@ -68,18 +66,12 @@
     <consumable visible="true" consumablename="ConsumableFireShips_C" count="3" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2363$$" type="Gr_Civ_FishingBoat" count="15" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$3392$$" type="Gr_Bldg_Dock" count="2" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2363$$" type="Gr_Civ_FishingBoat" count="15" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$3392$$" type="Gr_Bldg_Dock" count="2" includeconversion="true" onlycountelites="false" />
+      </and>
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

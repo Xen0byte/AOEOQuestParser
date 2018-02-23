@@ -29,9 +29,7 @@
     <protounit unit="Babylon_NewFactionLady" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103044" />
-    </values>
+    <questcomplete id="103044" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQShort" />
@@ -45,24 +43,16 @@
     <diplomacy relation="Neutral" team1="4" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <timer id="3" description="$$10815$$" failonexpire="false" />
-              <dummy id="4" description="$$10306$$" objectivename="BabylonS44_CaravansInArea" autocomplete="false" />
-              <collectmaterial id="5" description="$$10656$$" type="SH_Spice" amount="1" includeexisting="false" />
-            </values>
-          </and>
-          <or id="6" mustfailall="false">
-            <values>
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" description="" type="Ce_Cap_Caravan" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
-            </values>
-          </or>
-        </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <timer id="3" description="$$10815$$" failonexpire="false" />
+        <dummy id="4" description="$$10306$$" objectivename="BabylonS44_CaravansInArea" autocomplete="false" />
+        <collectmaterial id="5" description="$$10656$$" type="SH_Spice" amount="1" includeexisting="false" />
+      </and>
+      <or id="6" mustfailall="false">
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" description="" type="Ce_Cap_Caravan" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
       </or>
-    </values>
+    </or>
   </objectives>
 </quest>

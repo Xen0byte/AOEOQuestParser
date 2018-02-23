@@ -93,10 +93,8 @@
     <protounit unit="C01_R1_VillageScout_V2" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="10" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="10" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="5000" />
@@ -113,24 +111,16 @@
     <diplomacy relation="Enemy" team1="4" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2348$$" type="Npc_BanditLeader_03" count="1" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$4812$$" type="HomerEliteGuard" count="6" includeconversion="true" onlycountelites="false" />
-              <kill id="5" description="$$3707$$" type="Gr_Bldg_TownCenter" count="1" includeconversion="false" onlycountelites="false" />
-            </values>
-          </and>
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2348$$" type="Npc_BanditLeader_03" count="1" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$4812$$" type="HomerEliteGuard" count="6" includeconversion="true" onlycountelites="false" />
+        <kill id="5" description="$$3707$$" type="Gr_Bldg_TownCenter" count="1" includeconversion="false" onlycountelites="false" />
+      </and>
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
 </quest>

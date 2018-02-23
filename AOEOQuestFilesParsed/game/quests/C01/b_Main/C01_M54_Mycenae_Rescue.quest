@@ -47,10 +47,8 @@
     <protounit unit="C01_R2_KingAgamemnon" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="62" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="62" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="20000" />
@@ -63,18 +61,12 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <unitinarea id="3" description="$$2528$$" area="Player1" type="Npc_GeneralHeron" count="1" radius="20" aidefend="true" />
-              <unitinarea id="4" description="$$2529$$" area="Player1" type="Npc_Agathon" count="1" radius="20" aidefend="true" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <unitinarea id="3" description="$$2528$$" area="Player1" type="Npc_GeneralHeron" count="1" radius="20" aidefend="true" />
+        <unitinarea id="4" description="$$2529$$" area="Player1" type="Npc_Agathon" count="1" radius="20" aidefend="true" />
+      </and>
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

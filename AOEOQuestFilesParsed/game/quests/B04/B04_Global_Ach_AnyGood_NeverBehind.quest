@@ -8,21 +8,15 @@
     <protounit unit="B04_Bard" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="104012" />
-    </values>
+    <questcomplete id="104012" />
   </prereqs>
   <rewards visible="true">
     <consumable visible="true" consumablename="PowerCapitalConsumable2" count="1" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$12968$$" objectivename="NEVER_BEHIND_COMPLETE" autocomplete="false" />
-          <kill id="3" type="AILandPoint1" count="1" includeconversion="false" onlycountelites="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$12968$$" objectivename="NEVER_BEHIND_COMPLETE" autocomplete="false" />
+      <kill id="3" type="AILandPoint1" count="1" includeconversion="false" onlycountelites="false" />
+    </or>
   </objectives>
 </quest>

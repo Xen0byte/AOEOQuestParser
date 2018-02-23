@@ -8,18 +8,14 @@
     <protounit unit="A02_AllianceCollector" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="40" max="99" />
-      <questcomplete id="1200" />
-    </values>
+    <level min="40" max="99" />
+    <questcomplete id="1200" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="5" />
     <consumematerial visible="true" materialname="2WorkTool" count="150" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <collectmaterial id="1" description="$$9943$$" type="2WorkTool" amount="150" includeexisting="true" />
-    </values>
+    <collectmaterial id="1" description="$$9943$$" type="2WorkTool" amount="150" includeexisting="true" />
   </objectives>
 </quest>

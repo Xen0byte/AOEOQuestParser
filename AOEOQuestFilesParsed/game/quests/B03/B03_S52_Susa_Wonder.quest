@@ -20,9 +20,7 @@
     <protounit unit="Babylon_OldFactionGuy" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103051" />
-    </values>
+    <questcomplete id="103051" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="120000" />
@@ -35,19 +33,13 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <convertunit id="3" description="$$2342$$" type="UnitTypeVillager1" count="40" />
-              <dummy id="4" description="$$2538$$" objectivename="BuildWonder" autocomplete="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="Ba_Bldg_WonderFoundation" count="0" includeteam="true" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
-          <dummy id="6" objectivename="LoseRequiredUnits" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <convertunit id="3" description="$$2342$$" type="UnitTypeVillager1" count="40" />
+        <dummy id="4" description="$$2538$$" objectivename="BuildWonder" autocomplete="false" />
+      </and>
+      <reduceunitsto id="5" type="Ba_Bldg_WonderFoundation" count="0" includeteam="true" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
+      <dummy id="6" objectivename="LoseRequiredUnits" autocomplete="false" />
+    </or>
   </objectives>
 </quest>

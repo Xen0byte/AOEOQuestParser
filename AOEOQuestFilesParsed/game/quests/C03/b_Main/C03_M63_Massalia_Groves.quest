@@ -32,10 +32,8 @@
     <protounit unit="C03_R2_Protis" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13022" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13022" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="18000" />
@@ -54,25 +52,17 @@
     <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <dummy id="3" description="$$2629$$" objectivename="SacredGroveWest" autocomplete="false" />
-              <dummy id="4" description="$$2631$$" objectivename="SacredGroveEast" autocomplete="false" />
-              <dummy id="5" description="$$2630$$" objectivename="SacredGroveCenter" autocomplete="false" />
-              <kill id="6" description="$$8047$$" type="AbstractTownCenter" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <dummy id="3" description="$$2629$$" objectivename="SacredGroveWest" autocomplete="false" />
+        <dummy id="4" description="$$2631$$" objectivename="SacredGroveEast" autocomplete="false" />
+        <dummy id="5" description="$$2630$$" objectivename="SacredGroveCenter" autocomplete="false" />
+        <kill id="6" description="$$8047$$" type="AbstractTownCenter" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

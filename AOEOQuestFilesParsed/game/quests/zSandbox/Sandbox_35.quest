@@ -39,10 +39,8 @@
     <grouping cooponly="false" forcetocenter="true" name="enemy3Start" count="1" team="5" area="Player5" groupfilename="shared_start_small" rottype="Rotate0" rotateunitorientations="true" />
   </targets>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="99" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="99" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" />
@@ -61,18 +59,12 @@
     <diplomacy relation="Neutral" team1="4" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <collectresource id="2" description="$$2523$$" type="Gold" amount="3000" includeexisting="true" />
-          <protectunit id="3" description="$$9003$$" type="AbstractMarket" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <collectresource id="2" description="$$2523$$" type="Gold" amount="3000" includeexisting="true" />
+      <protectunit id="3" description="$$9003$$" type="AbstractMarket" owningplayerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="4" mustfailall="false" rewardname="OptionalOne" description="$$9658$$">
-    <values>
-      <dummy id="5" description="$$13401$$" objectivename="maraudersDefeated" autocomplete="false" />
-    </values>
+    <dummy id="5" description="$$13401$$" objectivename="maraudersDefeated" autocomplete="false" />
   </secondaryobjectives>
 </quest>

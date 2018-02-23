@@ -41,10 +41,8 @@
     <protounit unit="C02_R2_Sesostris" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="323" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="323" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="15000" />
@@ -57,31 +55,21 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <buildunit id="3" description="$$2565$$" type="AbstractTownCenter" count="1" />
-              <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-            </values>
-          </and>
-          <and id="5" mustfailall="true">
-            <values>
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-            </values>
-          </and>
-          <and id="8" mustfailall="true">
-            <values>
-              <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="10" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-              <reduceunitsto id="11" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="12" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <buildunit id="3" description="$$2565$$" type="AbstractTownCenter" count="1" />
+        <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      </and>
+      <and id="5" mustfailall="true">
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+      </and>
+      <and id="8" mustfailall="true">
+        <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="10" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+        <reduceunitsto id="11" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="12" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+      </and>
+    </or>
   </objectives>
 </quest>

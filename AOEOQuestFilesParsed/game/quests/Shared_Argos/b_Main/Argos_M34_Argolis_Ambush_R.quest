@@ -35,9 +35,7 @@
     <protounit unit="ArgosKing" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="81" />
-    </values>
+    <questcomplete id="81" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="5" />
@@ -50,39 +48,27 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$4110$$" type="Eg_Sie_Catapult" count="6" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$3630$$" type="Gr_Sie_BatteringRam" count="5" includeconversion="true" onlycountelites="false" />
-              <kill id="5" description="$$6284$$" type="Gr_Inf_Somatophylaz_E" count="20" includeconversion="true" onlycountelites="false" />
-              <kill id="6" description="$$4112$$" type="Npc_SP_Chieftan" count="5" includeconversion="true" onlycountelites="false" />
-              <timer id="7" description="$$2379$$" failonexpire="false" />
-            </values>
-          </and>
-          <protectunit id="8" description="$$2472$$" type="UnitTypeBldgTownCenter" owningplayerid="1" />
-          <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$4110$$" type="Eg_Sie_Catapult" count="6" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$3630$$" type="Gr_Sie_BatteringRam" count="5" includeconversion="true" onlycountelites="false" />
+        <kill id="5" description="$$6284$$" type="Gr_Inf_Somatophylaz_E" count="20" includeconversion="true" onlycountelites="false" />
+        <kill id="6" description="$$4112$$" type="Npc_SP_Chieftan" count="5" includeconversion="true" onlycountelites="false" />
+        <timer id="7" description="$$2379$$" failonexpire="false" />
+      </and>
+      <protectunit id="8" description="$$2472$$" type="UnitTypeBldgTownCenter" owningplayerid="1" />
+      <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="10" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="11" mustfailall="false">
-        <values>
-          <dummy id="12" description="$$10397$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
-          <and id="13" mustfailall="false">
-            <values>
-              <kill id="14" description="" type="Eg_Sie_Catapult" count="6" includeconversion="true" onlycountelites="false" />
-              <kill id="15" description="" type="Gr_Sie_BatteringRam" count="5" includeconversion="true" onlycountelites="false" />
-              <kill id="16" description="" type="Gr_Inf_Somatophylaz_E" count="20" includeconversion="true" onlycountelites="false" />
-              <kill id="17" description="" type="Npc_SP_Chieftan" count="5" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="11" mustfailall="false">
+      <dummy id="12" description="$$10397$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+      <and id="13" mustfailall="false">
+        <kill id="14" description="" type="Eg_Sie_Catapult" count="6" includeconversion="true" onlycountelites="false" />
+        <kill id="15" description="" type="Gr_Sie_BatteringRam" count="5" includeconversion="true" onlycountelites="false" />
+        <kill id="16" description="" type="Gr_Inf_Somatophylaz_E" count="20" includeconversion="true" onlycountelites="false" />
+        <kill id="17" description="" type="Npc_SP_Chieftan" count="5" includeconversion="true" onlycountelites="false" />
+      </and>
+    </or>
   </secondaryobjectives>
 </quest>

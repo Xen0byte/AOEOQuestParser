@@ -64,15 +64,11 @@
     <protounit unit="CyprusLeaderV2" />
   </questreturners>
   <prereqs>
-    <values>
-      <or>
-        <values>
-          <questcomplete id="3003" />
-          <questcomplete id="3023" />
-          <questcomplete id="3010" />
-        </values>
-      </or>
-    </values>
+    <or>
+      <questcomplete id="3003" />
+      <questcomplete id="3023" />
+      <questcomplete id="3010" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
@@ -87,24 +83,16 @@
     <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <dummy id="3" description="$$6181$$" objectivename="C12_CaptureGoldMine" autocomplete="false" />
-              <dummy id="4" description="$$6182$$" objectivename="C12_CaptureStoneMine" autocomplete="false" />
-              <kill id="5" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <dummy id="3" description="$$6181$$" objectivename="C12_CaptureGoldMine" autocomplete="false" />
+        <dummy id="4" description="$$6182$$" objectivename="C12_CaptureStoneMine" autocomplete="false" />
+        <kill id="5" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
+      </and>
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
 </quest>

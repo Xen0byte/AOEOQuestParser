@@ -8,10 +8,8 @@
     <protounit unit="C01_R3_Odysseus" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="51" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="51" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="45000" />
@@ -24,9 +22,7 @@
     <consumematerial visible="false" materialname="AnimalHide" count="50" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <collectmaterial id="1" description="$$2336$$" type="PinePlank" amount="100" includeexisting="true" />
-      <collectmaterial id="2" description="$$2337$$" type="AnimalHide" amount="50" includeexisting="true" />
-    </values>
+    <collectmaterial id="1" description="$$2336$$" type="PinePlank" amount="100" includeexisting="true" />
+    <collectmaterial id="2" description="$$2337$$" type="AnimalHide" amount="50" includeexisting="true" />
   </objectives>
 </quest>

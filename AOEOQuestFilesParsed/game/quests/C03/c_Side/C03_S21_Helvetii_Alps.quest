@@ -21,10 +21,8 @@
     <protounit unit="C03_R1_Explorer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13020" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13020" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="5000" />
@@ -40,13 +38,9 @@
     <diplomacy relation="Ally" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$2386$$" objectivename="ClimbMountain" autocomplete="false" />
-          <protectunit id="3" description="$$8355$$" type="NPC_AuggieR1" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$2386$$" objectivename="ClimbMountain" autocomplete="false" />
+      <protectunit id="3" description="$$8355$$" type="NPC_AuggieR1" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

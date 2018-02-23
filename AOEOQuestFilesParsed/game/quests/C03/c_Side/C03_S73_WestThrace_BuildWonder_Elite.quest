@@ -23,11 +23,9 @@
     <protounit unit="C03_R3_Brennos" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <level min="20" max="99" />
-      <questcomplete id="13036" />
-    </values>
+    <civilization id="6" />
+    <level min="20" max="99" />
+    <questcomplete id="13036" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="EliteMedium" />
@@ -53,29 +51,19 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <unitinarea id="3" description="$$7496$$" area="Quest_Area_E" type="Ce_Bldg_Wonder" count="1" radius="-1" aidefend="true" />
-          <and id="4" mustfailall="true">
-            <values>
-              <reduceunitsto id="5" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="6" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <unitinarea id="3" description="$$7496$$" area="Quest_Area_E" type="Ce_Bldg_Wonder" count="1" radius="-1" aidefend="true" />
+      <and id="4" mustfailall="true">
+        <reduceunitsto id="5" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="6" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="8" mustfailall="false">
-        <values>
-          <timer id="9" description="" failonexpire="true" />
-          <kill id="10" description="$$2507$$" type="UnitTypeBldgFortress" count="2" includeconversion="true" onlycountelites="false" />
-        </values>
-      </or>
-    </values>
+    <or id="8" mustfailall="false">
+      <timer id="9" description="" failonexpire="true" />
+      <kill id="10" description="$$2507$$" type="UnitTypeBldgFortress" count="2" includeconversion="true" onlycountelites="false" />
+    </or>
   </secondaryobjectives>
 </quest>

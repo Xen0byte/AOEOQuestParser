@@ -44,10 +44,8 @@
     <protounit unit="C02_R3_LostAdmiral" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="395" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="395" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQMedium" />
@@ -60,23 +58,15 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="4" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="5" mustfailall="false">
-        <values>
-          <dummy id="6" description="$$10385$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
-          <dummy id="7" description="" objectivename="EnemiesDefeated" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="5" mustfailall="false">
+      <dummy id="6" description="$$10385$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+      <dummy id="7" description="" objectivename="EnemiesDefeated" autocomplete="false" />
+    </or>
   </secondaryobjectives>
 </quest>

@@ -33,10 +33,8 @@
     <protounit unit="C02_R1_GeneralAhapitep_V2" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="250" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="250" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="6000" />
@@ -50,18 +48,12 @@
     <diplomacy relation="Neutral" team1="1" team2="3" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-          <and id="3" mustfailall="true">
-            <values>
-              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      <and id="3" mustfailall="true">
+        <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
 </quest>

@@ -8,10 +8,8 @@
     <protounit unit="C01_R1_VillageElder" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="78" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="78" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
@@ -19,15 +17,11 @@
     <unlockregion visible="false" region="6" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$4246$$">
-        <values>
-          <unitdiscovered id="2" type="C01_R1_VillageElder" count="1" />
-          <ownsunit id="3" type="C01_R1_VillageElder" count="1" />
-          <unitdiscovered id="4" type="C01_R3_WarriorAgamemnon" count="1" />
-          <ownsunit id="5" type="C01_R3_WarriorAgamemnon" count="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$4246$$">
+      <unitdiscovered id="2" type="C01_R1_VillageElder" count="1" />
+      <ownsunit id="3" type="C01_R1_VillageElder" count="1" />
+      <unitdiscovered id="4" type="C01_R3_WarriorAgamemnon" count="1" />
+      <ownsunit id="5" type="C01_R3_WarriorAgamemnon" count="1" />
+    </or>
   </objectives>
 </quest>

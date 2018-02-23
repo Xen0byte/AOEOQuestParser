@@ -78,10 +78,8 @@
     <protounit unit="C01_R1_VillageElder" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="162" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="162" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="2" />
@@ -96,14 +94,10 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="false" />
-          <protectunit id="3" description="$$2472$$" type="Gr_Bldg_TownCenter" owningplayerid="1" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="false" />
+      <protectunit id="3" description="$$2472$$" type="Gr_Bldg_TownCenter" owningplayerid="1" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+    </or>
   </objectives>
 </quest>

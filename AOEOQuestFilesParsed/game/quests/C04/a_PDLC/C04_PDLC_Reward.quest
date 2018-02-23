@@ -24,9 +24,7 @@
     <protounit unit="GEN_FredTheRedeemer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="8" />
-    </values>
+    <civilization id="8" />
   </prereqs>
   <rewards visible="true">
     <advisor visible="true" unit="Irene_R_I_CivReward" />
@@ -38,13 +36,9 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$6300$$">
-        <values>
-          <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
-          <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$6300$$">
+      <unitdiscovered id="2" type="GEN_FredTheRedeemer" count="1" />
+      <ownsunit id="3" type="GEN_FredTheRedeemer" count="1" />
+    </or>
   </objectives>
 </quest>

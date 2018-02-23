@@ -80,10 +80,8 @@
     <protounit unit="C01_R1_VillageScout_V2" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="10" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="10" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="5000" />
@@ -92,20 +90,14 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2347$$" type="Npc_BanditLeader_02" count="1" includeconversion="true" onlycountelites="false" />
-              <timer id="4" description="$$2471$$" failonexpire="false" />
-            </values>
-          </and>
-          <protectunit id="5" description="$$2472$$" type="Gr_Bldg_TownCenter" owningplayerid="1" />
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2347$$" type="Npc_BanditLeader_02" count="1" includeconversion="true" onlycountelites="false" />
+        <timer id="4" description="$$2471$$" failonexpire="false" />
+      </and>
+      <protectunit id="5" description="$$2472$$" type="Gr_Bldg_TownCenter" owningplayerid="1" />
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+    </or>
   </objectives>
 </quest>

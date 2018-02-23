@@ -8,9 +8,7 @@
     <protounit unit="GEN_FredTheRedeemer" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="30" max="99" />
-    </values>
+    <level min="30" max="99" />
   </prereqs>
   <rewards visible="true">
     <loottable visible="true" binditem="true" type="General_GoldenTicketUncommon" />
@@ -20,8 +18,6 @@
     <consumematerial visible="true" materialname="!GoldenTicket" count="1" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <collectmaterial id="1" description="$$11076$$" type="!GoldenTicket" amount="1" includeexisting="true" />
-    </values>
+    <collectmaterial id="1" description="$$11076$$" type="!GoldenTicket" amount="1" includeexisting="true" />
   </objectives>
 </quest>

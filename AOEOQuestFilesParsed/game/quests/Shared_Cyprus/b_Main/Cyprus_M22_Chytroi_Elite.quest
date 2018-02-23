@@ -77,10 +77,8 @@
     <protounit unit="CyprusLeaderV2" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="3001" />
-      <level min="34" max="99" />
-    </values>
+    <questcomplete id="3001" />
+    <level min="34" max="99" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="15" />
@@ -95,38 +93,24 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$6628$$" type="Custom_Hippikon" count="6" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <and id="5" mustfailall="true">
-            <values>
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$6628$$" type="Custom_Hippikon" count="6" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
+      </and>
+      <and id="5" mustfailall="true">
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="8" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="9" mustfailall="false">
-        <values>
-          <dummy id="10" description="$$10407$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
-          <and id="11" mustfailall="false">
-            <values>
-              <kill id="12" description="" type="Custom_Hippikon" count="6" includeconversion="true" onlycountelites="false" />
-              <kill id="13" description="" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="9" mustfailall="false">
+      <dummy id="10" description="$$10407$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+      <and id="11" mustfailall="false">
+        <kill id="12" description="" type="Custom_Hippikon" count="6" includeconversion="true" onlycountelites="false" />
+        <kill id="13" description="" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
+      </and>
+    </or>
   </secondaryobjectives>
 </quest>

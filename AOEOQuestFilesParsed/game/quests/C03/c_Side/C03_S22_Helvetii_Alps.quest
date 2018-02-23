@@ -24,10 +24,8 @@
     <protounit unit="C03_R1_Explorer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13047" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13047" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="5000" />
@@ -47,14 +45,10 @@
     <diplomacy relation="Neutral" team1="4" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$9047$$" objectivename="ReachBardHall" autocomplete="false" />
-          <protectunit id="3" description="$$8355$$" type="NPC_AuggieR1" owningplayerid="1" />
-          <protectunit id="4" description="$$9045$$" type="Ce_Sie_Ram" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$9047$$" objectivename="ReachBardHall" autocomplete="false" />
+      <protectunit id="3" description="$$8355$$" type="NPC_AuggieR1" owningplayerid="1" />
+      <protectunit id="4" description="$$9045$$" type="Ce_Sie_Ram" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

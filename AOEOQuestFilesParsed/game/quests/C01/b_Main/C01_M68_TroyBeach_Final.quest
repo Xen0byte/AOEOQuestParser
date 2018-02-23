@@ -32,11 +32,9 @@
     <protounit unit="C01_R3_WarriorAgamemnon" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="74" />
-      <questcomplete id="67" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="74" />
+    <questcomplete id="67" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="12" />
@@ -58,34 +56,24 @@
     <diplomacy relation="Enemy" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2338$$" type="Qst_Bldg_TroyGatehouse" count="1" includeconversion="false" onlycountelites="false" />
-              <kill id="4" description="$$2508$$" type="Gr_Bldg_TownCenter" count="4" includeconversion="false" onlycountelites="false" />
-              <or id="5" mustfailall="false">
-                <values>
-                  <protectunit id="6" type="Gr_QG_Achilles" owningplayerid="1" />
-                  <unitinarea id="7" description="$$2501$$" area="Quest_Area_A" type="Gr_QG_Achilles" count="1" radius="-1" aidefend="true" />
-                </values>
-              </or>
-            </values>
-          </and>
-          <and id="8" mustfailall="true">
-            <values>
-              <reduceunitsto id="9" type="Gr_Bldg_TrojanHorse" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="10" type="Gr_Inf_Spearman" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="11" type="Gr_Inf_Hypaspist" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="12" type="Gr_Inf_Hoplite" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="13" type="Gr_Inf_Pezhetairoi_R" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="14" type="Gr_Inf_Somatophylaz_R" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="15" type="UnitTypeBldgTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2338$$" type="Qst_Bldg_TroyGatehouse" count="1" includeconversion="false" onlycountelites="false" />
+        <kill id="4" description="$$2508$$" type="Gr_Bldg_TownCenter" count="4" includeconversion="false" onlycountelites="false" />
+        <or id="5" mustfailall="false">
+          <protectunit id="6" type="Gr_QG_Achilles" owningplayerid="1" />
+          <unitinarea id="7" description="$$2501$$" area="Quest_Area_A" type="Gr_QG_Achilles" count="1" radius="-1" aidefend="true" />
+        </or>
+      </and>
+      <and id="8" mustfailall="true">
+        <reduceunitsto id="9" type="Gr_Bldg_TrojanHorse" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="10" type="Gr_Inf_Spearman" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="11" type="Gr_Inf_Hypaspist" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="12" type="Gr_Inf_Hoplite" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="13" type="Gr_Inf_Pezhetairoi_R" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="14" type="Gr_Inf_Somatophylaz_R" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="15" type="UnitTypeBldgTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

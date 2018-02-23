@@ -8,18 +8,14 @@
     <protounit unit="C01_R2_DockForeman" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="57" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="57" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <kill id="1" description="$$2344$$" type="AbstractNuggetGuard" count="50" includeconversion="true" onlycountelites="false" />
-    </values>
+    <kill id="1" description="$$2344$$" type="AbstractNuggetGuard" count="50" includeconversion="true" onlycountelites="false" />
   </objectives>
 </quest>

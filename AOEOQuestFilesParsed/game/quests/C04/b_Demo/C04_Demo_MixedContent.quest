@@ -40,17 +40,13 @@
     <protounit unit="TarsosTrader" />
   </questreturners>
   <prereqs>
-    <values>
-      <or>
-        <values>
-          <civilization id="1" />
-          <civilization id="3" />
-          <civilization id="6" />
-          <civilization id="22" />
-          <civilization id="24" />
-        </values>
-      </or>
-    </values>
+    <or>
+      <civilization id="1" />
+      <civilization id="3" />
+      <civilization id="6" />
+      <civilization id="22" />
+      <civilization id="24" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <protip visible="false" tip="TIP_C04_DemoTurnIn" />
@@ -67,19 +63,13 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$7461$$" type="Pe_Bldg_WarAcademy" count="3" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$2508$$" type="Pe_Bldg_TownCenter" count="3" includeconversion="true" onlycountelites="false" />
-              <kill id="5" description="$$7598$$" type="GaumataLieutenant" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$7461$$" type="Pe_Bldg_WarAcademy" count="3" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$2508$$" type="Pe_Bldg_TownCenter" count="3" includeconversion="true" onlycountelites="false" />
+        <kill id="5" description="$$7598$$" type="GaumataLieutenant" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

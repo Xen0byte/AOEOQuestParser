@@ -8,17 +8,13 @@
     <protounit unit="CyprusPortMaster" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="3001" />
-    </values>
+    <questcomplete id="3001" />
   </prereqs>
   <rewards visible="true">
     <loottable visible="true" type="general" />
     <consumable visible="true" consumablename="ConsumableFireShips_E" count="5" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <kill id="1" description="$$6626$$" type="Eg_Shp_Trireme" count="20" includeconversion="true" onlycountelites="true" />
-    </values>
+    <kill id="1" description="$$6626$$" type="Eg_Shp_Trireme" count="20" includeconversion="true" onlycountelites="true" />
   </objectives>
 </quest>

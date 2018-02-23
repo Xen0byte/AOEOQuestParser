@@ -37,9 +37,7 @@
     <protounit unit="Babylon_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103013" />
-    </values>
+    <questcomplete id="103013" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
@@ -53,14 +51,10 @@
     <diplomacy relation="Enemy" team1="1" team2="3" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <unitdiscovered id="2" description="$$11545$$" type="Qst_SpawnPoint1" count="3" />
-          <protectunit id="3" description="$$11072$$" type="UnitTypeBldgTownCenter" owningplayerid="4" />
-          <reduceunitsto id="4" description="" type="UnitTypeBldgTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <unitdiscovered id="2" description="$$11545$$" type="Qst_SpawnPoint1" count="3" />
+      <protectunit id="3" description="$$11072$$" type="UnitTypeBldgTownCenter" owningplayerid="4" />
+      <reduceunitsto id="4" description="" type="UnitTypeBldgTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

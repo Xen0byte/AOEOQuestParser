@@ -18,10 +18,8 @@
     <protounit unit="C03_R1_VindeliciaDrust" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13018" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13018" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="6000" />
@@ -35,13 +33,9 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <unitdiscovered id="2" description="$$9030$$" type="AIStart" count="7" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <unitdiscovered id="2" description="$$9030$$" type="AIStart" count="7" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

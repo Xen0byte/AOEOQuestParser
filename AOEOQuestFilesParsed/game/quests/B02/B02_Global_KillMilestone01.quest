@@ -12,9 +12,7 @@
     <protounit unit="B02_R1_KingSkirmish" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="1" max="99" />
-    </values>
+    <level min="1" max="99" />
   </prereqs>
   <rewards visible="true">
     <blueprint visible="true" unit="Van_Sk_Statue_1" />
@@ -25,8 +23,6 @@
     <loottable visible="true" type="general_skirmish" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <counter id="1" description="$$8464$$" objectivename="DEFEATENEMY" reqcount="10" />
-    </values>
+    <counter id="1" description="$$8464$$" objectivename="DEFEATENEMY" reqcount="10" />
   </objectives>
 </quest>

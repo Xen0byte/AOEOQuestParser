@@ -18,16 +18,12 @@
     <protounit cooponly="false" forcetocenter="false" name="Brennos" protoname="Ce_QG_Brennos" count="1" team="1" area="Player1" usequesttargetindicator="true" />
   </targets>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13031" />
-      <or>
-        <values>
-          <questcomplete id="13032" />
-          <queststatus id="13032" queststatus="Assigned" />
-        </values>
-      </or>
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13031" />
+    <or>
+      <questcomplete id="13032" />
+      <queststatus id="13032" queststatus="Assigned" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="30000" />
@@ -45,24 +41,16 @@
     <diplomacy relation="Ally" team1="3" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="false" />
-          <protectunit id="3" description="$$7970$$" type="Gr_Bldg_TownCenter" owningplayerid="4" />
-          <protectunit id="4" description="$$7535$$" type="Ce_QG_Brennos" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="false" />
+      <protectunit id="3" description="$$7970$$" type="Gr_Bldg_TownCenter" owningplayerid="4" />
+      <protectunit id="4" description="$$7535$$" type="Ce_QG_Brennos" owningplayerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="5" mustfailall="false" rewardname="OptionalOne" description="$$9658$$">
-    <values>
-      <or id="6" mustfailall="false">
-        <values>
-          <dummy id="7" description="$$10406$$" objectivename="TrainNoCavalry" autocomplete="false" />
-          <timer id="8" description="$$2471$$" failonexpire="false" />
-        </values>
-      </or>
-    </values>
+    <or id="6" mustfailall="false">
+      <dummy id="7" description="$$10406$$" objectivename="TrainNoCavalry" autocomplete="false" />
+      <timer id="8" description="$$2471$$" failonexpire="false" />
+    </or>
   </secondaryobjectives>
 </quest>

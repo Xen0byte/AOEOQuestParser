@@ -8,21 +8,15 @@
     <protounit unit="Vanity_Trader2_Heroic" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="1501" />
-    </values>
+    <questcomplete id="1501" />
   </prereqs>
   <rewards visible="true">
     <trait visible="true" id="VanityWeapon1H_010" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$10225$$">
-        <values>
-          <unitdiscovered id="2" type="Vanity_PrimaryQG" count="1" />
-          <ownsunit id="3" type="Vanity_PrimaryQG" count="1" owningplayerid="1" causesfailure="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$10225$$">
+      <unitdiscovered id="2" type="Vanity_PrimaryQG" count="1" />
+      <ownsunit id="3" type="Vanity_PrimaryQG" count="1" owningplayerid="1" causesfailure="false" />
+    </or>
   </objectives>
 </quest>

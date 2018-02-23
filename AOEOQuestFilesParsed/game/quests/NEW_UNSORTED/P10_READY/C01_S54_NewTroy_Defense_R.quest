@@ -49,15 +49,11 @@
     <grouping cooponly="true" forcetocenter="false" name="Player2" count="1" team="3" area="Player2" groupfilename="Shared_Start_Small" rottype="Rotate90" rotateunitorientations="false" />
   </targets>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <or>
-        <values>
-          <queststatus id="60" queststatus="Assigned" />
-          <questcomplete id="56" />
-        </values>
-      </or>
-    </values>
+    <civilization id="1" />
+    <or>
+      <queststatus id="60" queststatus="Assigned" />
+      <questcomplete id="56" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="40000" />
@@ -73,30 +69,20 @@
     <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="false" />
-          <protectunit id="3" description="$$4060$$" type="Beach Stronghold" owningplayerid="4" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-          <and id="5" mustfailall="true">
-            <values>
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="false" />
+      <protectunit id="3" description="$$4060$$" type="Beach Stronghold" owningplayerid="4" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+      <and id="5" mustfailall="true">
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="8" mustfailall="false" rewardname="OptionalOne" description="$$9658$$">
-    <values>
-      <or id="9" mustfailall="false">
-        <values>
-          <dummy id="10" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-          <reduceunitsto id="11" description="" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-        </values>
-      </or>
-    </values>
+    <or id="9" mustfailall="false">
+      <dummy id="10" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      <reduceunitsto id="11" description="" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+    </or>
   </secondaryobjectives>
 </quest>

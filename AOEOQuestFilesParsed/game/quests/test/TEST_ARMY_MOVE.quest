@@ -11,18 +11,14 @@
     </mapvariables>
   </randommap>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="99" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="99" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" />
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <collectresource id="1" description="$$2513$$" type="Wood" amount="10000" includeexisting="true" />
-    </values>
+    <collectresource id="1" description="$$2513$$" type="Wood" amount="10000" includeexisting="true" />
   </objectives>
 </quest>

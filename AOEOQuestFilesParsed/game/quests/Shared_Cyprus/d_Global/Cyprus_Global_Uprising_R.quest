@@ -8,9 +8,7 @@
     <protounit unit="CyprusTrader" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="3001" />
-    </values>
+    <questcomplete id="3001" />
   </prereqs>
   <rewards visible="true">
     <loottable visible="true" type="general" />
@@ -28,8 +26,6 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <kill id="1" description="$$6501$$" type="CyprusGeneral" count="20" includeconversion="true" onlycountelites="false" />
-    </values>
+    <kill id="1" description="$$6501$$" type="CyprusGeneral" count="20" includeconversion="true" onlycountelites="false" />
   </objectives>
 </quest>

@@ -49,10 +49,8 @@
     <protounit unit="C02_R2_Architect" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="324" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="324" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="20000" />
@@ -64,20 +62,14 @@
     <diplomacy relation="Enemy" team1="2" team2="1" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <timer id="3" description="$$3593$$" failonexpire="false" />
-              <kill id="4" description="$$2601$$" type="NPC_Nubian_Warrior" count="60" includeconversion="true" onlycountelites="false" />
-              <kill id="5" description="$$2602$$" type="NPC_Nubian_Archer" count="60" includeconversion="true" onlycountelites="false" />
-              <kill id="6" description="$$2603$$" type="NPC_Nubian_Elephant" count="8" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <timer id="3" description="$$3593$$" failonexpire="false" />
+        <kill id="4" description="$$2601$$" type="NPC_Nubian_Warrior" count="60" includeconversion="true" onlycountelites="false" />
+        <kill id="5" description="$$2602$$" type="NPC_Nubian_Archer" count="60" includeconversion="true" onlycountelites="false" />
+        <kill id="6" description="$$2603$$" type="NPC_Nubian_Elephant" count="8" includeconversion="true" onlycountelites="false" />
+      </and>
+      <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

@@ -45,10 +45,8 @@
     <protounit unit="C01_R3_WarriorAgamemnon" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="84" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="84" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="30000" />
@@ -61,25 +59,17 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <unitinarea id="3" description="$$2493$$" area="Quest_Area_A" type="AbstractTownCenter" count="1" radius="-1" aidefend="true" />
-              <unitinarea id="4" description="$$2494$$" area="Quest_Area_B" type="AbstractTownCenter" count="1" radius="-1" aidefend="true" />
-              <unitinarea id="5" description="$$2495$$" area="Quest_Area_C" type="AbstractTownCenter" count="1" radius="-1" aidefend="true" />
-            </values>
-          </and>
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <unitinarea id="3" description="$$2493$$" area="Quest_Area_A" type="AbstractTownCenter" count="1" radius="-1" aidefend="true" />
+        <unitinarea id="4" description="$$2494$$" area="Quest_Area_B" type="AbstractTownCenter" count="1" radius="-1" aidefend="true" />
+        <unitinarea id="5" description="$$2495$$" area="Quest_Area_C" type="AbstractTownCenter" count="1" radius="-1" aidefend="true" />
+      </and>
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

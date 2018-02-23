@@ -24,10 +24,8 @@
     <protounit unit="C03_R2_Bard" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13022" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13022" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQShort" />
@@ -42,14 +40,10 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <unitdiscovered id="3" description="$$8928$$" type="AIStart" count="6" />
-          <protectunit id="4" description="$$8929$$" type="UnitTypeShipUtility1" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <unitdiscovered id="3" description="$$8928$$" type="AIStart" count="6" />
+      <protectunit id="4" description="$$8929$$" type="UnitTypeShipUtility1" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

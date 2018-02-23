@@ -39,10 +39,8 @@
     <protounit unit="C03_R1_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13021" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13021" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="6" />
@@ -70,32 +68,22 @@
     <diplomacy relation="Neutral" team1="3" team2="4" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$2382$$">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$8688$$" type="Objective_Gaesatae" count="10" includeconversion="true" onlycountelites="false" />
-              <and id="4" mustfailall="false" description="$$8712$$">
-                <values>
-                  <reduceunitsto id="5" type="Ce_Bldg_GuardTower" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-                  <reduceunitsto id="6" type="Ce_Bldg_Barracks" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-                  <reduceunitsto id="7" type="Ce_Bldg_ArcheryRange" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-                  <reduceunitsto id="8" type="Ce_Bldg_Stables" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-                </values>
-              </and>
-            </values>
-          </and>
-          <protectunit id="9" description="$$7535$$" type="Ce_QG_Brennos" owningplayerid="1" />
-          <reduceunitsto id="10" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="11" mustfailall="false">
-            <values>
-              <dummy id="12" objectivename="TIMER_EFFECT_BUGFIX" autocomplete="false" />
-              <timer id="13" failonexpire="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$2382$$">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$8688$$" type="Objective_Gaesatae" count="10" includeconversion="true" onlycountelites="false" />
+        <and id="4" mustfailall="false" description="$$8712$$">
+          <reduceunitsto id="5" type="Ce_Bldg_GuardTower" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+          <reduceunitsto id="6" type="Ce_Bldg_Barracks" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+          <reduceunitsto id="7" type="Ce_Bldg_ArcheryRange" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+          <reduceunitsto id="8" type="Ce_Bldg_Stables" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        </and>
+      </and>
+      <protectunit id="9" description="$$7535$$" type="Ce_QG_Brennos" owningplayerid="1" />
+      <reduceunitsto id="10" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="11" mustfailall="false">
+        <dummy id="12" objectivename="TIMER_EFFECT_BUGFIX" autocomplete="false" />
+        <timer id="13" failonexpire="false" />
+      </and>
+    </or>
   </objectives>
 </quest>

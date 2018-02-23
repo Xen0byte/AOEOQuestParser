@@ -39,10 +39,8 @@
     <protounit unit="C01_R1_Agamemnon" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="165" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="165" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="6" />
@@ -58,18 +56,12 @@
     <questgiver visible="true" name="C01_R1_Agamemnon" status="Unavailable" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2484$$" type="Gr_Bldg_Fortress" count="1" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$2485$$" type="Npc_KingThyestes_Greek" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2484$$" type="Gr_Bldg_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$2485$$" type="Npc_KingThyestes_Greek" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

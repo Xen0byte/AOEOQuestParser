@@ -17,17 +17,11 @@
     <protounit unit="GEN_PDLCStore" />
   </questgivers>
   <prereqs>
-    <values>
-      <or>
-        <values>
-          <civilization id="1" />
-          <civilization id="3" />
-          <civilization id="6" />
-        </values>
-      </or>
-    </values>
+    <or>
+      <civilization id="1" />
+      <civilization id="3" />
+      <civilization id="6" />
+    </or>
   </prereqs>
-  <objectives id="0" mustfailall="false">
-    <values />
-  </objectives>
+  <objectives id="0" mustfailall="false" />
 </quest>

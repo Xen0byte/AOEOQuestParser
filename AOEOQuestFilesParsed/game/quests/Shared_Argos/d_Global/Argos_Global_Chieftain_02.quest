@@ -8,17 +8,13 @@
     <protounit unit="ArgosKing" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="450" />
-    </values>
+    <questcomplete id="450" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <kill id="1" description="$$4146$$" type="Npc_SP_Chieftan" count="10" includeconversion="true" onlycountelites="false" />
-    </values>
+    <kill id="1" description="$$4146$$" type="Npc_SP_Chieftan" count="10" includeconversion="true" onlycountelites="false" />
   </objectives>
 </quest>

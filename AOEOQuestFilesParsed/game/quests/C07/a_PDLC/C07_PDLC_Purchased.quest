@@ -4,10 +4,6 @@
   <questgivers>
     <protounit unit="GEN_PDLCStore" />
   </questgivers>
-  <prereqs>
-    <values />
-  </prereqs>
-  <objectives id="0" mustfailall="false">
-    <values />
-  </objectives>
+  <prereqs />
+  <objectives id="0" mustfailall="false" />
 </quest>

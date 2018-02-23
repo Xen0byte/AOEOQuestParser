@@ -21,9 +21,7 @@
     <protounit unit="B04_PrimaryQG" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="104012" />
-    </values>
+    <questcomplete id="104012" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="B04Short" />
@@ -38,19 +36,13 @@
     <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <ownsunit id="3" description="$$13118$$" type="Qst_CounterObject" count="4" owningplayerid="1" causesfailure="false" />
-              <dummy id="4" description="$$12735$$" objectivename="B04_Gauntlet_Ally" autocomplete="false" />
-              <dummy id="5" description="$$4813$$" objectivename="B04_Gauntlet_TC" autocomplete="false" />
-            </values>
-          </and>
-          <protectunit id="6" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <ownsunit id="3" description="$$13118$$" type="Qst_CounterObject" count="4" owningplayerid="1" causesfailure="false" />
+        <dummy id="4" description="$$12735$$" objectivename="B04_Gauntlet_Ally" autocomplete="false" />
+        <dummy id="5" description="$$4813$$" objectivename="B04_Gauntlet_TC" autocomplete="false" />
+      </and>
+      <protectunit id="6" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

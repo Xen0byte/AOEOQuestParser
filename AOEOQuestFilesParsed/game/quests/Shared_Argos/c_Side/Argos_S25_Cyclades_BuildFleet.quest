@@ -66,9 +66,7 @@
     <protounit unit="ArgosRefugee" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="205" />
-    </values>
+    <questcomplete id="205" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQLong" />
@@ -81,24 +79,16 @@
     <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <and id="3" mustfailall="false">
-            <values>
-              <ownsunit id="4" description="$$2673$$" type="UnitTypeShipUtility1" count="1" owningplayerid="1" causesfailure="false" />
-              <ownsunit id="5" description="$$8088$$" type="UnitTypeShipBasic1" count="8" owningplayerid="1" causesfailure="false" />
-            </values>
-          </and>
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <and id="3" mustfailall="false">
+        <ownsunit id="4" description="$$2673$$" type="UnitTypeShipUtility1" count="1" owningplayerid="1" causesfailure="false" />
+        <ownsunit id="5" description="$$8088$$" type="UnitTypeShipBasic1" count="8" owningplayerid="1" causesfailure="false" />
+      </and>
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+      </and>
+    </or>
   </objectives>
 </quest>

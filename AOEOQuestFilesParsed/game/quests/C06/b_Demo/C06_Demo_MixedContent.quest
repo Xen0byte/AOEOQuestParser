@@ -37,17 +37,13 @@
     <protounit unit="Babylon_Trader" />
   </questreturners>
   <prereqs>
-    <values>
-      <or>
-        <values>
-          <civilization id="1" />
-          <civilization id="3" />
-          <civilization id="6" />
-          <civilization id="8" />
-          <civilization id="24" />
-        </values>
-      </or>
-    </values>
+    <or>
+      <civilization id="1" />
+      <civilization id="3" />
+      <civilization id="6" />
+      <civilization id="8" />
+      <civilization id="24" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <protip visible="false" tip="TIP_C06_DemoTurnIn" />
@@ -71,18 +67,12 @@
     <diplomacy relation="Enemy" team1="4" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <unitdiscovered id="3" description="$$10884$$" type="AIStart" count="4" />
-              <kill id="4" description="$$10886$$" type="C06_BadGuy_Leader" count="1" includeconversion="false" onlycountelites="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <unitdiscovered id="3" description="$$10884$$" type="AIStart" count="4" />
+        <kill id="4" description="$$10886$$" type="C06_BadGuy_Leader" count="1" includeconversion="false" onlycountelites="false" />
+      </and>
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

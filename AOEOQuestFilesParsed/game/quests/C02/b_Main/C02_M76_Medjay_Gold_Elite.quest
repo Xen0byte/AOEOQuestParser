@@ -44,10 +44,8 @@
     <protounit unit="C02_R2_ChieftainMolmot" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="344" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="344" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="EliteVShort" />
@@ -64,37 +62,25 @@
     <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <collectresource id="3" description="$$2608$$" type="Gold" amount="6000" includeexisting="true" />
-          <and id="4" mustfailall="true">
-            <values>
-              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
-            </values>
-          </and>
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
-              <reduceunitsto id="10" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="11" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <collectresource id="3" description="$$2608$$" type="Gold" amount="6000" includeexisting="true" />
+      <and id="4" mustfailall="true">
+        <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
+      </and>
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
+        <reduceunitsto id="10" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="11" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="6" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="12" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="13" mustfailall="false">
-        <values>
-          <timer id="14" description="" failonexpire="true" />
-          <kill id="15" description="$$2508$$" type="UnitTypeBldgTownCenter" count="2" includeconversion="true" onlycountelites="false" />
-        </values>
-      </or>
-    </values>
+    <or id="13" mustfailall="false">
+      <timer id="14" description="" failonexpire="true" />
+      <kill id="15" description="$$2508$$" type="UnitTypeBldgTownCenter" count="2" includeconversion="true" onlycountelites="false" />
+    </or>
   </secondaryobjectives>
 </quest>

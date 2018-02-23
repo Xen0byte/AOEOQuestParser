@@ -41,10 +41,8 @@
     <protounit unit="C02_R2_DockForeman" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="331" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="331" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="EliteVShort" />
@@ -58,30 +56,20 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <collectresource id="2" description="$$2597$$" type="Food" amount="5000" includeexisting="true" />
-          <and id="3" mustfailall="true">
-            <values>
-              <reduceunitsto id="4" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="5" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="6" type="UnitTypeBldgDock" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <collectresource id="2" description="$$2597$$" type="Food" amount="5000" includeexisting="true" />
+      <and id="3" mustfailall="true">
+        <reduceunitsto id="4" type="AbstractTownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="5" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="6" type="UnitTypeBldgDock" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9656$$">
-    <values>
-      <or id="8" mustfailall="false">
-        <values>
-          <timer id="9" description="$$9656$$" failonexpire="true" />
-          <dummy id="10" description="$$10373$$" objectivename="UNUSED" autocomplete="false" />
-          <collectresource id="11" description="" type="Food" amount="5000" includeexisting="true" />
-        </values>
-      </or>
-    </values>
+    <or id="8" mustfailall="false">
+      <timer id="9" description="$$9656$$" failonexpire="true" />
+      <dummy id="10" description="$$10373$$" objectivename="UNUSED" autocomplete="false" />
+      <collectresource id="11" description="" type="Food" amount="5000" includeexisting="true" />
+    </or>
   </secondaryobjectives>
 </quest>

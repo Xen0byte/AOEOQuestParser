@@ -27,17 +27,13 @@
     <protounit unit="B04_PortMaster" />
   </questreturners>
   <prereqs>
-    <values>
-      <or>
-        <values>
-          <civilization id="1" />
-          <civilization id="3" />
-          <civilization id="6" />
-          <civilization id="8" />
-          <civilization id="22" />
-        </values>
-      </or>
-    </values>
+    <or>
+      <civilization id="1" />
+      <civilization id="3" />
+      <civilization id="6" />
+      <civilization id="8" />
+      <civilization id="22" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <protip visible="false" tip="TIP_C07_DemoTurnIn" />
@@ -48,13 +44,9 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <kill id="2" description="$$2507$$" type="Ce_Bldg_Fortress" count="3" includeconversion="true" onlycountelites="false" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <kill id="2" description="$$2507$$" type="Ce_Bldg_Fortress" count="3" includeconversion="true" onlycountelites="false" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

@@ -24,10 +24,8 @@
     <protounit unit="C03_R1_Explorer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13049" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13049" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQShort" />
@@ -54,26 +52,18 @@
     <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$9050$$" objectivename="ClimbMountain" autocomplete="false" />
-          <protectunit id="3" description="$$8355$$" type="NPC_AuggieR1" owningplayerid="1" />
-          <protectunit id="4" description="$$9045$$" type="Ce_Sie_Ram" owningplayerid="1" />
-          <protectunit id="5" description="$$9049$$" type="Ce_Arc_Longbowman_E" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$9050$$" objectivename="ClimbMountain" autocomplete="false" />
+      <protectunit id="3" description="$$8355$$" type="NPC_AuggieR1" owningplayerid="1" />
+      <protectunit id="4" description="$$9045$$" type="Ce_Sie_Ram" owningplayerid="1" />
+      <protectunit id="5" description="$$9049$$" type="Ce_Arc_Longbowman_E" owningplayerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="6" mustfailall="false" rewardname="Optional" description="$$9656$$">
-    <values>
-      <or id="7" mustfailall="false">
-        <values>
-          <timer id="8" description="$$9656$$" failonexpire="true" />
-          <dummy id="9" description="$$10374$$" objectivename="TimeFailed" autocomplete="false" />
-          <dummy id="10" description="" objectivename="ClimbMountain" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="7" mustfailall="false">
+      <timer id="8" description="$$9656$$" failonexpire="true" />
+      <dummy id="9" description="$$10374$$" objectivename="TimeFailed" autocomplete="false" />
+      <dummy id="10" description="" objectivename="ClimbMountain" autocomplete="false" />
+    </or>
   </secondaryobjectives>
 </quest>

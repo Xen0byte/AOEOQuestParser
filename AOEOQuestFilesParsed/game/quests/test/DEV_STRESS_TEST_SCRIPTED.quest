@@ -25,9 +25,7 @@
     <protounit unit="GEN_FredTheRedeemer" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="35" max="99" />
-    </values>
+    <level min="35" max="99" />
   </prereqs>
   <diplomacysettings>
     <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
@@ -36,19 +34,13 @@
     <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <protectunit id="2" description="$$2453$$" type="Mn_Bldg_Wonder2" owningplayerid="5" />
-          <and id="3" mustfailall="false">
-            <values>
-              <unitdiscovered id="4" description="" type="Qst_SpawnPoint1" count="1" />
-              <unitdiscovered id="5" description="$$2454$$" type="AIStart" count="40" />
-              <timer id="6" description="$$2324$$" failonexpire="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <protectunit id="2" description="$$2453$$" type="Mn_Bldg_Wonder2" owningplayerid="5" />
+      <and id="3" mustfailall="false">
+        <unitdiscovered id="4" description="" type="Qst_SpawnPoint1" count="1" />
+        <unitdiscovered id="5" description="$$2454$$" type="AIStart" count="40" />
+        <timer id="6" description="$$2324$$" failonexpire="false" />
+      </and>
+    </or>
   </objectives>
 </quest>

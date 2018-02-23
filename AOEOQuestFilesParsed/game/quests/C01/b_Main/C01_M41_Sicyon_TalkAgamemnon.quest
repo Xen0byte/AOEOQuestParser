@@ -12,27 +12,19 @@
     <protounit unit="C01_R1_Agamemnon" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <or>
-        <values>
-          <questcomplete id="164" />
-          <level min="10" max="99" />
-        </values>
-      </or>
-    </values>
+    <civilization id="1" />
+    <or>
+      <questcomplete id="164" />
+      <level min="10" max="99" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$4249$$">
-        <values>
-          <unitdiscovered id="2" type="C01_R1_Agamemnon" count="1" />
-          <ownsunit id="3" type="C01_R1_Agamemnon" count="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$4249$$">
+      <unitdiscovered id="2" type="C01_R1_Agamemnon" count="1" />
+      <ownsunit id="3" type="C01_R1_Agamemnon" count="1" />
+    </or>
   </objectives>
 </quest>

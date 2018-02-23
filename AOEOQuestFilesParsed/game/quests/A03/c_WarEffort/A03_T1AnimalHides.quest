@@ -8,18 +8,14 @@
     <protounit unit="A03_AllianceCollector" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="40" max="99" />
-      <questcomplete id="1300" />
-    </values>
+    <level min="40" max="99" />
+    <questcomplete id="1300" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="5" />
     <consumematerial visible="true" materialname="AnimalHide" count="1000" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <collectmaterial id="1" description="$$2337$$" type="AnimalHide" amount="1000" includeexisting="true" />
-    </values>
+    <collectmaterial id="1" description="$$2337$$" type="AnimalHide" amount="1000" includeexisting="true" />
   </objectives>
 </quest>

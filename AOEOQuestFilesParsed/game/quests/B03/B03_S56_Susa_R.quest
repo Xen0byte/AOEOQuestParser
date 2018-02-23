@@ -24,9 +24,7 @@
     <protounit unit="Babylon_OldFactionGuy" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103053" />
-    </values>
+    <questcomplete id="103053" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="10" />
@@ -45,19 +43,13 @@
     <diplomacy relation="Enemy" team1="1" team2="3" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$2471$$">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="false" />
-          <protectunit id="3" description="$$2453$$" type="Ba_Bldg_Wonder" owningplayerid="1" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$2471$$">
+      <timer id="2" description="$$2471$$" failonexpire="false" />
+      <protectunit id="3" description="$$2453$$" type="Ba_Bldg_Wonder" owningplayerid="1" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="5" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <kill id="6" description="$$11050$$" type="Pe_Civ_UtilityBoat" count="10" includeconversion="true" onlycountelites="false" />
-    </values>
+    <kill id="6" description="$$11050$$" type="Pe_Civ_UtilityBoat" count="10" includeconversion="true" onlycountelites="false" />
   </secondaryobjectives>
 </quest>

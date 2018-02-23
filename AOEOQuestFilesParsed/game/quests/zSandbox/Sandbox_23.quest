@@ -12,10 +12,8 @@
     </mapvariables>
   </randommap>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="99" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="99" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" />
@@ -26,23 +24,15 @@
     <diplomacy relation="Enemy" team1="2" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="false" />
-          <or id="3" mustfailall="false">
-            <values>
-              <dummy id="4" description="$$13332$$" objectivename="UNUSED" autocomplete="false" />
-              <or id="5" mustfailall="true">
-                <values>
-                  <protectunit id="6" description="" type="UnitTypeBldgFortress" owningplayerid="1" />
-                  <protectunit id="7" description="" type="UnitTypeBldgFortress" owningplayerid="3" />
-                </values>
-              </or>
-            </values>
-          </or>
-        </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="false" />
+      <or id="3" mustfailall="false">
+        <dummy id="4" description="$$13332$$" objectivename="UNUSED" autocomplete="false" />
+        <or id="5" mustfailall="true">
+          <protectunit id="6" description="" type="UnitTypeBldgFortress" owningplayerid="1" />
+          <protectunit id="7" description="" type="UnitTypeBldgFortress" owningplayerid="3" />
+        </or>
       </or>
-    </values>
+    </or>
   </objectives>
 </quest>

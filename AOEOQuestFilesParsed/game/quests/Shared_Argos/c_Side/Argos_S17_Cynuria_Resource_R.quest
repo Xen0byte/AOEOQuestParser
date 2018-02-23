@@ -27,15 +27,13 @@
     <protounit unit="ArgosDockForeman" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="81" />
-      <questcomplete id="186" />
-      <questcomplete id="189" />
-      <questcomplete id="187" />
-      <questcomplete id="191" />
-      <questcomplete id="188" />
-      <questcomplete id="190" />
-    </values>
+    <questcomplete id="81" />
+    <questcomplete id="186" />
+    <questcomplete id="189" />
+    <questcomplete id="187" />
+    <questcomplete id="191" />
+    <questcomplete id="188" />
+    <questcomplete id="190" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="10" />
@@ -49,35 +47,23 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <and id="3" mustfailall="false">
-            <values>
-              <collectresource id="4" description="$$2597$$" type="Food" amount="3000" includeexisting="true" />
-              <collectresource id="5" description="$$2695$$" type="Wood" amount="3000" includeexisting="true" />
-              <collectresource id="6" description="$$2696$$" type="Stone" amount="3000" includeexisting="true" />
-            </values>
-          </and>
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <and id="3" mustfailall="false">
+        <collectresource id="4" description="$$2597$$" type="Food" amount="3000" includeexisting="true" />
+        <collectresource id="5" description="$$2695$$" type="Wood" amount="3000" includeexisting="true" />
+        <collectresource id="6" description="$$2696$$" type="Stone" amount="3000" includeexisting="true" />
+      </and>
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="10" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="11" mustfailall="false">
-        <values>
-          <dummy id="12" description="$$3707$$" objectivename="Optional" autocomplete="false" />
-          <reduceunitsto id="13" type="UnitTypeBldgTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-        </values>
-      </or>
-    </values>
+    <or id="11" mustfailall="false">
+      <dummy id="12" description="$$3707$$" objectivename="Optional" autocomplete="false" />
+      <reduceunitsto id="13" type="UnitTypeBldgTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+    </or>
   </secondaryobjectives>
 </quest>

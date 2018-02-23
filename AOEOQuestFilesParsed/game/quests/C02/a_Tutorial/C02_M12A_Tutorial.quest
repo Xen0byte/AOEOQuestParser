@@ -12,10 +12,8 @@
     <protounit unit="C02_R1_KingNarmer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="12011" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="12011" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
@@ -26,25 +24,15 @@
     <protip visible="false" tip="TIP_C02_QuestTechUnlock_Dock" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <and id="1" mustfailall="false">
-        <values>
-          <or id="2" mustfailall="false" description="$$2354$$">
-            <values>
-              <unitdiscovered id="3" type="C02_R2_Trader" count="1" />
-            </values>
-          </or>
-        </values>
-      </and>
-      <and id="4" mustfailall="false">
-        <values>
-          <or id="5" mustfailall="false" description="$$4392$$">
-            <values>
-              <unitdiscovered id="6" description="" type="C02_R2_Trader_V2" count="1" />
-            </values>
-          </or>
-        </values>
-      </and>
-    </values>
+    <and id="1" mustfailall="false">
+      <or id="2" mustfailall="false" description="$$2354$$">
+        <unitdiscovered id="3" type="C02_R2_Trader" count="1" />
+      </or>
+    </and>
+    <and id="4" mustfailall="false">
+      <or id="5" mustfailall="false" description="$$4392$$">
+        <unitdiscovered id="6" description="" type="C02_R2_Trader_V2" count="1" />
+      </or>
+    </and>
   </objectives>
 </quest>

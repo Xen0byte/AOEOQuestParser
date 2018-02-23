@@ -50,11 +50,9 @@
     <protounit unit="ArgosKing" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="75" />
-      <questcomplete id="73" />
-      <questcomplete id="211" />
-    </values>
+    <questcomplete id="75" />
+    <questcomplete id="73" />
+    <questcomplete id="211" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="2" />
@@ -64,13 +62,9 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <ownsunit id="2" description="$$4176$$" type="Qst_Convertable_Bldg" count="10" owningplayerid="1" causesfailure="false" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <ownsunit id="2" description="$$4176$$" type="Qst_Convertable_Bldg" count="10" owningplayerid="1" causesfailure="false" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

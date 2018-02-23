@@ -54,9 +54,7 @@
     <protounit unit="B04_PrimaryQG" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="104024" />
-    </values>
+    <questcomplete id="104024" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="B04Long" />
@@ -69,19 +67,13 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$12721$$" objectivename="B04_Islands_Ally" autocomplete="false" />
-          <dummy id="3" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-          <and id="4" mustfailall="true">
-            <values>
-              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$12721$$" objectivename="B04_Islands_Ally" autocomplete="false" />
+      <dummy id="3" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      <and id="4" mustfailall="true">
+        <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
 </quest>

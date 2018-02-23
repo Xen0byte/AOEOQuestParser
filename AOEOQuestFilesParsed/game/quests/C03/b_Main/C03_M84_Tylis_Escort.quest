@@ -38,10 +38,8 @@
     <protounit unit="C03_R3_Acichorios" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13032" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13032" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
@@ -55,19 +53,13 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$4813$$" type="UnitTypeBldgTownCenter" count="1" includeconversion="true" onlycountelites="false" />
-              <unitinarea id="4" description="$$7093$$" area="Quest_Area_A" type="transport" count="5" radius="-1" aidefend="true" />
-            </values>
-          </and>
-          <protectunit id="5" description="$$8246$$" type="AcicTrireme" owningplayerid="1" />
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$4813$$" type="UnitTypeBldgTownCenter" count="1" includeconversion="true" onlycountelites="false" />
+        <unitinarea id="4" description="$$7093$$" area="Quest_Area_A" type="transport" count="5" radius="-1" aidefend="true" />
+      </and>
+      <protectunit id="5" description="$$8246$$" type="AcicTrireme" owningplayerid="1" />
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

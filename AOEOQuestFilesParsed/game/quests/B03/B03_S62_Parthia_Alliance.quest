@@ -51,9 +51,7 @@
     <protounit unit="Babylon_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103061" />
-    </values>
+    <questcomplete id="103061" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="90000" />
@@ -72,28 +70,18 @@
     <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <or id="2" mustfailall="false">
-            <values>
-              <and id="3" mustfailall="false">
-                <values>
-                  <dummy id="4" description="$$10882$$" objectivename="BaS62_TownFreed" autocomplete="false" />
-                  <ownsunit id="5" description="$$6374$$" type="Qst_CounterObject" count="2" owningplayerid="1" causesfailure="false" />
-                </values>
-              </and>
-              <protectunit id="6" description="$$7970$$" type="Pe_Bldg_TownCenter" owningplayerid="4" />
-            </values>
-          </or>
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
+    <or id="1" mustfailall="false">
+      <or id="2" mustfailall="false">
+        <and id="3" mustfailall="false">
+          <dummy id="4" description="$$10882$$" objectivename="BaS62_TownFreed" autocomplete="false" />
+          <ownsunit id="5" description="$$6374$$" type="Qst_CounterObject" count="2" owningplayerid="1" causesfailure="false" />
+        </and>
+        <protectunit id="6" description="$$7970$$" type="Pe_Bldg_TownCenter" owningplayerid="4" />
       </or>
-    </values>
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
 </quest>

@@ -22,10 +22,8 @@
     <protounit unit="C01_R2_Engineer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="183" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="183" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="25000" />
@@ -36,20 +34,14 @@
     <advisor visible="true" unit="Ligeia_R_III" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <and id="3" mustfailall="false">
-            <values>
-              <kill id="4" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
-              <kill id="5" description="$$2482$$" type="Gr_Bldg_House" count="10" includeconversion="true" onlycountelites="false" />
-              <kill id="6" description="$$2508$$" type="Gr_Bldg_TownCenter" count="3" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <and id="3" mustfailall="false">
+        <kill id="4" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
+        <kill id="5" description="$$2482$$" type="Gr_Bldg_House" count="10" includeconversion="true" onlycountelites="false" />
+        <kill id="6" description="$$2508$$" type="Gr_Bldg_TownCenter" count="3" includeconversion="true" onlycountelites="false" />
+      </and>
+      <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

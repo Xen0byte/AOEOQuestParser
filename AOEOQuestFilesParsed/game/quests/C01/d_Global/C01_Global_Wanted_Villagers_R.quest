@@ -12,18 +12,14 @@
     <protounit unit="C01_R1_Oracle" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="58" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="58" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <convertunit id="1" description="$$2342$$" type="UnitTypeVillager1" count="30" />
-    </values>
+    <convertunit id="1" description="$$2342$$" type="UnitTypeVillager1" count="30" />
   </objectives>
 </quest>

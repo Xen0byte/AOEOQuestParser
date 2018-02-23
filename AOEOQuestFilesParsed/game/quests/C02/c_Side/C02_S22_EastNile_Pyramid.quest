@@ -57,10 +57,8 @@
     <protounit unit="C02_R1_CitySesostris_V2" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="326" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="326" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="10000" />
@@ -75,25 +73,17 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <buildunit id="3" description="$$5674$$" type="Eg_Bldg_WonderFoundation" count="1" />
-              <buildunit id="4" description="$$5675$$" type="Eg_Bldg_WonderFoundationSmall" count="1" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="Eg_Bldg_WonderFoundation" count="0" includeteam="false" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
-          <reduceunitsto id="6" type="Eg_Bldg_WonderFoundationSmall" count="0" includeteam="false" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="Eg_Bldg_TownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="Eg_Civ_Villager" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <buildunit id="3" description="$$5674$$" type="Eg_Bldg_WonderFoundation" count="1" />
+        <buildunit id="4" description="$$5675$$" type="Eg_Bldg_WonderFoundationSmall" count="1" />
+      </and>
+      <reduceunitsto id="5" type="Eg_Bldg_WonderFoundation" count="0" includeteam="false" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
+      <reduceunitsto id="6" type="Eg_Bldg_WonderFoundationSmall" count="0" includeteam="false" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="Eg_Bldg_TownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="Eg_Civ_Villager" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

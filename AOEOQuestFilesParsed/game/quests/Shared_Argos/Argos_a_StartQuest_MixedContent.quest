@@ -18,47 +18,33 @@
     <protounit unit="ArgosCaptain" />
   </questreturners>
   <prereqs>
-    <values>
+    <or>
+      <questcomplete id="77" />
+      <questcomplete id="401" />
+      <questcomplete id="13500" />
       <or>
-        <values>
-          <questcomplete id="77" />
-          <questcomplete id="401" />
-          <questcomplete id="13500" />
-          <or>
-            <values>
-              <questcomplete id="14610" />
-              <queststatus id="14610" queststatus="Assigned" />
-            </values>
-          </or>
-          <or>
-            <values>
-              <questcomplete id="16610" />
-              <queststatus id="16610" queststatus="Assigned" />
-            </values>
-          </or>
-          <or>
-            <values>
-              <questcomplete id="17610" />
-              <queststatus id="17610" queststatus="Assigned" />
-            </values>
-          </or>
-        </values>
+        <questcomplete id="14610" />
+        <queststatus id="14610" queststatus="Assigned" />
       </or>
-    </values>
+      <or>
+        <questcomplete id="16610" />
+        <queststatus id="16610" queststatus="Assigned" />
+      </or>
+      <or>
+        <questcomplete id="17610" />
+        <queststatus id="17610" queststatus="Assigned" />
+      </or>
+    </or>
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="5" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$4244$$">
-        <values>
-          <unitdiscovered id="2" description="" type="ArgosCaptain" count="1" />
-          <ownsunit id="3" type="ArgosCaptain" count="1" owningplayerid="1" causesfailure="false" />
-          <unitdiscovered id="4" description="" type="GEN_FredTheRedeemer" count="1" />
-          <ownsunit id="5" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$4244$$">
+      <unitdiscovered id="2" description="" type="ArgosCaptain" count="1" />
+      <ownsunit id="3" type="ArgosCaptain" count="1" owningplayerid="1" causesfailure="false" />
+      <unitdiscovered id="4" description="" type="GEN_FredTheRedeemer" count="1" />
+      <ownsunit id="5" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+    </or>
   </objectives>
 </quest>

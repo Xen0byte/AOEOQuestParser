@@ -47,10 +47,8 @@
     <protounit unit="C03_R1_Explorer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13020" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13020" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQVShort" />
@@ -66,25 +64,17 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <kill id="3" description="$$3707$$" type="Ce_Bldg_TownCenter" count="1" includeconversion="true" onlycountelites="false" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <kill id="3" description="$$3707$$" type="Ce_Bldg_TownCenter" count="1" includeconversion="true" onlycountelites="false" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="5" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="6" mustfailall="false">
-        <values>
-          <timer id="7" description="$$2471$$" failonexpire="true" />
-          <dummy id="8" description="$$10089$$" objectivename="TimeFailed" autocomplete="false" />
-          <kill id="9" description="" type="Ce_Bldg_TownCenter" count="1" includeconversion="true" onlycountelites="false" />
-        </values>
-      </or>
-    </values>
+    <or id="6" mustfailall="false">
+      <timer id="7" description="$$2471$$" failonexpire="true" />
+      <dummy id="8" description="$$10089$$" objectivename="TimeFailed" autocomplete="false" />
+      <kill id="9" description="" type="Ce_Bldg_TownCenter" count="1" includeconversion="true" onlycountelites="false" />
+    </or>
   </secondaryobjectives>
 </quest>

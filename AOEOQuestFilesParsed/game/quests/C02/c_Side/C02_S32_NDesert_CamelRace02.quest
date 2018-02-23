@@ -19,10 +19,8 @@
     <protounit unit="C02_R2_DesertTrader" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="262" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="262" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="10000" />
@@ -35,23 +33,17 @@
     <diplomacy relation="Enemy" team1="2" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <and id="3" mustfailall="false">
-            <values>
-              <unitinarea id="4" description="$$2587$$" area="Quest_Area_A" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
-              <unitinarea id="5" description="$$2588$$" area="Quest_Area_B" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
-              <unitinarea id="6" description="$$2589$$" area="Quest_Area_C" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
-              <unitinarea id="7" description="$$2590$$" area="Quest_Area_D" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
-              <unitinarea id="8" description="$$2591$$" area="Quest_Area_E" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
-              <unitinarea id="9" description="$$2592$$" area="Player2" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
-            </values>
-          </and>
-          <reduceunitsto id="10" type="Qst_CamelRider" count="2" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <and id="3" mustfailall="false">
+        <unitinarea id="4" description="$$2587$$" area="Quest_Area_A" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
+        <unitinarea id="5" description="$$2588$$" area="Quest_Area_B" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
+        <unitinarea id="6" description="$$2589$$" area="Quest_Area_C" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
+        <unitinarea id="7" description="$$2590$$" area="Quest_Area_D" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
+        <unitinarea id="8" description="$$2591$$" area="Quest_Area_E" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
+        <unitinarea id="9" description="$$2592$$" area="Player2" type="Qst_CamelRider" count="3" radius="-1" aidefend="false" />
+      </and>
+      <reduceunitsto id="10" type="Qst_CamelRider" count="2" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

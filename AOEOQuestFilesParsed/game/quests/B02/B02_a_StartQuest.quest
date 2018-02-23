@@ -11,28 +11,20 @@
     <protounit unit="B02_R1_KingSkirmish" />
   </questreturners>
   <prereqs>
-    <values>
-      <or>
-        <values>
-          <questcomplete id="2202" />
-          <level min="4" max="99" />
-        </values>
-      </or>
-    </values>
+    <or>
+      <questcomplete id="2202" />
+      <level min="4" max="99" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="5" />
     <protip visible="false" proto="Cy_Cap_SkirmishHall" tip="TIP_B02_Usage" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$8309$$">
-        <values>
-          <unitdiscovered id="2" description="" type="B02_R1_KingSkirmish" count="1" />
-          <unitdiscovered id="3" type="GEN_FredTheRedeemer" count="1" />
-          <ownsunit id="4" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$8309$$">
+      <unitdiscovered id="2" description="" type="B02_R1_KingSkirmish" count="1" />
+      <unitdiscovered id="3" type="GEN_FredTheRedeemer" count="1" />
+      <ownsunit id="4" type="GEN_FredTheRedeemer" count="1" owningplayerid="1" causesfailure="false" />
+    </or>
   </objectives>
 </quest>

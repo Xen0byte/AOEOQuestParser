@@ -54,10 +54,8 @@
     <protounit unit="ArgosCaptain" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="460" />
-      <level min="40" max="99" />
-    </values>
+    <questcomplete id="460" />
+    <level min="40" max="99" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="20" />
@@ -72,23 +70,15 @@
     <loottable visible="true" loottable="general_legendary" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="4" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="5" mustfailall="false">
-        <values>
-          <dummy id="6" description="$$10396$$" objectivename="OptionalNoStone" autocomplete="false" />
-          <dummy id="7" description="" objectivename="EnemiesDefeated" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="5" mustfailall="false">
+      <dummy id="6" description="$$10396$$" objectivename="OptionalNoStone" autocomplete="false" />
+      <dummy id="7" description="" objectivename="EnemiesDefeated" autocomplete="false" />
+    </or>
   </secondaryobjectives>
 </quest>

@@ -102,10 +102,8 @@
     <protounit unit="C02_R1_CitySesostris" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="255" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="255" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="6" />
@@ -123,30 +121,20 @@
     <diplomacy relation="Neutral" team1="3" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$2557$$" objectivename="UNUSED" autocomplete="false" />
-          <and id="3" mustfailall="false">
-            <values>
-              <reduceunitsto id="4" type="Eg_Bldg_TownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-              <reduceunitsto id="5" type="NPC_Badari_Fortress" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-            </values>
-          </and>
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="7" />
-            </values>
-          </and>
-          <and id="9" mustfailall="false">
-            <values>
-              <dummy id="10" objectivename="TIMER_EFFECT_BUGFIX" autocomplete="false" />
-              <timer id="11" failonexpire="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$2557$$" objectivename="UNUSED" autocomplete="false" />
+      <and id="3" mustfailall="false">
+        <reduceunitsto id="4" type="Eg_Bldg_TownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+        <reduceunitsto id="5" type="NPC_Badari_Fortress" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+      </and>
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="7" />
+      </and>
+      <and id="9" mustfailall="false">
+        <dummy id="10" objectivename="TIMER_EFFECT_BUGFIX" autocomplete="false" />
+        <timer id="11" failonexpire="false" />
+      </and>
+    </or>
   </objectives>
 </quest>

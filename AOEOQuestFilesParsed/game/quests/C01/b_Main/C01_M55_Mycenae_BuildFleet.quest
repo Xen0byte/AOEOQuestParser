@@ -8,10 +8,8 @@
     <protounit unit="C01_R2_KingAgamemnon" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="43" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="43" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="10000" />
@@ -19,8 +17,6 @@
     <consumematerial visible="false" materialname="PinePlank" count="100" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <collectmaterial id="1" description="$$2336$$" type="PinePlank" amount="100" includeexisting="true" />
-    </values>
+    <collectmaterial id="1" description="$$2336$$" type="PinePlank" amount="100" includeexisting="true" />
   </objectives>
 </quest>

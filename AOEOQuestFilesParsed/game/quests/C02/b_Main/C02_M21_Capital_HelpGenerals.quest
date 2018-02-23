@@ -12,15 +12,11 @@
     <protounit unit="C02_R1_KingNarmer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <or>
-        <values>
-          <questcomplete id="12013" />
-          <questcomplete id="12201" />
-        </values>
-      </or>
-    </values>
+    <civilization id="3" />
+    <or>
+      <questcomplete id="12013" />
+      <questcomplete id="12201" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="10000" />
@@ -32,51 +28,33 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <and id="1" mustfailall="false" description="$$4474$$">
-        <values>
-          <or id="2" mustfailall="false">
-            <values>
-              <ownsunit id="3" type="C02_R1_GeneralAhapitep_V2" count="1" />
-              <ownsunit id="4" type="C02_R1_GeneralAhapitep_V3" count="1" />
-              <unitdiscovered id="5" type="C02_R1_GeneralAhapitep_V2" count="1" />
-              <unitdiscovered id="6" type="C02_R1_GeneralAhapitep_V3" count="1" />
-            </values>
-          </or>
-        </values>
-      </and>
-      <and id="7" mustfailall="false" description="$$4475$$">
-        <values>
-          <or id="8" mustfailall="false" description="$$4475$$">
-            <values>
-              <ownsunit id="9" type="C02_R1_GeneralBatoshipip_V2" count="1" />
-              <ownsunit id="10" type="C02_R1_GeneralBatoshipip_V3" count="1" />
-              <unitdiscovered id="11" type="C02_R1_GeneralBatoshipip_V2" count="1" />
-              <unitdiscovered id="12" type="C02_R1_GeneralBatoshipip_V3" count="1" />
-            </values>
-          </or>
-        </values>
-      </and>
-      <and id="13" mustfailall="false" description="$$4477$$">
-        <values>
-          <or id="14" mustfailall="false" description="$$4477$$">
-            <values>
-              <ownsunit id="15" type="C02_R1_GeneralAhapitep_V3" count="1" />
-              <unitdiscovered id="16" type="C02_R1_GeneralAhapitep_V3" count="1" />
-            </values>
-          </or>
-        </values>
-      </and>
-      <and id="17" mustfailall="false" description="$$4478$$">
-        <values>
-          <or id="18" mustfailall="false" description="$$4478$$">
-            <values>
-              <ownsunit id="19" type="C02_R1_GeneralBatoshipip_V3" count="1" />
-              <unitdiscovered id="20" type="C02_R1_GeneralBatoshipip_V3" count="1" />
-            </values>
-          </or>
-        </values>
-      </and>
-    </values>
+    <and id="1" mustfailall="false" description="$$4474$$">
+      <or id="2" mustfailall="false">
+        <ownsunit id="3" type="C02_R1_GeneralAhapitep_V2" count="1" />
+        <ownsunit id="4" type="C02_R1_GeneralAhapitep_V3" count="1" />
+        <unitdiscovered id="5" type="C02_R1_GeneralAhapitep_V2" count="1" />
+        <unitdiscovered id="6" type="C02_R1_GeneralAhapitep_V3" count="1" />
+      </or>
+    </and>
+    <and id="7" mustfailall="false" description="$$4475$$">
+      <or id="8" mustfailall="false" description="$$4475$$">
+        <ownsunit id="9" type="C02_R1_GeneralBatoshipip_V2" count="1" />
+        <ownsunit id="10" type="C02_R1_GeneralBatoshipip_V3" count="1" />
+        <unitdiscovered id="11" type="C02_R1_GeneralBatoshipip_V2" count="1" />
+        <unitdiscovered id="12" type="C02_R1_GeneralBatoshipip_V3" count="1" />
+      </or>
+    </and>
+    <and id="13" mustfailall="false" description="$$4477$$">
+      <or id="14" mustfailall="false" description="$$4477$$">
+        <ownsunit id="15" type="C02_R1_GeneralAhapitep_V3" count="1" />
+        <unitdiscovered id="16" type="C02_R1_GeneralAhapitep_V3" count="1" />
+      </or>
+    </and>
+    <and id="17" mustfailall="false" description="$$4478$$">
+      <or id="18" mustfailall="false" description="$$4478$$">
+        <ownsunit id="19" type="C02_R1_GeneralBatoshipip_V3" count="1" />
+        <unitdiscovered id="20" type="C02_R1_GeneralBatoshipip_V3" count="1" />
+      </or>
+    </and>
   </objectives>
 </quest>

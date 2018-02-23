@@ -83,9 +83,7 @@
   <questreturners>
     <protounit unit="B01_R1_KingMinos" />
   </questreturners>
-  <prereqs>
-    <values />
-  </prereqs>
+  <prereqs />
   <rewards visible="true">
     <protip visible="false" tip="TIP_B01_DemoTurnIn" />
     <or>
@@ -101,25 +99,17 @@
     <diplomacy relation="Neutral" team1="2" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <protectunit id="2" description="$$2453$$" type="Mn_Bldg_Wonder3" owningplayerid="1" />
-          <and id="3" mustfailall="false">
-            <values>
-              <unitdiscovered id="4" description="" type="Qst_SpawnPoint1" count="1" />
-              <unitdiscovered id="5" description="$$2454$$" type="AIStart" count="10" />
-              <timer id="6" description="$$2324$$" failonexpire="false" />
-            </values>
-          </and>
-          <and id="7" mustfailall="true">
-            <values>
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="7" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <protectunit id="2" description="$$2453$$" type="Mn_Bldg_Wonder3" owningplayerid="1" />
+      <and id="3" mustfailall="false">
+        <unitdiscovered id="4" description="" type="Qst_SpawnPoint1" count="1" />
+        <unitdiscovered id="5" description="$$2454$$" type="AIStart" count="10" />
+        <timer id="6" description="$$2324$$" failonexpire="false" />
+      </and>
+      <and id="7" mustfailall="true">
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="7" />
+      </and>
+    </or>
   </objectives>
 </quest>

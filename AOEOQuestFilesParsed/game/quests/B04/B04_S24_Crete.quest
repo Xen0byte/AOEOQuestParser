@@ -22,9 +22,7 @@
     <protounit unit="B04_PrimaryQG" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="104023" />
-    </values>
+    <questcomplete id="104023" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="5" />
@@ -42,14 +40,10 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$12682$$" objectivename="UNUSED" autocomplete="false" />
-          <ownsunit id="3" description="$$12108$$" type="Qst_CounterObject" count="40" owningplayerid="4" causesfailure="false" />
-          <ownsunit id="4" description="$$12109$$" type="Qst_CounterObject" count="40" owningplayerid="2" causesfailure="true" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$12682$$" objectivename="UNUSED" autocomplete="false" />
+      <ownsunit id="3" description="$$12108$$" type="Qst_CounterObject" count="40" owningplayerid="4" causesfailure="false" />
+      <ownsunit id="4" description="$$12109$$" type="Qst_CounterObject" count="40" owningplayerid="2" causesfailure="true" />
+    </or>
   </objectives>
 </quest>

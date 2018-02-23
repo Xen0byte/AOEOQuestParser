@@ -28,10 +28,8 @@
     <protounit unit="C02_R3_Sesostris" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="334" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="334" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="30000" />
@@ -49,23 +47,15 @@
     <diplomacy relation="Ally" team1="2" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <ownsunit id="3" description="$$2570$$" type="qst_Pyramid" count="1" owningplayerid="1" causesfailure="false" />
-              <kill id="4" description="$$2484$$" type="NPC_Badari_Fortress" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <and id="5" mustfailall="true">
-            <values>
-              <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <ownsunit id="3" description="$$2570$$" type="qst_Pyramid" count="1" owningplayerid="1" causesfailure="false" />
+        <kill id="4" description="$$2484$$" type="NPC_Badari_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+      <and id="5" mustfailall="true">
+        <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+      </and>
+    </or>
   </objectives>
 </quest>

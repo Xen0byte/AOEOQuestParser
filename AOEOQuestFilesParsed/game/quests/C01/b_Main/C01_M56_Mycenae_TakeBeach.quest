@@ -78,10 +78,8 @@
     <protounit unit="C01_R2_KingAgamemnon" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="44" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="44" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="4" />
@@ -97,23 +95,15 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$2508$$" type="Gr_Bldg_TownCenter" count="3" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <and id="5" mustfailall="true">
-            <values>
-              <reduceunitsto id="6" type="Qst_Shp_TroyTrireme" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2507$$" type="Gr_Bldg_Fortress" count="2" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$2508$$" type="Gr_Bldg_TownCenter" count="3" includeconversion="true" onlycountelites="false" />
+      </and>
+      <and id="5" mustfailall="true">
+        <reduceunitsto id="6" type="Qst_Shp_TroyTrireme" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

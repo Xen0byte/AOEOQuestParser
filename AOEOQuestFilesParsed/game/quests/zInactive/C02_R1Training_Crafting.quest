@@ -18,10 +18,8 @@
     <protounit unit="C02_R1_CitySesostris_V2" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <level min="6" max="99" />
-    </values>
+    <civilization id="3" />
+    <level min="6" max="99" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
@@ -34,9 +32,7 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <ownsunit id="1" description="$$3658$$" type="Eg_Craft_Chooser" count="1" owningplayerid="1" causesfailure="false" />
-      <ownsunit id="2" description="$$13222$$" type="Eg_Cap_StoreStore01" count="1" owningplayerid="1" causesfailure="false" />
-    </values>
+    <ownsunit id="1" description="$$3658$$" type="Eg_Craft_Chooser" count="1" owningplayerid="1" causesfailure="false" />
+    <ownsunit id="2" description="$$13222$$" type="Eg_Cap_StoreStore01" count="1" owningplayerid="1" causesfailure="false" />
   </objectives>
 </quest>

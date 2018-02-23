@@ -11,11 +11,7 @@
     <protounit unit="GEN_PDLCStore" />
   </questgivers>
   <prereqs>
-    <values>
-      <level min="99" max="99" />
-    </values>
+    <level min="99" max="99" />
   </prereqs>
-  <objectives id="0" mustfailall="false">
-    <values />
-  </objectives>
+  <objectives id="0" mustfailall="false" />
 </quest>

@@ -68,10 +68,8 @@
     <protounit unit="CyprusTrader" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="3026" />
-      <level min="40" max="99" />
-    </values>
+    <questcomplete id="3026" />
+    <level min="40" max="99" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="13" />
@@ -83,33 +81,21 @@
     <loottable visible="true" loottable="general_legendary" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$3707$$" type="AbstractTownCenter" count="1" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$5517$$" type="CyprusGeneral" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$3707$$" type="AbstractTownCenter" count="1" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$5517$$" type="CyprusGeneral" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="6" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="7" mustfailall="false">
-        <values>
-          <dummy id="8" description="$$10441$$" objectivename="OptionalRestrictSpearmen" autocomplete="false" />
-          <and id="9" mustfailall="false">
-            <values>
-              <kill id="10" description="" type="AbstractTownCenter" count="1" includeconversion="true" onlycountelites="false" />
-              <kill id="11" description="" type="CyprusGeneral" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="7" mustfailall="false">
+      <dummy id="8" description="$$10441$$" objectivename="OptionalRestrictSpearmen" autocomplete="false" />
+      <and id="9" mustfailall="false">
+        <kill id="10" description="" type="AbstractTownCenter" count="1" includeconversion="true" onlycountelites="false" />
+        <kill id="11" description="" type="CyprusGeneral" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+    </or>
   </secondaryobjectives>
 </quest>

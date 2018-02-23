@@ -30,10 +30,8 @@
     <protounit unit="A02_AllianceLeader" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="40" max="99" />
-      <questcomplete id="1200" />
-    </values>
+    <level min="40" max="99" />
+    <questcomplete id="1200" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="15" />
@@ -65,33 +63,23 @@
     <diplomacy relation="Neutral" team1="5" team2="4" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$9778$$" objectivename="BuildWonder" autocomplete="false" />
-          <dummy id="3" description="" objectivename="DEFEAT" autocomplete="false" />
-          <and id="4" mustfailall="true">
-            <values>
-              <reduceunitsto id="5" type="A02_Bldg_TownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="6" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="UnitTypePriest1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="A02_Bldg_Temple" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-          <reduceunitsto id="9" type="A02_Bldg_WonderFoundation" count="0" includeteam="true" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$9778$$" objectivename="BuildWonder" autocomplete="false" />
+      <dummy id="3" description="" objectivename="DEFEAT" autocomplete="false" />
+      <and id="4" mustfailall="true">
+        <reduceunitsto id="5" type="A02_Bldg_TownCenter" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="6" type="UnitTypeVillager1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="UnitTypePriest1" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="A02_Bldg_Temple" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+      <reduceunitsto id="9" type="A02_Bldg_WonderFoundation" count="0" includeteam="true" includeunderconstruction="true" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="10" mustfailall="false" rewardname="Optional" description="$$9656$$">
-    <values>
-      <or id="11" mustfailall="false">
-        <values>
-          <ownsunit id="12" description="$$9851$$" type="UnitTypeVillager1" count="100" owningplayerid="1" causesfailure="false" />
-          <dummy id="13" objectivename="DEFEAT" autocomplete="false" />
-          <timer id="14" description="$$9656$$" failonexpire="true" />
-        </values>
-      </or>
-    </values>
+    <or id="11" mustfailall="false">
+      <ownsunit id="12" description="$$9851$$" type="UnitTypeVillager1" count="100" owningplayerid="1" causesfailure="false" />
+      <dummy id="13" objectivename="DEFEAT" autocomplete="false" />
+      <timer id="14" description="$$9656$$" failonexpire="true" />
+    </or>
   </secondaryobjectives>
 </quest>

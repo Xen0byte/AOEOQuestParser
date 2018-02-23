@@ -9,10 +9,8 @@
     <protounit unit="C03_R1_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13006" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13006" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="100" />
@@ -23,24 +21,20 @@
     <protip visible="false" tip="TIP_C03_QuestTechUnlock_Farm" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$4349$$">
-        <values>
-          <ownsequipment id="2" equipmentid="391" />
-          <ownsequipment id="3" equipmentid="362" />
-          <ownsequipment id="4" equipmentid="365" />
-          <ownsequipment id="5" equipmentid="367" />
-          <ownsequipment id="6" equipmentid="370" />
-          <ownsequipment id="7" equipmentid="378" />
-          <ownsequipment id="8" equipmentid="385" />
-          <ownsequipment id="9" equipmentid="875" />
-          <ownsequipment id="10" equipmentid="412" />
-          <ownsequipment id="11" equipmentid="415" />
-          <ownsequipment id="12" equipmentid="421" />
-          <ownsequipment id="13" equipmentid="429" />
-          <ownsequipment id="14" equipmentid="373" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$4349$$">
+      <ownsequipment id="2" equipmentid="391" />
+      <ownsequipment id="3" equipmentid="362" />
+      <ownsequipment id="4" equipmentid="365" />
+      <ownsequipment id="5" equipmentid="367" />
+      <ownsequipment id="6" equipmentid="370" />
+      <ownsequipment id="7" equipmentid="378" />
+      <ownsequipment id="8" equipmentid="385" />
+      <ownsequipment id="9" equipmentid="875" />
+      <ownsequipment id="10" equipmentid="412" />
+      <ownsequipment id="11" equipmentid="415" />
+      <ownsequipment id="12" equipmentid="421" />
+      <ownsequipment id="13" equipmentid="429" />
+      <ownsequipment id="14" equipmentid="373" />
+    </or>
   </objectives>
 </quest>

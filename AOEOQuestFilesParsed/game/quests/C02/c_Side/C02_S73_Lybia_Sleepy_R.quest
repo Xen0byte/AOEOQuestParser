@@ -18,10 +18,8 @@
     <protounit unit="C02_R3_Priestess" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="341" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="341" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQVShort" />
@@ -29,13 +27,9 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <protectunit id="2" description="$$4962$$" type="NPC_PrinceSesostris" owningplayerid="3" />
-          <unitinarea id="3" description="$$4963$$" area="Quest_Area_A" type="Eg_Civ_Villager" count="1" radius="-1" aidefend="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <protectunit id="2" description="$$4962$$" type="NPC_PrinceSesostris" owningplayerid="3" />
+      <unitinarea id="3" description="$$4963$$" area="Quest_Area_A" type="Eg_Civ_Villager" count="1" radius="-1" aidefend="false" />
+    </or>
   </objectives>
 </quest>

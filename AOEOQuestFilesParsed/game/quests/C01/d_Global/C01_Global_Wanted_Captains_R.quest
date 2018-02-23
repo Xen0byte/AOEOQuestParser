@@ -14,18 +14,14 @@
     <protounit unit="C01_R3_Magistrate" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="269" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="269" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <kill id="1" description="$$2341$$" type="AbstractTransportable" count="20" includeconversion="true" onlycountelites="true" />
-    </values>
+    <kill id="1" description="$$2341$$" type="AbstractTransportable" count="20" includeconversion="true" onlycountelites="true" />
   </objectives>
 </quest>

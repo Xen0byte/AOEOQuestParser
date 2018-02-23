@@ -19,10 +19,8 @@
     <protounit unit="C03_R3_Brennos" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13033" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13033" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="30000" />
@@ -51,19 +49,13 @@
     <diplomacy relation="Ally" team1="5" team2="1" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <dummy id="3" description="$$8869$$" objectivename="ArmyRescued" autocomplete="false" />
-              <dummy id="4" description="$$2644$$" objectivename="ArmyDestroyed" autocomplete="false" />
-            </values>
-          </and>
-          <protectunit id="5" description="$$8248$$" type="Ce_QG_Comontorios" owningplayerid="1" />
-          <reduceunitsto id="6" type="unit" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <dummy id="3" description="$$8869$$" objectivename="ArmyRescued" autocomplete="false" />
+        <dummy id="4" description="$$2644$$" objectivename="ArmyDestroyed" autocomplete="false" />
+      </and>
+      <protectunit id="5" description="$$8248$$" type="Ce_QG_Comontorios" owningplayerid="1" />
+      <reduceunitsto id="6" type="unit" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

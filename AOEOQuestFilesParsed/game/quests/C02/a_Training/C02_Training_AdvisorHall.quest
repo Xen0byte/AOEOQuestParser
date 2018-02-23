@@ -16,10 +16,8 @@
     <protounit unit="C02_R1_CitySesostris_V2" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <level min="8" max="99" />
-    </values>
+    <civilization id="3" />
+    <level min="8" max="99" />
   </prereqs>
   <rewards visible="true">
     <or>
@@ -33,8 +31,6 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <ownsunit id="1" description="$$3651$$" type="Eg_Cap_AdvisorHall" count="1" owningplayerid="1" causesfailure="false" />
-    </values>
+    <ownsunit id="1" description="$$3651$$" type="Eg_Cap_AdvisorHall" count="1" owningplayerid="1" causesfailure="false" />
   </objectives>
 </quest>

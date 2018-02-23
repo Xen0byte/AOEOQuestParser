@@ -8,9 +8,7 @@
     <protounit unit="ArgosEgyptianAdmiral" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="73" />
-    </values>
+    <questcomplete id="73" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="200" />
@@ -21,8 +19,6 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <unitnearunit id="1" description="$$4137$$" neededunittype="FavoriteCamel" nearunittype="AbstractTownCenter" count="1" radius="30" />
-    </values>
+    <unitnearunit id="1" description="$$4137$$" neededunittype="FavoriteCamel" nearunittype="AbstractTownCenter" count="1" radius="30" />
   </objectives>
 </quest>

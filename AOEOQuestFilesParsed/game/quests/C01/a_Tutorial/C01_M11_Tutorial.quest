@@ -9,10 +9,8 @@
     <protounit unit="C01_R1_VillageElder" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="11029" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="11029" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="100" />
@@ -23,22 +21,18 @@
     <protip visible="false" tip="TIP_C01_QuestTechUnlock_Farm" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$4349$$">
-        <values>
-          <ownsequipment id="2" equipmentid="3" />
-          <ownsequipment id="3" equipmentid="44" />
-          <ownsequipment id="4" equipmentid="47" />
-          <ownsequipment id="5" equipmentid="50" />
-          <ownsequipment id="6" equipmentid="53" />
-          <ownsequipment id="7" equipmentid="71" />
-          <ownsequipment id="8" equipmentid="67" />
-          <ownsequipment id="9" equipmentid="838" />
-          <ownsequipment id="10" equipmentid="93" />
-          <ownsequipment id="11" equipmentid="102" />
-          <ownsequipment id="12" equipmentid="58" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$4349$$">
+      <ownsequipment id="2" equipmentid="3" />
+      <ownsequipment id="3" equipmentid="44" />
+      <ownsequipment id="4" equipmentid="47" />
+      <ownsequipment id="5" equipmentid="50" />
+      <ownsequipment id="6" equipmentid="53" />
+      <ownsequipment id="7" equipmentid="71" />
+      <ownsequipment id="8" equipmentid="67" />
+      <ownsequipment id="9" equipmentid="838" />
+      <ownsequipment id="10" equipmentid="93" />
+      <ownsequipment id="11" equipmentid="102" />
+      <ownsequipment id="12" equipmentid="58" />
+    </or>
   </objectives>
 </quest>

@@ -44,10 +44,8 @@
     <protounit unit="C01_R1_PortMaster" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="96" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="96" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQMedium" />
@@ -68,35 +66,23 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2517$$" type="Gr_Shp_Trireme" count="10" includeconversion="true" onlycountelites="false" />
-              <kill id="4" description="$$4759$$" type="SpecialTrireme" count="1" includeconversion="true" onlycountelites="false" />
-              <kill id="5" description="$$2518$$" type="Npc_Bandit_Fortress" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2517$$" type="Gr_Shp_Trireme" count="10" includeconversion="true" onlycountelites="false" />
+        <kill id="4" description="$$4759$$" type="SpecialTrireme" count="1" includeconversion="true" onlycountelites="false" />
+        <kill id="5" description="$$2518$$" type="Npc_Bandit_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="8" mustfailall="false">
-        <values>
-          <dummy id="9" description="$$10990$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
-          <and id="10" mustfailall="false">
-            <values>
-              <kill id="11" description="" type="Gr_Shp_Trireme" count="10" includeconversion="true" onlycountelites="false" />
-              <kill id="12" description="" type="SpecialTrireme" count="1" includeconversion="true" onlycountelites="false" />
-              <kill id="13" description="" type="Npc_Bandit_Fortress" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="8" mustfailall="false">
+      <dummy id="9" description="$$10990$$" objectivename="OptionalRestrictTraining" autocomplete="false" />
+      <and id="10" mustfailall="false">
+        <kill id="11" description="" type="Gr_Shp_Trireme" count="10" includeconversion="true" onlycountelites="false" />
+        <kill id="12" description="" type="SpecialTrireme" count="1" includeconversion="true" onlycountelites="false" />
+        <kill id="13" description="" type="Npc_Bandit_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+    </or>
   </secondaryobjectives>
 </quest>

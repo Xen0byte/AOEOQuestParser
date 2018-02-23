@@ -8,18 +8,14 @@
     <protounit unit="A01_AllianceCollector" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="40" max="99" />
-      <questcomplete id="1100" />
-    </values>
+    <level min="40" max="99" />
+    <questcomplete id="1100" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="4" />
     <consumematerial visible="true" materialname="2GraniteBlock" count="300" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <collectmaterial id="1" description="$$9930$$" type="2GraniteBlock" amount="300" includeexisting="true" />
-    </values>
+    <collectmaterial id="1" description="$$9930$$" type="2GraniteBlock" amount="300" includeexisting="true" />
   </objectives>
 </quest>

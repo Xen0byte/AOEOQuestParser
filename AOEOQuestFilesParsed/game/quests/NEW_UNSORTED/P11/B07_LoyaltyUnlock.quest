@@ -2,16 +2,12 @@
   <timer hideonui="false" />
   <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="99" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="99" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" />
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
   </rewards>
-  <objectives id="0" mustfailall="false">
-    <values />
-  </objectives>
+  <objectives id="0" mustfailall="false" />
 </quest>

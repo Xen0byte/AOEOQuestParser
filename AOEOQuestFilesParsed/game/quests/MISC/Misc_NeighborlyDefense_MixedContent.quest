@@ -30,10 +30,8 @@
     <protounit unit="C07_R1_Ambassador_VISITPLAYER" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="5" max="99" />
-      <queststatus id="10102" queststatus="NotAssigned" />
-    </values>
+    <level min="5" max="99" />
+    <queststatus id="10102" queststatus="NotAssigned" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="socialQuests" />
@@ -41,29 +39,19 @@
     <mailreward visible="true" subject="$$5424$$" message="$$5419$$" gold="100" sendtovisittarget="true" reward="sets\coregame\general\generalsetallmaterials" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <protectunit id="2" description="$$5260$$" type="AbstractPalace" owningplayerid="3" />
-          <reduceunitsto id="3" type="AbstractPalace" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="5" mustfailall="true">
-            <values>
-              <and id="6" mustfailall="false" description="$$5940$$">
-                <values>
-                  <dummy id="7" description="" objectivename="ClearedEnemies01" autocomplete="false" />
-                </values>
-              </and>
-              <and id="8" mustfailall="false" description="$$5941$$">
-                <values>
-                  <dummy id="9" description="" objectivename="ClearedEnemies02" autocomplete="false" />
-                </values>
-              </and>
-              <timer id="10" description="$$5918$$" failonexpire="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <protectunit id="2" description="$$5260$$" type="AbstractPalace" owningplayerid="3" />
+      <reduceunitsto id="3" type="AbstractPalace" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="5" mustfailall="true">
+        <and id="6" mustfailall="false" description="$$5940$$">
+          <dummy id="7" description="" objectivename="ClearedEnemies01" autocomplete="false" />
+        </and>
+        <and id="8" mustfailall="false" description="$$5941$$">
+          <dummy id="9" description="" objectivename="ClearedEnemies02" autocomplete="false" />
+        </and>
+        <timer id="10" description="$$5918$$" failonexpire="false" />
+      </and>
+    </or>
   </objectives>
 </quest>

@@ -60,10 +60,8 @@
     <protounit unit="CyprusLeaderV2" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="3001" />
-      <level min="40" max="99" />
-    </values>
+    <questcomplete id="3001" />
+    <level min="40" max="99" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="20" />
@@ -78,40 +76,26 @@
     <loottable visible="true" loottable="general_legendary" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <and id="3" mustfailall="false">
-            <values>
-              <kill id="4" description="$$2507$$" type="Gr_Bldg_Fortress" count="5" includeconversion="true" onlycountelites="false" />
-              <kill id="5" description="$$6490$$" type="CyprusGeneral" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <and id="3" mustfailall="false">
+        <kill id="4" description="$$2507$$" type="Gr_Bldg_Fortress" count="5" includeconversion="true" onlycountelites="false" />
+        <kill id="5" description="$$6490$$" type="CyprusGeneral" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="9" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="10" mustfailall="false">
-        <values>
-          <timer id="11" description="$$2471$$" failonexpire="true" />
-          <dummy id="12" description="$$10416$$" objectivename="TimeFailed" autocomplete="false" />
-          <and id="13" mustfailall="false">
-            <values>
-              <kill id="14" description="" type="Gr_Bldg_Fortress" count="5" includeconversion="true" onlycountelites="false" />
-              <kill id="15" description="" type="CyprusGeneral" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="10" mustfailall="false">
+      <timer id="11" description="$$2471$$" failonexpire="true" />
+      <dummy id="12" description="$$10416$$" objectivename="TimeFailed" autocomplete="false" />
+      <and id="13" mustfailall="false">
+        <kill id="14" description="" type="Gr_Bldg_Fortress" count="5" includeconversion="true" onlycountelites="false" />
+        <kill id="15" description="" type="CyprusGeneral" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+    </or>
   </secondaryobjectives>
 </quest>

@@ -89,10 +89,8 @@
     <protounit unit="C02_R2_GeneralChafre" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="337" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="337" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="30000" />
@@ -107,24 +105,16 @@
     <diplomacy relation="Enemy" team1="2" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2508$$" type="NPC_Nubian_TownCenter" count="2" includeconversion="true" onlycountelites="false" />
-              <timer id="4" description="$$5440$$" failonexpire="false" />
-            </values>
-          </and>
-          <kill id="5" type="NPC_Nubian_TownCenter" count="2" includeconversion="true" onlycountelites="false" />
-          <and id="6" mustfailall="true">
-            <values>
-              <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2508$$" type="NPC_Nubian_TownCenter" count="2" includeconversion="true" onlycountelites="false" />
+        <timer id="4" description="$$5440$$" failonexpire="false" />
+      </and>
+      <kill id="5" type="NPC_Nubian_TownCenter" count="2" includeconversion="true" onlycountelites="false" />
+      <and id="6" mustfailall="true">
+        <reduceunitsto id="7" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+      </and>
+    </or>
   </objectives>
 </quest>

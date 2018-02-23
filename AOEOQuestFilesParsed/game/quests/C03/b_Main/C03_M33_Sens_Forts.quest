@@ -31,10 +31,8 @@
     <protounit unit="C03_R1_SensBrennos" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13014" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13014" />
   </prereqs>
   <rewards visible="true">
     <gamecurrency visible="true" gamecurrency="cGameCurEmpirePoints" amount="2" />
@@ -51,13 +49,9 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <kill id="2" description="$$9029$$" type="Npc_Barbarian_Fortress" count="1" includeconversion="true" onlycountelites="false" />
-          <protectunit id="3" description="$$7535$$" type="Ce_QG_Brennos" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <kill id="2" description="$$9029$$" type="Npc_Barbarian_Fortress" count="1" includeconversion="true" onlycountelites="false" />
+      <protectunit id="3" description="$$7535$$" type="Ce_QG_Brennos" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

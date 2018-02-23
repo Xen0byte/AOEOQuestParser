@@ -26,9 +26,7 @@
     <protounit unit="Babylon_NewFactionLady" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103045" />
-    </values>
+    <questcomplete id="103045" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQShort" />
@@ -47,18 +45,12 @@
     <diplomacy relation="Ally" team1="2" team2="4" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <dummy id="3" description="$$10657$$" objectivename="BabylonS45_DockReached" autocomplete="false" />
-              <collectmaterial id="4" description="$$10658$$" type="SH_Honey" amount="5" includeexisting="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="LogicalTypeLandMilitary" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <dummy id="3" description="$$10657$$" objectivename="BabylonS45_DockReached" autocomplete="false" />
+        <collectmaterial id="4" description="$$10658$$" type="SH_Honey" amount="5" includeexisting="false" />
+      </and>
+      <reduceunitsto id="5" type="LogicalTypeLandMilitary" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

@@ -8,9 +8,7 @@
     <protounit unit="Babylon_NewFactionLady" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103023" />
-    </values>
+    <questcomplete id="103023" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQLong" />
@@ -26,17 +24,13 @@
     <material visible="true" materialname="!VanityTicket" count="3" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <and id="1" mustfailall="false">
-        <values>
-          <collectmaterial id="2" description="$$10654$$" type="SH_Fungus" amount="1" includeexisting="true" />
-          <collectmaterial id="3" description="$$10660$$" type="SH_Seed" amount="1" includeexisting="true" />
-          <collectmaterial id="4" description="$$10656$$" type="SH_Spice" amount="1" includeexisting="true" />
-          <collectmaterial id="5" description="$$10658$$" type="SH_Honey" amount="5" includeexisting="true" />
-          <collectmaterial id="6" description="$$10659$$" type="SH_Tears" amount="1" includeexisting="true" />
-          <collectmaterial id="7" description="$$10650$$" type="SH_Umbrella" amount="5" includeexisting="true" />
-        </values>
-      </and>
-    </values>
+    <and id="1" mustfailall="false">
+      <collectmaterial id="2" description="$$10654$$" type="SH_Fungus" amount="1" includeexisting="true" />
+      <collectmaterial id="3" description="$$10660$$" type="SH_Seed" amount="1" includeexisting="true" />
+      <collectmaterial id="4" description="$$10656$$" type="SH_Spice" amount="1" includeexisting="true" />
+      <collectmaterial id="5" description="$$10658$$" type="SH_Honey" amount="5" includeexisting="true" />
+      <collectmaterial id="6" description="$$10659$$" type="SH_Tears" amount="1" includeexisting="true" />
+      <collectmaterial id="7" description="$$10650$$" type="SH_Umbrella" amount="5" includeexisting="true" />
+    </and>
   </objectives>
 </quest>

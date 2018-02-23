@@ -20,9 +20,7 @@
     <protounit unit="GEN_MamuShannon" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="15" max="99" />
-    </values>
+    <level min="15" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="10000" />
@@ -35,24 +33,16 @@
     <diplomacy relation="Neutral" team1="2" team2="1" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <ownsunit id="3" description="$$2698$$" type="Npc_PeePaw" count="1" owningplayerid="1" causesfailure="false" />
-              <collectmaterial id="4" description="$$4086$$" type="!MapleSap" amount="5" includeexisting="true" />
-              <unitinarea id="5" description="$$4087$$" area="Quest_Area_D" type="Npc_PeePaw" count="1" radius="-1" aidefend="false" />
-            </values>
-          </and>
-          <or id="6" mustfailall="false">
-            <values>
-              <reduceunitsto id="7" type="Gr_Bldg_House" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="2" />
-              <reduceunitsto id="8" type="EquipmentFilterMilitary" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </or>
-        </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <ownsunit id="3" description="$$2698$$" type="Npc_PeePaw" count="1" owningplayerid="1" causesfailure="false" />
+        <collectmaterial id="4" description="$$4086$$" type="!MapleSap" amount="5" includeexisting="true" />
+        <unitinarea id="5" description="$$4087$$" area="Quest_Area_D" type="Npc_PeePaw" count="1" radius="-1" aidefend="false" />
+      </and>
+      <or id="6" mustfailall="false">
+        <reduceunitsto id="7" type="Gr_Bldg_House" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="2" />
+        <reduceunitsto id="8" type="EquipmentFilterMilitary" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
       </or>
-    </values>
+    </or>
   </objectives>
 </quest>

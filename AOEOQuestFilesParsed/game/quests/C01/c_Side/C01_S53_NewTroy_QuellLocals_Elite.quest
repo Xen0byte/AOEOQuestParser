@@ -52,10 +52,8 @@
     <protounit unit="C01_R3_Magistrate" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="269" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="269" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="EliteMedium" />
@@ -68,24 +66,16 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <kill id="2" description="$$2532$$" type="Gr_Bldg_Temple" count="3" includeconversion="true" onlycountelites="false" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <kill id="2" description="$$2532$$" type="Gr_Bldg_Temple" count="3" includeconversion="true" onlycountelites="false" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="4" mustfailall="false" rewardname="Optional" description="$$9656$$">
-    <values>
-      <or id="5" mustfailall="false">
-        <values>
-          <timer id="6" description="$$9656$$" failonexpire="true" />
-          <dummy id="7" description="$$10372$$" objectivename="TimeFailed" autocomplete="false" />
-          <kill id="8" description="" type="Gr_Bldg_Temple" count="3" includeconversion="true" onlycountelites="false" />
-        </values>
-      </or>
-    </values>
+    <or id="5" mustfailall="false">
+      <timer id="6" description="$$9656$$" failonexpire="true" />
+      <dummy id="7" description="$$10372$$" objectivename="TimeFailed" autocomplete="false" />
+      <kill id="8" description="" type="Gr_Bldg_Temple" count="3" includeconversion="true" onlycountelites="false" />
+    </or>
   </secondaryobjectives>
 </quest>

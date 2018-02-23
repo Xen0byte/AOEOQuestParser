@@ -25,10 +25,8 @@
     <protounit unit="C03_R1_PortMaster" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13072" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13072" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="EliteShort" />
@@ -52,26 +50,18 @@
     <diplomacy relation="Ally" team1="1" team2="3" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <timer id="1" description="$$9088$$" failonexpire="false" />
-      <or id="2" mustfailall="false">
-        <values>
-          <kill id="3" description="$$9043$$" type="Ce_Shp_Warship" count="50" includeconversion="true" onlycountelites="false" />
-          <dummy id="4" description="$$8155$$" objectivename="NotUsed" autocomplete="false" />
-          <reduceunitsto id="5" type="Ce_Bldg_Dock" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
-          <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <timer id="1" description="$$9088$$" failonexpire="false" />
+    <or id="2" mustfailall="false">
+      <kill id="3" description="$$9043$$" type="Ce_Shp_Warship" count="50" includeconversion="true" onlycountelites="false" />
+      <dummy id="4" description="$$8155$$" objectivename="NotUsed" autocomplete="false" />
+      <reduceunitsto id="5" type="Ce_Bldg_Dock" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="4" />
+      <reduceunitsto id="6" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="8" mustfailall="false">
-        <values>
-          <dummy id="9" description="$$10419$$" objectivename="OptionalRestrictSwanships" autocomplete="false" />
-          <kill id="10" description="" type="Ce_Shp_Warship" count="50" includeconversion="true" onlycountelites="false" />
-        </values>
-      </or>
-    </values>
+    <or id="8" mustfailall="false">
+      <dummy id="9" description="$$10419$$" objectivename="OptionalRestrictSwanships" autocomplete="false" />
+      <kill id="10" description="" type="Ce_Shp_Warship" count="50" includeconversion="true" onlycountelites="false" />
+    </or>
   </secondaryobjectives>
 </quest>

@@ -47,10 +47,8 @@
     <protounit unit="C01_R1_Oracle" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="49" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="49" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="15000" />
@@ -63,13 +61,9 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <convertunit id="2" description="$$2342$$" type="Gr_Civ_Villager" count="12" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <convertunit id="2" description="$$2342$$" type="Gr_Civ_Villager" count="12" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

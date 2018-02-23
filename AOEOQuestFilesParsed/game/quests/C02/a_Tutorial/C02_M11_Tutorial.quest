@@ -9,10 +9,8 @@
     <protounit unit="C02_R1_KingNarmer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="12006" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="12006" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="100" />
@@ -23,23 +21,19 @@
     <protip visible="false" tip="TIP_C02_QuestTechUnlock_Farm" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$4349$$">
-        <values>
-          <ownsequipment id="2" equipmentid="159" />
-          <ownsequipment id="3" equipmentid="189" />
-          <ownsequipment id="4" equipmentid="192" />
-          <ownsequipment id="5" equipmentid="195" />
-          <ownsequipment id="6" equipmentid="198" />
-          <ownsequipment id="7" equipmentid="202" />
-          <ownsequipment id="8" equipmentid="208" />
-          <ownsequipment id="9" equipmentid="212" />
-          <ownsequipment id="10" equipmentid="856" />
-          <ownsequipment id="11" equipmentid="239" />
-          <ownsequipment id="12" equipmentid="230" />
-          <ownsequipment id="13" equipmentid="272" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$4349$$">
+      <ownsequipment id="2" equipmentid="159" />
+      <ownsequipment id="3" equipmentid="189" />
+      <ownsequipment id="4" equipmentid="192" />
+      <ownsequipment id="5" equipmentid="195" />
+      <ownsequipment id="6" equipmentid="198" />
+      <ownsequipment id="7" equipmentid="202" />
+      <ownsequipment id="8" equipmentid="208" />
+      <ownsequipment id="9" equipmentid="212" />
+      <ownsequipment id="10" equipmentid="856" />
+      <ownsequipment id="11" equipmentid="239" />
+      <ownsequipment id="12" equipmentid="230" />
+      <ownsequipment id="13" equipmentid="272" />
+    </or>
   </objectives>
 </quest>

@@ -13,15 +13,11 @@
     <protounit unit="C03_R1_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <or>
-        <values>
-          <level min="3" max="99" />
-          <questcomplete id="13004" />
-        </values>
-      </or>
-    </values>
+    <civilization id="6" />
+    <or>
+      <level min="3" max="99" />
+      <questcomplete id="13004" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="100" />
@@ -31,8 +27,6 @@
     <protip visible="false" proto="Ce_Cap_Warehouse03Starting" tip="TIP_Shared_FirstNewGear" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <ownsunit id="1" description="$$3649$$" type="Ce_Cap_SkillBuilding" count="1" />
-    </values>
+    <ownsunit id="1" description="$$3649$$" type="Ce_Cap_SkillBuilding" count="1" />
   </objectives>
 </quest>

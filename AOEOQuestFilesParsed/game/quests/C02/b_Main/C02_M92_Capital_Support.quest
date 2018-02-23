@@ -21,10 +21,8 @@
     <protounit unit="C02_R1_CitySesostris_V2" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="394" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="394" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="60000" />
@@ -40,19 +38,13 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <protectunit id="2" description="$$5712$$" type="NPC_PrinceSesostris2" owningplayerid="1" />
-          <and id="3" mustfailall="false">
-            <values>
-              <unitinarea id="4" description="$$2577$$" area="Quest_Area_C" type="Eg_Spc_PriestPtah" count="1" radius="1000" aidefend="false" />
-              <unitinarea id="5" description="$$2578$$" area="Quest_Area_B" type="Eg_Spc_PriestSet" count="1" radius="1000" aidefend="false" />
-              <unitinarea id="6" description="$$2579$$" area="Quest_Area_A" type="Eg_Spc_PriestRa" count="1" radius="1000" aidefend="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <protectunit id="2" description="$$5712$$" type="NPC_PrinceSesostris2" owningplayerid="1" />
+      <and id="3" mustfailall="false">
+        <unitinarea id="4" description="$$2577$$" area="Quest_Area_C" type="Eg_Spc_PriestPtah" count="1" radius="1000" aidefend="false" />
+        <unitinarea id="5" description="$$2578$$" area="Quest_Area_B" type="Eg_Spc_PriestSet" count="1" radius="1000" aidefend="false" />
+        <unitinarea id="6" description="$$2579$$" area="Quest_Area_A" type="Eg_Spc_PriestRa" count="1" radius="1000" aidefend="false" />
+      </and>
+    </or>
   </objectives>
 </quest>

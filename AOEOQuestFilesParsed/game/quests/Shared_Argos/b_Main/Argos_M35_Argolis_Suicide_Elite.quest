@@ -95,9 +95,7 @@
     <protounit unit="ArgosKing" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="81" />
-    </values>
+    <questcomplete id="81" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="15" />
@@ -113,24 +111,16 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="false" />
-          <protectunit id="3" description="$$4115$$" type="UnitTypeBldgTownCenter" owningplayerid="1" />
-          <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="false" />
+      <protectunit id="3" description="$$4115$$" type="UnitTypeBldgTownCenter" owningplayerid="1" />
+      <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+    </or>
   </objectives>
   <secondaryobjectives id="5" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="6" mustfailall="false">
-        <values>
-          <timer id="7" description="$$2471$$" failonexpire="true" />
-          <kill id="8" description="$$2508$$" type="UnitTypeBldgTownCenter" count="5" includeconversion="true" onlycountelites="false" />
-        </values>
-      </or>
-    </values>
+    <or id="6" mustfailall="false">
+      <timer id="7" description="$$2471$$" failonexpire="true" />
+      <kill id="8" description="$$2508$$" type="UnitTypeBldgTownCenter" count="5" includeconversion="true" onlycountelites="false" />
+    </or>
   </secondaryobjectives>
 </quest>

@@ -15,19 +15,15 @@
     <protounit unit="GEN_FredTheRedeemer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="99" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="99" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" />
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <protectunit id="1" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
-      <kill id="2" type="Ro_Cav_PrimusPilus" count="1" includeconversion="true" onlycountelites="false" />
-    </values>
+    <protectunit id="1" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
+    <kill id="2" type="Ro_Cav_PrimusPilus" count="1" includeconversion="true" onlycountelites="false" />
   </objectives>
 </quest>

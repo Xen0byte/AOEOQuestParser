@@ -84,10 +84,8 @@
     <protounit unit="CyprusPortMaster" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="3030" />
-      <level min="40" max="99" />
-    </values>
+    <questcomplete id="3030" />
+    <level min="40" max="99" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="13" />
@@ -100,27 +98,17 @@
     <loottable visible="true" loottable="general_legendary" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <kill id="2" description="$$2508$$" type="Eg_Bldg_TownCenter" count="2" includeconversion="true" onlycountelites="false" />
-          <and id="3" mustfailall="true">
-            <values>
-              <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <kill id="2" description="$$2508$$" type="Eg_Bldg_TownCenter" count="2" includeconversion="true" onlycountelites="false" />
+      <and id="3" mustfailall="true">
+        <reduceunitsto id="4" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="3" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="6" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="7" mustfailall="false">
-        <values>
-          <kill id="8" description="$$10440$$" type="Eg_Shp_CatTrireme" count="18" includeconversion="true" onlycountelites="false" />
-        </values>
-      </or>
-    </values>
+    <or id="7" mustfailall="false">
+      <kill id="8" description="$$10440$$" type="Eg_Shp_CatTrireme" count="18" includeconversion="true" onlycountelites="false" />
+    </or>
   </secondaryobjectives>
 </quest>

@@ -2,9 +2,7 @@
   <timer hideonui="false" />
   <randommap randommap="true" numplayers="0" mapregionname="&lt;Not Specified&gt;" lightsetname="&lt;Not Specified&gt;" mapsizename="&lt;Not Specified&gt;" />
   <prereqs>
-    <values>
-      <level min="10" max="99" />
-    </values>
+    <level min="10" max="99" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="1" lookuptable="EliteGlobal" />
@@ -16,18 +14,12 @@
     <loottable visible="true" type="general_campaign" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <counter id="2" description="$$13221$$" objectivename="EliteCompleteTracker" reqcount="10" />
-          <and id="3" mustfailall="false">
-            <values>
-              <dummy id="4" objectivename="UNUSED" autocomplete="false" />
-              <kill id="5" type="UnitTypeBldgTownCenter" count="1" includeconversion="true" onlycountelites="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <counter id="2" description="$$13221$$" objectivename="EliteCompleteTracker" reqcount="10" />
+      <and id="3" mustfailall="false">
+        <dummy id="4" objectivename="UNUSED" autocomplete="false" />
+        <kill id="5" type="UnitTypeBldgTownCenter" count="1" includeconversion="true" onlycountelites="false" />
+      </and>
+    </or>
   </objectives>
 </quest>

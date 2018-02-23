@@ -58,9 +58,7 @@
     <protounit unit="B04_PrimaryQG" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="104051" />
-    </values>
+    <questcomplete id="104051" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="18" />
@@ -79,48 +77,30 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$13157$$" type="NPC_NorthernHero02" count="1" includeconversion="true" onlycountelites="false" />
-              <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$13157$$" type="NPC_NorthernHero02" count="1" includeconversion="true" onlycountelites="false" />
+        <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      </and>
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
   <secondaryobjectives id="6" mustfailall="false" rewardname="Optional_One" description="$$9507$$">
-    <values>
-      <or id="7" mustfailall="false">
-        <values>
-          <dummy id="8" description="$$13105$$" objectivename="OptionalRestrictAge4" autocomplete="false" />
-          <and id="9" mustfailall="false">
-            <values>
-              <kill id="10" description="" type="NPC_NorthernHero02" count="1" includeconversion="true" onlycountelites="false" />
-              <dummy id="11" description="" objectivename="EnemiesDefeated" autocomplete="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="7" mustfailall="false">
+      <dummy id="8" description="$$13105$$" objectivename="OptionalRestrictAge4" autocomplete="false" />
+      <and id="9" mustfailall="false">
+        <kill id="10" description="" type="NPC_NorthernHero02" count="1" includeconversion="true" onlycountelites="false" />
+        <dummy id="11" description="" objectivename="EnemiesDefeated" autocomplete="false" />
+      </and>
+    </or>
   </secondaryobjectives>
   <secondaryobjectives id="12" mustfailall="false" rewardname="Optional_Two" description="$$9508$$">
-    <values>
-      <or id="13" mustfailall="false">
-        <values>
-          <dummy id="14" description="$$13104$$" objectivename="OptionalRestrictAge3" autocomplete="false" />
-          <and id="15" mustfailall="false">
-            <values>
-              <kill id="16" description="" type="NPC_NorthernHero02" count="1" includeconversion="true" onlycountelites="false" />
-              <dummy id="17" description="" objectivename="EnemiesDefeated" autocomplete="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="13" mustfailall="false">
+      <dummy id="14" description="$$13104$$" objectivename="OptionalRestrictAge3" autocomplete="false" />
+      <and id="15" mustfailall="false">
+        <kill id="16" description="" type="NPC_NorthernHero02" count="1" includeconversion="true" onlycountelites="false" />
+        <dummy id="17" description="" objectivename="EnemiesDefeated" autocomplete="false" />
+      </and>
+    </or>
   </secondaryobjectives>
 </quest>

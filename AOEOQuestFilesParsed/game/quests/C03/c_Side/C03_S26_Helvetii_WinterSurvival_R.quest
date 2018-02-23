@@ -17,10 +17,8 @@
     <protounit unit="C03_R2_Bard" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13024" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13024" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQShort" />
@@ -33,30 +31,20 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <collectresource id="3" description="$$2368$$" type="Food" amount="1500" includeexisting="true" />
-          <protectunit id="4" description="$$9003$$" type="Ce_Bldg_Market" owningplayerid="1" />
-          <and id="5" mustfailall="true">
-            <values>
-              <reduceunitsto id="6" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="7" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <collectresource id="3" description="$$2368$$" type="Food" amount="1500" includeexisting="true" />
+      <protectunit id="4" description="$$9003$$" type="Ce_Bldg_Market" owningplayerid="1" />
+      <and id="5" mustfailall="true">
+        <reduceunitsto id="6" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="7" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="8" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="9" mustfailall="false">
-        <values>
-          <timer id="10" description="$$2471$$" failonexpire="true" />
-          <collectresource id="11" description="$$10376$$" type="Gold" amount="1000" includeexisting="true" />
-        </values>
-      </or>
-    </values>
+    <or id="9" mustfailall="false">
+      <timer id="10" description="$$2471$$" failonexpire="true" />
+      <collectresource id="11" description="$$10376$$" type="Gold" amount="1000" includeexisting="true" />
+    </or>
   </secondaryobjectives>
 </quest>

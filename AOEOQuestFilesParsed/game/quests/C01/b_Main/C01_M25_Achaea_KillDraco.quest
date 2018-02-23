@@ -60,10 +60,8 @@
     <protounit unit="C01_R1_VillageScout_V2" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="10" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="10" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="5000" />
@@ -72,24 +70,16 @@
     <loottable visible="true" type="general" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <kill id="3" description="$$2346$$" type="Npc_BanditLeader_04" count="1" includeconversion="true" onlycountelites="false" />
-              <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-            </values>
-          </and>
-          <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="6" mustfailall="false">
-            <values>
-              <dummy id="7" objectivename="TIMER_EFFECT_BUGFIX" autocomplete="false" />
-              <timer id="8" failonexpire="false" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <kill id="3" description="$$2346$$" type="Npc_BanditLeader_04" count="1" includeconversion="true" onlycountelites="false" />
+        <dummy id="4" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      </and>
+      <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="6" mustfailall="false">
+        <dummy id="7" objectivename="TIMER_EFFECT_BUGFIX" autocomplete="false" />
+        <timer id="8" failonexpire="false" />
+      </and>
+    </or>
   </objectives>
 </quest>

@@ -13,15 +13,11 @@
     <protounit unit="C02_R1_KingNarmer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <or>
-        <values>
-          <level min="3" max="99" />
-          <questcomplete id="12004" />
-        </values>
-      </or>
-    </values>
+    <civilization id="3" />
+    <or>
+      <level min="3" max="99" />
+      <questcomplete id="12004" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="100" />
@@ -31,8 +27,6 @@
     <protip visible="false" proto="Eg_Cap_Warehouse03Starting" tip="TIP_Shared_FirstNewGear" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <ownsunit id="1" description="$$3649$$" type="Eg_Cap_SkillBuilding" count="1" />
-    </values>
+    <ownsunit id="1" description="$$3649$$" type="Eg_Cap_SkillBuilding" count="1" />
   </objectives>
 </quest>

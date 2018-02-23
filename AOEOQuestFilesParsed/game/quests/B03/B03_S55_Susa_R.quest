@@ -18,9 +18,7 @@
     <protounit unit="Babylon_OldFactionGuy" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="103053" />
-    </values>
+    <questcomplete id="103053" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="5" />
@@ -33,29 +31,19 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <kill id="3" description="$$4708$$" type="NPC_SusaTemple" count="12" includeconversion="false" onlycountelites="false" />
-          <and id="4" mustfailall="true">
-            <values>
-              <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="6" type="LogicalTypeScout" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <kill id="3" description="$$4708$$" type="NPC_SusaTemple" count="12" includeconversion="false" onlycountelites="false" />
+      <and id="4" mustfailall="true">
+        <reduceunitsto id="5" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="6" type="LogicalTypeScout" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="7" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <and id="8" mustfailall="false">
-        <values>
-          <kill id="9" description="$$2482$$" type="Pe_Bldg_House" count="36" includeconversion="false" onlycountelites="false" />
-          <kill id="10" description="" type="NPC_SusaTemple" count="12" includeconversion="false" onlycountelites="false" />
-        </values>
-      </and>
-    </values>
+    <and id="8" mustfailall="false">
+      <kill id="9" description="$$2482$$" type="Pe_Bldg_House" count="36" includeconversion="false" onlycountelites="false" />
+      <kill id="10" description="" type="NPC_SusaTemple" count="12" includeconversion="false" onlycountelites="false" />
+    </and>
   </secondaryobjectives>
 </quest>

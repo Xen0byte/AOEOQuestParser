@@ -48,14 +48,10 @@
     <protounit unit="Babylon_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <or>
-        <values>
-          <questcomplete id="103000" />
-          <questcomplete id="103420" />
-        </values>
-      </or>
-    </values>
+    <or>
+      <questcomplete id="103000" />
+      <questcomplete id="103420" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="90000" />
@@ -69,22 +65,16 @@
     <diplomacy relation="Ally" team1="3" team2="1" sharedlos="true" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <tribute id="3" description="$$11599$$" type="Stone" amount="1000" destplayer="5" />
-              <tribute id="4" description="$$11534$$" type="Gold" amount="1000" destplayer="4" />
-              <dummy id="5" description="$$11781$$" objectivename="EnemiesDefeated" autocomplete="false" />
-            </values>
-          </and>
-          <dummy id="6" description="$$11777$$" objectivename="UNUSED" autocomplete="false" />
-          <protectunit id="7" description="" type="UnitTypeBldgTownCenter" owningplayerid="4" />
-          <protectunit id="8" description="" type="UnitTypeBldgTownCenter" owningplayerid="5" />
-          <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <tribute id="3" description="$$11599$$" type="Stone" amount="1000" destplayer="5" />
+        <tribute id="4" description="$$11534$$" type="Gold" amount="1000" destplayer="4" />
+        <dummy id="5" description="$$11781$$" objectivename="EnemiesDefeated" autocomplete="false" />
+      </and>
+      <dummy id="6" description="$$11777$$" objectivename="UNUSED" autocomplete="false" />
+      <protectunit id="7" description="" type="UnitTypeBldgTownCenter" owningplayerid="4" />
+      <protectunit id="8" description="" type="UnitTypeBldgTownCenter" owningplayerid="5" />
+      <reduceunitsto id="9" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

@@ -22,16 +22,12 @@
     <protounit cooponly="false" forcetocenter="false" name="PlayerDefenders" protoname="PT_Uber_Hoplite" count="10" team="1" area="Player1" usequesttargetindicator="false" />
   </targets>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="99" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="99" max="99" />
   </prereqs>
   <objectives id="0" mustfailall="false">
-    <values>
-      <buildunit id="1" description="$$2538$$" type="UnitTypeBldgWonder" count="1" />
-      <kill id="2" description="$$5182$$" type="CountsTowardMilitaryScore" count="10000" includeconversion="true" onlycountelites="false" />
-      <timer id="3" description="$$2471$$" failonexpire="true" />
-    </values>
+    <buildunit id="1" description="$$2538$$" type="UnitTypeBldgWonder" count="1" />
+    <kill id="2" description="$$5182$$" type="CountsTowardMilitaryScore" count="10000" includeconversion="true" onlycountelites="false" />
+    <timer id="3" description="$$2471$$" failonexpire="true" />
   </objectives>
 </quest>

@@ -26,21 +26,15 @@
     <protounit cooponly="false" forcetocenter="false" name="EnemyDefenders" protoname="Gr_Inf_Spearman" count="10" team="2" area="Quest_Area_A" usequesttargetindicator="false" />
   </targets>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="99" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="99" max="99" />
   </prereqs>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <buildunit id="2" description="$$2538$$" type="UnitTypeBldgWonder" count="1" />
-          <kill id="3" description="$$5182$$" type="CountsTowardMilitaryScore" count="10000" includeconversion="true" onlycountelites="false" />
-          <timer id="4" description="$$2471$$" failonexpire="true" />
-          <dummy id="5" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <buildunit id="2" description="$$2538$$" type="UnitTypeBldgWonder" count="1" />
+      <kill id="3" description="$$5182$$" type="CountsTowardMilitaryScore" count="10000" includeconversion="true" onlycountelites="false" />
+      <timer id="4" description="$$2471$$" failonexpire="true" />
+      <dummy id="5" description="$$3802$$" objectivename="EnemiesDefeated" autocomplete="false" />
+    </or>
   </objectives>
 </quest>

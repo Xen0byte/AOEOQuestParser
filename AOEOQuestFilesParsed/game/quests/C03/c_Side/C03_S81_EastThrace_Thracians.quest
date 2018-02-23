@@ -19,10 +19,8 @@
     <protounit unit="C03_R3_Acichorios" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13033" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13033" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="15000" />
@@ -37,13 +35,9 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <unitinarea id="2" description="$$9054$$" area="Quest_Area_A" type="UnitTypeCaravan1" count="1" radius="-1" aidefend="false" />
-          <protectunit id="3" description="$$9053$$" type="UnitTypeCaravan1" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <unitinarea id="2" description="$$9054$$" area="Quest_Area_A" type="UnitTypeCaravan1" count="1" radius="-1" aidefend="false" />
+      <protectunit id="3" description="$$9053$$" type="UnitTypeCaravan1" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

@@ -12,11 +12,9 @@
     <protounit unit="C03_R1_Leader" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13019" />
-      <questcomplete id="13015" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13019" />
+    <questcomplete id="13015" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
@@ -27,17 +25,13 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$9031$$">
-        <values>
-          <unitdiscovered id="2" type="C03_R1_VindeliciaDrust" count="1" />
-          <ownsunit id="3" type="C03_R1_VindeliciaDrust" count="1" />
-          <unitdiscovered id="4" type="C03_R1_SensBrennos" count="1" />
-          <ownsunit id="5" type="C03_R1_SensBrennos" count="1" />
-          <unitdiscovered id="6" type="C03_R1_Leader" count="1" />
-          <ownsunit id="7" type="C03_R1_Leader" count="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$9031$$">
+      <unitdiscovered id="2" type="C03_R1_VindeliciaDrust" count="1" />
+      <ownsunit id="3" type="C03_R1_VindeliciaDrust" count="1" />
+      <unitdiscovered id="4" type="C03_R1_SensBrennos" count="1" />
+      <ownsunit id="5" type="C03_R1_SensBrennos" count="1" />
+      <unitdiscovered id="6" type="C03_R1_Leader" count="1" />
+      <ownsunit id="7" type="C03_R1_Leader" count="1" />
+    </or>
   </objectives>
 </quest>

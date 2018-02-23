@@ -19,14 +19,10 @@
     <protounit unit="B04_PrimaryQG" />
   </questreturners>
   <prereqs>
-    <values>
-      <or>
-        <values>
-          <questcomplete id="104000" />
-          <questcomplete id="104420" />
-        </values>
-      </or>
-    </values>
+    <or>
+      <questcomplete id="104000" />
+      <questcomplete id="104420" />
+    </or>
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="B04Short" />
@@ -52,13 +48,9 @@
     <diplomacy relation="Neutral" team1="3" team2="5" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <ownsunit id="2" description="$$12673$$" type="Qst_CounterObject" count="5" owningplayerid="1" causesfailure="false" />
-          <protectunit id="3" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <ownsunit id="2" description="$$12673$$" type="Qst_CounterObject" count="5" owningplayerid="1" causesfailure="false" />
+      <protectunit id="3" description="$$12659$$" type="NPC_NorthernHero01" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

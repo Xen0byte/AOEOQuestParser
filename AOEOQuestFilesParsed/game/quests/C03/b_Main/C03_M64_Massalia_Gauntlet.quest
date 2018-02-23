@@ -21,10 +21,8 @@
     <protounit unit="C03_R2_Protis" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13023" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13023" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="18000" />
@@ -43,21 +41,15 @@
     <diplomacy relation="Ally" team1="4" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <dummy id="3" description="$$8597$$" objectivename="GuardTower1" autocomplete="false" />
-              <dummy id="4" description="$$8596$$" objectivename="GuardTower2" autocomplete="false" />
-              <dummy id="5" description="$$8598$$" objectivename="GuardTower3" autocomplete="false" />
-              <dummy id="6" description="$$8049$$" objectivename="DefendTown" autocomplete="false" />
-            </values>
-          </and>
-          <reduceunitsto id="7" description="" type="Ce_Bldg_TownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
-          <dummy id="8" objectivename="ProtectVillagers" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <dummy id="3" description="$$8597$$" objectivename="GuardTower1" autocomplete="false" />
+        <dummy id="4" description="$$8596$$" objectivename="GuardTower2" autocomplete="false" />
+        <dummy id="5" description="$$8598$$" objectivename="GuardTower3" autocomplete="false" />
+        <dummy id="6" description="$$8049$$" objectivename="DefendTown" autocomplete="false" />
+      </and>
+      <reduceunitsto id="7" description="" type="Ce_Bldg_TownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="5" />
+      <dummy id="8" objectivename="ProtectVillagers" autocomplete="false" />
+    </or>
   </objectives>
 </quest>

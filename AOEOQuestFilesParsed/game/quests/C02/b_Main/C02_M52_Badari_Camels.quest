@@ -38,10 +38,8 @@
     <protounit unit="C02_R1_CitySesostris" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="12051" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="12051" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="8000" />
@@ -50,13 +48,9 @@
     <consumable visible="true" consumablename="ConsumableNubianArc_C" count="3" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <unitinarea id="2" description="$$2558$$" area="Player1" type="QuestCamel" count="5" radius="25" aidefend="true" />
-          <protectunit id="3" description="$$5712$$" type="NPC_PrinceSesostris2" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <unitinarea id="2" description="$$2558$$" area="Player1" type="QuestCamel" count="5" radius="25" aidefend="true" />
+      <protectunit id="3" description="$$5712$$" type="NPC_PrinceSesostris2" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

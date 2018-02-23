@@ -39,9 +39,7 @@
     <protounit unit="ArgosRefugee" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="211" />
-    </values>
+    <questcomplete id="211" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="80000" />
@@ -57,13 +55,9 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <unitinarea id="2" description="$$4156$$" area="Player1" type="CapturedAdmiral" count="1" radius="30" aidefend="false" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <unitinarea id="2" description="$$4156$$" area="Player1" type="CapturedAdmiral" count="1" radius="30" aidefend="false" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+    </or>
   </objectives>
 </quest>

@@ -26,10 +26,8 @@
     <protounit unit="C02_R2_Trader" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="12011" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="12011" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1000" />
@@ -49,28 +47,20 @@
     <diplomacy relation="Neutral" team1="3" team2="2" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <buildunit id="3" description="$$4509$$" type="Eg_Bldg_Temple1" count="1" />
-              <techstatus id="4" description="$$2464$$" name="EgyptCapAge2" status="Active" />
-              <collectresource id="5" description="$$2373$$" type="Wood" amount="400" includeexisting="false" />
-              <buildunit id="6" description="$$2467$$" type="Eg_Bldg_Farm" count="4" />
-              <unitinarea id="7" description="$$3813$$" area="Player1" type="ConvertVillager01" count="10" radius="20" aidefend="true" />
-            </values>
-          </and>
-          <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <reduceunitsto id="9" type="Eg_Civ_UtilityBoat" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <and id="10" mustfailall="true">
-            <values>
-              <reduceunitsto id="11" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="12" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <buildunit id="3" description="$$4509$$" type="Eg_Bldg_Temple1" count="1" />
+        <techstatus id="4" description="$$2464$$" name="EgyptCapAge2" status="Active" />
+        <collectresource id="5" description="$$2373$$" type="Wood" amount="400" includeexisting="false" />
+        <buildunit id="6" description="$$2467$$" type="Eg_Bldg_Farm" count="4" />
+        <unitinarea id="7" description="$$3813$$" area="Player1" type="ConvertVillager01" count="10" radius="20" aidefend="true" />
+      </and>
+      <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <reduceunitsto id="9" type="Eg_Civ_UtilityBoat" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <and id="10" mustfailall="true">
+        <reduceunitsto id="11" type="AbstractTownCenter" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="12" type="UnitTypeVillager1" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
 </quest>

@@ -23,10 +23,8 @@
     <protounit unit="C03_R1_Explorer" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="6" />
-      <questcomplete id="13048" />
-    </values>
+    <civilization id="6" />
+    <questcomplete id="13048" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="5000" />
@@ -44,22 +42,16 @@
     <diplomacy relation="Neutral" team1="0" team2="3" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <and id="2" mustfailall="false">
-            <values>
-              <unitinarea id="3" area="Quest_Area_A" type="NPC_AuggieR1" count="1" radius="-1" aidefend="true" />
-              <unitinarea id="4" area="Quest_Area_A" type="Ce_Sie_Ram" count="1" radius="-1" aidefend="true" />
-              <unitinarea id="5" area="Quest_Area_A" type="Ce_Arc_Longbowman_E" count="1" radius="-1" aidefend="true" />
-            </values>
-          </and>
-          <dummy id="6" description="$$9048$$" objectivename="UNUSED" autocomplete="false" />
-          <protectunit id="7" description="$$8355$$" type="NPC_AuggieR1" owningplayerid="1" />
-          <protectunit id="8" description="$$9045$$" type="Ce_Sie_Ram" owningplayerid="1" />
-          <protectunit id="9" description="$$9049$$" type="Ce_Arc_Longbowman_E" owningplayerid="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <and id="2" mustfailall="false">
+        <unitinarea id="3" area="Quest_Area_A" type="NPC_AuggieR1" count="1" radius="-1" aidefend="true" />
+        <unitinarea id="4" area="Quest_Area_A" type="Ce_Sie_Ram" count="1" radius="-1" aidefend="true" />
+        <unitinarea id="5" area="Quest_Area_A" type="Ce_Arc_Longbowman_E" count="1" radius="-1" aidefend="true" />
+      </and>
+      <dummy id="6" description="$$9048$$" objectivename="UNUSED" autocomplete="false" />
+      <protectunit id="7" description="$$8355$$" type="NPC_AuggieR1" owningplayerid="1" />
+      <protectunit id="8" description="$$9045$$" type="Ce_Sie_Ram" owningplayerid="1" />
+      <protectunit id="9" description="$$9049$$" type="Ce_Arc_Longbowman_E" owningplayerid="1" />
+    </or>
   </objectives>
 </quest>

@@ -21,10 +21,8 @@
     <protounit unit="A03_AllianceLeader" />
   </questreturners>
   <prereqs>
-    <values>
-      <level min="40" max="99" />
-      <questcomplete id="1300" />
-    </values>
+    <level min="40" max="99" />
+    <questcomplete id="1300" />
   </prereqs>
   <rewards visible="true">
     <alliancepoints visible="true" amount="12" />
@@ -49,64 +47,46 @@
     <diplomacy relation="Ally" team1="5" team2="4" sharedlos="false" />
   </diplomacysettings>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <ownsunit id="2" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="1" causesfailure="false" />
-          <ownsunit id="3" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="4" causesfailure="false" />
-          <ownsunit id="4" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="2" causesfailure="true" />
-          <ownsunit id="5" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="3" causesfailure="true" />
-          <dummy id="6" description="$$9731$$" objectivename="UNUSED" autocomplete="false" />
-          <and id="7" mustfailall="false">
-            <values>
-              <ownsunit id="8" description="$$9732$$" type="Van_Cap_StatueArcher" count="22" owningplayerid="2" causesfailure="false" />
-              <dummy id="9" description="" objectivename="UNUSED" autocomplete="false" />
-            </values>
-          </and>
-          <and id="10" mustfailall="false">
-            <values>
-              <ownsunit id="11" description="$$9740$$" type="Van_Cap_StatueArcher" count="22" owningplayerid="3" causesfailure="false" />
-              <dummy id="12" description="" objectivename="UNUSED" autocomplete="false" />
-            </values>
-          </and>
-          <and id="13" mustfailall="true">
-            <values>
-              <reduceunitsto id="14" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="15" type="UnitTypeBldgBarracks" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="16" type="UnitTypeBldgArcheryRange" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="17" type="UnitTypeBldgStables" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="18" type="UnitTypeBldgTemple" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="19" type="UnitTypeBldgTemple2" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="20" type="UnitTypeBldgTemple3" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-              <reduceunitsto id="21" type="UnitTypeBldgSiegeWorkshop" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-            </values>
-          </and>
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <ownsunit id="2" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="1" causesfailure="false" />
+      <ownsunit id="3" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="4" causesfailure="false" />
+      <ownsunit id="4" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="2" causesfailure="true" />
+      <ownsunit id="5" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="3" causesfailure="true" />
+      <dummy id="6" description="$$9731$$" objectivename="UNUSED" autocomplete="false" />
+      <and id="7" mustfailall="false">
+        <ownsunit id="8" description="$$9732$$" type="Van_Cap_StatueArcher" count="22" owningplayerid="2" causesfailure="false" />
+        <dummy id="9" description="" objectivename="UNUSED" autocomplete="false" />
+      </and>
+      <and id="10" mustfailall="false">
+        <ownsunit id="11" description="$$9740$$" type="Van_Cap_StatueArcher" count="22" owningplayerid="3" causesfailure="false" />
+        <dummy id="12" description="" objectivename="UNUSED" autocomplete="false" />
+      </and>
+      <and id="13" mustfailall="true">
+        <reduceunitsto id="14" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="15" type="UnitTypeBldgBarracks" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="16" type="UnitTypeBldgArcheryRange" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="17" type="UnitTypeBldgStables" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="18" type="UnitTypeBldgTemple" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="19" type="UnitTypeBldgTemple2" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="20" type="UnitTypeBldgTemple3" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+        <reduceunitsto id="21" type="UnitTypeBldgSiegeWorkshop" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      </and>
+    </or>
   </objectives>
   <secondaryobjectives id="22" mustfailall="false" rewardname="OptionalOne" description="$$9507$$">
-    <values>
-      <or id="23" mustfailall="false">
-        <values>
-          <ownsunit id="24" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="1" causesfailure="false" />
-          <ownsunit id="25" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="4" causesfailure="false" />
-          <ownsunit id="26" description="" type="Van_Cap_StatueArcher" count="5" owningplayerid="2" causesfailure="true" />
-          <dummy id="27" description="$$9743$$" objectivename="UNUSED" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="23" mustfailall="false">
+      <ownsunit id="24" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="1" causesfailure="false" />
+      <ownsunit id="25" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="4" causesfailure="false" />
+      <ownsunit id="26" description="" type="Van_Cap_StatueArcher" count="5" owningplayerid="2" causesfailure="true" />
+      <dummy id="27" description="$$9743$$" objectivename="UNUSED" autocomplete="false" />
+    </or>
   </secondaryobjectives>
   <secondaryobjectives id="28" mustfailall="false" rewardname="OptionalTwo" description="$$9508$$">
-    <values>
-      <or id="29" mustfailall="false">
-        <values>
-          <ownsunit id="30" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="1" causesfailure="false" />
-          <ownsunit id="31" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="4" causesfailure="false" />
-          <ownsunit id="32" description="" type="Van_Cap_StatueArcher" count="5" owningplayerid="3" causesfailure="true" />
-          <dummy id="33" description="$$9744$$" objectivename="UNUSED" autocomplete="false" />
-        </values>
-      </or>
-    </values>
+    <or id="29" mustfailall="false">
+      <ownsunit id="30" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="1" causesfailure="false" />
+      <ownsunit id="31" description="" type="Mn_Bldg_Wonder2" count="1" owningplayerid="4" causesfailure="false" />
+      <ownsunit id="32" description="" type="Van_Cap_StatueArcher" count="5" owningplayerid="3" causesfailure="true" />
+      <dummy id="33" description="$$9744$$" objectivename="UNUSED" autocomplete="false" />
+    </or>
   </secondaryobjectives>
 </quest>

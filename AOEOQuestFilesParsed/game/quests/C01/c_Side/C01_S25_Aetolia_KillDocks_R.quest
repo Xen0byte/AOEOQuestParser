@@ -36,10 +36,8 @@
     <protounit unit="C01_R1_PortMaster_V3" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <questcomplete id="164" />
-    </values>
+    <civilization id="1" />
+    <questcomplete id="164" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQVShort" />
@@ -60,26 +58,18 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <timer id="2" description="$$2471$$" failonexpire="true" />
-          <dummy id="3" description="$$2349$$" objectivename="UNUSED" autocomplete="false" />
-          <reduceunitsto id="4" description="" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <reduceunitsto id="5" type="Gr_Bldg_Dock" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <timer id="2" description="$$2471$$" failonexpire="true" />
+      <dummy id="3" description="$$2349$$" objectivename="UNUSED" autocomplete="false" />
+      <reduceunitsto id="4" description="" type="LogicalTypeNeededForVictory" count="0" includeteam="true" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <reduceunitsto id="5" type="Gr_Bldg_Dock" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+    </or>
   </objectives>
   <secondaryobjectives id="6" mustfailall="false" rewardname="Optional" description="$$9658$$">
-    <values>
-      <or id="7" mustfailall="false">
-        <values>
-          <timer id="8" description="" failonexpire="true" />
-          <dummy id="9" description="$$10089$$" objectivename="TimeFailed" autocomplete="false" />
-          <reduceunitsto id="10" type="Gr_Bldg_Dock" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
-        </values>
-      </or>
-    </values>
+    <or id="7" mustfailall="false">
+      <timer id="8" description="" failonexpire="true" />
+      <dummy id="9" description="$$10089$$" objectivename="TimeFailed" autocomplete="false" />
+      <reduceunitsto id="10" type="Gr_Bldg_Dock" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="2" />
+    </or>
   </secondaryobjectives>
 </quest>

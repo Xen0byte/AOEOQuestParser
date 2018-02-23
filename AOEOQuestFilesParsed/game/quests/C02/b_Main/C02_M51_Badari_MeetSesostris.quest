@@ -11,22 +11,16 @@
     <protounit unit="C02_R1_CitySesostris" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="3" />
-      <questcomplete id="141" />
-    </values>
+    <civilization id="3" />
+    <questcomplete id="141" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="50" />
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false" description="$$4623$$">
-        <values>
-          <unitdiscovered id="2" type="C02_R1_CitySesostris" count="1" />
-          <ownsunit id="3" type="C02_R1_CitySesostris" count="1" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false" description="$$4623$$">
+      <unitdiscovered id="2" type="C02_R1_CitySesostris" count="1" />
+      <ownsunit id="3" type="C02_R1_CitySesostris" count="1" />
+    </or>
   </objectives>
 </quest>

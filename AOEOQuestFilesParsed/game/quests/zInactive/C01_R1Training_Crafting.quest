@@ -14,10 +14,8 @@
     <protounit unit="C01_R1_GuildMaster" />
   </questreturners>
   <prereqs>
-    <values>
-      <civilization id="1" />
-      <level min="6" max="99" />
-    </values>
+    <civilization id="1" />
+    <level min="6" max="99" />
   </prereqs>
   <rewards visible="true">
     <capitalresource visible="true" capitalresource="cCapResCoin" amount="100" />
@@ -30,9 +28,7 @@
     </or>
   </rewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <ownsunit id="1" description="$$3658$$" type="Gr_Craft_Chooser" count="1" owningplayerid="1" causesfailure="false" />
-      <ownsunit id="2" description="$$13222$$" type="Gr_Cap_StoreStore01" count="1" owningplayerid="1" causesfailure="false" />
-    </values>
+    <ownsunit id="1" description="$$3658$$" type="Gr_Craft_Chooser" count="1" owningplayerid="1" causesfailure="false" />
+    <ownsunit id="2" description="$$13222$$" type="Gr_Cap_StoreStore01" count="1" owningplayerid="1" causesfailure="false" />
   </objectives>
 </quest>

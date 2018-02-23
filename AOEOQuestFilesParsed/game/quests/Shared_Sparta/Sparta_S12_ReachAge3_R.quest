@@ -18,10 +18,8 @@
     <protounit unit="SharedPvP_Captain" />
   </questreturners>
   <prereqs>
-    <values>
-      <questcomplete id="10400" />
-      <level min="7" max="99" />
-    </values>
+    <questcomplete id="10400" />
+    <level min="7" max="99" />
   </prereqs>
   <rewards visible="true">
     <xp visible="true" amount="1" lookuptable="SQShort" />
@@ -37,36 +35,24 @@
     <loottable visible="true" loottable="general" />
   </secondaryrewards>
   <objectives id="0" mustfailall="false">
-    <values>
-      <or id="1" mustfailall="false">
-        <values>
-          <dummy id="2" description="$$3730$$" objectivename="AgeUp" autocomplete="false" />
-          <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
-          <timer id="4" description="$$2471$$" failonexpire="true" />
-        </values>
-      </or>
-    </values>
+    <or id="1" mustfailall="false">
+      <dummy id="2" description="$$3730$$" objectivename="AgeUp" autocomplete="false" />
+      <reduceunitsto id="3" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="true" playerid="1" />
+      <timer id="4" description="$$2471$$" failonexpire="true" />
+    </or>
   </objectives>
   <secondaryobjectives id="5" mustfailall="false" rewardname="OptionalOne" description="$$9507$$">
-    <values>
-      <or id="6" mustfailall="false">
-        <values>
-          <dummy id="7" description="$$9765$$" objectivename="AgeUpEarlier" autocomplete="false" />
-          <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="1" />
-          <timer id="9" description="$$2471$$" failonexpire="true" />
-        </values>
-      </or>
-    </values>
+    <or id="6" mustfailall="false">
+      <dummy id="7" description="$$9765$$" objectivename="AgeUpEarlier" autocomplete="false" />
+      <reduceunitsto id="8" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="1" />
+      <timer id="9" description="$$2471$$" failonexpire="true" />
+    </or>
   </secondaryobjectives>
   <secondaryobjectives id="10" mustfailall="false" rewardname="OptionalTwo" description="$$9508$$">
-    <values>
-      <or id="11" mustfailall="false">
-        <values>
-          <dummy id="12" description="$$9766$$" objectivename="AgeUpEarliest" autocomplete="false" />
-          <reduceunitsto id="13" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="1" />
-          <timer id="14" description="$$2471$$" failonexpire="true" />
-        </values>
-      </or>
-    </values>
+    <or id="11" mustfailall="false">
+      <dummy id="12" description="$$9766$$" objectivename="AgeUpEarliest" autocomplete="false" />
+      <reduceunitsto id="13" type="LogicalTypeNeededForVictory" count="0" includeteam="false" includeunderconstruction="false" canuncomplete="false" causesfailure="false" playerid="1" />
+      <timer id="14" description="$$2471$$" failonexpire="true" />
+    </or>
   </secondaryobjectives>
 </quest>
