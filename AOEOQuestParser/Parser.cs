@@ -57,6 +57,8 @@ namespace AOEOQuestParser
                 secondaryobjectives(currentQuestFile, tempFile);
                 #endregion
 
+                values(currentQuestFile, tempFile);
+
                 Logic.WriteFiles(questDestination, relativePaths[processedFilesCounter], tempFile);
                 Logic.EraseTempFile(tempFile);
 
@@ -1716,6 +1718,95 @@ namespace AOEOQuestParser
             {
                 questElement.Add(parsedElement);
                 victoryconditionsCounter++;
+            }
+
+            tempXDocInstance.Save(tempFile);
+        }
+
+        // Strips out value elements before writing to the temporary file.
+        public static void values(string currentQuestFile, string tempFile)
+        {
+            XDocument tempXDocInstance = XDocument.Load(tempFile);
+            XElement questElement = tempXDocInstance.Descendants().First();
+
+            bool valuesFound = true;
+
+            while (valuesFound)
+            {
+                try
+                {
+                    if (questElement.Descendants("values").Count() > 0)
+                    {
+                        List<XElement> removevalues = new List<XElement>();
+
+                        foreach (XElement descendant in questElement.Descendants())
+                        {
+                            if (descendant.Name.ToString() == "values" && descendant.Descendants().Count() == 0)
+                            {
+                                if (descendant.Attributes().Count() != 0 || descendant.Value.ToString() != "")
+                                {
+                                    Console.WriteLine("\n" + "[ERROR] Isolated 'values' element discovered.");
+                                    Console.WriteLine(descendant);
+                                    Console.WriteLine("[FILE] " + currentQuestFile + "\n");
+                                }
+
+                                else
+                                {
+                                    removevalues.Add(descendant);
+                                }
+                            }
+                        }
+
+                        if (removevalues.Count() > 0)
+                        {
+                            foreach (XElement value in removevalues)
+                            {
+                                value.Remove();
+                            }
+                        }
+
+                        foreach (XElement descendant in questElement.Descendants())
+                        {
+                            if (descendant.Name.ToString() == "values" && descendant.Descendants().Count() > 0)
+                            {
+                                List<XElement> valueelements = new List<XElement>();
+
+                                foreach (XElement element in descendant.Elements())
+                                {
+                                    valueelements.Add(element);
+                                }
+
+                                if (descendant.Parent.Elements().Count() == 1)
+                                {
+                                    XElement parent = descendant.Parent;
+                                    parent.RemoveNodes();
+
+                                    foreach (XElement node in valueelements)
+                                    {
+                                        parent.Add(new XElement(node));
+                                    }
+                                }
+
+                                else if (descendant.Parent.Elements().Count() != 1)
+                                {
+                                    Console.WriteLine("\n" + "[ERROR] The " + descendant.Parent.Name.ToString() + " element has more than one sub-element.");
+                                    Console.WriteLine("[FILE] " + currentQuestFile + "\n");
+                                }
+                            }
+
+                        }
+                    }
+
+                    else
+                    {
+                        valuesFound = false;
+                    }
+                }
+
+                catch (NullReferenceException)
+                {
+                    // ¯\_(ツ)_/¯
+                }
             }
 
             tempXDocInstance.Save(tempFile);
